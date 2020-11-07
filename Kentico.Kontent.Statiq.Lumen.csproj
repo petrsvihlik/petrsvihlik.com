@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
+    <DefaultItemExcludes>$(DefaultItemExcludes);output\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Kentico.Kontent.Delivery" Version="14.0.0" />
+    <PackageReference Include="Kentico.Kontent.Delivery.Abstractions" Version="14.0.0" />
+    <PackageReference Include="Kentico.Kontent.ImageTransformation" Version="14.0.0" />
+    <PackageReference Include="Kontent.Statiq" Version="1.0.0-beta0007" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.8" />
+    <PackageReference Include="Statiq.App" Version="1.0.0-beta.27" />
+    <PackageReference Include="Statiq.Feeds" Version="1.0.0-beta.27" />
+    <PackageReference Include="Statiq.Html" Version="1.0.0-beta.27" />
+    <PackageReference Include="Statiq.Razor" Version="1.0.0-beta.27" />
+    <PackageReference Include="Statiq.Sass" Version="1.0.0-beta.27" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.12" />
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <UserSecretsId>42813ac8-5d91-4bcb-98f2-7f402adfd9b9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="input\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="input\**">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

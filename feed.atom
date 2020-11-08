@@ -4,7 +4,7 @@
 	<title>Lumen Blog</title>
 	<link rel="self" href="https://petrsvihlik.com/" />
 	<rights>2020</rights>
-	<updated>2020-11-08T15:25:48Z</updated>
+	<updated>2020-11-08T15:47:56Z</updated>
 	<entry>
 		<id>https://petrsvihlik.com/posts/ok-google-water-the-garden</id>
 		<title>OK Google, water the garden!</title>
@@ -49,7 +49,7 @@
 		<id>https://petrsvihlik.com/posts/three-ways-to-manage-data-in-kentico-using-powershell</id>
 		<title>Three Ways to Manage Data in Kentico Using PowerShell</title>
 		<link href="https://petrsvihlik.com/posts/three-ways-to-manage-data-in-kentico-using-powershell" />
-		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/d24a390e-d856-429c-9d98-40fb7548ab5d/net.png" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/041a27dd-ae9f-4278-bf69-2fcbd6781b0f/net.png" />
 		<updated>2016-08-09T00:00:00Z</updated>
 		<summary>PowerShell is the leading task automation platform for Windows. Developers and system administrators from all around the world use it for the most complex deployment and installation scenarios as well as for the simplest scripting. The fact that it's built on top of the .NET Framework opens up certain possibilities for integration with Kentico. Today, we'll have a look at what we can achieve with PowerShell in combination with the Kentico API and the Kentico REST API.</summary>
 	</entry>

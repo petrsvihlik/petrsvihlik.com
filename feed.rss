@@ -5,8 +5,8 @@
 		<link>https://petrsvihlik.com/</link>
 		<description />
 		<copyright>2020</copyright>
-		<pubDate>Sun, 08 Nov 2020 15:25:48 GMT</pubDate>
-		<lastBuildDate>Sun, 08 Nov 2020 15:25:48 GMT</lastBuildDate>
+		<pubDate>Sun, 08 Nov 2020 15:47:56 GMT</pubDate>
+		<lastBuildDate>Sun, 08 Nov 2020 15:47:56 GMT</lastBuildDate>
 		<item>
 			<title>OK Google, water the garden!</title>
 			<link>https://petrsvihlik.com/posts/ok-google-water-the-garden</link>
@@ -56,7 +56,7 @@
 			<title>Three Ways to Manage Data in Kentico Using PowerShell</title>
 			<link>https://petrsvihlik.com/posts/three-ways-to-manage-data-in-kentico-using-powershell</link>
 			<description>PowerShell is the leading task automation platform for Windows. Developers and system administrators from all around the world use it for the most complex deployment and installation scenarios as well as for the simplest scripting. The fact that it's built on top of the .NET Framework opens up certain possibilities for integration with Kentico. Today, we'll have a look at what we can achieve with PowerShell in combination with the Kentico API and the Kentico REST API.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/d24a390e-d856-429c-9d98-40fb7548ab5d/net.png" length="0" type="image" />
+			<enclosure url="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/041a27dd-ae9f-4278-bf69-2fcbd6781b0f/net.png" length="0" type="image" />
 			<guid>https://petrsvihlik.com/posts/three-ways-to-manage-data-in-kentico-using-powershell</guid>
 			<pubDate>Tue, 09 Aug 2016 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>

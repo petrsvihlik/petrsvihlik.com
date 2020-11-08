@@ -51,4 +51,8 @@
     @{ await Html.RenderPartialAsync("_OpenGraph", article);
         await Html.RenderPartialAsync("_TwitterCard", article);
     }
+    @if (!string.IsNullOrWhiteSpace(article.CanonicalUrl))
+    {
+        <link rel="canonical" href="@article.CanonicalUrl" />
+    }
 }

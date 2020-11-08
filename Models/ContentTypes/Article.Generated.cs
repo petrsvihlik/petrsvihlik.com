@@ -14,6 +14,7 @@ namespace Kentico.Kontent.Statiq.Lumen.Models
     {
         public const string Codename = "article";
         public const string AuthorCodename = "author";
+        public const string CanonicalUrlCodename = "canonical_url";
         public const string CategoryCodename = "category";
         public const string ContentCodename = "content";
         public const string DescriptionCodename = "description";
@@ -30,6 +31,7 @@ namespace Kentico.Kontent.Statiq.Lumen.Models
         public const string TwitterSiteCodename = "twitter__site";
 
         public IEnumerable<object> Author { get; set; }
+        public string CanonicalUrl { get; set; }
         public IEnumerable<object> Category { get; set; }
         public string Content { get; set; }
         public string Description { get; set; }

@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<id>https://petrsvihlik.com/</id>
-	<title>Lumen Blog</title>
+	<title>Petr �vihl�k - blog</title>
 	<link rel="self" href="https://petrsvihlik.com/" />
 	<rights>2020</rights>
-	<updated>2020-11-08T15:47:56Z</updated>
+	<updated>2020-11-08T18:37:15Z</updated>
+	<subtitle>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</subtitle>
 	<entry>
 		<id>https://petrsvihlik.com/posts/ok-google-water-the-garden</id>
 		<title>OK Google, water the garden!</title>
@@ -30,12 +31,28 @@
 		<summary>Are you implementing Objectives and Key Results across your company and don’t want your colleagues to feel frustrated after the first couple of few weeks?</summary>
 	</entry>
 	<entry>
+		<id>https://petrsvihlik.com/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov</id>
+		<title>Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov</title>
+		<link href="https://petrsvihlik.com/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/d42caa6c-3971-4e9a-b396-b16cf64f0c2a/1afmj79uf0amfyqmfob2.png" />
+		<updated>2019-12-01T00:00:00Z</updated>
+		<summary>I love AppVeyor. It's my go-to CI/CD service for .NET projects. I use it for both personal and work open-source projects. I also love automation of all kinds so, among other things, I want my test coverage reports to be automatically generated with every build.</summary>
+	</entry>
+	<entry>
 		<id>https://petrsvihlik.com/posts/building-a-culture-of-relationships-that-persist</id>
 		<title>Building A Culture of Relationships That Persist</title>
 		<link href="https://petrsvihlik.com/posts/building-a-culture-of-relationships-that-persist" />
 		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/6df5fa63-9066-4e32-8ec8-a3998b474e7b/1_aWdmUDOC8PDVoz5KBTDDPA.jpeg" />
 		<updated>2019-12-01T00:00:00Z</updated>
 		<summary>What does it take to build a flourishing company culture? And how to recognize one? Real-world examples of good and bad habits, substantial and irrelevant indicators.</summary>
+	</entry>
+	<entry>
+		<id>https://petrsvihlik.com/posts/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv</id>
+		<title>Why I Won't Hire You - 5 Honest Tips to a Better CV</title>
+		<link href="https://petrsvihlik.com/posts/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/e9689de5-138e-4248-afb6-5bacfd8bee86/2Zh3DsU.jpg" />
+		<updated>2019-08-26T00:00:00Z</updated>
+		<summary>Recently, I had the immense pleasure to go through several hundreds of CVs. I threw 95% of them to trash. Are you wondering how to get in the lucky 5%? Read on and follow the simple tips.</summary>
 	</entry>
 	<entry>
 		<id>https://petrsvihlik.com/posts/how-i-changed-my-life-in-three-steps</id>

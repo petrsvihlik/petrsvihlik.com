@@ -7,6 +7,7 @@ using Statiq.Common;
 using Kentico.Kontent.Statiq.Lumen.Models;
 using Microsoft.Extensions.Configuration;
 using Statiq.Web;
+using Kentico.Kontent.Statiq.Lumen.Resolvers;
 
 namespace Kentico.Kontent.Statiq.Lumen
 {
@@ -19,6 +20,7 @@ namespace Kentico.Kontent.Statiq.Lumen
                 .BuildConfiguration(cfg => cfg.AddUserSecrets<Program>())
                 .ConfigureServices((services, settings) =>
                 {
+                    services.AddSingleton<IContentLinkUrlResolver, CustomContentLinkUrlResolver>();
                     services.AddSingleton<ITypeProvider, CustomTypeProvider>();
                     services.AddDeliveryClient((IConfiguration)settings);
                 })

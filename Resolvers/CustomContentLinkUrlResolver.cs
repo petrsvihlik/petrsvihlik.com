@@ -1,4 +1,5 @@
 ﻿using Kentico.Kontent.Delivery.Abstractions;
+using Kentico.Kontent.Statiq.Lumen.Models;
 using System.Threading.Tasks;
 
 namespace Kentico.Kontent.Statiq.Lumen.Resolvers
@@ -10,7 +11,10 @@ namespace Kentico.Kontent.Statiq.Lumen.Resolvers
             // Resolves URLs to content items based on the 'accessory' content type
             return Task.FromResult(link.ContentTypeCodename switch
             {
-                "post" => $"/Post/Details/{link.UrlSlug}",
+                Article.Codename => $"/post/{link.UrlSlug}",
+                Page.Codename => $"/pages/{link.UrlSlug}",
+                Category.Codename => $"/category/{link.UrlSlug}",
+                Tag.Codename => $"/tag/{link.UrlSlug}",
                 _ => "/404",
             });
         }

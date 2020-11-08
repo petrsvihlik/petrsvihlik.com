@@ -13,11 +13,11 @@
     }
     @if (!string.IsNullOrWhiteSpace(@Model.TwitterSite))
     {
-        <meta name="twitter:site" content="@Model.TwitterSite" />
+        <meta name="twitter:site" content="@Model.TwitterSite.TwitterHandle()" />
     }
     @if (!string.IsNullOrWhiteSpace(@Model.TwitterCreator))
     {
-        <meta name="twitter:creator" content="@Model.TwitterCreator" />
+        <meta name="twitter:creator" content="@Model.TwitterCreator.TwitterHandle()" />
     }
 
     @if (Model.TwitterImage != null)

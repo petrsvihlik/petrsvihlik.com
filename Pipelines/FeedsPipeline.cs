@@ -41,7 +41,7 @@ namespace PetrSvihlik.Com.Pipelines
                         };
                     }),
                 new GenerateFeeds()
-                    .WithFeedTitle("Petr Švihlík - blog")
+                    .WithFeedTitle("Petr Svihlik - blog") //TODO: load from Kontent
                     .WithFeedDescription("Blog about all that matters to me - technology, life, leadership, and Developer Relations.")
                     .WithFeedCopyright($"{DateTime.Today.Year}")
             );

@@ -31,7 +31,15 @@
     <link rel="stylesheet" href="@IExecutionContext.Current.GetLink("/assets/scss/init.css")" />
     <link rel="preload" href="@(IExecutionContext.Current.GetLink("/assets/fonts/fontello-771c82e0/font/fontello.woff2"))?65524428" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="@IExecutionContext.Current.GetLink("/assets/fonts/fontello-771c82e0/css/fontello.css")" />
-    <link rel="shortcut icon" href="@IExecutionContext.Current.GetLink("favicon.ico")" />
+    <link rel="shortcut icon" href="@IExecutionContext.Current.GetLink("favicon.ico")" type="image/x-icon" />
+    <link rel="icon" href="@IExecutionContext.Current.GetLink("favicon.ico")" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="@IExecutionContext.Current.GetLink("apple-touch-icon.png")">
+    <link rel="icon" type="image/png" sizes="32x32" href="@IExecutionContext.Current.GetLink("favicon-32x32.png")">
+    <link rel="icon" type="image/png" sizes="16x16" href="@IExecutionContext.Current.GetLink("favicon-16x16.png")">
+    <link rel="manifest" href="@IExecutionContext.Current.GetLink("site.webmanifest")">
+    <link rel="mask-icon" href="@IExecutionContext.Current.GetLink("safari-pinned-tab.svg")" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/@@kentico/kontent-smart-link@latest/dist/kontent-smart-link.umd.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@kentico/kontent-smart-link@latest/dist/kontent-smart-link.styles.css" />
     <script type="text/javascript">

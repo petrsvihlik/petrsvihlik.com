@@ -1,7 +1,7 @@
-﻿using Kentico.Kontent.Statiq.Lumen.Models;
+﻿using PetrSvihlik.Com.Models;
 using Statiq.Common;
 
-namespace Kentico.Kontent.Statiq.Lumen.Extensions
+namespace PetrSvihlik.Com.Extensions
 {
     public static class IDocumentExtensions
     {

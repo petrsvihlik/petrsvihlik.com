@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Kentico.Kontent.Delivery.Abstractions;
 
-namespace Kentico.Kontent.Statiq.Lumen.Models
+namespace PetrSvihlik.Com.Models.ContentTypes
 {
     public class CustomTypeProvider : ITypeProvider
     {

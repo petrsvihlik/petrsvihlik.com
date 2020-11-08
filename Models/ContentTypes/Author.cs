@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Kentico.Kontent.Statiq.Lumen.Models
+namespace PetrSvihlik.Com.Models.ContentTypes
 {
     public partial class Author
     {

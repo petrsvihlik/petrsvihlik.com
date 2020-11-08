@@ -3,7 +3,7 @@ using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
 
-namespace Kentico.Kontent.Statiq.Lumen.Pipelines
+namespace PetrSvihlik.Com.Pipelines
 {
     public abstract class LoadDataPipeLine<TContentModel> : Pipeline where TContentModel : class
     {

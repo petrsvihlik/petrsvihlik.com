@@ -1,14 +1,14 @@
 using Kentico.Kontent.Delivery.Abstractions;
 using Kentico.Kontent.Delivery.Urls.QueryParameters;
-using Kentico.Kontent.Statiq.Lumen.Models;
-using Kentico.Kontent.Statiq.Lumen.Models.ViewModels;
+using PetrSvihlik.Com.Models.ContentTypes;
 using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
 using Statiq.Razor;
 using System.Linq;
+using PetrSvihlik.Com.Models.ViewModels;
 
-namespace Kentico.Kontent.Statiq.Lumen.Pipelines
+namespace PetrSvihlik.Com.Pipelines
 {
     public class PostsPipeline : Pipeline
     {

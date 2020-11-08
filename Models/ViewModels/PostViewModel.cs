@@ -1,4 +1,6 @@
-﻿namespace Kentico.Kontent.Statiq.Lumen.Models.ViewModels
+﻿using PetrSvihlik.Com.Models.ContentTypes;
+
+namespace PetrSvihlik.Com.Models.ViewModels
 {
     public class PostViewModel : ViewModelBase
     {

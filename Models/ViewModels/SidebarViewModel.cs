@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using PetrSvihlik.Com.Models.ContentTypes;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace Kentico.Kontent.Statiq.Lumen.Models.ViewModels
+namespace PetrSvihlik.Com.Models.ViewModels
 {
     public class SidebarViewModel : ViewModelBase
     {

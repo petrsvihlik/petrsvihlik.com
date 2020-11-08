@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using Kentico.Kontent.Delivery.Abstractions;
 
-namespace Kentico.Kontent.Statiq.Lumen.Models
+namespace PetrSvihlik.Com.Models.ContentTypes
 {
     public partial class Page
     {

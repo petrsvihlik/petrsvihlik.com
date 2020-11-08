@@ -4,7 +4,7 @@ using Statiq.Core;
 using System;
 using System.Linq;
 
-namespace Kentico.Kontent.Statiq.Lumen.Pipelines
+namespace PetrSvihlik.Com.Pipelines
 {
     public class SiteMapPipeline : Pipeline
     {

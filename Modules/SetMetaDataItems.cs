@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Kentico.Kontent.Statiq.Lumen.Modules
+namespace PetrSvihlik.Com.Modules
 {
     public class SetMetaDataItems : Module
     {

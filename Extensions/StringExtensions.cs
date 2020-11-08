@@ -1,4 +1,4 @@
-﻿namespace Kentico.Kontent.Statiq.Lumen.Extensions
+﻿namespace PetrSvihlik.Com.Extensions
 {
     public static class StringExtensions
     {

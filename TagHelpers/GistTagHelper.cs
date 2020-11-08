@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System;
 
-namespace Kentico.Kontent.Statiq.Lumen.TagHelpers
+namespace PetrSvihlik.Com.TagHelpers
 {
     [HtmlTargetElement("gist", Attributes = "id,username")]
     public class GistTagHelper : TagHelper

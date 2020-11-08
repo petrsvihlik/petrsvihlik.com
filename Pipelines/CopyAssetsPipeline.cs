@@ -1,7 +1,7 @@
 ﻿using Statiq.Common;
 using Statiq.Core;
 
-namespace Kentico.Kontent.Statiq.Lumen.Pipelines
+namespace PetrSvihlik.Com.Pipelines
 {
     public class CopyAssetsPipeline : Pipeline
     {

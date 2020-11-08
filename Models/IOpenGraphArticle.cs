@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Kentico.Kontent.Statiq.Lumen.Models
+namespace PetrSvihlik.Com.Models
 {
     public interface IOpenGraphArticle : IOpenGraph
     {

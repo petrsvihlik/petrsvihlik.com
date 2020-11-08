@@ -3,7 +3,7 @@ using Statiq.Common;
 using Statiq.Core;
 using System.Linq;
 
-namespace Kentico.Kontent.Statiq.Lumen.Pipelines
+namespace PetrSvihlik.Com.Pipelines
 {
     public class DownloadImagesPipeline : Pipeline
     {

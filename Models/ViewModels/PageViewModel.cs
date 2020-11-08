@@ -1,4 +1,4 @@
-﻿namespace Kentico.Kontent.Statiq.Lumen.Models.ViewModels
+﻿namespace PetrSvihlik.Com.Models.ViewModels
 {
     public class PageViewModel : ViewModelBase
     {

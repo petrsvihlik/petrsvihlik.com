@@ -1,8 +1,8 @@
 ﻿using Kentico.Kontent.Delivery.Abstractions;
 using Kentico.Kontent.Delivery.Urls.QueryParameters;
-using Kentico.Kontent.Statiq.Lumen.Models;
+using PetrSvihlik.Com.Models.ContentTypes;
 
-namespace Kentico.Kontent.Statiq.Lumen.Pipelines
+namespace PetrSvihlik.Com.Pipelines
 {
     public class SiteMetadataPipeline : LoadDataPipeLine<SiteMetadata>
     {

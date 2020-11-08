@@ -4,12 +4,12 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 using Statiq.App;
 using Statiq.Common;
-using Kentico.Kontent.Statiq.Lumen.Models;
 using Microsoft.Extensions.Configuration;
 using Statiq.Web;
-using Kentico.Kontent.Statiq.Lumen.Resolvers;
+using PetrSvihlik.Com.Models.ContentTypes;
+using PetrSvihlik.Com.Resolvers;
 
-namespace Kentico.Kontent.Statiq.Lumen
+namespace PetrSvihlik.Com
 {
     public class Program
     {

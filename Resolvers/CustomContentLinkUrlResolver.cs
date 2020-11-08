@@ -1,8 +1,8 @@
 ﻿using Kentico.Kontent.Delivery.Abstractions;
-using Kentico.Kontent.Statiq.Lumen.Models;
+using PetrSvihlik.Com.Models.ContentTypes;
 using System.Threading.Tasks;
 
-namespace Kentico.Kontent.Statiq.Lumen.Resolvers
+namespace PetrSvihlik.Com.Resolvers
 {
     public class CustomContentLinkUrlResolver : IContentLinkUrlResolver
     {

@@ -1,21 +1,21 @@
 using Kentico.Kontent.Delivery.Abstractions;
-using Kentico.Kontent.Statiq.Lumen.Extensions;
-using Kentico.Kontent.Statiq.Lumen.Models;
-using Kentico.Kontent.Statiq.Lumen.Models.ViewModels;
+using PetrSvihlik.Com.Models.ContentTypes;
 using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
 using Statiq.Razor;
 using System.Collections.Generic;
 using System.Linq;
+using PetrSvihlik.Com.Models.ViewModels;
+using PetrSvihlik.Com.Extensions;
 
-namespace Kentico.Kontent.Statiq.Lumen.Pipelines
+namespace PetrSvihlik.Com.Pipelines
 {
     public class CategoriesPipeline : Pipeline
     {
         public CategoriesPipeline(IDeliveryClient deliveryClient)
         {
-            Dependencies.AddRange(nameof(PostsPipeline), nameof(HomepagePipeline),nameof(SiteMetadataPipeline));
+            Dependencies.AddRange(nameof(PostsPipeline), nameof(HomepagePipeline), nameof(SiteMetadataPipeline));
 
             ProcessModules = new ModuleList {
                 new ReplaceDocuments(nameof(PostsPipeline)), // Get docs from a different pipeline

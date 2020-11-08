@@ -1,4 +1,4 @@
-﻿namespace Kentico.Kontent.Statiq.Lumen.Models
+﻿namespace PetrSvihlik.Com.Models
 {
     public static class MetadataHelpers
     {

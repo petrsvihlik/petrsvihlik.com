@@ -1,9 +1,9 @@
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
-using Kentico.Kontent.Statiq.Lumen.Models;
-using Kentico.Kontent.Statiq.Lumen.Modules;
 using Kontent.Statiq;
 using Microsoft.Extensions.Logging;
+using PetrSvihlik.Com.Models.ContentTypes;
+using PetrSvihlik.Com.Modules;
 using Statiq.Common;
 using Statiq.Core;
 using Statiq.Feeds;
@@ -11,7 +11,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Kentico.Kontent.Statiq.Lumen.Pipelines
+namespace PetrSvihlik.Com.Pipelines
 {
     public class FeedsPipeline : Pipeline
     {
@@ -41,7 +41,8 @@ namespace Kentico.Kontent.Statiq.Lumen.Pipelines
                         };
                     }),
                 new GenerateFeeds()
-                    .WithFeedTitle("Lumen Blog")
+                    .WithFeedTitle("Petr Švihlík - blog")
+                    .WithFeedDescription("Blog about all that matters to me - technology, life, leadership, and Developer Relations.")
                     .WithFeedCopyright($"{DateTime.Today.Year}")
             );
             OutputModules = new ModuleList(

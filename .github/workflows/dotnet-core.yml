@@ -3,6 +3,8 @@ name: .NET Core
 on:
   push:
     branches: [ master ]
+  repository_dispatch:
+    types: content-changed
   #pull_request:
    # branches: [ master ]
 

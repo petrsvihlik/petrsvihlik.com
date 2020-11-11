@@ -32,12 +32,6 @@ jobs:
       with:
         name: "Generator"
         path: ./tools
-
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    steps:
     - name: Publish
       run: dotnet run --configuration Release  
       env:
@@ -49,6 +43,7 @@ jobs:
         name: "Site"
         path: ./output     
     - name: Deploy 🚀
+      if: github.ref == 'refs/heads/master'
       uses: JamesIves/github-pages-deploy-action@3.6.2
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

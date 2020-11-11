@@ -5,8 +5,8 @@ on:
     branches: [ master ]
   repository_dispatch:
     types: content-changed
-  #pull_request:
-   # branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.101
+        dotnet-version: 5.0.x
     - name: Install dependencies
       run: dotnet restore
     - name: Build
@@ -32,6 +32,12 @@ jobs:
       with:
         name: "Generator"
         path: ./tools
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
     - name: Publish
       run: dotnet run --configuration Release  
       env:

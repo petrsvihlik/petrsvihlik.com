@@ -3,7 +3,7 @@ using System;
 
 namespace PetrSvihlik.Com.TagHelpers
 {
-    [HtmlTargetElement("gist", Attributes = "id,username")]
+    [HtmlTargetElement("gist", TagStructure = TagStructure.NormalOrSelfClosing, Attributes = "id")]
     public class GistTagHelper : TagHelper
     {
         [HtmlAttributeName("id")]
@@ -12,16 +12,13 @@ namespace PetrSvihlik.Com.TagHelpers
         [HtmlAttributeName("username")]
         public string Username { get; set; }
 
-        public GistTagHelper()
-        {
-        }
-
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             var id = Id.ToString("N");
             var username = !string.IsNullOrWhiteSpace(Username) ? Username + "/" : string.Empty;
-            var content = $"<script src=\"https://gist.github.com/{username}{id}.js\"></script>";
-            output.Content.SetHtmlContent(content);
+            output.TagName = "script";
+            output.Attributes.SetAttribute("src", $"https://gist.github.com/{username}{id}.js");
+            output.TagMode = TagMode.StartTagAndEndTag;
         }
     }
 }

@@ -3,9 +3,17 @@
 	<id>https://petrsvihlik.com/</id>
 	<title>Petr Svihlik - blog</title>
 	<link rel="self" href="https://petrsvihlik.com/" />
-	<rights>2020</rights>
-	<updated>2020-12-08T08:46:42Z</updated>
+	<rights>2021</rights>
+	<updated>2021-01-05T11:53:39Z</updated>
 	<subtitle>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</subtitle>
+	<entry>
+		<id>https://petrsvihlik.com/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment</id>
+		<title>Avoiding the DevRel ROI Trap with Better Strategic Alignment</title>
+		<link href="https://petrsvihlik.com/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/a1618fd8-12a6-455c-a213-fcdb57eda29d/dr1.png" />
+		<updated>2021-01-05T00:00:00Z</updated>
+		<summary>An alternative approach to proving the value of DevRel, not focused on numbers or KPIs.</summary>
+	</entry>
 	<entry>
 		<id>https://petrsvihlik.com/posts/ok-google-water-the-garden</id>
 		<title>OK Google, water the garden!</title>

@@ -17,8 +17,7 @@ namespace PetrSvihlik.Com.Pipelines
             Dependencies.AddRange(nameof(SiteMetadataPipeline));
             InputModules = new ModuleList{
                 new Kontent<Article>(deliveryClient)
-                    .OrderBy(Article.PublishDateCodename, SortOrder.Descending)
-                    .WithQuery(new DepthParameter(1), new IncludeTotalCountParameter()),
+                    .WithQuery(new DepthParameter(1), new IncludeTotalCountParameter(), new OrderParameter($"elements.{Article.PublishDateCodename}", SortOrder.Descending)),
                 new SetMetadata(nameof(Category), Config.FromDocument((doc, ctx) =>
                 {
                     // Add category (useful for grouping)

@@ -4,8 +4,34 @@
 	<title>Petr Svihlik - blog</title>
 	<link rel="self" href="https://petrsvihlik.com/" />
 	<rights>2021</rights>
-	<updated>2021-01-27T22:42:15Z</updated>
+	<updated>2021-03-10T11:23:45Z</updated>
 	<subtitle>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</subtitle>
+	<entry>
+		<id>https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions</id>
+		<title>Lessons Learned: Migrating from AppVeyor to GitHub Actions</title>
+		<link href="https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/6be06d79-4329-44fc-9410-35264a1e19c8/7s03fq9hzyt4145sr5z3.webp" />
+		<updated>2021-03-05T00:00:00Z</updated>
+		<summary>The third article about GitHub Actions in a row? One must be thinking I am up to something. And they'd be right. Over the past week, I migrated more than 10 repositories from AppVeyor to GitHub Actions.</summary>
+	</entry>
+	<entry>
+		<id>https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target</id>
+		<title>Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target 🤐</title>
+		<link href="https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/5537277d-f61e-45c5-8089-d1ef658a97f2/tg86g0b2w3zjmrdj81ln.webp" />
+		<updated>2021-03-05T00:00:00Z</updated>
+		<summary>Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets. As per the documentation, with the exception of GITHUB_TOKEN, secrets are not passed to the runner when a workflow is triggered from a forked repository. This is to prevent the automatic execution of untrusted code that may be contained within the forked repo.</summary>
+	</entry>
+	<entry>
+		<id>https://petrsvihlik.com/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet</id>
+		<title>Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet</title>
+		<link href="https://petrsvihlik.com/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/e7d2c732-2a29-01dd-644f-5309aa1a00e5/acb37865-3b65-4407-9f5c-7e256bab4754/62ho8jkki3i9q6pqekq6.webp" />
+		<updated>2021-03-05T00:00:00Z</updated>
+		<summary>You might remember my earlier post where I described how to set up code coverage reporting for .NET Core 3 using AppVeyor + OpenCover + Codecov.
+
+Time has moved on, .NET 5 has arrived, and the best practices have changed, so let's see how to collect code coverage for .NET projects in 2021.</summary>
+	</entry>
 	<entry>
 		<id>https://petrsvihlik.com/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment</id>
 		<title>Avoiding the DevRel ROI Trap with Better Strategic Alignment</title>

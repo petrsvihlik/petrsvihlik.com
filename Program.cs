@@ -17,7 +17,7 @@ namespace PetrSvihlik.Com
             await Bootstrapper
                 .Factory
                 .CreateDefault(args)
-                .BuildConfiguration(cfg => cfg.AddUserSecrets<Program>())
+                .BuildConfiguration(cfg => cfg.AddUserSecrets<Program>(true))
                 .ConfigureServices((services, settings) =>
                 {
                     services.AddSingleton<IContentLinkUrlResolver, CustomContentLinkUrlResolver>();

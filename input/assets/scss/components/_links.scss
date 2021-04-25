@@ -9,7 +9,6 @@
         list-style: none;
         padding: 0;
         margin: 10px -3px;
-        width: 140px;
 
         &-item {
             padding: 0;
@@ -40,6 +39,24 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+@include breakpoint-xs {
+    .links {
+        &__list {
+            width: auto;
+        }
+    }
+}
+
+
+@include breakpoint-sm {
+    .links {
+        &__list {
+            width: 140px;
         }
     }
 }

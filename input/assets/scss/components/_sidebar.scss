@@ -1,9 +1,11 @@
 .sidebar {
     width: 100%;
+
     &__inner {
         position: relative;
         padding: 25px 20px 0;
     }
+
     &__author {
         &-photo {
             display: inline-block;
@@ -11,28 +13,44 @@
             border-radius: 50%;
             background-clip: padding-box;
         }
+
         &-title {
             font-size: $typographic-base-font-size * 1.125;
             font-weight: 500;
             @include line-height(1.125);
             @include margin(.5, 0, .5, 0);
+
             &-link {
                 color: $color-base;
+
                 &:hover,
                 &:focus {
                     color: $color-base;
                 }
             }
         }
+
         &-subtitle {
             color: $color-gray;
             @include line-height(1);
             @include margin-bottom(1);
         }
     }
+
     &__copyright {
         color: lighten($color-gray, 18%);
         font-size: $typographic-small-font-size;
+    }
+}
+
+@include breakpoint-xs {
+    .sidebar {
+        &__copyright {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
     }
 }
 
@@ -55,12 +73,20 @@
                 bottom: 0;
             }
         }
+
+        &__copyright {
+            position: initial;
+            bottom: initial;
+            width: initial;
+            text-align: initial;
+        }
     }
 }
 
 @include breakpoint-md {
     .sidebar {
         width: 34%;
+
         &__inner {
             padding: 40px;
         }

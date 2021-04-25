@@ -19,7 +19,7 @@ namespace PetrSvihlik.Com.Pipelines
             InputModules = new ModuleList{
                 new Kontent<Page>(deliveryClient)
                     .WithQuery(new IncludeTotalCountParameter(), new NotEmptyFilter("elements.body")),
-                new SetDestination(Config.FromDocument((doc, ctx)  => new NormalizedPath($"pages/{doc.AsKontent<Page>().Url}/index.html" ))),
+                new SetDestination(Config.FromDocument((doc, ctx)  => GetPath(doc))),
             };
 
             ProcessModules = new ModuleList {
@@ -42,6 +42,21 @@ namespace PetrSvihlik.Com.Pipelines
             OutputModules = new ModuleList {
                 new WriteFiles(),
             };
+        }
+
+        private static NormalizedPath GetPath(IDocument doc)
+        {
+            Page page = doc.AsKontent<Page>();
+            string path;
+            if (page.Url == "404")
+            {
+                path = $"{page.Url}.html";
+            }
+            else
+            {
+                path = $"pages/{page.Url}/index.html";
+            }
+            return new NormalizedPath(path);
         }
     }
 }

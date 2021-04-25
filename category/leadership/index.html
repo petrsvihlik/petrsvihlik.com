@@ -85,10 +85,10 @@
             </li>
     </ul>
     <div class="switch__container">
-    <span class="switch__text">Night mode</span>
+    <span class="switch__text" onClick="document.getElementById('slider').click();">Night mode</span>
     <label class="switch">
         <input id="DarkModeSwitcher" type="checkbox" />
-        <span class="slider" onClick="toggleDarkMode();" />
+        <span class="slider" id="slider" onClick="toggleDarkMode();" />
     </label>
 </div>
 </nav>

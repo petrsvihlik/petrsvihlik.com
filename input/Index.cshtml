@@ -27,7 +27,7 @@
                 else
                 {
                     <div class="page__body" data-kontent-item-id="@Model.Page.System.Id" data-kontent-element-codename="@Page.BodyCodename">
-                        @Html.Raw(Model.Page.Body)
+                        @Html.DisplayFor(vm => Model.Page.Body)
                     </div>
                 }
             </div>

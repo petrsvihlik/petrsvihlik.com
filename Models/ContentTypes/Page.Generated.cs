@@ -20,7 +20,7 @@ namespace PetrSvihlik.Com.Models.ContentTypes
         public const string TitleCodename = "title";
         public const string UrlCodename = "url";
 
-        public string Body { get; set; }
+        public IRichTextContent Body { get; set; }
         public string MetaDescription { get; set; }
         public IEnumerable<IMultipleChoiceOption> ShowInNavigation { get; set; }
         public IEnumerable<object> Subpages { get; set; }

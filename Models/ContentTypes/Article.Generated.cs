@@ -33,7 +33,7 @@ namespace PetrSvihlik.Com.Models.ContentTypes
         public IEnumerable<object> Author { get; set; }
         public string CanonicalUrl { get; set; }
         public IEnumerable<object> Category { get; set; }
-        public string Content { get; set; }
+        public IRichTextContent Content { get; set; }
         public string Description { get; set; }
         public string OgDescription { get; set; }
         public IEnumerable<IAsset> OgImage { get; set; }

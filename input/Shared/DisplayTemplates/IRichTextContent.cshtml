@@ -1,0 +1,20 @@
+﻿@model Kentico.Kontent.Delivery.Abstractions.IRichTextContent
+
+@foreach (var block in Model)
+{
+    @switch (block)
+    {
+        case Kentico.Kontent.Delivery.Abstractions.IInlineImage image:
+            @Html.DisplayFor(vm => image)
+            break;
+
+            
+        case Kentico.Kontent.Delivery.Abstractions.IHtmlContent html:
+            @Html.Raw(html)
+            break;
+
+        default:
+            @Html.DisplayFor(vm => block)
+            break;
+    }
+}

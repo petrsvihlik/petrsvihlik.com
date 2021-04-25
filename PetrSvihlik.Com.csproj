@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Kentico.Kontent.AspNetCore" Version="0.11.1" />
     <PackageReference Include="Kentico.Kontent.ImageTransformation" Version="14.3.0-beta1" />
     <PackageReference Include="Kontent.Statiq" Version="1.0.0-beta0012" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.0-preview.3.21201.4" />

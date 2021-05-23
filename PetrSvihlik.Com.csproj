@@ -13,7 +13,7 @@
     <PackageReference Include="Kontent.Statiq" Version="1.0.0-beta0012" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.0-preview.3.21201.4" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0-preview.3.21201.4" />
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.26" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.29" />
   </ItemGroup>
   
   <PropertyGroup>

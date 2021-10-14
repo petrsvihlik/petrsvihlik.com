@@ -2,18 +2,17 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <DefaultItemExcludes>$(DefaultItemExcludes);output\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Kentico.Kontent.AspNetCore" Version="0.11.1" />
-    <PackageReference Include="Kentico.Kontent.ImageTransformation" Version="14.3.0-beta1" />
-    <PackageReference Include="Kontent.Statiq" Version="1.0.0-beta0012" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.0-preview.3.21201.4" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0-preview.3.21201.4" />
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.29" />
+    <PackageReference Include="Kontent.Statiq" Version="1.0.0-beta0013" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.0-rc.2.21480.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0-rc.2.21480.5" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.34" />
   </ItemGroup>
   
   <PropertyGroup>

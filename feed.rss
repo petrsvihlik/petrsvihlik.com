@@ -4,9 +4,27 @@
 		<title>Petr Svihlik - blog</title>
 		<link>https://petrsvihlik.com/</link>
 		<description>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</description>
-		<copyright>2021</copyright>
-		<pubDate>Sun, 13 Jun 2021 10:43:03 GMT</pubDate>
-		<lastBuildDate>Sun, 13 Jun 2021 10:43:03 GMT</lastBuildDate>
+		<copyright>2022</copyright>
+		<pubDate>Sat, 16 Apr 2022 20:43:19 GMT</pubDate>
+		<lastBuildDate>Sat, 16 Apr 2022 20:43:19 GMT</lastBuildDate>
+		<item>
+			<title>The First 300 Days of My Microsoft Journey</title>
+			<link>https://petrsvihlik.com/posts/the-first-300-days-of-my-microsoft-journey</link>
+			<description>My friends and former colleagues have been bombarding me with questions about my job at Microsoft lately. And since it's been almost a year since I joined the company and things already started to settle down, I thought it could be a good time now to try to answer the question.</description>
+			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/399bbea5-c3be-4fdb-90dd-f1f665d26198/1644958483752.png" length="0" type="image" />
+			<guid>https://petrsvihlik.com/posts/the-first-300-days-of-my-microsoft-journey</guid>
+			<pubDate>Thu, 17 Feb 2022 00:00:00 GMT</pubDate>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
+		<item>
+			<title>A Curated List of Top 10 Android Games Worth Your Time</title>
+			<link>https://petrsvihlik.com/posts/a-curated-list-of-top-10-android-games-worth-your-time</link>
+			<description>No matter whether you’re on a train, on a toilet, or on acid you’ll enjoy these games. Guaranteed!</description>
+			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/4980dbfa-7056-4536-9ca0-5793858e9675/1_sFWRg4ylu4nD4WygRz6l5A.jpeg" length="0" type="image" />
+			<guid>https://petrsvihlik.com/posts/a-curated-list-of-top-10-android-games-worth-your-time</guid>
+			<pubDate>Sat, 16 Oct 2021 00:00:00 GMT</pubDate>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
 		<item>
 			<title>Lessons Learned: Migrating from AppVeyor to GitHub Actions</title>
 			<link>https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions</link>
@@ -43,6 +61,14 @@ Time has moved on, .NET 5 has arrived, and the best practices have changed, so l
 			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/a1618fd8-12a6-455c-a213-fcdb57eda29d/dr1.png" length="0" type="image" />
 			<guid>https://petrsvihlik.com/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment</guid>
 			<pubDate>Tue, 05 Jan 2021 00:00:00 GMT</pubDate>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
+		<item>
+			<title>The Little I Learned About Running</title>
+			<link>https://petrsvihlik.com/posts/the-little-i-learned-about-running</link>
+			<description>I had never been good at sports (perhaps with an exception of swimming) and yet it somehow happened and I started to run and have been running for five years. I never ever run more than 15km and I’m sure my technique is terrible, but I’d still like to share a few things that contributed to my preserving the habit of running to this day.</description>
+			<guid>https://petrsvihlik.com/posts/the-little-i-learned-about-running</guid>
+			<pubDate>Sun, 06 Dec 2020 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>

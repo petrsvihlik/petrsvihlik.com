@@ -3,9 +3,25 @@
 	<id>https://petrsvihlik.com/</id>
 	<title>Petr Svihlik - blog</title>
 	<link rel="self" href="https://petrsvihlik.com/" />
-	<rights>2021</rights>
-	<updated>2021-06-13T10:43:03Z</updated>
+	<rights>2022</rights>
+	<updated>2022-04-16T20:43:19Z</updated>
 	<subtitle>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</subtitle>
+	<entry>
+		<id>https://petrsvihlik.com/posts/the-first-300-days-of-my-microsoft-journey</id>
+		<title>The First 300 Days of My Microsoft Journey</title>
+		<link href="https://petrsvihlik.com/posts/the-first-300-days-of-my-microsoft-journey" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/399bbea5-c3be-4fdb-90dd-f1f665d26198/1644958483752.png" />
+		<updated>2022-02-17T00:00:00Z</updated>
+		<summary>My friends and former colleagues have been bombarding me with questions about my job at Microsoft lately. And since it's been almost a year since I joined the company and things already started to settle down, I thought it could be a good time now to try to answer the question.</summary>
+	</entry>
+	<entry>
+		<id>https://petrsvihlik.com/posts/a-curated-list-of-top-10-android-games-worth-your-time</id>
+		<title>A Curated List of Top 10 Android Games Worth Your Time</title>
+		<link href="https://petrsvihlik.com/posts/a-curated-list-of-top-10-android-games-worth-your-time" />
+		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/4980dbfa-7056-4536-9ca0-5793858e9675/1_sFWRg4ylu4nD4WygRz6l5A.jpeg" />
+		<updated>2021-10-16T00:00:00Z</updated>
+		<summary>No matter whether you’re on a train, on a toilet, or on acid you’ll enjoy these games. Guaranteed!</summary>
+	</entry>
 	<entry>
 		<id>https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions</id>
 		<title>Lessons Learned: Migrating from AppVeyor to GitHub Actions</title>
@@ -39,6 +55,13 @@ Time has moved on, .NET 5 has arrived, and the best practices have changed, so l
 		<link rel="enclosure" type="image" href="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/a1618fd8-12a6-455c-a213-fcdb57eda29d/dr1.png" />
 		<updated>2021-01-05T00:00:00Z</updated>
 		<summary>An alternative approach to proving the value of DevRel, not focused on numbers or KPIs.</summary>
+	</entry>
+	<entry>
+		<id>https://petrsvihlik.com/posts/the-little-i-learned-about-running</id>
+		<title>The Little I Learned About Running</title>
+		<link href="https://petrsvihlik.com/posts/the-little-i-learned-about-running" />
+		<updated>2020-12-06T00:00:00Z</updated>
+		<summary>I had never been good at sports (perhaps with an exception of swimming) and yet it somehow happened and I started to run and have been running for five years. I never ever run more than 15km and I’m sure my technique is terrible, but I’d still like to share a few things that contributed to my preserving the habit of running to this day.</summary>
 	</entry>
 	<entry>
 		<id>https://petrsvihlik.com/posts/ok-google-water-the-garden</id>

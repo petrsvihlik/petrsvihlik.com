@@ -8,11 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Kentico.Kontent.AspNetCore" Version="0.11.1" />
     <PackageReference Include="Kontent.Statiq" Version="1.0.0-beta0013" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.0-rc.2.21480.5" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0-rc.2.21480.5" />
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.34" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.36" />
   </ItemGroup>
   
   <PropertyGroup>

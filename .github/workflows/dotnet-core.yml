@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 7.0.x
     - name: Install dependencies
       run: dotnet restore
     - name: Build
@@ -28,7 +28,7 @@ jobs:
     - name: Publish
       run: dotnet publish --configuration Release --no-build -o ./tools
     - name: "Artifact : generator"
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: "Generator"
         path: ./tools
@@ -38,13 +38,13 @@ jobs:
         LinkRoot: ${{ secrets.LINKROOT }} # Fix subfolder links https://statiq.dev/framework/configuration/settings
         Host:  ${{ secrets.HOST }} # Make links absolute (for feeds, OG...)
     - name: "Artifact : site"
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: "Site"
         path: ./output     
     - name: Deploy 🚀
       if: github.ref == 'refs/heads/master'
-      uses: JamesIves/github-pages-deploy-action@3.6.2
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages

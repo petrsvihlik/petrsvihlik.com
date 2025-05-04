@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 9.0.x
     - name: Install dependencies
       run: dotnet restore
     - name: Build
@@ -26,9 +26,9 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish --configuration Release --no-build -o ./tools
+      run: dotnet publish PetrSvihlik.Com.csproj --configuration Release --no-build -o ./tools
     - name: "Artifact : generator"
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: "Generator"
         path: ./tools
@@ -38,15 +38,15 @@ jobs:
         LinkRoot: ${{ secrets.LINKROOT }} # Fix subfolder links https://statiq.dev/framework/configuration/settings
         Host:  ${{ secrets.HOST }} # Make links absolute (for feeds, OG...)
     - name: "Artifact : site"
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: "Site"
         path: ./output     
     - name: Deploy 🚀
       if: github.ref == 'refs/heads/master'
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: JamesIves/github-pages-deploy-action@v4.7.3
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: output
-        CLEAN: true # Automatically remove deleted files from the deploy branch
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        folder: output
+        clean: true # Automatically remove deleted files from the deploy branch

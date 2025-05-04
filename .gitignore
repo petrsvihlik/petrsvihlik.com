@@ -37,6 +37,7 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 output
+tools/
 
 # JS
 node_modules/

@@ -15,6 +15,7 @@ namespace PetrSvihlik.Com.Pipelines
             Dependencies.AddRange(nameof(PostsPipeline), nameof(HomepagePipeline), nameof(SiteMetadataPipeline));
             ProcessModules = new ModuleList(
                 new ReplaceDocuments(nameof(PostsPipeline)),
+                new OrderDocuments(Config.FromDocument(doc => doc.Get<Article>("ArticleModel")?.PublishDate)).Descending(),
                 new PaginateDocuments(4),
                 new SetDestination(Config.FromDocument(doc => Filename(doc))),
                 new MergeContent(new ReadFiles("_Index.cshtml")),

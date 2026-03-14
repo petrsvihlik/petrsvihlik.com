@@ -29,6 +29,7 @@ namespace PetrSvihlik.Com.Pipelines
                     new ExecuteConfig(Config.FromDocument(groupDoc => new ModuleList
                     {
                         new ReplaceDocuments(Config.FromDocument<IEnumerable<IDocument>>(doc => doc.GetChildren())),
+                        new OrderDocuments(Config.FromDocument(doc => doc.Get<Article>("ArticleModel")?.PublishDate)).Descending(),
                         new PaginateDocuments(4),
                         new MergeContent(new ReadFiles("_Index.cshtml")),
                         new RenderRazor()

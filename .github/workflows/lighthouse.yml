@@ -10,6 +10,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Wait for GitHub Pages to propagate
+      run: sleep 60
     - name: Audit URLs using Lighthouse
       uses: treosh/lighthouse-ci-action@v12
       with:

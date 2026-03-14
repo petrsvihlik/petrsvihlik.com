@@ -29,6 +29,7 @@ namespace PetrSvihlik.Com.Pipelines
                                 new Contact { Name = "Dev.to", Url = "https://dev.to/petrsvihlik", Icon = "icon-devto" },
                                 new Contact { Name = "Medium", Url = "https://medium.com/@PetrSvihlik", Icon = "icon-medium" },
                                 new Contact { Name = "LinkedIn", Url = "https://www.linkedin.com/in/svihlik/", Icon = "icon-linkedin" },
+                                new Contact { Name = "RSS", Url = "/feed.rss", Icon = "icon-rss" },
                             }
                         }
                     };

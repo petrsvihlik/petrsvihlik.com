@@ -13,4 +13,6 @@ Outside of work, I enjoy [music](https://en.wikipedia.org/wiki/Mike_Oldfield), d
 
 When you check out my [projects](/pages/projects) on GitHub, you'll soon learn that most of them are somehow related to .NET. That's a correct observation, I love spending my time trying out new C# language features and exploring .NET Foundation projects. This project is no exception and it's a part of my learning process. This time I tried to pick up [Statiq](https://statiq.dev/)—a static site generator for .NET.
 
+![Petr Švihlík with his daughter](/assets/img/about-photo.jpg)
+
 Interested in collaborating? Or just wanna chat? Feel free to drop me a line!

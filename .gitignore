@@ -47,3 +47,6 @@ npm-debug.log
 .eslintcache
 .gatsby-context.js
 gatsby-starter-lumen.iml
+
+# Claude Code worktrees
+.claude/worktrees/

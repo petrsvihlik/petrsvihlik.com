@@ -5,13 +5,13 @@ description: "Petr's hobby projects"
 show_in_navigation: true
 ---
 
-A collection of hobby projects and proofs-of-concept I've built over the years.
+## Past Projects & PoCs
 
-- **[WopiHost](https://github.com/petrsvihlik/WopiHost)** — ASP.NET Core implementation of the WOPI protocol for Office Online integration.
-- **[Lumen starter for Kontent.ai](https://github.com/petrsvihlik/lumen-starter)** — Gatsby.js blog starter using Kontent.ai as a headless CMS.
-- **.NET Project Tye** — Contributions and experiments with Microsoft's Project Tye microservices tool.
-- **Roslyn Source Generator** — A proof-of-concept Roslyn source generator for automating boilerplate code.
-- **Blazor Template** — Blazor WebAssembly project template with authentication.
-- **PeachPie PHP SDK port** — Porting a PHP SDK to run on .NET via PeachPie compiler.
-- **VanillaForums auth connector** — OAuth authentication connector for VanillaForums.
-- **GraphQL/PowerBI Gist** — Connecting a GraphQL API to Power BI for reporting.
+- **[WopiHost](https://github.com/petrsvihlik/WopiHost)** — a .NET implementation of the MS-WOPI protocol that makes integrating with WOPI clients such as Office Online Server a piece of cake ([roadmap](https://github.com/petrsvihlik/WopiHost/projects)).
+- **[Lumen starter for Statiq & Kentico Kontent](https://github.com/petrsvihlik/statiq-starter-kontent-lumen)** — a delightful HTML template for a .NET static site generator + a headless CMS.
+- **[.NET Project Tye](https://github.com/petrsvihlik/WopiHost/pull/105)** experiments.
+- **[.NET Roslyn Source Generator](https://github.com/petrsvihlik/kontent-source-generator)** for Kentico Kontent.
+- **[.NET Blazor Template](https://github.com/petrsvihlik/StartBootstrap.Freelancer.Blazor)** for Kentico Kontent.
+- **[.NET port of Kentico Kontent Delivery PHP SDK](https://github.com/petrsvihlik/Kentico.Kontent.Delivery.PeachPie)** using PeachPie.
+- **[.NET Core authentication connector for VanillaForums](https://github.com/petrsvihlik/jsConnectAspNetCoreMvc)**.
+- **[Loading GraphQL data (GitHub API v4) into PowerBI](https://gist.github.com/petrsvihlik/cc34a6cf1882d515139c5b27f37cf99e)** — Gist + [JSFiddle](https://jsfiddle.net/rockyintel/1sqm7dpf/).

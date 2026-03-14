@@ -1,0 +1,25 @@
+name: Lighthouse
+
+on:
+  push:
+    branches: [ master ]
+  repository_dispatch:
+    types: content-changed
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Audit URLs using Lighthouse
+      uses: treosh/lighthouse-ci-action@v12
+      with:
+        urls: |
+          https://petrsvihlik.com/
+          https://petrsvihlik.com/pages/
+          https://petrsvihlik.com/pages/about-me
+          https://petrsvihlik.com/pages/projects
+          https://petrsvihlik.com/posts/the-rise-of-jamstack
+        uploadArtifacts: true
+        temporaryPublicStorage: true

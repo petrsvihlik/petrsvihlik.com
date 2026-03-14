@@ -5,13 +5,28 @@
 		<link>https://petrsvihlik.com/</link>
 		<description>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</description>
 		<copyright>2026</copyright>
-		<pubDate>Sat, 14 Mar 2026 21:12:39 GMT</pubDate>
-		<lastBuildDate>Sat, 14 Mar 2026 21:12:39 GMT</lastBuildDate>
+		<pubDate>Sat, 14 Mar 2026 23:50:17 GMT</pubDate>
+		<lastBuildDate>Sat, 14 Mar 2026 23:50:17 GMT</lastBuildDate>
+		<item>
+			<title>The Junior Developer Problem Is More Complicated Than You Think</title>
+			<link>https://petrsvihlik.com/posts/junior-developer-problem</link>
+			<description>A nuanced response to arguments about AI replacing junior developers, examining structural challenges and the profession's evolution.</description>
+			<guid>https://petrsvihlik.com/posts/junior-developer-problem</guid>
+			<pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
+		<item>
+			<title>AI Is Not a Tooling Conversation. It's an Organizational Stress Test.</title>
+			<link>https://petrsvihlik.com/posts/ai-tooling-organizational-stress-test</link>
+			<description>Takeaways from the Pragmatic Summit in San Francisco on AI's organizational impact on engineering teams.</description>
+			<guid>https://petrsvihlik.com/posts/ai-tooling-organizational-stress-test</guid>
+			<pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
 		<item>
 			<title>The First 300 Days of My Microsoft Journey</title>
 			<link>https://petrsvihlik.com/posts/the-first-300-days-of-my-microsoft-journey</link>
-			<description>My friends and former colleagues have been bombarding me with questions about my job at Microsoft lately. And since it's been almost a year since I joined the company and things already started to settle down, I thought it could be a good time now to try to answer the question.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/399bbea5-c3be-4fdb-90dd-f1f665d26198/1644958483752.png" length="0" type="image" />
+			<description>My friends and former colleagues have been bombarding me with questions about my time at Microsoft. Here's a detailed account.</description>
 			<guid>https://petrsvihlik.com/posts/the-first-300-days-of-my-microsoft-journey</guid>
 			<pubDate>Thu, 17 Feb 2022 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
@@ -19,46 +34,39 @@
 		<item>
 			<title>A Curated List of Top 10 Android Games Worth Your Time</title>
 			<link>https://petrsvihlik.com/posts/a-curated-list-of-top-10-android-games-worth-your-time</link>
-			<description>No matter whether you’re on a train, on a toilet, or on acid you’ll enjoy these games. Guaranteed!</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/4980dbfa-7056-4536-9ca0-5793858e9675/1_sFWRg4ylu4nD4WygRz6l5A.jpeg" length="0" type="image" />
+			<description>No matter whether you're on a train, on a toilet, or on acid you'll enjoy these top 10 Android games.</description>
 			<guid>https://petrsvihlik.com/posts/a-curated-list-of-top-10-android-games-worth-your-time</guid>
 			<pubDate>Sat, 16 Oct 2021 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
-			<title>Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target 🤐</title>
-			<link>https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target</link>
-			<description>Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets. As per the documentation, with the exception of GITHUB_TOKEN, secrets are not passed to the runner when a workflow is triggered from a forked repository. This is to prevent the automatic execution of untrusted code that may be contained within the forked repo.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/5537277d-f61e-45c5-8089-d1ef658a97f2/tg86g0b2w3zjmrdj81ln.webp" length="0" type="image" />
-			<guid>https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target</guid>
+			<title>Lessons Learned: Migrating from AppVeyor to GitHub Actions</title>
+			<link>https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions</link>
+			<description>The third article about GitHub Actions in a row? One must be thinking I am up to something.</description>
+			<guid>https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions</guid>
 			<pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
 			<title>Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet</title>
 			<link>https://petrsvihlik.com/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet</link>
-			<description>You might remember my earlier post where I described how to set up code coverage reporting for .NET Core 3 using AppVeyor + OpenCover + Codecov.
-
-Time has moved on, .NET 5 has arrived, and the best practices have changed, so let's see how to collect code coverage for .NET projects in 2021.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/acb37865-3b65-4407-9f5c-7e256bab4754/62ho8jkki3i9q6pqekq6.webp" length="0" type="image" />
+			<description>You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version.</description>
 			<guid>https://petrsvihlik.com/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet</guid>
 			<pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
-			<title>Lessons Learned: Migrating from AppVeyor to GitHub Actions</title>
-			<link>https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions</link>
-			<description>The third article about GitHub Actions in a row? One must be thinking I am up to something. And they'd be right. Over the past week, I migrated more than 10 repositories from AppVeyor to GitHub Actions.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/6be06d79-4329-44fc-9410-35264a1e19c8/7s03fq9hzyt4145sr5z3.webp" length="0" type="image" />
-			<guid>https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions</guid>
+			<title>Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target</title>
+			<link>https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target</link>
+			<description>Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets.</description>
+			<guid>https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target</guid>
 			<pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
 			<title>Avoiding the DevRel ROI Trap with Better Strategic Alignment</title>
 			<link>https://petrsvihlik.com/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment</link>
-			<description>An alternative approach to proving the value of DevRel, not focused on numbers or KPIs.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/a1618fd8-12a6-455c-a213-fcdb57eda29d/dr1.png" length="0" type="image" />
+			<description>An alternative approach to proving the value of DevRel, not focused on numbers or metrics but on strategic alignment.</description>
 			<guid>https://petrsvihlik.com/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment</guid>
 			<pubDate>Tue, 05 Jan 2021 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
@@ -66,7 +74,7 @@ Time has moved on, .NET 5 has arrived, and the best practices have changed, so l
 		<item>
 			<title>The Little I Learned About Running</title>
 			<link>https://petrsvihlik.com/posts/the-little-i-learned-about-running</link>
-			<description>I had never been good at sports (perhaps with an exception of swimming) and yet it somehow happened and I started to run and have been running for five years. I never ever run more than 15km and I’m sure my technique is terrible, but I’d still like to share a few things that contributed to my preserving the habit of running to this day.</description>
+			<description>I had never been good at sports (perhaps with an exception of swimming) and yet I fell in love with running.</description>
 			<guid>https://petrsvihlik.com/posts/the-little-i-learned-about-running</guid>
 			<pubDate>Sun, 06 Dec 2020 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
@@ -74,8 +82,7 @@ Time has moved on, .NET 5 has arrived, and the best practices have changed, so l
 		<item>
 			<title>OK Google, water the garden!</title>
 			<link>https://petrsvihlik.com/posts/ok-google-water-the-garden</link>
-			<description>Let’s face it, my brain is just not compatible with any device that has a segment display or more than one button. Whether it’s a scientific calculator, thermostat, or water irrigation controller…</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/4d4b9d99-9494-49af-8d73-fd16c879cfbf/1_c3XqXeoytt9oQCXqWG_Cpw.jpeg" length="0" type="image" />
+			<description>Let's face it, my brain is just not compatible with any device that has a segment display or more than one button.</description>
 			<guid>https://petrsvihlik.com/posts/ok-google-water-the-garden</guid>
 			<pubDate>Thu, 16 Jul 2020 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
@@ -83,62 +90,47 @@ Time has moved on, .NET 5 has arrived, and the best practices have changed, so l
 		<item>
 			<title>The Rise of JAMstack</title>
 			<link>https://petrsvihlik.com/posts/the-rise-of-jamstack</link>
-			<description>JAMstack has proven increasingly popular among developers over the past few years, with static sites becoming more commonplace since around 2015. As web design began to place higher importance on the developer experience, the term JAMstack was formed and has been gaining traction among the industry ever since. What’s behind that trend, and is it set to continue?</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/5a521b01-d508-4506-8ac9-2cd64efb34a2/uHGkEXe8lXJsmj6cZNQmIW3bpsEzn0mU9Eun.png" length="0" type="image" />
+			<description>JAMstack has proven increasingly popular among developers over the past few years. But what exactly is JAMstack, and why should you care?</description>
 			<guid>https://petrsvihlik.com/posts/the-rise-of-jamstack</guid>
 			<pubDate>Thu, 12 Mar 2020 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
-			<title>7 Deadly ☠️ Sins of OKRs 🎯</title>
+			<title>7 Deadly Sins of OKRs</title>
 			<link>https://petrsvihlik.com/posts/7-deadly-sins-of-okrs</link>
-			<description>Are you implementing Objectives and Key Results across your company and don’t want your colleagues to feel frustrated after the first couple of few weeks?</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/3169d78e-703e-41ac-9afc-47dc46820660/0__quS00K7WBUYDQuA.jpg" length="0" type="image" />
+			<description>Are you implementing Objectives and Key Results across your company and don't want your colleagues to feel frustrated after the first couple of few weeks?</description>
 			<guid>https://petrsvihlik.com/posts/7-deadly-sins-of-okrs</guid>
 			<pubDate>Thu, 06 Feb 2020 00:00:00 GMT</pubDate>
-			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
-		</item>
-		<item>
-			<title>Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov</title>
-			<link>https://petrsvihlik.com/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov</link>
-			<description>I love AppVeyor. It's my go-to CI/CD service for .NET projects. I use it for both personal and work open-source projects. I also love automation of all kinds so, among other things, I want my test coverage reports to be automatically generated with every build.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/d42caa6c-3971-4e9a-b396-b16cf64f0c2a/1afmj79uf0amfyqmfob2.png" length="0" type="image" />
-			<guid>https://petrsvihlik.com/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov</guid>
-			<pubDate>Sun, 01 Dec 2019 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
 			<title>Building A Culture of Relationships That Persist</title>
 			<link>https://petrsvihlik.com/posts/building-a-culture-of-relationships-that-persist</link>
 			<description>What does it take to build a flourishing company culture? And how to recognize one? Real-world examples of good and bad habits, substantial and irrelevant indicators.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/6df5fa63-9066-4e32-8ec8-a3998b474e7b/1_aWdmUDOC8PDVoz5KBTDDPA.jpeg" length="0" type="image" />
 			<guid>https://petrsvihlik.com/posts/building-a-culture-of-relationships-that-persist</guid>
+			<pubDate>Sun, 01 Dec 2019 00:00:00 GMT</pubDate>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
+		<item>
+			<title>Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov</title>
+			<link>https://petrsvihlik.com/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov</link>
+			<description>I love AppVeyor. It's my go-to CI/CD service for .NET projects. I use it for both open-source and private projects.</description>
+			<guid>https://petrsvihlik.com/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov</guid>
 			<pubDate>Sun, 01 Dec 2019 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
 			<title>Why I Won't Hire You - 5 Honest Tips to a Better CV</title>
 			<link>https://petrsvihlik.com/posts/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv</link>
-			<description>Recently, I had the immense pleasure to go through several hundreds of CVs. I threw 95% of them to trash. Are you wondering how to get in the lucky 5%? Read on and follow the simple tips.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/e9689de5-138e-4248-afb6-5bacfd8bee86/2Zh3DsU.jpg" length="0" type="image" />
+			<description>Recently, I had the immense pleasure to go through several hundreds of CVs. I thought I'd share some of the most common mistakes I've seen.</description>
 			<guid>https://petrsvihlik.com/posts/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv</guid>
 			<pubDate>Mon, 26 Aug 2019 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
-			<title>Meet Petr Svihlik</title>
-			<link>https://petrsvihlik.com/posts/meet-petr-svihlik</link>
-			<description>Petr Svihlik of Kentico shares his experiences in this week’s Meet the Developer Advocate.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/318244f9-16af-41ee-88c9-af1bf360932b/kentico_by-jiri-hlousek-7964.jpg" length="0" type="image" />
-			<guid>https://petrsvihlik.com/posts/meet-petr-svihlik</guid>
-			<pubDate>Fri, 19 Apr 2019 00:00:00 GMT</pubDate>
-			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
-		</item>
-		<item>
 			<title>How I Changed My Life in Three Steps</title>
 			<link>https://petrsvihlik.com/posts/how-i-changed-my-life-in-three-steps</link>
-			<description>The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and I feel that I’m happier than I’ve ever been in my life. If something troubles you or you’d like to change your life for the better, here’s a three-step recipe.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/d54b152c-d034-46cb-9e26-fb7b2abdaccc/1_hPan2IHiAQdmNs870ugreA.jpeg" length="0" type="image" />
+			<description>The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and focused on things that truly matter.</description>
 			<guid>https://petrsvihlik.com/posts/how-i-changed-my-life-in-three-steps</guid>
 			<pubDate>Tue, 22 Jan 2019 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
@@ -146,8 +138,7 @@ Time has moved on, .NET 5 has arrived, and the best practices have changed, so l
 		<item>
 			<title>Three Ways to Manage Data in Kentico Using PowerShell</title>
 			<link>https://petrsvihlik.com/posts/three-ways-to-manage-data-in-kentico-using-powershell</link>
-			<description>PowerShell is the leading task automation platform for Windows. Developers and system administrators from all around the world use it for the most complex deployment and installation scenarios as well as for the simplest scripting. The fact that it's built on top of the .NET Framework opens up certain possibilities for integration with Kentico. Today, we'll have a look at what we can achieve with PowerShell in combination with the Kentico API and the Kentico REST API.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/041a27dd-ae9f-4278-bf69-2fcbd6781b0f/net.png" length="0" type="image" />
+			<description>PowerShell is the leading task automation platform for Windows. Developers and sysadmins alike use it to automate tasks and manage systems.</description>
 			<guid>https://petrsvihlik.com/posts/three-ways-to-manage-data-in-kentico-using-powershell</guid>
 			<pubDate>Tue, 09 Aug 2016 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
@@ -155,8 +146,7 @@ Time has moved on, .NET 5 has arrived, and the best practices have changed, so l
 		<item>
 			<title>Referencing Multiple Versions of the Same Assembly in a Single Application</title>
 			<link>https://petrsvihlik.com/posts/referencing-multiple-versions-of-the-same-assembly-in-a-single-application</link>
-			<description>We've all been there — our application depends on a version of assembly that's incompatible with the version that's referenced by the NuGet package we've just installed. The situation gets worse when the conflict occurs between two third-party NuGet packages. What can we do about it? What does Kentico do about it?</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/8088e347-f867-4029-8db6-aeaaee3f390d/cms_dep_t.png" length="0" type="image" />
+			<description>We've all been there — our application depends on a version of assembly that's incompatible with the version that's referenced by the NuGet package we've just installed.</description>
 			<guid>https://petrsvihlik.com/posts/referencing-multiple-versions-of-the-same-assembly-in-a-single-application</guid>
 			<pubDate>Tue, 24 May 2016 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
@@ -164,8 +154,7 @@ Time has moved on, .NET 5 has arrived, and the best practices have changed, so l
 		<item>
 			<title>Running Visual Studio Remote Debugger in Domain Environment</title>
 			<link>https://petrsvihlik.com/posts/running-visual-studio-remote-debugger-in-domain-environment</link>
-			<description>This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor, hereinafter remote debugger, running on a computer that is not part of a domain from a computer that is in a domain.</description>
-			<enclosure url="https://assets-eu-01.kc-usercontent.com/4d0fc084-2515-01c7-1a39-53146da3d8a8/dae6390e-dcf3-4775-a4c2-64791029a02d/domain.png" length="0" type="image" />
+			<description>This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain.</description>
 			<guid>https://petrsvihlik.com/posts/running-visual-studio-remote-debugger-in-domain-environment</guid>
 			<pubDate>Wed, 19 Jun 2013 00:00:00 GMT</pubDate>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>

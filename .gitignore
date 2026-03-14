@@ -48,5 +48,6 @@ npm-debug.log
 .gatsby-context.js
 gatsby-starter-lumen.iml
 
-# Claude Code worktrees
+# Claude Code
 .claude/worktrees/
+.claude/settings.local.json

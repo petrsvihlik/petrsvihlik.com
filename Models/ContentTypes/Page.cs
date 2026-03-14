@@ -1,12 +1,16 @@
 using PetrSvihlik.Com.Models;
-using System.Linq;
 
 namespace PetrSvihlik.Com.Models.ContentTypes
 {
-    public partial class Page : ITitleProvider
+    public class Page : ITitleProvider
     {
-        public string ElementCodename => TitleCodename;
+        public string Title { get; set; }
+        public string Url { get; set; }
+        public string Body { get; set; }
+        public string MetaDescription { get; set; }
+        public bool ShowInNavigation { get; set; }
 
-        public bool ShowInMenu => ShowInNavigation.FirstOrDefault().Codename == "true";
+        string ITitleProvider.Title => Title;
+        string ITitleProvider.ElementCodename => "title";
     }
 }

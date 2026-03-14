@@ -1,13 +1,13 @@
-﻿@using PetrSvihlik.Com.Models.ContentTypes
+@using PetrSvihlik.Com.Models.ContentTypes
 @model IEnumerable<Contact>
 
 <div class="links">
     <ul class="links__list">
         @foreach (var contact in Model)
         {
-            <li class="links__list-item" data-kontent-item-id="@contact.System.Id">
-                <a href="@contact.Url" rel="noopener noreferrer" target="_blank" aria-label="@contact.Name" data-kontent-element-codename="@Contact.NameCodename">
-                    <i class="@contact.Icon" data-kontent-element-codename="@Contact.IconCodename"></i>
+            <li class="links__list-item">
+                <a href="@contact.Url" rel="noopener noreferrer" target="_blank" aria-label="@contact.Name">
+                    <i class="@contact.Icon"></i>
                 </a>
             </li>
         }

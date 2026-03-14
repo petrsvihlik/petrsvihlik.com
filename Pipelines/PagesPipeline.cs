@@ -1,62 +1,63 @@
-using Kontent.Ai.Delivery.Abstractions;
-using Kontent.Ai.Urls.Delivery.QueryParameters;
-using Kontent.Ai.Urls.Delivery.QueryParameters.Filters;
 using PetrSvihlik.Com.Models.ContentTypes;
-using Kontent.Statiq;
+using PetrSvihlik.Com.Models.ViewModels;
 using Statiq.Common;
 using Statiq.Core;
+using Statiq.Markdown;
 using Statiq.Razor;
+using Statiq.Yaml;
 using System.Linq;
-using PetrSvihlik.Com.Models.ViewModels;
 
 namespace PetrSvihlik.Com.Pipelines
 {
     public class PagesPipeline : Pipeline
     {
-        public PagesPipeline(IDeliveryClient deliveryClient)
+        public PagesPipeline()
         {
             Dependencies.AddRange(nameof(HomepagePipeline), nameof(SiteMetadataPipeline));
-            InputModules = new ModuleList{
-                new Kontent<Page>(deliveryClient)
-                    .WithQuery(new IncludeTotalCountParameter(), new NotEmptyFilter("elements.body")),
-                new SetDestination(Config.FromDocument((doc, ctx)  => GetPath(doc))),
+            InputModules = new ModuleList
+            {
+                new ReadFiles("pages/*.md"),
+                new ExtractFrontMatter(new ParseYaml()),
+                new RenderMarkdown(),
+                new SetDestination(Config.FromDocument(doc => GetPath(doc))),
             };
 
-            ProcessModules = new ModuleList {
-                new MergeContent(new ReadFiles(patterns: "Index.cshtml") ),
+            ProcessModules = new ModuleList
+            {
+                new MergeContent(new ReadFiles("Index.cshtml")),
                 new RenderRazor()
-                 .WithModel(Config.FromDocument((document, context) =>
-                 {
-                    var menuItem = document.AsKontent<Page>();
-                    var model = new HomeViewModel(menuItem,
-                                    new SidebarViewModel(
-                                    context.Outputs.FromPipeline(nameof(HomepagePipeline)).Select(x => x.AsKontent<Homepage>()).FirstOrDefault(),
-                                    context.Outputs.FromPipeline(nameof(SiteMetadataPipeline)).Select(x => x.AsKontent<SiteMetadata>()).FirstOrDefault(),
-                                    false, menuItem.Url));
-                    return model;
-                 }
-                 ))/*,
-                new KontentImageProcessor()*/
+                    .WithModel(Config.FromDocument((document, context) =>
+                    {
+                        var slug = document.GetString("slug") ?? document.Source.FileNameWithoutExtension.FullPath;
+                        var page = new Page
+                        {
+                            Title = document.GetString("title"),
+                            Url = slug,
+                            Body = document.GetContentStringAsync().GetAwaiter().GetResult(),
+                            MetaDescription = document.GetString("description"),
+                            ShowInNavigation = document.GetBool("show_in_navigation"),
+                        };
+                        var model = new HomeViewModel(page,
+                            new SidebarViewModel(
+                                context.Outputs.FromPipeline(nameof(HomepagePipeline)).Select(x => x.Get<Homepage>("Homepage")).FirstOrDefault(),
+                                context.Outputs.FromPipeline(nameof(SiteMetadataPipeline)).Select(x => x.Get<SiteMetadata>("SiteMetadata")).FirstOrDefault(),
+                                false, page.Url));
+                        return model;
+                    }))
             };
 
-            OutputModules = new ModuleList {
+            OutputModules = new ModuleList
+            {
                 new WriteFiles(),
             };
         }
 
         private static NormalizedPath GetPath(IDocument doc)
         {
-            Page page = doc.AsKontent<Page>();
-            string path;
-            if (page.Url == "404")
-            {
-                path = $"{page.Url}.html";
-            }
-            else
-            {
-                path = $"pages/{page.Url}/index.html";
-            }
-            return new NormalizedPath(path);
+            var slug = doc.GetString("slug") ?? doc.Source.FileNameWithoutExtension.FullPath;
+            return slug == "404"
+                ? new NormalizedPath("404.html")
+                : new NormalizedPath($"pages/{slug}/index.html");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@using PetrSvihlik.Com.Models.ContentTypes
+@using PetrSvihlik.Com.Models.ContentTypes
 @model HomeViewModel
 @{
     ViewData["SiteMetadata"] = Model.Metadata;
@@ -14,7 +14,7 @@
         <div class="page">
             @if (Model.TitleProvider != null)
             {
-                <h1 class="page__title" data-kontent-item-id="@Model.TitleProvider.System.Id" data-kontent-element-codename="@Model.TitleProvider.ElementCodename">
+                <h1 class="page__title">
                     @Model.TitleProvider.Title
                 </h1>
             }
@@ -27,8 +27,8 @@
                 }
                 else
                 {
-                    <div class="page__body" data-kontent-item-id="@Model.Page.System.Id" data-kontent-element-codename="@Page.BodyCodename">
-                        @Html.DisplayFor(vm => Model.Page.Body)
+                    <div class="page__body">
+                        @Html.Raw(Model.Page.Body)
                     </div>
                 }
             </div>

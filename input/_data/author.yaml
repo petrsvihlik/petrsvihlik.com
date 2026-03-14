@@ -1,0 +1,22 @@
+name: "Petr Švihlík"
+bio: "VP Engineering @ Kentico, ex-Microsoft, Dev Avocado, Open-So(u)rcerer, .NET freak, explorer of the planet earth."
+email: "petr.svihlik@microsoft.com"
+contacts:
+  - name: GitHub
+    url: https://github.com/petrsvihlik
+    icon: icon-github-circled
+  - name: Twitter
+    url: https://twitter.com/petrsvihlik
+    icon: icon-twitter
+  - name: Stack Overflow
+    url: https://stackoverflow.com/users/1332034/rocky
+    icon: icon-stackoverflow
+  - name: Dev.to
+    url: https://dev.to/petrsvihlik
+    icon: icon-devto
+  - name: Medium
+    url: https://medium.com/@PetrSvihlik
+    icon: icon-medium
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/svihlik/
+    icon: icon-linkedin

@@ -1,13 +1,6 @@
-﻿using Kontent.Ai.Delivery.Abstractions;
-using Kontent.Ai.Delivery.Extensions;
-using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 using Statiq.App;
-using Statiq.Common;
-using Microsoft.Extensions.Configuration;
 using Statiq.Web;
-using PetrSvihlik.Com.Models.ContentTypes;
-using PetrSvihlik.Com.Resolvers;
 
 namespace PetrSvihlik.Com
 {
@@ -17,13 +10,7 @@ namespace PetrSvihlik.Com
             await Bootstrapper
                 .Factory
                 .CreateDefault(args)
-                .BuildConfiguration(cfg => cfg.AddUserSecrets<Program>(true))
-                .ConfigureServices((services, settings) =>
-                {
-                    services.AddSingleton<IContentLinkUrlResolver, CustomContentLinkUrlResolver>();
-                    services.AddSingleton<ITypeProvider, CustomTypeProvider>();
-                    services.AddDeliveryClient((IConfiguration)settings);
-                })
+                .AddWeb()
                 .AddHostingCommands()
                 .RunAsync();
     }

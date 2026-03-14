@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,15 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Kontent.Statiq" Version="2.0.0-beta0015" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.5" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.5" />
     <PackageReference Include="Statiq.Web" Version="1.0.0-beta.60" />
   </ItemGroup>
-  
-  <PropertyGroup>
-    <UserSecretsId>42813ac8-5d91-4bcb-98f2-7f402adfd9b9</UserSecretsId>
-  </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="extensionas\**" />

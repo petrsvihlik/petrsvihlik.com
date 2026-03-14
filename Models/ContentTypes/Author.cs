@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-using System.Linq;
 
 namespace PetrSvihlik.Com.Models.ContentTypes
 {
-    public partial class Author
+    public class Author
     {
-        public IEnumerable<Contact> ContactsTyped => Contacts.OfType<Contact>();
+        public string Name { get; set; }
+        public string Bio { get; set; }
+        public List<Contact> Contacts { get; set; } = new();
     }
 }

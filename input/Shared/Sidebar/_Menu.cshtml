@@ -1,12 +1,12 @@
-﻿@using PetrSvihlik.Com.Models.ContentTypes
+@using PetrSvihlik.Com.Models.ContentTypes
 @model IEnumerable<Page>
 
 <nav class="menu">
     <ul class="menu__list">
-        @foreach (var item in Model.Where(n => n.ShowInMenu))
+        @foreach (var item in Model.Where(n => n.ShowInNavigation))
         {
-            <li class="menu__list-item" data-kontent-item-id="@item.System.Id">
-                <a href="@IExecutionContext.Current.GetLink(item.Url == "/" ? "/" : $"pages/{item.Url}")" class="menu__list-item-link @(item.Url == ViewBag.ActiveMenuItem ? " active--exact  active" : "")" data-kontent-element-codename="@Article.TitleCodename">@item.Title</a>
+            <li class="menu__list-item">
+                <a href="@IExecutionContext.Current.GetLink(item.Url == "/" ? "/" : $"pages/{item.Url}")" class="menu__list-item-link @(item.Url == ViewBag.ActiveMenuItem ? " active--exact  active" : "")">@item.Title</a>
             </li>
         }
     </ul>

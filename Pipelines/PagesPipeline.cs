@@ -19,6 +19,7 @@ namespace PetrSvihlik.Com.Pipelines
                 new ReadFiles("pages/*.md"),
                 new ExtractFrontMatter(new ParseYaml()),
                 new RenderMarkdown(),
+                new SetMetadata("RenderedBody", Config.FromDocument(async doc => await doc.GetContentStringAsync())),
                 new SetDestination(Config.FromDocument(doc => GetPath(doc))),
             };
 
@@ -33,7 +34,7 @@ namespace PetrSvihlik.Com.Pipelines
                         {
                             Title = document.GetString("title"),
                             Url = slug,
-                            Body = document.GetContentStringAsync().GetAwaiter().GetResult(),
+                            Body = document.GetString("RenderedBody"),
                             MetaDescription = document.GetString("description"),
                             ShowInNavigation = document.GetBool("show_in_navigation"),
                         };

@@ -6,8 +6,11 @@
         @await Html.PartialAsync("Shared/Sidebar/_Author", Model)
         @await Html.PartialAsync("Shared/Sidebar/_Menu", Model.Homepage.NavigationPages, new ViewDataDictionary(ViewData) { { nameof(Model.ActiveMenuItem), Model.ActiveMenuItem } })
         @await Html.PartialAsync("Shared/Sidebar/_Contacts", Model.Contacts)
-        <div class="sidebar__copyright">
-            @Model.Metadata.Copyright
-        </div>
+        @if (!string.IsNullOrEmpty(Model.Metadata.Copyright))
+        {
+            <div class="sidebar__copyright">
+                @Model.Metadata.Copyright
+            </div>
+        }
     </div>
 </div>

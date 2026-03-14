@@ -17,7 +17,7 @@ namespace PetrSvihlik.Com.Pipelines
                     {
                         Title = "Petr Švihlík",
                         Subtitle = "Posts about DevRel, DX, OS, and .NET.",
-                        Copyright = "© Statically generated with Statiq.",
+                        Copyright = "",
                         SiteAuthor = new Author
                         {
                             Name = "Petr Švihlík",
@@ -25,7 +25,6 @@ namespace PetrSvihlik.Com.Pipelines
                             Contacts = new List<Contact>
                             {
                                 new Contact { Name = "GitHub", Url = "https://github.com/petrsvihlik", Icon = "icon-github-circled" },
-                                new Contact { Name = "Twitter", Url = "https://twitter.com/petrsvihlik", Icon = "icon-twitter" },
                                 new Contact { Name = "Stack Overflow", Url = "https://stackoverflow.com/users/1332034/rocky", Icon = "icon-stackoverflow" },
                                 new Contact { Name = "Dev.to", Url = "https://dev.to/petrsvihlik", Icon = "icon-devto" },
                                 new Contact { Name = "Medium", Url = "https://medium.com/@PetrSvihlik", Icon = "icon-medium" },

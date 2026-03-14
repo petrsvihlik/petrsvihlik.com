@@ -77,6 +77,8 @@
                 );
                 background-size: 100% 300%;
                 animation: sidebar-gradient 6s ease infinite;
+                -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+                mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
                 position: absolute;
                 content: "";
                 width: 1px;

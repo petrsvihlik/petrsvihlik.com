@@ -5,5 +5,5 @@ slug: reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-cove
 date: 2021-03-05
 category: technology
 tags: [codecov, dot-net, github-actions, coverlet, continuous-integration, devops]
-canonical_url: https://dev.to/kentico-kontent/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i
+canonical_url: https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i
 ---

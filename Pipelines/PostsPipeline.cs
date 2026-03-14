@@ -32,7 +32,7 @@ namespace PetrSvihlik.Com.Pipelines
 
             ProcessModules = new ModuleList
             {
-                new MergeContent(new ReadFiles("Post.cshtml")),
+                new MergeContent(new ReadFiles("_Post.cshtml")),
                 new RenderRazor()
                     .WithModel(Config.FromDocument((document, context) =>
                     {

@@ -9,7 +9,7 @@
     var externalIcon = isExternal ? @"&nbsp;<i class=""icon-link-ext""></i>" : "";
 
     <div class="article">
-        <div><time class="article__meta-time" datetime="@article.PublishDate?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture.DateTimeFormat)">@Html.DisplayFor(model => article.PublishDate)</time><span class="article__meta-divider"></span><span class="article__meta-category"><a class="article__meta-category-link" href="@IExecutionContext.Current.GetLink($"/category/{article.SelectedCategory.Slug}")">@Html.Raw(string.Join(", ", article.SelectedCategory.Title))</a></span></div>
+        <div><time class="article__meta-time" datetime="@article.PublishDate?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture.DateTimeFormat)">@article.PublishDate?.ToString("MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)</time><span class="article__meta-divider"></span><span class="article__meta-category"><a class="article__meta-category-link" href="@IExecutionContext.Current.GetLink($"/category/{article.SelectedCategory.Slug}")">@Html.Raw(string.Join(", ", article.SelectedCategory.Title))</a></span></div>
         <h2 class="article__title"><a class="article__title-link" href="@link">@article.Title@Html.Raw(externalIcon)</a></h2>
         <p class="article__description">@article.Description</p>
         <a class="article__readmore" href="@link">Read @Html.Raw(externalIcon)</a>

@@ -17,7 +17,7 @@ namespace PetrSvihlik.Com.Pipelines
                 new ReplaceDocuments(nameof(PostsPipeline)),
                 new PaginateDocuments(4),
                 new SetDestination(Config.FromDocument(doc => Filename(doc))),
-                new MergeContent(new ReadFiles("Index.cshtml")),
+                new MergeContent(new ReadFiles("_Index.cshtml")),
                 new RenderRazor()
                     .WithModel(Config.FromDocument((document, context) =>
                     {

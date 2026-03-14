@@ -23,7 +23,7 @@
             </div>
             <div class="article-single__date">
                 <em>
-                    Published @Html.DisplayFor(model => article.PublishDate)
+                    Published @article.PublishDate?.ToString("MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)
                 </em>
             </div>
         </div>

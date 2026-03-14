@@ -24,7 +24,7 @@ namespace PetrSvihlik.Com.Pipelines
 
             ProcessModules = new ModuleList
             {
-                new MergeContent(new ReadFiles("Index.cshtml")),
+                new MergeContent(new ReadFiles("_Index.cshtml")),
                 new RenderRazor()
                     .WithModel(Config.FromDocument((document, context) =>
                     {

@@ -30,7 +30,7 @@ namespace PetrSvihlik.Com.Pipelines
                     {
                         new ReplaceDocuments(Config.FromDocument<IEnumerable<IDocument>>(doc => doc.GetChildren())),
                         new PaginateDocuments(4),
-                        new MergeContent(new ReadFiles("Index.cshtml")),
+                        new MergeContent(new ReadFiles("_Index.cshtml")),
                         new RenderRazor()
                             .WithModel(Config.FromDocument((document, context) =>
                             {

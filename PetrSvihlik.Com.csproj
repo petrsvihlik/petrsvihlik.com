@@ -12,6 +12,21 @@
     <PackageReference Include="Statiq.Web" Version="1.0.0-beta.60" />
   </ItemGroup>
 
+  <!-- Vulnerability overrides for transitive dependencies -->
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.19.0" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="18.4.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.16.0" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="10.0.5" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.5" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.16.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.5" />
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Remove="extensionas\**" />
     <Compile Remove="input\**" />

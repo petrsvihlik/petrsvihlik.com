@@ -2,9 +2,7 @@ name: Lighthouse
 
 on:
   push:
-    branches: [ master ]
-  repository_dispatch:
-    types: content-changed
+    branches: [ gh-pages ]
 
 jobs:
   lighthouse:

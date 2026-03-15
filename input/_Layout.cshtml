@@ -73,7 +73,7 @@
                 e.preventDefault();
                 var img = document.createElement('img');
                 img.src = link.href;
-                img.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;visibility:hidden;';
+                img.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;visibility:hidden;border-radius:4px;';
                 document.body.appendChild(img);
                 var z = mediumZoom(img, { background: 'rgba(0,0,0,0.7)' });
                 img.addEventListener('load', function() {

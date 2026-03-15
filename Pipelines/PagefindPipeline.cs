@@ -1,7 +1,7 @@
+using Microsoft.Extensions.Logging;
 using Statiq.Common;
 using Statiq.Core;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -32,6 +32,7 @@ namespace PetrSvihlik.Com.Pipelines
             {
                 new ExecuteConfig(Config.FromContext(ctx =>
                 {
+                    var log = (ILogger)ctx;
                     var outputPath = ctx.FileSystem.OutputPath.FullPath;
                     var isWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
@@ -47,7 +48,7 @@ namespace PetrSvihlik.Com.Pipelines
                         WorkingDirectory = ctx.FileSystem.RootPath.FullPath,
                     };
 
-                    ctx.LogInformation("Running Pagefind to build search index...");
+                    log.LogInformation("Running Pagefind to build search index...");
                     using var process = new Process { StartInfo = psi };
                     process.Start();
 
@@ -56,16 +57,16 @@ namespace PetrSvihlik.Com.Pipelines
                     process.WaitForExit();
 
                     if (!string.IsNullOrWhiteSpace(stdout))
-                        ctx.LogInformation(stdout.Trim());
+                        log.LogInformation(stdout.Trim());
 
                     if (process.ExitCode != 0)
                     {
                         if (!string.IsNullOrWhiteSpace(stderr))
-                            ctx.LogError(stderr.Trim());
+                            log.LogError(stderr.Trim());
                         throw new Exception($"Pagefind failed with exit code {process.ExitCode}");
                     }
 
-                    ctx.LogInformation("Pagefind index built successfully.");
+                    log.LogInformation("Pagefind index built successfully.");
                     return Array.Empty<IDocument>();
                 }))
             };

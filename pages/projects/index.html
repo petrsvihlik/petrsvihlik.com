@@ -130,17 +130,29 @@
                 </h1>
             <div class="page__body">
                     <div class="page__body">
-                        <h2>Past Projects &amp; PoCs</h2>
+                        <h2 id="wopihost">WopiHost</h2>
+<img src="/assets/img/wopihost-logo.png" alt="WopiHost logo" class="project-logo">
+<p><a href="https://github.com/petrsvihlik/WopiHost">WopiHost</a> is the most advanced open-source .NET implementation of the <a href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/">MS-WOPI protocol</a>, enabling seamless integration with WOPI clients such as <strong>Office Online Server</strong> and <strong>Microsoft 365</strong>.</p>
+<p>It ships as a set of focused NuGet packages so you only pull in what you need:</p>
 <ul>
-<li><strong><a href="https://github.com/petrsvihlik/WopiHost">WopiHost</a></strong> — a .NET implementation of the MS-WOPI protocol that makes integrating with WOPI clients such as Office Online Server a piece of cake (<a href="https://github.com/petrsvihlik/WopiHost/projects">roadmap</a>).</li>
-<li><strong><a href="https://github.com/petrsvihlik/statiq-starter-kontent-lumen">Lumen starter for Statiq &amp; Kentico Kontent</a></strong> — a delightful HTML template for a .NET static site generator + a headless CMS.</li>
-<li><strong><a href="https://github.com/petrsvihlik/WopiHost/pull/105">.NET Project Tye</a></strong> experiments.</li>
-<li><strong><a href="https://github.com/petrsvihlik/kontent-source-generator">.NET Roslyn Source Generator</a></strong> for Kentico Kontent.</li>
-<li><strong><a href="https://github.com/petrsvihlik/StartBootstrap.Freelancer.Blazor">.NET Blazor Template</a></strong> for Kentico Kontent.</li>
-<li><strong><a href="https://github.com/petrsvihlik/Kentico.Kontent.Delivery.PeachPie">.NET port of Kentico Kontent Delivery PHP SDK</a></strong> using PeachPie.</li>
-<li><strong><a href="https://github.com/petrsvihlik/jsConnectAspNetCoreMvc">.NET Core authentication connector for VanillaForums</a></strong>.</li>
-<li><strong><a href="https://gist.github.com/petrsvihlik/cc34a6cf1882d515139c5b27f37cf99e">Loading GraphQL data (GitHub API v4) into PowerBI</a></strong> — Gist + <a href="https://jsfiddle.net/rockyintel/1sqm7dpf/">JSFiddle</a>.</li>
+<li><strong><code>WopiHost.Core</code></strong> — ASP.NET Core middleware &amp; WOPI endpoints</li>
+<li><strong><code>WopiHost.Abstractions</code></strong> — interfaces for custom storage &amp; lock providers</li>
+<li><strong><code>WopiHost.FileSystemProvider</code></strong> — ready-to-use filesystem storage provider</li>
+<li><strong><code>WopiHost.MemoryLockProvider</code></strong> — in-memory lock provider for development</li>
+<li><strong><code>WopiHost.Discovery</code></strong> — WOPI Discovery with caching</li>
+<li><strong><code>WopiHost.Url</code></strong> — WOPI URL builder</li>
 </ul>
+<h3 id="highlights">Highlights</h3>
+<ul>
+<li>🔌 <strong>Pluggable storage</strong> — implement <code>IWopiStorageProvider</code> to back WopiHost with any data source: cloud blob storage, a database, or a custom API</li>
+<li>☁️ <strong>.NET Aspire integration</strong> — first-class cloud-native support with OpenTelemetry observability built in</li>
+<li>🔐 <strong>Enterprise security</strong> — WOPI proof key validation, origin checking, extensible JWT-based auth/authz</li>
+<li>📄 <strong>Full WOPI compliance</strong> — file operations, container operations, <code>PutRelativeFile</code>, <code>PutUserInfo</code>, rename, create, and OneNote for the web folder endpoints</li>
+<li>🏥 <strong>Production ready</strong> — health checks, in-memory caching</li>
+<li>🎯 <strong>Multi-targeting</strong> — .NET 8, 9, and 10</li>
+</ul>
+<p>The latest <strong>v5.0</strong> release was a major milestone: migration from Autofac to <code>Microsoft.Extensions.DependencyInjection</code>, full nullable reference type annotations, and a dedicated <code>ILockService</code> abstraction — the most complete release in the project's history.</p>
+<p><a href="https://github.com/petrsvihlik/WopiHost">View on GitHub</a> · <a href="https://www.nuget.org/packages?q=WopiHost">NuGet packages</a> · <a href="https://github.com/petrsvihlik/WopiHost/releases">Releases</a></p>
 
                     </div>
             </div>
@@ -149,5 +161,7 @@
 </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+    <script>mediumZoom('.page__body img', { background: 'rgba(0,0,0,0.7)' });</script>
 </body>
 </html>

@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" />
     <link rel="stylesheet" href="/assets/scss/init.css" />
+    <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
     <link rel="preload" href="/assets/fonts/fontello-5805c6cd/font/fontello.woff2?65524428" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/fonts/fontello-5805c6cd/css/fontello.css" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -37,7 +38,7 @@
 
 </head>
 
-<body>
+<body id="post">
         <!-- Google Tag Manager (noscript) -->
         <noscript>
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKDH5DJ"
@@ -46,40 +47,140 @@
         <!-- End Google Tag Manager (noscript) -->
     <div class="layout">
         
-    <div>
-        <div>
-            <a href="/" class="article-single__home-button active">
-                All Articles
-            </a>
-        </div>
+<div class="sidebar">
+    <div class="sidebar__inner">
+        
+<div class="sidebar__author">
+    <a href="/">
+        <img src="/assets/img/avatar.jpg"
+             class="sidebar__author-photo"
+             width="75"
+             height="75"
+             alt="Petr &#x160;vihl&#xED;k" />
+    </a>
+
+    <h2 class="sidebar__author-title">
+        <a class="sidebar__author-title-link" href="/">Petr &#x160;vihl&#xED;k</a>
+    </h2>
+    <p class="sidebar__author-subtitle">VP Engineering @ Kentico, ex-Microsoft, Open-So(u)rcerer, .NET freak, explorer of the planet earth.</p>
+</div>
+
+        
+<nav class="menu">
+    <ul class="menu__list">
+            <li class="menu__list-item">
+                <a href="/" class="menu__list-item-link ">Articles</a>
+            </li>
+            <li class="menu__list-item">
+                <a href="/pages/projects" class="menu__list-item-link ">Projects</a>
+            </li>
+            <li class="menu__list-item">
+                <a href="/pages/about-me" class="menu__list-item-link ">About me</a>
+            </li>
+    </ul>
+    <div class="switch__container">
+    <span class="switch__text" onClick="document.getElementById('slider').click();">Night mode</span>
+    <label class="switch">
+        <input id="DarkModeSwitcher" type="checkbox" />
+        <span class="slider" id="slider" onClick="toggleDarkMode();" />
+    </label>
+</div>
+</nav>
+
+        <div class="search">
+    <div id="search"></div>
+</div>
+
+        
+<div class="links">
+    <ul class="links__list">
+            <li class="links__list-item">
+                <a href="https://github.com/petrsvihlik" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
+                    <i class="icon-github-circled"></i>
+                </a>
+            </li>
+            <li class="links__list-item">
+                <a href="https://stackoverflow.com/users/1332034/rocky" rel="noopener noreferrer" target="_blank" aria-label="Stack Overflow">
+                    <i class="icon-stackoverflow"></i>
+                </a>
+            </li>
+            <li class="links__list-item">
+                <a href="https://dev.to/petrsvihlik" rel="noopener noreferrer" target="_blank" aria-label="Dev.to">
+                    <i class="icon-devto"></i>
+                </a>
+            </li>
+            <li class="links__list-item">
+                <a href="https://medium.com/@PetrSvihlik" rel="noopener noreferrer" target="_blank" aria-label="Medium">
+                    <i class="icon-medium"></i>
+                </a>
+            </li>
+            <li class="links__list-item">
+                <a href="https://www.linkedin.com/in/svihlik/" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
+                    <i class="icon-linkedin"></i>
+                </a>
+            </li>
+            <li class="links__list-item">
+                <a href="/feed.rss" rel="noopener noreferrer" target="_blank" aria-label="RSS">
+                    <i class="icon-rss"></i>
+                </a>
+            </li>
+    </ul>
+</div>
+
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="content__inner">
         <div class="article-single">
             <div class="article-single__inner">
                 <h1 class="article-single__title">The First 300 Days of My Microsoft Journey</h1>
-                <div class="article-single__body">
-                    
-                </div>
+
+                    <p class="article-single__description">My friends and former colleagues have been bombarding me with questions about my time at Microsoft. Here&#x27;s a detailed account.</p>
+
+
+                    <p class="article-single__readmore">
+                        <a href="https://www.linkedin.com/pulse/first-300-days-my-microsoft-journey-petr-%C5%A1vihl%C3%ADk/" target="_blank" rel="noopener noreferrer">Read the full article →</a>
+                    </p>
             </div>
+
             <div class="article-single__date">
-                <em>
-                    Published February 2022
-                </em>
+                <em>Published February 2022</em>
             </div>
-        </div>
-        <div class="article-single__footer">
-            <div class="article-single__tags">
-                <ul class="article-single__tags-list">
-                        <li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/career">Career</a></li>
-                        <li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/company-culture">Company Culture</a></li>
-                        <li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/life">Life</a></li>
-                        <li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/retrospective">Retrospective</a></li>
-                </ul>
+
+            <div class="article-single__footer">
+                    <div class="article-single__tags">
+                        <ul class="article-single__tags-list">
+                                <li class="article-single__tags-list-item">
+                                    <a class="article-single__tags-list-item-link" href="/tag/career">Career</a>
+                                </li>
+                                <li class="article-single__tags-list-item">
+                                    <a class="article-single__tags-list-item-link" href="/tag/company-culture">Company Culture</a>
+                                </li>
+                                <li class="article-single__tags-list-item">
+                                    <a class="article-single__tags-list-item-link" href="/tag/life">Life</a>
+                                </li>
+                                <li class="article-single__tags-list-item">
+                                    <a class="article-single__tags-list-item-link" href="/tag/retrospective">Retrospective</a>
+                                </li>
+                        </ul>
+                    </div>
+                <a href="/" class="article-single__home-button">All Articles</a>
             </div>
         </div>
     </div>
+</div>
 
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
     <script>mediumZoom('.page__body img', { background: 'rgba(0,0,0,0.7)' });</script>
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            new PagefindUI({ element: '#search', showImages: false });
+        });
+    </script>
 </body>
 </html>

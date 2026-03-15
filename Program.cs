@@ -12,6 +12,7 @@ namespace PetrSvihlik.Com
                 .CreateDefault(args)
                 .AddWeb()
                 .AddHostingCommands()
+                .AddSetting(WebKeys.ContentFiles, new[] { "**/{!_,}*.{html,cshtml,md}", "!projects/**" })
                 .RunAsync();
     }
 }

@@ -1,0 +1,83 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-tile {
+    border: 1px solid $color-gray-border;
+    border-radius: 6px;
+    padding: 1.5rem;
+
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__logo {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        flex-shrink: 0;
+        border-radius: 4px;
+    }
+
+    &__name {
+        font-size: 1.25rem;
+        margin: 0 0 0.25rem;
+
+        a {
+            color: $color-base;
+            text-decoration: none;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__description {
+        margin: 0;
+        color: $color-gray;
+        font-size: $typographic-small-font-size;
+    }
+
+    &__highlights {
+        margin: 0 0 1.25rem;
+        font-size: $typographic-small-font-size;
+
+        // Markdown renders a <ul> inside this div
+        ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.35rem;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    &__link {
+        font-size: $typographic-small-font-size;
+        color: $color-primary;
+        text-decoration: none;
+        margin-left: auto;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.dark .project-tile {
+    border-color: #444;
+}

@@ -73,10 +73,13 @@
                 e.preventDefault();
                 var img = document.createElement('img');
                 img.src = link.href;
-                img.style.cssText = 'position:fixed;top:50%;left:50%;width:1px;height:1px;pointer-events:none;';
+                img.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;visibility:hidden;';
                 document.body.appendChild(img);
                 var z = mediumZoom(img, { background: 'rgba(0,0,0,0.7)' });
-                img.addEventListener('load', function() { z.open(); });
+                img.addEventListener('load', function() {
+                    img.style.visibility = '';
+                    z.open();
+                });
                 z.on('closed', function() { z.detach(); img.remove(); });
             });
         });

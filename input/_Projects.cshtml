@@ -1,0 +1,53 @@
+@using PetrSvihlik.Com.Models.ContentTypes
+@using PetrSvihlik.Com.Models.ViewModels
+@model ProjectsViewModel
+@{
+    ViewData["SiteMetadata"] = Model.Metadata;
+    ViewData["Author"] = Model.Author;
+    ViewBag.Title = $"Projects - {Model.Metadata.Title}";
+    ViewBag.PageType = "page";
+}
+@await Html.PartialAsync("Shared/Sidebar/_Sidebar", Model.Sidebar)
+<div class="content">
+    <div class="content__inner">
+        <div class="page">
+            <h1 class="page__title">Projects</h1>
+            <div class="page__body">
+                <div class="projects">
+                    @foreach (var project in Model.Projects)
+                    {
+                        <div class="project-tile">
+                            <div class="project-tile__header">
+                                @if (!string.IsNullOrEmpty(project.Logo))
+                                {
+                                    <img src="@project.Logo" alt="@project.Title logo" class="project-tile__logo">
+                                }
+                                <div>
+                                    <h2 class="project-tile__name">
+                                        <a href="@project.GitHubUrl" target="_blank" rel="noopener noreferrer">@project.Title</a>
+                                    </h2>
+                                    <p class="project-tile__description">@project.Description</p>
+                                </div>
+                            </div>
+                            @if (!string.IsNullOrEmpty(project.ContentHtml))
+                            {
+                                <div class="project-tile__highlights">
+                                    @Html.Raw(project.ContentHtml)
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(project.Repo))
+                            {
+                                <div class="project-tile__actions">
+                                    <a class="github-button" href="@project.GitHubUrl" data-icon="octicon-star" data-size="large" aria-label="Star @project.Repo on GitHub">Star</a>
+                                    <a class="github-button" href="@project.GitHubUrl/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork @project.Repo on GitHub">Fork</a>
+                                    <a href="@project.GitHubUrl" class="project-tile__link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+                <script async defer src="https://buttons.github.io/buttons.js"></script>
+            </div>
+        </div>
+    </div>
+</div>

@@ -46,8 +46,13 @@
 
     &__highlights {
         margin: 0 0 1.25rem;
-        padding-left: 1.25rem;
         font-size: $typographic-small-font-size;
+
+        // Markdown renders a <ul> inside this div
+        ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
 
         li {
             margin-bottom: 0.35rem;

@@ -28,7 +28,7 @@ jobs:
     - name: Publish
       run: dotnet publish PetrSvihlik.Com.csproj --configuration Release --no-build -o ./tools
     - name: "Artifact : generator"
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: "Generator"
         path: ./tools
@@ -40,7 +40,7 @@ jobs:
     - name: Index with Pagefind
       run: npx pagefind --site output
     - name: "Artifact : site"
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: "Site"
         path: ./output     

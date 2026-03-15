@@ -419,6 +419,36 @@ input:checked + .slider { background-color: var(--color-background, #fff); }
 
 input:checked + .slider:before { transform: translateX(30px); }
 
+.projects { display: flex; flex-direction: column; gap: 2rem; }
+
+.project-tile { border: 1px solid #e6e6e6; border-radius: 6px; padding: 1.5rem; }
+
+.project-tile__header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+
+.project-tile__logo { width: 52px; height: 52px; object-fit: contain; flex-shrink: 0; border-radius: 4px; }
+
+.project-tile__name { font-size: 1.25rem; margin: 0 0 0.25rem; }
+
+.project-tile__name a { color: var(--color-base, #222); text-decoration: none; }
+
+.project-tile__name a:hover { color: var(--color-primary, #5D93FF); }
+
+.project-tile__description { margin: 0; color: #767676; font-size: 14px; }
+
+.project-tile__highlights { margin: 0 0 1.25rem; font-size: 14px; }
+
+.project-tile__highlights ul { margin: 0; padding-left: 1.25rem; }
+
+.project-tile__highlights li { margin-bottom: 0.35rem; }
+
+.project-tile__actions { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+
+.project-tile__link { font-size: 14px; color: var(--color-primary, #5D93FF); text-decoration: none; margin-left: auto; }
+
+.project-tile__link:hover { text-decoration: underline; }
+
+.dark .project-tile { border-color: #444; }
+
 .page { margin-bottom: 52px; }
 
 .page__title { font-size: 40px; font-weight: 500; line-height: 52px; margin-top: 0px; margin-bottom: 37.7px; }

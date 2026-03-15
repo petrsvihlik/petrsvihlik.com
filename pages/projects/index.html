@@ -41,7 +41,7 @@
     
 </head>
 
-<body>
+<body id="page">
         <!-- Google Tag Manager (noscript) -->
         <noscript>
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKDH5DJ"
@@ -135,36 +135,37 @@
 <div class="content">
     <div class="content__inner">
         <div class="page">
-                <h1 class="page__title">
-                    Projects
-                </h1>
+            <h1 class="page__title">Projects</h1>
             <div class="page__body">
-                    <div class="page__body">
-                        <h2 id="wopihost">WopiHost</h2>
-<img src="/assets/img/wopihost-logo.png" alt="WopiHost logo" class="project-logo">
-<p><a href="https://github.com/petrsvihlik/WopiHost">WopiHost</a> is the most advanced open-source .NET implementation of the <a href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/">MS-WOPI protocol</a>, enabling seamless integration with WOPI clients such as <strong>Office Online Server</strong> and <strong>Microsoft 365</strong>.</p>
-<p>It ships as a set of focused NuGet packages so you only pull in what you need:</p>
-<ul>
-<li><strong><code>WopiHost.Core</code></strong> — ASP.NET Core middleware &amp; WOPI endpoints</li>
-<li><strong><code>WopiHost.Abstractions</code></strong> — interfaces for custom storage &amp; lock providers</li>
-<li><strong><code>WopiHost.FileSystemProvider</code></strong> — ready-to-use filesystem storage provider</li>
-<li><strong><code>WopiHost.MemoryLockProvider</code></strong> — in-memory lock provider for development</li>
-<li><strong><code>WopiHost.Discovery</code></strong> — WOPI Discovery with caching</li>
-<li><strong><code>WopiHost.Url</code></strong> — WOPI URL builder</li>
-</ul>
-<h3 id="highlights">Highlights</h3>
-<ul>
-<li>🔌 <strong>Pluggable storage</strong> — implement <code>IWopiStorageProvider</code> to back WopiHost with any data source: cloud blob storage, a database, or a custom API</li>
+                <div class="projects">
+                        <div class="project-tile">
+                            <div class="project-tile__header">
+                                    <img src="/assets/img/wopihost-logo.png" alt="WopiHost logo" class="project-tile__logo">
+                                <div>
+                                    <h2 class="project-tile__name">
+                                        <a href="https://github.com/petrsvihlik/WopiHost" target="_blank" rel="noopener noreferrer">WopiHost</a>
+                                    </h2>
+                                    <p class="project-tile__description">The most advanced open-source .NET implementation of the MS-WOPI protocol &#x2014; enabling seamless integration with Office Online Server and Microsoft 365.</p>
+                                </div>
+                            </div>
+                                <div class="project-tile__highlights">
+                                    <ul>
+<li>🔌 <strong>Pluggable storage</strong> — implement <code>IWopiStorageProvider</code> to back WopiHost with any data source</li>
 <li>☁️ <strong>.NET Aspire integration</strong> — first-class cloud-native support with OpenTelemetry observability built in</li>
 <li>🔐 <strong>Enterprise security</strong> — WOPI proof key validation, origin checking, extensible JWT-based auth/authz</li>
-<li>📄 <strong>Full WOPI compliance</strong> — file operations, container operations, <code>PutRelativeFile</code>, <code>PutUserInfo</code>, rename, create, and OneNote for the web folder endpoints</li>
-<li>🏥 <strong>Production ready</strong> — health checks, in-memory caching</li>
+<li>📄 <strong>Full WOPI compliance</strong> — file &amp; container operations, PutRelativeFile, rename, create, OneNote endpoints</li>
 <li>🎯 <strong>Multi-targeting</strong> — .NET 8, 9, and 10</li>
 </ul>
-<p>The latest <strong>v5.0</strong> release was a major milestone: migration from Autofac to <code>Microsoft.Extensions.DependencyInjection</code>, full nullable reference type annotations, and a dedicated <code>ILockService</code> abstraction — the most complete release in the project's history.</p>
-<p><a href="https://github.com/petrsvihlik/WopiHost">View on GitHub</a> · <a href="https://www.nuget.org/packages?q=WopiHost">NuGet packages</a> · <a href="https://github.com/petrsvihlik/WopiHost/releases">Releases</a></p>
 
-                    </div>
+                                </div>
+                                <div class="project-tile__actions">
+                                    <a class="github-button" href="https://github.com/petrsvihlik/WopiHost" data-icon="octicon-star" data-size="large" aria-label="Star petrsvihlik/WopiHost on GitHub">Star</a>
+                                    <a class="github-button" href="https://github.com/petrsvihlik/WopiHost/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork petrsvihlik/WopiHost on GitHub">Fork</a>
+                                    <a href="https://github.com/petrsvihlik/WopiHost" class="project-tile__link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                                </div>
+                        </div>
+                </div>
+                <script async defer src="https://buttons.github.io/buttons.js"></script>
             </div>
         </div>
     </div>

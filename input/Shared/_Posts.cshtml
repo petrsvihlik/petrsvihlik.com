@@ -21,6 +21,6 @@
     var homeUrl = IExecutionContext.Current.GetLink("/");
     <div class="pagination">
         <div class="pagination__prev"><a aria-current="page" rel="prev" class="pagination__prev-link @(Model.Previous != null ? "" : "pagination__prev-link--disable")" href="@(Model.Previous?.Url ?? homeUrl)">← PREV</a></div>
-        <div class="pagination__next"><a rel="next" class="pagination__next-link @(Model.Next != null ? "" : "pagination__next-link--disable") " href="@(Model.Next?.Url ?? homeUrl)">→ NEXT</a></div>
+        <div class="pagination__next"><a rel="next" class="pagination__next-link @(Model.Next != null ? "" : "pagination__next-link--disable") " href="@(Model.Next?.Url ?? homeUrl)">NEXT →</a></div>
     </div>
 }

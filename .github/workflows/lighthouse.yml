@@ -21,7 +21,6 @@ jobs:
       with:
         urls: |
           https://petrsvihlik.com/
-          https://petrsvihlik.com/pages/
           https://petrsvihlik.com/pages/about-me
           https://petrsvihlik.com/pages/projects
           https://petrsvihlik.com/posts/the-rise-of-jamstack

@@ -5,13 +5,30 @@ description: "Petr's hobby projects"
 show_in_navigation: true
 ---
 
-## Past Projects & PoCs
+## WopiHost
 
-- **[WopiHost](https://github.com/petrsvihlik/WopiHost)** — a .NET implementation of the MS-WOPI protocol that makes integrating with WOPI clients such as Office Online Server a piece of cake ([roadmap](https://github.com/petrsvihlik/WopiHost/projects)).
-- **[Lumen starter for Statiq & Kentico Kontent](https://github.com/petrsvihlik/statiq-starter-kontent-lumen)** — a delightful HTML template for a .NET static site generator + a headless CMS.
-- **[.NET Project Tye](https://github.com/petrsvihlik/WopiHost/pull/105)** experiments.
-- **[.NET Roslyn Source Generator](https://github.com/petrsvihlik/kontent-source-generator)** for Kentico Kontent.
-- **[.NET Blazor Template](https://github.com/petrsvihlik/StartBootstrap.Freelancer.Blazor)** for Kentico Kontent.
-- **[.NET port of Kentico Kontent Delivery PHP SDK](https://github.com/petrsvihlik/Kentico.Kontent.Delivery.PeachPie)** using PeachPie.
-- **[.NET Core authentication connector for VanillaForums](https://github.com/petrsvihlik/jsConnectAspNetCoreMvc)**.
-- **[Loading GraphQL data (GitHub API v4) into PowerBI](https://gist.github.com/petrsvihlik/cc34a6cf1882d515139c5b27f37cf99e)** — Gist + [JSFiddle](https://jsfiddle.net/rockyintel/1sqm7dpf/).
+<img src="/assets/img/wopihost-logo.png" alt="WopiHost logo" class="project-logo">
+
+[WopiHost](https://github.com/petrsvihlik/WopiHost) is the most advanced open-source .NET implementation of the [MS-WOPI protocol](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/), enabling seamless integration with WOPI clients such as **Office Online Server** and **Microsoft 365**.
+
+It ships as a set of focused NuGet packages so you only pull in what you need:
+
+- **`WopiHost.Core`** — ASP.NET Core middleware & WOPI endpoints
+- **`WopiHost.Abstractions`** — interfaces for custom storage & lock providers
+- **`WopiHost.FileSystemProvider`** — ready-to-use filesystem storage provider
+- **`WopiHost.MemoryLockProvider`** — in-memory lock provider for development
+- **`WopiHost.Discovery`** — WOPI Discovery with caching
+- **`WopiHost.Url`** — WOPI URL builder
+
+### Highlights
+
+- 🔌 **Pluggable storage** — implement `IWopiStorageProvider` to back WopiHost with any data source: cloud blob storage, a database, or a custom API
+- ☁️ **.NET Aspire integration** — first-class cloud-native support with OpenTelemetry observability built in
+- 🔐 **Enterprise security** — WOPI proof key validation, origin checking, extensible JWT-based auth/authz
+- 📄 **Full WOPI compliance** — file operations, container operations, `PutRelativeFile`, `PutUserInfo`, rename, create, and OneNote for the web folder endpoints
+- 🏥 **Production ready** — health checks, in-memory caching
+- 🎯 **Multi-targeting** — .NET 8, 9, and 10
+
+The latest **v5.0** release was a major milestone: migration from Autofac to `Microsoft.Extensions.DependencyInjection`, full nullable reference type annotations, and a dedicated `ILockService` abstraction — the most complete release in the project's history.
+
+[View on GitHub](https://github.com/petrsvihlik/WopiHost) · [NuGet packages](https://www.nuget.org/packages?q=WopiHost) · [Releases](https://github.com/petrsvihlik/WopiHost/releases)

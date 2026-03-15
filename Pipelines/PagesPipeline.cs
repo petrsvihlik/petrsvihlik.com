@@ -18,7 +18,7 @@ namespace PetrSvihlik.Com.Pipelines
             {
                 new ReadFiles("pages/*.md"),
                 new ExtractFrontMatter(new ParseYaml()),
-                new RenderMarkdown(),
+                new RenderMarkdown().UseExtensions(),
                 new SetMetadata("RenderedBody", Config.FromDocument(async doc => await doc.GetContentStringAsync())),
                 new SetDestination(Config.FromDocument(doc => GetPath(doc))),
             };

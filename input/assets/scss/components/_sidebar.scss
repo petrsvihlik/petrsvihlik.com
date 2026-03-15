@@ -54,6 +54,12 @@
     }
 }
 
+@keyframes sidebar-gradient {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
 @include breakpoint-sm {
     .sidebar {
         width: 42%;
@@ -62,8 +68,17 @@
             padding: 30px 20px 0;
 
             &:after {
-                background: $color-gray-border;
-                background: linear-gradient(to bottom, $color-gray-border 0%, $color-gray-border 48%, $color-background 100%);
+                background: linear-gradient(
+                    to bottom,
+                    $color-primary,
+                    $color-secondary,
+                    $color-primary,
+                    $color-gray-border
+                );
+                background-size: 100% 300%;
+                animation: sidebar-gradient 6s ease infinite;
+                -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+                mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
                 position: absolute;
                 content: "";
                 width: 1px;

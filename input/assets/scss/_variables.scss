@@ -8,7 +8,7 @@ $color-base: var(--color-base, #222);
 $color-primary: var(--color-primary, #5D93FF);
 $color-secondary: var(--color-secondary, #f7a046);
 
-$color-gray: #888;
+$color-gray: #767676; // minimum for 4.5:1 contrast on white
 $color-gray-18: #2e2e2e;
 $color-gray-20: #333333;
 $color-gray-border: #e6e6e6;

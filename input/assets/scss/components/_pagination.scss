@@ -21,7 +21,7 @@
 
       &--disable {
         pointer-events: none;
-        color: lighten($color-gray, 20%);
+        color: $color-gray; // lighten() would fail 3:1 contrast for large text
       }
 
     }
@@ -44,7 +44,7 @@
 
       &--disable {
         pointer-events: none;
-        color: lighten($color-gray, 20%);
+        color: $color-gray; // lighten() would fail 3:1 contrast for large text
       }
 
     }

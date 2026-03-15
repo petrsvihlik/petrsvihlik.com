@@ -1,4 +1,10 @@
-﻿.dark {
+﻿:root {
+    // Accessible light-mode colors (WCAG AA 4.5:1 on white)
+    --color-primary: #0057b8;   // was #5D93FF (2.96:1 → 6.3:1)
+    --color-secondary: #a85000; // was #f7a046 (2.08:1 → 5.1:1)
+}
+
+.dark {
     --color-background: #222;
     --color-base: #DDD;
     --color-primary: #A26C00;

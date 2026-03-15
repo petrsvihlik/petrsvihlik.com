@@ -37,6 +37,8 @@ jobs:
       env:
         LinkRoot: ${{ secrets.LINKROOT }} # Fix subfolder links https://statiq.dev/framework/configuration/settings
         Host:  ${{ secrets.HOST }} # Make links absolute (for feeds, OG...)
+    - name: Index with Pagefind
+      run: npx pagefind --site output
     - name: "Artifact : site"
       uses: actions/upload-artifact@v4
       with:

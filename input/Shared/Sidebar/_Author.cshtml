@@ -1,26 +1,24 @@
-﻿@using PetrSvihlik.Com.Models.ContentTypes
+@using PetrSvihlik.Com.Models.ContentTypes
 @using PetrSvihlik.Com.Models.ViewModels
-@using Kontent.Ai.Urls.ImageTransformation
 @model SidebarViewModel
 @{
     var author = Model.Author;
 }
 
-<div class="sidebar__author" data-kontent-item-id="@author.System.Id">
+<div class="sidebar__author">
     <a href="@IExecutionContext.Current.GetLink("/")">
-        <img src="@(new ImageUrlBuilder(new Uri(author.AvatarImage.FirstOrDefault().Url)).WithWidth(75).WithFormat(ImageFormat.Webp).Url)"
+        <img src="@IExecutionContext.Current.GetLink("/assets/img/avatar.jpg")"
              class="sidebar__author-photo"
              width="75"
              height="75"
-             alt="@author.Name"
-             data-kontent-element-codename="@Author.AvatarImageCodename" />
+             alt="@author.Name" />
     </a>
     @{
         var tag = Model.IsIndex ? "h1" : "h2";
     }
 
-    <@tag class="sidebar__author-title" data-kontent-element-codename="@Author.NameCodename">
+    <@tag class="sidebar__author-title">
         <a class="sidebar__author-title-link" href="@IExecutionContext.Current.GetLink("/")">@author.Name</a>
     </@tag>
-    <p class="sidebar__author-subtitle" data-kontent-element-codename="@Author.BioCodename">@author.Bio</p>
+    <p class="sidebar__author-subtitle">@author.Bio</p>
 </div>

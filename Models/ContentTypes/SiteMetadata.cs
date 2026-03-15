@@ -1,9 +1,10 @@
-using System.Linq;
-
 namespace PetrSvihlik.Com.Models.ContentTypes
 {
-    public partial class SiteMetadata
+    public class SiteMetadata
     {
-        public Author SiteAuthor => Author.OfType<Author>().First();
+        public string Title { get; set; }
+        public string Subtitle { get; set; }
+        public string Copyright { get; set; }
+        public Author SiteAuthor { get; set; }
     }
 }

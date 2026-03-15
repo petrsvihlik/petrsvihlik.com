@@ -1,0 +1,48 @@
+@model PostViewModel
+@{
+    var article = Model.Article;
+    ViewBag.Title = $"{article.Title} - {Model.Metadata.Title}";
+    ViewData["SiteMetadata"] = Model.Metadata;
+    ViewData["Author"] = Model.Author;
+}
+
+@if (Model != null)
+{
+    <div>
+        <div>
+            <a href="@IExecutionContext.Current.GetLink("/")" class="article-single__home-button active">
+                All Articles
+            </a>
+        </div>
+        <div class="article-single">
+            <div class="article-single__inner">
+                <h1 class="article-single__title">@article.Title</h1>
+                <div class="article-single__body">
+                    @Html.Raw(article.ContentHtml)
+                </div>
+            </div>
+            <div class="article-single__date">
+                <em>
+                    Published @article.PublishDate?.ToString("MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)
+                </em>
+            </div>
+        </div>
+        <div class="article-single__footer">
+            <div class="article-single__tags">
+                <ul class="article-single__tags-list">
+                    @foreach (var tag in article.TagObjects)
+                    {
+                        <li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="@IExecutionContext.Current.GetLink($"/tag/{tag.Slug}")">@tag.Title</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+
+@section Head {
+    @if (!string.IsNullOrWhiteSpace(article.CanonicalUrl))
+    {
+        <link rel="canonical" href="@article.CanonicalUrl" />
+    }
+}

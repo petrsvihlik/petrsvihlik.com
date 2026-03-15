@@ -1,6 +1,5 @@
-﻿using PetrSvihlik.Com.Models.ContentTypes;
+using PetrSvihlik.Com.Models.ContentTypes;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace PetrSvihlik.Com.Models.ViewModels
 {
@@ -16,7 +15,7 @@ namespace PetrSvihlik.Com.Models.ViewModels
 
         public SidebarViewModel(Homepage homepage, SiteMetadata metadata, bool isIndex, string activeMenuItem) : base(metadata)
         {
-            Contacts = metadata.SiteAuthor.Contacts.OfType<Contact>();
+            Contacts = metadata?.SiteAuthor?.Contacts ?? new List<Contact>();
             Homepage = homepage;
             IsIndex = isIndex;
             ActiveMenuItem = activeMenuItem;

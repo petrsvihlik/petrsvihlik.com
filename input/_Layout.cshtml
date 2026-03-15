@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     @{
@@ -40,18 +40,11 @@
     <link rel="mask-icon" href="@IExecutionContext.Current.GetLink("safari-pinned-tab.svg")" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/@@kentico/kontent-smart-link@latest/dist/kontent-smart-link.umd.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@kentico/kontent-smart-link@latest/dist/kontent-smart-link.styles.css" />
-    <script type="text/javascript">
-        KontentSmartLink.initializeOnLoad({
-            queryParam: 'preview',
-        });
-    </script>
     <script type="application/javascript" src="@IExecutionContext.Current.GetLink("/assets/js/darkmode.js")"></script>
     @RenderSection("Head", required: false)
 </head>
 
-<body id="@(ViewBag.PageType)" data-kontent-project-id="@(((IConfiguration)IExecutionContext.Current.Settings).GetValue<string>("DeliveryOptions:ProjectId"))" data-kontent-language-codename="en-US">
+<body id="@(ViewBag.PageType)">
     @if (!string.IsNullOrWhiteSpace(ViewBag.TagManagerId))
     {
         <!-- Google Tag Manager (noscript) -->

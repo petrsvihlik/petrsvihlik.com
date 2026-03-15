@@ -1,4 +1,3 @@
-﻿using Kontent.Statiq;
 using Statiq.Common;
 using Statiq.Core;
 using System;
@@ -18,19 +17,9 @@ namespace PetrSvihlik.Com.Pipelines
                 {
                     var siteMapItem = new SitemapItem(doc.Destination.FullPath)
                     {
-                        LastModUtc = doc.Get<DateTime?>(KontentKeys.System.LastModified, null)
+                        LastModUtc = DateTime.UtcNow,
+                        ChangeFrequency = SitemapChangeFrequency.Weekly,
                     };
-
-                    if (!siteMapItem.LastModUtc.HasValue)
-                    {
-                        siteMapItem.LastModUtc = DateTime.UtcNow;
-                        siteMapItem.ChangeFrequency = SitemapChangeFrequency.Weekly;
-                    }
-                    else
-                    {
-                        siteMapItem.ChangeFrequency = SitemapChangeFrequency.Monthly;
-                    }
-
                     return siteMapItem;
                 })),
 

@@ -15,7 +15,7 @@ namespace PetrSvihlik.Com.Pipelines
     {
         public PostsPipeline()
         {
-            Dependencies.AddRange(nameof(SiteMetadataPipeline));
+            Dependencies.AddRange(nameof(SiteMetadataPipeline), nameof(HomepagePipeline));
             InputModules = new ModuleList
             {
                 new ReadFiles("posts/*.md"),
@@ -39,7 +39,10 @@ namespace PetrSvihlik.Com.Pipelines
                         var article = document.Get<Article>("ArticleModel");
                         var metadata = context.Outputs.FromPipeline(nameof(SiteMetadataPipeline))
                             .Select(x => x.Get<SiteMetadata>("SiteMetadata")).FirstOrDefault();
-                        return new PostViewModel(article, metadata);
+                        var homepage = context.Outputs.FromPipeline(nameof(HomepagePipeline))
+                            .Select(x => x.Get<Homepage>("Homepage")).FirstOrDefault();
+                        var sidebar = new SidebarViewModel(homepage, metadata, false, null);
+                        return new PostViewModel(article, metadata, sidebar);
                     })),
             };
 

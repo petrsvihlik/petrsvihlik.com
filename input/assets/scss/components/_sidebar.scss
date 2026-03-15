@@ -107,3 +107,32 @@
         }
     }
 }
+
+// Pagefind search widget — themed to match the site
+.search {
+    margin-bottom: 1rem;
+
+    // Map Pagefind UI CSS variables to the site's own colour/font tokens
+    --pagefind-ui-primary:     #{$color-primary};
+    --pagefind-ui-text:        #{$color-base};
+    --pagefind-ui-background:  transparent;
+    --pagefind-ui-border:      #{$color-gray-border};
+    --pagefind-ui-tag:         #{$color-gray-bg};
+    --pagefind-ui-font:        #{$typographic-font-family};
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: #{$button-border-radius};
+    --pagefind-ui-image-border-radius: 4px;
+
+    // Keep the input compact inside the narrow sidebar
+    .pagefind-ui__search-input {
+        font-size: $typographic-small-font-size;
+        height: $button-height;
+        padding: 0 12px;
+    }
+
+    // Hide the "Clear" button icon (replaces it with text elsewhere)
+    .pagefind-ui__search-clear {
+        background-color: transparent;
+        color: $color-gray;
+    }
+}

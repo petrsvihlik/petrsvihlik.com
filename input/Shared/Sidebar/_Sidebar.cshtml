@@ -5,6 +5,7 @@
     <div class="sidebar__inner">
         @await Html.PartialAsync("Shared/Sidebar/_Author", Model)
         @await Html.PartialAsync("Shared/Sidebar/_Menu", Model.Homepage.NavigationPages, new ViewDataDictionary(ViewData) { { nameof(Model.ActiveMenuItem), Model.ActiveMenuItem } })
+        @await Html.PartialAsync("Shared/Sidebar/_Search")
         @await Html.PartialAsync("Shared/Sidebar/_Contacts", Model.Contacts)
         @if (!string.IsNullOrEmpty(Model.Metadata.Copyright))
         {

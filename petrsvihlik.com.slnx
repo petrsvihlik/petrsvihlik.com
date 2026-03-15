@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="petrsvihlik.com.csproj" />
+  <Folder Name="/Solution Items/">
+    <File Path=".github/workflows/dotnet-core.yml" />
+    <File Path=".config/dotnet-tools.json" />
+  </Folder>
+</Solution>

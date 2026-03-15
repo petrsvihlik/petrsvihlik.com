@@ -4,15 +4,12 @@ on:
   push:
     branches: [ gh-pages ]
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Wait for GitHub Pages to propagate
       run: sleep 60
     - name: Audit URLs using Lighthouse

@@ -20,7 +20,7 @@ namespace PetrSvihlik.Com.Pipelines
             {
                 new ReadFiles("posts/*.md"),
                 new ExtractFrontMatter(new ParseYaml()),
-                new RenderMarkdown(),
+                new RenderMarkdown().UseExtensions(),
                 new SetMetadata("ArticleModel", Config.FromDocument((doc, ctx) => BuildArticle(doc))),
                 new SetMetadata(nameof(Category), Config.FromDocument(doc =>
                     doc.GetString("category"))),

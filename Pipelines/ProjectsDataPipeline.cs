@@ -12,7 +12,7 @@ namespace PetrSvihlik.Com.Pipelines
         {
             InputModules = new ModuleList
             {
-                new ReadFiles("projects/*.md"),
+                new ReadFiles("projects/_*.md"),
                 new ExtractFrontMatter(new ParseYaml()),
                 new RenderMarkdown().UseExtensions(),
                 new SetMetadata("ProjectModel", Config.FromDocument((doc, ctx) => new Project

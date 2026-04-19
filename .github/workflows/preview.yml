@@ -9,9 +9,6 @@ jobs:
   deploy-preview:
     if: github.event.action != 'closed'
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-dotnet@v5
@@ -32,36 +29,13 @@ jobs:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: surge ./output petrsvihlik-pr-${{ github.event.pull_request.number }}.surge.sh
-      - name: Post preview URL comment
-        uses: actions/github-script@v7
+      - name: Save PR number
+        run: echo "${{ github.event.pull_request.number }}" > pr-number.txt
+      - uses: actions/upload-artifact@v7
         with:
-          script: |
-            const url = 'https://petrsvihlik-pr-${{ github.event.pull_request.number }}.surge.sh';
-            const marker = '<!-- surge-preview -->';
-            const body = `${marker}\n🚀 **Preview:** [${url}](${url})`;
-
-            const comments = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-            });
-
-            const existing = comments.data.find(c => c.body.includes(marker));
-            if (existing) {
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: existing.id,
-                body,
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                body,
-              });
-            }
+          name: pr-number
+          path: pr-number.txt
+          retention-days: 1
 
   teardown-preview:
     if: github.event.action == 'closed'

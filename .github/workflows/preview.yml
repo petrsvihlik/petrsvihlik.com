@@ -23,8 +23,6 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Generate site
         run: dotnet run --configuration Release
-      - name: Index with Pagefind
-        run: npx pagefind --site output
       - name: Install Surge
         run: npm install -g surge
       - name: Deploy to Surge

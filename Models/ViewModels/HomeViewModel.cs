@@ -8,6 +8,13 @@ namespace PetrSvihlik.Com.Models.ViewModels
 
         public PagedContent<Article> Articles { get; private set; }
 
+        /// <summary>
+        /// Full, unpaginated article list — powers the homepage client-side
+        /// filter so it can search the whole archive (not just the current
+        /// page). Null on non-homepage views.
+        /// </summary>
+        public System.Collections.Generic.IReadOnlyList<Article> AllArticles { get; set; }
+
         public SidebarViewModel Sidebar { get; private set; }
 
         public ITitleProvider TitleProvider { get; }

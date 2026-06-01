@@ -1,15 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-accent="cyan">
 <head>
     @{
         var metadata = ViewBag.SiteMetadata as SiteMetadata;
         var author = ViewBag.Author as Author;
         var title = ViewBag.Title ?? metadata.Title;
+        var activeNav = ViewBag.ActiveNav as string;
+        ViewBag.NavArticles = activeNav == "articles" ? "active" : "";
+        ViewBag.NavProjects = activeNav == "projects" ? "active" : "";
+        ViewBag.NavAbout = activeNav == "about" ? "active" : "";
         ViewBag.TagManagerId = IExecutionContext.Current.Settings.GetString("TagManagerId");
     }
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- avoid theme flash: apply stored theme/accent before first paint -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('ps-theme') || 'dark';
+                var a = localStorage.getItem('ps-accent') || 'cyan';
+                var r = document.documentElement;
+                r.setAttribute('data-theme', t);
+                r.setAttribute('data-accent', a);
+            } catch (e) { }
+        })();
+    </script>
     <!-- Google Tag Manager -->
     @if (!string.IsNullOrWhiteSpace(ViewBag.TagManagerId))
     {
@@ -26,27 +42,22 @@
     <title>@title</title>
     <meta name="description" content="@(metadata.Subtitle ?? "Blog about development.")" />
     <meta name="author" content="@author.Name" />
-    <meta name="viewport" content="width=device-width" />
-    <!-- Load Google Fonts non-blocking to eliminate render-blocking resource -->
+    <!-- JetBrains Mono — loaded non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" /></noscript>
-    <link rel="stylesheet" href="@IExecutionContext.Current.GetLink("/assets/scss/init.css")" />
-    <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-    <link rel="preload" href="@(IExecutionContext.Current.GetLink("/assets/fonts/fontello-5805c6cd/font/fontello.woff2"))?65524428" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="@IExecutionContext.Current.GetLink("/assets/fonts/fontello-5805c6cd/css/fontello.css")" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" /></noscript>
+    <link rel="stylesheet" href="@IExecutionContext.Current.GetLink("/assets/css/site.css")" />
     <link rel="shortcut icon" href="@IExecutionContext.Current.GetLink("favicon.ico")" type="image/x-icon" />
     <link rel="icon" href="@IExecutionContext.Current.GetLink("favicon.ico")" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="@IExecutionContext.Current.GetLink("apple-touch-icon.png")">
     <link rel="icon" type="image/png" sizes="32x32" href="@IExecutionContext.Current.GetLink("favicon-32x32.png")">
     <link rel="icon" type="image/png" sizes="16x16" href="@IExecutionContext.Current.GetLink("favicon-16x16.png")">
     <link rel="manifest" href="@IExecutionContext.Current.GetLink("site.webmanifest")">
-    <link rel="mask-icon" href="@IExecutionContext.Current.GetLink("safari-pinned-tab.svg")" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <script type="application/javascript" src="@IExecutionContext.Current.GetLink("/assets/js/darkmode.js")"></script>
+    <link rel="mask-icon" href="@IExecutionContext.Current.GetLink("safari-pinned-tab.svg")" color="#4fd6e0">
+    <meta name="msapplication-TileColor" content="#0a0c10">
+    <meta name="theme-color" content="#0a0c10">
     @RenderSection("Head", required: false)
 </head>
 
@@ -60,16 +71,30 @@
         </noscript>
         <!-- End Google Tag Manager (noscript) -->
     }
-    <div class="layout">
-        @RenderBody()
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-    <script src="@IExecutionContext.Current.GetLink("/assets/js/zoom.js")"></script>
-    <script src="/pagefind/pagefind-ui.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            new PagefindUI({ element: '#search', showImages: false });
-        });
-    </script>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="topbar">
+        <a class="brand" href="@IExecutionContext.Current.GetLink("/")"><span class="sym">~/</span>petr<span class="dim">.svihlik</span></a>
+        <nav class="nav">
+            <a href="@IExecutionContext.Current.GetLink("/")" class="@ViewBag.NavArticles">articles</a>
+            <a href="@IExecutionContext.Current.GetLink("/pages/projects")" class="@ViewBag.NavProjects">projects</a>
+            <a href="@IExecutionContext.Current.GetLink("/pages/about-me")" class="@ViewBag.NavAbout">about</a>
+        </nav>
+        <div class="tb-ctrl">
+            <div class="swatches" role="group" aria-label="accent color">
+                <button class="sw" data-accent="cyan"    style="--c:#4fd6e0" aria-label="cyan"></button>
+                <button class="sw" data-accent="magenta" style="--c:#ff79c6" aria-label="magenta"></button>
+                <button class="sw" data-accent="green"   style="--c:#93dca2" aria-label="green"></button>
+                <button class="sw" data-accent="yellow"  style="--c:#e7c46b" aria-label="yellow"></button>
+                <button class="sw" data-accent="purple"  style="--c:#c79bf2" aria-label="purple"></button>
+            </div>
+            <button class="iconbtn" data-theme-toggle aria-label="toggle theme">sun</button>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <script src="@IExecutionContext.Current.GetLink("/assets/js/site.js")"></script>
 </body>
 </html>

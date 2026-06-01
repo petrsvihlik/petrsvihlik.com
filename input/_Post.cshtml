@@ -7,59 +7,65 @@
     ViewData["Author"] = Model.Author;
     ViewBag.Title = $"{article.Title} - {Model.Metadata.Title}";
     ViewBag.PageType = "post";
+    ViewBag.ActiveNav = "articles";
 }
 
-@await Html.PartialAsync("Shared/Sidebar/_Sidebar", Model.Sidebar)
+<main class="wrap">
 
-<div class="content">
-    <div class="content__inner">
-        <div class="article-single">
-            <div class="article-single__inner">
-                <h1 class="article-single__title">@article.Title</h1>
-
-                @if (!string.IsNullOrWhiteSpace(article.Description))
-                {
-                    <p class="article-single__description">@article.Description</p>
-                }
-
-                @if (!string.IsNullOrWhiteSpace(article.ContentHtml))
-                {
-                    <div class="article-single__body">
-                        @Html.Raw(article.ContentHtml)
-                    </div>
-                }
-
-                @if (!string.IsNullOrWhiteSpace(article.CanonicalUrl))
-                {
-                    <p class="article-single__readmore">
-                        <a href="@article.CanonicalUrl" target="_blank" rel="noopener noreferrer">Read the full article →</a>
-                    </p>
-                }
-            </div>
-
-            <div class="article-single__date">
-                <em>Published @article.PublishDate?.ToString("MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)</em>
-            </div>
-
-            <div class="article-single__footer">
-                @if (article.TagObjects?.Count > 0)
-                {
-                    <div class="article-single__tags">
-                        <ul class="article-single__tags-list">
-                            @foreach (var tag in article.TagObjects)
-                            {
-                                <li class="article-single__tags-list-item">
-                                    <a class="article-single__tags-list-item-link" href="@IExecutionContext.Current.GetLink($"/tag/{tag.Slug}")">@tag.Title</a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                }
-                <a href="@IExecutionContext.Current.GetLink("/")" class="article-single__home-button">All Articles</a>
-            </div>
-        </div>
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">$</span> cat @(article.Slug).md</h2>
+        @if (article.PublishDate != null)
+        {
+            <span class="count">@article.PublishDate?.ToString("yyyy-MM", System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)</span>
+        }
     </div>
-</div>
+    <hr class="sep">
+
+    <article class="article-single" style="margin-top:24px">
+        <h1 class="article-single__title">@article.Title</h1>
+
+        @if (!string.IsNullOrWhiteSpace(article.Description))
+        {
+            <p class="article-single__description">@article.Description</p>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(article.ContentHtml))
+        {
+            <div class="article-single__body">
+                @Html.Raw(article.ContentHtml)
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(article.CanonicalUrl))
+        {
+            <p class="article-single__readmore">
+                <a href="@article.CanonicalUrl" target="_blank" rel="noopener noreferrer">Read the full article →</a>
+            </p>
+        }
+
+        <div class="article-single__date">
+            <em>Published @article.PublishDate?.ToString("MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat)</em>
+        </div>
+
+        <div class="article-single__footer">
+            @if (article.TagObjects?.Count > 0)
+            {
+                <div class="article-single__tags">
+                    <ul class="article-single__tags-list">
+                        @foreach (var tag in article.TagObjects)
+                        {
+                            <li class="article-single__tags-list-item">
+                                <a class="article-single__tags-list-item-link" href="@IExecutionContext.Current.GetLink($"/tag/{tag.Slug}")">@tag.Title</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+            <a href="@IExecutionContext.Current.GetLink("/")" class="article-single__home-button">All Articles</a>
+        </div>
+    </article>
+
+</main>
 
 @section Head {
     @if (!string.IsNullOrWhiteSpace(article.CanonicalUrl))

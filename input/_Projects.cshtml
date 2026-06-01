@@ -6,48 +6,52 @@
     ViewData["Author"] = Model.Author;
     ViewBag.Title = $"Projects - {Model.Metadata.Title}";
     ViewBag.PageType = "page";
+    ViewBag.ActiveNav = "projects";
 }
-@await Html.PartialAsync("Shared/Sidebar/_Sidebar", Model.Sidebar)
-<div class="content">
-    <div class="content__inner">
-        <div class="page">
-            <h1 class="page__title">Projects</h1>
-            <div class="page__body">
-                <div class="projects">
-                    @foreach (var project in Model.Projects)
-                    {
-                        <div class="project-tile">
-                            <div class="project-tile__header">
-                                @if (!string.IsNullOrEmpty(project.Logo))
-                                {
-                                    <img src="@project.Logo" alt="@project.Title logo" class="project-tile__logo">
-                                }
-                                <div>
-                                    <h2 class="project-tile__name">
-                                        <a href="@project.GitHubUrl" target="_blank" rel="noopener noreferrer">@project.Title</a>
-                                    </h2>
-                                    <p class="project-tile__description">@project.Description</p>
-                                </div>
-                            </div>
-                            @if (!string.IsNullOrEmpty(project.ContentHtml))
-                            {
-                                <div class="project-tile__highlights">
-                                    @Html.Raw(project.ContentHtml)
-                                </div>
-                            }
-                            @if (!string.IsNullOrEmpty(project.Repo))
-                            {
-                                <div class="project-tile__actions">
-                                    <a class="github-button" href="@project.GitHubUrl" data-icon="octicon-star" data-size="large" aria-label="Star @project.Repo on GitHub">Star</a>
-                                    <a class="github-button" href="@project.GitHubUrl/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork @project.Repo on GitHub">Fork</a>
-                                    <a href="@project.GitHubUrl" class="project-tile__link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-                                </div>
-                            }
-                        </div>
-                    }
-                </div>
-                <script async defer src="https://buttons.github.io/buttons.js"></script>
-            </div>
-        </div>
+
+<main class="wrap">
+
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">~/</span>projects</h2>
+        <span class="count">git remote -v</span>
     </div>
-</div>
+    <hr class="sep">
+
+    <p class="lead" style="margin-top:20px">
+        Open source, .NET tooling, and side-quests. Pulled from
+        <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener" style="color:var(--accent)">github.com/petrsvihlik</a>.
+    </p>
+
+    <div class="cards">
+        @foreach (var project in Model.Projects)
+        {
+            <a class="card" href="@project.GitHubUrl" target="_blank" rel="noopener">
+                <div class="ctop"><span class="lang"></span><h3>@project.Title</h3></div>
+                <p>@project.Description</p>
+                <div class="meta">
+                    @if (!string.IsNullOrEmpty(project.Repo))
+                    {
+                        <span class="stars" data-repo="@project.Repo" title="GitHub stars"><b>★</b> <span class="stars-count" aria-live="polite">…</span></span>
+                        <span>@project.Repo</span>
+                    }
+                    <span>C#</span>
+                </div>
+            </a>
+        }
+        <a class="card" href="https://github.com/petrsvihlik" target="_blank" rel="noopener">
+            <div class="ctop"><span class="lang"></span><h3>+ more</h3></div>
+            <p>See everything on GitHub →</p>
+            <div class="meta"><span>browse all repos</span></div>
+        </a>
+    </div>
+
+    <footer class="foot">
+        <span><span class="dot">●</span> open source by default</span>
+        <span class="dim">— © @System.DateTime.UtcNow.Year @Model.Author.Name</span>
+        <span class="right">
+            <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener">github</a>
+            <a href="@IExecutionContext.Current.GetLink("/feed.rss")" target="_blank" rel="noopener">rss</a>
+        </span>
+    </footer>
+
+</main>

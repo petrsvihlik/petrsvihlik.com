@@ -31,8 +31,20 @@ namespace PetrSvihlik.Com.Pipelines
                             .Select(x => x.Get<SiteMetadata>("SiteMetadata")).FirstOrDefault();
                         var homepage = context.Outputs.FromPipeline(nameof(HomepagePipeline))
                             .Select(x => x.Get<Homepage>("Homepage")).FirstOrDefault();
+
+                        // full archive (newest-first) so the homepage filter
+                        // can search every post, not just the current page
+                        var allArticles = context.Outputs.FromPipeline(nameof(PostsPipeline))
+                            .Select(d => d.Get<Article>("ArticleModel"))
+                            .Where(a => a != null)
+                            .OrderByDescending(a => a.PublishDate)
+                            .ToList();
+
                         return new HomeViewModel(paged,
-                            new SidebarViewModel(homepage, metadata, true, "/"));
+                            new SidebarViewModel(homepage, metadata, true, "/"))
+                        {
+                            AllArticles = allArticles
+                        };
                     }))
             );
 

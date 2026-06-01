@@ -1,3 +1,5 @@
+@using System.Linq
+@using System.Globalization
 @using PetrSvihlik.Com.Models.ContentTypes
 @model HomeViewModel
 @{
@@ -7,31 +9,108 @@
     {
         ViewBag.Title = $"{Model.TitleProvider.Title} - {Model.Metadata.Title}";
     }
+
+    var isArticleList = Model.Articles != null;
+    var isHomeIndex = isArticleList && Model.Sidebar.IsIndex;
+    var showHero = isHomeIndex && Model.Articles.Index <= 1;
+
+    ViewBag.ActiveNav = (Model.Page != null && Model.Page.Url == "about-me")
+        ? "about"
+        : (isArticleList ? "articles" : null);
+
+    var author = Model.Author;
 }
-@await Html.PartialAsync("Shared/Sidebar/_Sidebar", Model.Sidebar)
-<div class="content">
-    <div class="content__inner">
-        <div class="page">
-            @if (Model.TitleProvider != null)
-            {
-                <h1 class="page__title">
-                    @Model.TitleProvider.Title
-                </h1>
-            }
-            <div class="page__body">
-                @if (Model.Articles != null)
-                {
-                    <div class="page__body">
-                        @await Html.PartialAsync("Shared/_Posts", Model.Articles)
-                    </div>
-                }
-                else
-                {
-                    <div class="page__body">
-                        @Html.Raw(Model.Page.Body)
-                    </div>
-                }
+
+<main class="wrap">
+@if (isArticleList)
+{
+    @* ---------- hero (homepage only) ---------- *@
+    if (showHero)
+    {
+        <section class="hero">
+            <div class="avatar-box">
+                <canvas class="avatar" width="120" height="120" role="img" aria-label="@author.Name"
+                        data-src="@IExecutionContext.Current.GetLink("/assets/img/avatar.jpg")"></canvas>
+                <div class="avatar-tag">./avatar.jpg</div>
             </div>
-        </div>
+            <div class="id">
+                <p class="prompt"><span class="sym">$</span> whoami</p>
+                <h1>@author.Name<span class="cursor"></span></h1>
+                <p class="bio">
+                    <span class="k">VP&nbsp;Engineering</span> @@ Kentico · ex-Microsoft ·
+                    <span class="s">Open-So(u)rcerer</span> · <span class="n">.NET</span> freak ·
+                    explorer of the planet earth.
+                </p>
+                <nav class="socials">
+                    @foreach (var contact in Model.Sidebar.Contacts)
+                    {
+                        <a href="@contact.Url" target="_blank" rel="noopener">@contact.Name.ToLowerInvariant()</a>
+                    }
+                </nav>
+            </div>
+        </section>
+
+        <hr class="sep">
+    }
+
+    @* ---------- section heading ---------- *@
+    <div class="sec-head">
+        @if (isHomeIndex)
+        {
+            <h2><span class="sym">#</span> articles</h2>
+        }
+        else
+        {
+            <h2><span class="sym">#</span> @Model.TitleProvider?.Title</h2>
+        }
+        <span class="count" data-count>@Model.Articles.Items.Count @(Model.Articles.Items.Count == 1 ? "entry" : "entries")</span>
     </div>
-</div>
+
+    @* ---------- grep filter ---------- *@
+    <div class="grep">
+        <span class="label">grep&gt;</span>
+        <input type="text" data-grep placeholder="filter by title or category (e.g. technology)…" aria-label="filter articles" autocomplete="off" spellcheck="false">
+        <span class="hint">/</span>
+    </div>
+
+    @* full archive index — lets the filter search every post, not just this page *@
+    @if (isHomeIndex && Model.AllArticles != null)
+    {
+        var searchIndex = Model.AllArticles.Select(a => new
+        {
+            title = a.Title,
+            url = !string.IsNullOrWhiteSpace(a.CanonicalUrl)
+                ? a.CanonicalUrl
+                : IExecutionContext.Current.GetLink($"/posts/{a.Slug}"),
+            ext = !string.IsNullOrWhiteSpace(a.CanonicalUrl),
+            cat = a.SelectedCategory?.Title ?? "",
+            date = a.PublishDate?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat) ?? "",
+            desc = a.Description ?? ""
+        });
+        <script type="application/json" data-article-index>@Html.Raw(System.Text.Json.JsonSerializer.Serialize(searchIndex))</script>
+    }
+
+    @await Html.PartialAsync("Shared/_Posts", Model.Articles)
+}
+else
+{
+    @* ---------- generic content page (about, 404, …) ---------- *@
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">$</span> cat @(Model.Page.Title)</h2>
+    </div>
+    <hr class="sep">
+
+    <section class="prose" style="margin-top:22px">
+        @Html.Raw(Model.Page.Body)
+    </section>
+}
+
+    <footer class="foot">
+        <span><span class="dot">●</span> built with caffeine &amp; .NET</span>
+        <span class="dim">— © @System.DateTime.UtcNow.Year @author.Name</span>
+        <span class="right">
+            <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener">github</a>
+            <a href="@IExecutionContext.Current.GetLink("/feed.rss")" target="_blank" rel="noopener">rss</a>
+        </span>
+    </footer>
+</main>

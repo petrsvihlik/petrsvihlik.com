@@ -7,7 +7,6 @@ Source code for [petrsvihlik.com](https://petrsvihlik.com) — a static site bui
 ## Prerequisites
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download)
-- [Node.js](https://nodejs.org/) (for Pagefind search indexing)
 
 ## Running locally
 
@@ -21,8 +20,6 @@ Opens at `http://localhost:5080`. The site rebuilds automatically on file change
 ```bash
 dotnet run
 ```
-
-> Note: Pagefind search index is built as part of the normal build but not during `preview`. Search won't work locally unless you run `npx pagefind --site output` manually after a full build.
 
 ## Adding content
 

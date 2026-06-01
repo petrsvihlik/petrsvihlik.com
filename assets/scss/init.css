@@ -263,12 +263,6 @@ pre[class*="language-"] { padding: 1em; margin: .5em 0; overflow: auto; }
 @media screen and (min-width: 960px) { .sidebar { width: 34%; }
   .sidebar__inner { padding: 40px; } }
 
-.search { margin-bottom: 1rem; --pagefind-ui-primary:     var(--color-primary, #5D93FF); --pagefind-ui-text:        var(--color-base, #222); --pagefind-ui-background:  transparent; --pagefind-ui-border:      #e6e6e6; --pagefind-ui-tag:         #ebebeb; --pagefind-ui-font:        Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; --pagefind-ui-border-width: 1px; --pagefind-ui-border-radius: 20px; --pagefind-ui-image-border-radius: 4px; }
-
-.search .pagefind-ui__search-input { font-size: 14px; height: 35px; padding: 0 12px; }
-
-.search .pagefind-ui__search-clear { background-color: transparent; color: #767676; }
-
 .article { margin-bottom: 32.5px; }
 
 .article:last-child { margin-bottom: 13px; }

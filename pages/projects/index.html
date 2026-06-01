@@ -1,9 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-accent="cyan">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- avoid theme flash: apply stored theme/accent before first paint -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('ps-theme') || 'dark';
+                var a = localStorage.getItem('ps-accent') || 'cyan';
+                var r = document.documentElement;
+                r.setAttribute('data-theme', t);
+                r.setAttribute('data-accent', a);
+            } catch (e) { }
+        })();
+    </script>
     <!-- Google Tag Manager -->
         <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,27 +29,22 @@
     <title>Projects - Petr &#x160;vihl&#xED;k</title>
     <meta name="description" content="Posts about DevRel, DX, OS, and .NET." />
     <meta name="author" content="Petr &#x160;vihl&#xED;k" />
-    <meta name="viewport" content="width=device-width" />
-    <!-- Load Google Fonts non-blocking to eliminate render-blocking resource -->
+    <!-- JetBrains Mono — loaded non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" /></noscript>
-    <link rel="stylesheet" href="/assets/scss/init.css" />
-    <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-    <link rel="preload" href="/assets/fonts/fontello-5805c6cd/font/fontello.woff2?65524428" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/assets/fonts/fontello-5805c6cd/css/fontello.css" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" /></noscript>
+    <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <script type="application/javascript" src="/assets/js/darkmode.js"></script>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4fd6e0">
+    <meta name="msapplication-TileColor" content="#0a0c10">
+    <meta name="theme-color" content="#0a0c10">
     
 </head>
 
@@ -48,137 +55,71 @@
                     height="0" width="0" style="display:none;visibility:hidden"></iframe>
         </noscript>
         <!-- End Google Tag Manager (noscript) -->
-    <div class="layout">
-        <div class="sidebar">
-    <div class="sidebar__inner">
-        
-<div class="sidebar__author">
-    <a href="/">
-        <img src="/assets/img/avatar.jpg"
-             class="sidebar__author-photo"
-             width="75"
-             height="75"
-             alt="Petr &#x160;vihl&#xED;k" />
-    </a>
 
-    <h2 class="sidebar__author-title">
-        <a class="sidebar__author-title-link" href="/">Petr &#x160;vihl&#xED;k</a>
-    </h2>
-    <p class="sidebar__author-subtitle">VP Engineering @ Kentico, ex-Microsoft, Open-So(u)rcerer, .NET freak, explorer of the planet earth.</p>
-</div>
+    <canvas id="bg-canvas"></canvas>
 
-        
-<nav class="menu">
-    <ul class="menu__list">
-            <li class="menu__list-item">
-                <a href="/" class="menu__list-item-link ">Articles</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="/pages/projects" class="menu__list-item-link  active--exact  active">Projects</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="/pages/about-me" class="menu__list-item-link ">About me</a>
-            </li>
-    </ul>
-    <div class="switch__container">
-    <span class="switch__text" onClick="document.getElementById('slider').click();">Night mode</span>
-    <label class="switch">
-        <input id="DarkModeSwitcher" type="checkbox" />
-        <span class="slider" id="slider" onClick="toggleDarkMode();" />
-    </label>
-</div>
-</nav>
-
-        <div class="search">
-    <div id="search"></div>
-</div>
-
-        
-<div class="links">
-    <ul class="links__list">
-            <li class="links__list-item">
-                <a href="https://github.com/petrsvihlik" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
-                    <i class="icon-github-circled"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://stackoverflow.com/users/1332034/rocky" rel="noopener noreferrer" target="_blank" aria-label="Stack Overflow">
-                    <i class="icon-stackoverflow"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://dev.to/petrsvihlik" rel="noopener noreferrer" target="_blank" aria-label="Dev.to">
-                    <i class="icon-devto"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://medium.com/@PetrSvihlik" rel="noopener noreferrer" target="_blank" aria-label="Medium">
-                    <i class="icon-medium"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://www.linkedin.com/in/svihlik/" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
-                    <i class="icon-linkedin"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="/feed.rss" rel="noopener noreferrer" target="_blank" aria-label="RSS">
-                    <i class="icon-rss"></i>
-                </a>
-            </li>
-    </ul>
-</div>
-
-    </div>
-</div>
-
-<div class="content">
-    <div class="content__inner">
-        <div class="page">
-            <h1 class="page__title">Projects</h1>
-            <div class="page__body">
-                <div class="projects">
-                        <div class="project-tile">
-                            <div class="project-tile__header">
-                                    <img src="/assets/img/wopihost-logo.png" alt="WopiHost logo" class="project-tile__logo">
-                                <div>
-                                    <h2 class="project-tile__name">
-                                        <a href="https://github.com/petrsvihlik/WopiHost" target="_blank" rel="noopener noreferrer">WopiHost</a>
-                                    </h2>
-                                    <p class="project-tile__description">The most advanced open-source .NET implementation of the MS-WOPI protocol &#x2014; enabling seamless integration with Office Online Server and Microsoft 365.</p>
-                                </div>
-                            </div>
-                                <div class="project-tile__highlights">
-                                    <ul>
-<li>🔌 <strong>Pluggable storage</strong> — implement <code>IWopiStorageProvider</code> to back WopiHost with any data source</li>
-<li>☁️ <strong>.NET Aspire integration</strong> — first-class cloud-native support with OpenTelemetry observability built in</li>
-<li>🔐 <strong>Enterprise security</strong> — WOPI proof key validation, origin checking, extensible JWT-based auth/authz</li>
-<li>📄 <strong>Full WOPI compliance</strong> — file &amp; container operations, PutRelativeFile, rename, create, OneNote endpoints</li>
-<li>🎯 <strong>Multi-targeting</strong> — .NET 8, 9, and 10</li>
-</ul>
-
-                                </div>
-                                <div class="project-tile__actions">
-                                    <a class="github-button" href="https://github.com/petrsvihlik/WopiHost" data-icon="octicon-star" data-size="large" aria-label="Star petrsvihlik/WopiHost on GitHub">Star</a>
-                                    <a class="github-button" href="https://github.com/petrsvihlik/WopiHost/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork petrsvihlik/WopiHost on GitHub">Fork</a>
-                                    <a href="https://github.com/petrsvihlik/WopiHost" class="project-tile__link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-                                </div>
-                        </div>
-                </div>
-                <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <header class="topbar">
+        <a class="brand" href="/"><span class="sym">~/</span>petr<span class="dim">.svihlik</span></a>
+        <nav class="nav">
+            <a href="/" class="">articles</a>
+            <a href="/pages/projects" class="active">projects</a>
+            <a href="/pages/about-me" class="">about</a>
+        </nav>
+        <div class="tb-ctrl">
+            <div class="swatches" role="group" aria-label="accent color">
+                <button class="sw" data-accent="cyan"    style="--c:#4fd6e0" aria-label="cyan"></button>
+                <button class="sw" data-accent="magenta" style="--c:#ff79c6" aria-label="magenta"></button>
+                <button class="sw" data-accent="green"   style="--c:#93dca2" aria-label="green"></button>
+                <button class="sw" data-accent="yellow"  style="--c:#e7c46b" aria-label="yellow"></button>
+                <button class="sw" data-accent="purple"  style="--c:#c79bf2" aria-label="purple"></button>
             </div>
+            <button class="iconbtn" data-theme-toggle aria-label="toggle theme">sun</button>
         </div>
-    </div>
-</div>
+    </header>
 
+    
+<main class="wrap">
+
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">~/</span>projects</h2>
+        <span class="count">git remote -v</span>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-    <script src="/assets/js/zoom.js"></script>
-    <script src="/pagefind/pagefind-ui.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            new PagefindUI({ element: '#search', showImages: false });
-        });
-    </script>
+    <hr class="sep">
+
+    <p class="lead" style="margin-top:20px">
+        Open source, .NET tooling, and side-quests. Pulled from
+        <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener" style="color:var(--accent)">github.com/petrsvihlik</a>.
+    </p>
+
+    <div class="cards">
+            <a class="card" href="https://github.com/petrsvihlik/WopiHost" target="_blank" rel="noopener">
+                <div class="ctop"><span class="lang"></span><h3>WopiHost</h3></div>
+                <p>The most advanced open-source .NET implementation of the MS-WOPI protocol &#x2014; enabling seamless integration with Office Online Server and Microsoft 365.</p>
+                <div class="meta">
+                        <span class="stars" data-repo="petrsvihlik/WopiHost" title="GitHub stars"><b>★</b> <span class="stars-count" aria-live="polite">…</span></span>
+                        <span>petrsvihlik/WopiHost</span>
+                    <span>C#</span>
+                </div>
+            </a>
+        <a class="card" href="https://github.com/petrsvihlik" target="_blank" rel="noopener">
+            <div class="ctop"><span class="lang"></span><h3>+ more</h3></div>
+            <p>See everything on GitHub →</p>
+            <div class="meta"><span>browse all repos</span></div>
+        </a>
+    </div>
+
+    <footer class="foot">
+        <span><span class="dot">●</span> open source by default</span>
+        <span class="dim">— © 2026 Petr &#x160;vihl&#xED;k</span>
+        <span class="right">
+            <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener">github</a>
+            <a href="/feed.rss" target="_blank" rel="noopener">rss</a>
+        </span>
+    </footer>
+
+</main>
+
+
+    <script src="/assets/js/site.js"></script>
 </body>
 </html>

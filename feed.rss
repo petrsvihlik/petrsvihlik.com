@@ -1,18 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
 		<title>Petr Svihlik - blog</title>
 		<link>https://petrsvihlik.com/</link>
 		<description>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</description>
 		<copyright>2026</copyright>
-		<pubDate>Sun, 19 Apr 2026 19:57:58 GMT</pubDate>
-		<lastBuildDate>Sun, 19 Apr 2026 19:57:58 GMT</lastBuildDate>
+		<pubDate>Mon, 01 Jun 2026 20:40:20 GMT</pubDate>
+		<lastBuildDate>Mon, 01 Jun 2026 20:40:20 GMT</lastBuildDate>
 		<item>
 			<title>The Junior Developer Problem Is More Complicated Than You Think</title>
 			<link>https://petrsvihlik.com/posts/junior-developer-problem</link>
 			<description>A nuanced response to arguments about AI replacing junior developers, examining structural challenges and the profession's evolution.</description>
 			<guid>https://petrsvihlik.com/posts/junior-developer-problem</guid>
 			<pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;The Junior Developer Problem Is More Complicated Than You Think&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;A nuanced response to arguments about AI replacing junior developers, examining structural challenges and the profession's evolution.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://www.linkedin.com/pulse/junior-developer-problem-more-complicated-than-you-think-petr-%C5%A1vihl%C3%ADk-rw50c/" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published March 2026&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/ai"&gt;Ai&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/developers"&gt;Developers&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/career"&gt;Career&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -21,6 +52,37 @@
 			<description>Takeaways from the Pragmatic Summit in San Francisco on AI's organizational impact on engineering teams.</description>
 			<guid>https://petrsvihlik.com/posts/ai-tooling-organizational-stress-test</guid>
 			<pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;AI Is Not a Tooling Conversation. It's an Organizational Stress Test.&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;Takeaways from the Pragmatic Summit in San Francisco on AI's organizational impact on engineering teams.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://www.linkedin.com/pulse/ai-tooling-conversation-its-organizational-stress-test-petr-%C5%A1vihl%C3%ADk-sd2re/" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published February 2026&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/ai"&gt;Ai&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/engineering"&gt;Engineering&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/leadership"&gt;Leadership&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -29,6 +91,40 @@
 			<description>My friends and former colleagues have been bombarding me with questions about my time at Microsoft. Here's a detailed account.</description>
 			<guid>https://petrsvihlik.com/posts/the-first-300-days-of-my-microsoft-journey</guid>
 			<pubDate>Thu, 17 Feb 2022 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;The First 300 Days of My Microsoft Journey&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;My friends and former colleagues have been bombarding me with questions about my time at Microsoft. Here's a detailed account.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://www.linkedin.com/pulse/first-300-days-my-microsoft-journey-petr-%C5%A1vihl%C3%ADk/" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published February 2022&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/career"&gt;Career&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/company-culture"&gt;Company Culture&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/life"&gt;Life&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/retrospective"&gt;Retrospective&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -37,6 +133,34 @@
 			<description>No matter whether you're on a train, on a toilet, or on acid you'll enjoy these top 10 Android games.</description>
 			<guid>https://petrsvihlik.com/posts/a-curated-list-of-top-10-android-games-worth-your-time</guid>
 			<pubDate>Sat, 16 Oct 2021 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;A Curated List of Top 10 Android Games Worth Your Time&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;No matter whether you're on a train, on a toilet, or on acid you'll enjoy these top 10 Android games.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://petrsvihlik.medium.com/a-curated-list-of-top-10-android-games-worth-your-time-6d5232728683" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published October 2021&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/fun"&gt;Fun&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/gaming"&gt;Gaming&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -45,6 +169,40 @@
 			<description>The third article about GitHub Actions in a row? One must be thinking I am up to something.</description>
 			<guid>https://petrsvihlik.com/posts/lessons-learned-migrating-from-appveyor-to-github-actions</guid>
 			<pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Lessons Learned: Migrating from AppVeyor to GitHub Actions&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;The third article about GitHub Actions in a row? One must be thinking I am up to something.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://dev.to/petrsvihlik/lessons-learned-migrating-from-appveyor-to-github-actions-1gh8" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published March 2021&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/github-actions"&gt;Github Actions&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/appveyor"&gt;Appveyor&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/linux"&gt;Linux&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/devops"&gt;Devops&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -53,6 +211,46 @@
 			<description>You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version.</description>
 			<guid>https://petrsvihlik.com/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet</guid>
 			<pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published March 2021&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/codecov"&gt;Codecov&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/dot-net"&gt;Dot Net&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/github-actions"&gt;Github Actions&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/coverlet"&gt;Coverlet&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/continuous-integration"&gt;Continuous Integration&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/devops"&gt;Devops&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -61,6 +259,34 @@
 			<description>Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets.</description>
 			<guid>https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target</guid>
 			<pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://dev.to/petrsvihlik/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pullrequesttarget-hci" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published March 2021&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/github-actions"&gt;Github Actions&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/devops"&gt;Devops&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -69,6 +295,46 @@
 			<description>An alternative approach to proving the value of DevRel, not focused on numbers or metrics but on strategic alignment.</description>
 			<guid>https://petrsvihlik.com/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment</guid>
 			<pubDate>Tue, 05 Jan 2021 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Avoiding the DevRel ROI Trap with Better Strategic Alignment&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;An alternative approach to proving the value of DevRel, not focused on numbers or metrics but on strategic alignment.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://petrsvihlik.medium.com/avoiding-the-devrel-roi-trap-with-better-strategic-alignment-bcdb6e2a717d" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published January 2021&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/devrel"&gt;Devrel&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/leadership"&gt;Leadership&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/okr"&gt;Okr&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/metrics"&gt;Metrics&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/measurement"&gt;Measurement&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/kpi"&gt;Kpi&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -77,6 +343,34 @@
 			<description>I had never been good at sports (perhaps with an exception of swimming) and yet I fell in love with running.</description>
 			<guid>https://petrsvihlik.com/posts/the-little-i-learned-about-running</guid>
 			<pubDate>Sun, 06 Dec 2020 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;The Little I Learned About Running&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;I had never been good at sports (perhaps with an exception of swimming) and yet I fell in love with running.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://petrsvihlik.medium.com/the-little-i-learned-about-running-265b1625fa49" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published December 2020&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/life"&gt;Life&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/sport"&gt;Sport&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -85,6 +379,40 @@
 			<description>Let's face it, my brain is just not compatible with any device that has a segment display or more than one button.</description>
 			<guid>https://petrsvihlik.com/posts/ok-google-water-the-garden</guid>
 			<pubDate>Thu, 16 Jul 2020 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;OK Google, water the garden!&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;Let's face it, my brain is just not compatible with any device that has a segment display or more than one button.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://medium.com/@PetrSvihlik/ok-google-water-the-garden-29827f29a1cb" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published July 2020&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/smart-home"&gt;Smart Home&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/rachio"&gt;Rachio&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/water-irrigation"&gt;Water Irrigation&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/gardening"&gt;Gardening&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -93,6 +421,31 @@
 			<description>JAMstack has proven increasingly popular among developers over the past few years. But what exactly is JAMstack, and why should you care?</description>
 			<guid>https://petrsvihlik.com/posts/the-rise-of-jamstack</guid>
 			<pubDate>Thu, 12 Mar 2020 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;The Rise of JAMstack&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;JAMstack has proven increasingly popular among developers over the past few years. But what exactly is JAMstack, and why should you care?&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://kontent.ai/blog/the-rise-of-jamstack" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published March 2020&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/jamstack"&gt;Jamstack&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -101,6 +454,43 @@
 			<description>Are you implementing Objectives and Key Results across your company and don't want your colleagues to feel frustrated after the first couple of few weeks?</description>
 			<guid>https://petrsvihlik.com/posts/7-deadly-sins-of-okrs</guid>
 			<pubDate>Thu, 06 Feb 2020 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;7 Deadly Sins of OKRs&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;Are you implementing Objectives and Key Results across your company and don't want your colleagues to feel frustrated after the first couple of few weeks?&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://medium.com/@PetrSvihlik/7-deadly-sins-of-okrs-58d2adc648a1" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published February 2020&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/okr"&gt;Okr&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/agile"&gt;Agile&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/goals"&gt;Goals&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/change-management"&gt;Change Management&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/planning"&gt;Planning&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -109,6 +499,37 @@
 			<description>What does it take to build a flourishing company culture? And how to recognize one? Real-world examples of good and bad habits, substantial and irrelevant indicators.</description>
 			<guid>https://petrsvihlik.com/posts/building-a-culture-of-relationships-that-persist</guid>
 			<pubDate>Sun, 01 Dec 2019 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Building A Culture of Relationships That Persist&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;What does it take to build a flourishing company culture? And how to recognize one? Real-world examples of good and bad habits, substantial and irrelevant indicators.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://medium.com/@PetrSvihlik/a-culture-of-relationships-that-persist-fac65dbab74f" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published December 2019&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/relationships"&gt;Relationships&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/company-culture"&gt;Company Culture&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/friendship"&gt;Friendship&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -117,6 +538,40 @@
 			<description>I love AppVeyor. It's my go-to CI/CD service for .NET projects. I use it for both open-source and private projects.</description>
 			<guid>https://petrsvihlik.com/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov</guid>
 			<pubDate>Sun, 01 Dec 2019 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;I love AppVeyor. It's my go-to CI/CD service for .NET projects. I use it for both open-source and private projects.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published December 2019&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/opencover"&gt;Opencover&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/appveyor"&gt;Appveyor&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/codecov"&gt;Codecov&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/dot-net"&gt;Dot Net&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -125,6 +580,40 @@
 			<description>Recently, I had the immense pleasure to go through several hundreds of CVs. I thought I'd share some of the most common mistakes I've seen.</description>
 			<guid>https://petrsvihlik.com/posts/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv</guid>
 			<pubDate>Mon, 26 Aug 2019 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Why I Won't Hire You - 5 Honest Tips to a Better CV&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;Recently, I had the immense pleasure to go through several hundreds of CVs. I thought I'd share some of the most common mistakes I've seen.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://dev.to/petrsvihlik/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv-540g" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published August 2019&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/career"&gt;Career&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/resume"&gt;Resume&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/cover-letter"&gt;Cover Letter&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/cv"&gt;Cv&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -133,6 +622,40 @@
 			<description>The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and focused on things that truly matter.</description>
 			<guid>https://petrsvihlik.com/posts/how-i-changed-my-life-in-three-steps</guid>
 			<pubDate>Tue, 22 Jan 2019 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;How I Changed My Life in Three Steps&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and focused on things that truly matter.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://medium.com/@PetrSvihlik/how-i-changed-my-life-in-three-steps-fc7d73f958ca" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published January 2019&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/honesty"&gt;Honesty&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/life"&gt;Life&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/retrospective"&gt;Retrospective&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/core-values"&gt;Core Values&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -141,6 +664,40 @@
 			<description>PowerShell is the leading task automation platform for Windows. Developers and sysadmins alike use it to automate tasks and manage systems.</description>
 			<guid>https://petrsvihlik.com/posts/three-ways-to-manage-data-in-kentico-using-powershell</guid>
 			<pubDate>Tue, 09 Aug 2016 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Three Ways to Manage Data in Kentico Using PowerShell&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;PowerShell is the leading task automation platform for Windows. Developers and sysadmins alike use it to automate tasks and manage systems.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://devnet.kentico.com/articles/three-ways-to-manage-data-in-kentico-using-powershell" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published August 2016&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/powershell"&gt;Powershell&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/rest"&gt;Rest&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/reflection"&gt;Reflection&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/compilation"&gt;Compilation&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -149,6 +706,34 @@
 			<description>We've all been there — our application depends on a version of assembly that's incompatible with the version that's referenced by the NuGet package we've just installed.</description>
 			<guid>https://petrsvihlik.com/posts/referencing-multiple-versions-of-the-same-assembly-in-a-single-application</guid>
 			<pubDate>Tue, 24 May 2016 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Referencing Multiple Versions of the Same Assembly in a Single Application&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;We've all been there — our application depends on a version of assembly that's incompatible with the version that's referenced by the NuGet package we've just installed.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://devnet.kentico.com/articles/referencing-multiple-versions-of-the-same-assembly-in-a-single-application" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published May 2016&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/dot-net"&gt;Dot Net&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/dependency-hell"&gt;Dependency Hell&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
@@ -157,6 +742,34 @@
 			<description>This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain.</description>
 			<guid>https://petrsvihlik.com/posts/running-visual-studio-remote-debugger-in-domain-environment</guid>
 			<pubDate>Wed, 19 Jun 2013 00:00:00 GMT</pubDate>
+			<content:encoded>
+        &lt;h1 class="article-single__title"&gt;Running Visual Studio Remote Debugger in Domain Environment&lt;/h1&gt;
+
+            &lt;p class="article-single__description"&gt;This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain.&lt;/p&gt;
+
+
+            &lt;p class="article-single__readmore"&gt;
+                &lt;a href="https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;div class="article-single__date"&gt;
+            &lt;em&gt;Published June 2013&lt;/em&gt;
+        &lt;/div&gt;
+
+        &lt;div class="article-single__footer"&gt;
+                &lt;div class="article-single__tags"&gt;
+                    &lt;ul class="article-single__tags-list"&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/visual-studio"&gt;Visual Studio&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="article-single__tags-list-item"&gt;
+                                &lt;a class="article-single__tags-list-item-link" href="https://petrsvihlik.com/tag/debugging"&gt;Debugging&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;a href="https://petrsvihlik.com/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;
+        &lt;/div&gt;
+    </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 	</channel>

@@ -1,9 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-accent="cyan">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- avoid theme flash: apply stored theme/accent before first paint -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('ps-theme') || 'dark';
+                var a = localStorage.getItem('ps-accent') || 'cyan';
+                var r = document.documentElement;
+                r.setAttribute('data-theme', t);
+                r.setAttribute('data-accent', a);
+            } catch (e) { }
+        })();
+    </script>
     <!-- Google Tag Manager -->
         <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,27 +29,22 @@
     <title>Petr &#x160;vihl&#xED;k</title>
     <meta name="description" content="Posts about DevRel, DX, OS, and .NET." />
     <meta name="author" content="Petr &#x160;vihl&#xED;k" />
-    <meta name="viewport" content="width=device-width" />
-    <!-- Load Google Fonts non-blocking to eliminate render-blocking resource -->
+    <!-- JetBrains Mono — loaded non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" /></noscript>
-    <link rel="stylesheet" href="/assets/scss/init.css" />
-    <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-    <link rel="preload" href="/assets/fonts/fontello-5805c6cd/font/fontello.woff2?65524428" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/assets/fonts/fontello-5805c6cd/css/fontello.css" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" /></noscript>
+    <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <script type="application/javascript" src="/assets/js/darkmode.js"></script>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4fd6e0">
+    <meta name="msapplication-TileColor" content="#0a0c10">
+    <meta name="theme-color" content="#0a0c10">
     
 </head>
 
@@ -48,140 +55,94 @@
                     height="0" width="0" style="display:none;visibility:hidden"></iframe>
         </noscript>
         <!-- End Google Tag Manager (noscript) -->
-    <div class="layout">
-        <div class="sidebar">
-    <div class="sidebar__inner">
-        
-<div class="sidebar__author">
-    <a href="/">
-        <img src="/assets/img/avatar.jpg"
-             class="sidebar__author-photo"
-             width="75"
-             height="75"
-             alt="Petr &#x160;vihl&#xED;k" />
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="topbar">
+        <a class="brand" href="/"><span class="sym">~/</span>petr<span class="dim">.svihlik</span></a>
+        <nav class="nav">
+            <a href="/" class="active">articles</a>
+            <a href="/pages/projects" class="">projects</a>
+            <a href="/pages/about-me" class="">about</a>
+        </nav>
+        <div class="tb-ctrl">
+            <div class="swatches" role="group" aria-label="accent color">
+                <button class="sw" data-accent="cyan"    style="--c:#4fd6e0" aria-label="cyan"></button>
+                <button class="sw" data-accent="magenta" style="--c:#ff79c6" aria-label="magenta"></button>
+                <button class="sw" data-accent="green"   style="--c:#93dca2" aria-label="green"></button>
+                <button class="sw" data-accent="yellow"  style="--c:#e7c46b" aria-label="yellow"></button>
+                <button class="sw" data-accent="purple"  style="--c:#c79bf2" aria-label="purple"></button>
+            </div>
+            <button class="iconbtn" data-theme-toggle aria-label="toggle theme">sun</button>
+        </div>
+    </header>
+
+    
+<main class="wrap">
+    <div class="sec-head">
+            <h2><span class="sym">#</span> articles</h2>
+        <span class="count" data-count>4 entries</span>
+    </div>
+    <div class="grep">
+        <span class="label">grep&gt;</span>
+        <input type="text" data-grep placeholder="filter by title or category (e.g. technology)…" aria-label="filter articles" autocomplete="off" spellcheck="false">
+        <span class="hint">/</span>
+    </div>
+        <script type="application/json" data-article-index>[{"title":"The Junior Developer Problem Is More Complicated Than You Think","url":"https://www.linkedin.com/pulse/junior-developer-problem-more-complicated-than-you-think-petr-%C5%A1vihl%C3%ADk-rw50c/","ext":true,"cat":"Technology","date":"2026-03","desc":"A nuanced response to arguments about AI replacing junior developers, examining structural challenges and the profession\u0027s evolution."},{"title":"AI Is Not a Tooling Conversation. It\u0027s an Organizational Stress Test.","url":"https://www.linkedin.com/pulse/ai-tooling-conversation-its-organizational-stress-test-petr-%C5%A1vihl%C3%ADk-sd2re/","ext":true,"cat":"Leadership","date":"2026-02","desc":"Takeaways from the Pragmatic Summit in San Francisco on AI\u0027s organizational impact on engineering teams."},{"title":"The First 300 Days of My Microsoft Journey","url":"https://www.linkedin.com/pulse/first-300-days-my-microsoft-journey-petr-%C5%A1vihl%C3%ADk/","ext":true,"cat":"Personal Development","date":"2022-02","desc":"My friends and former colleagues have been bombarding me with questions about my time at Microsoft. Here\u0027s a detailed account."},{"title":"A Curated List of Top 10 Android Games Worth Your Time","url":"https://petrsvihlik.medium.com/a-curated-list-of-top-10-android-games-worth-your-time-6d5232728683","ext":true,"cat":"Entertainment","date":"2021-10","desc":"No matter whether you\u0027re on a train, on a toilet, or on acid you\u0027ll enjoy these top 10 Android games."},{"title":"Lessons Learned: Migrating from AppVeyor to GitHub Actions","url":"https://dev.to/petrsvihlik/lessons-learned-migrating-from-appveyor-to-github-actions-1gh8","ext":true,"cat":"Technology","date":"2021-03","desc":"The third article about GitHub Actions in a row? One must be thinking I am up to something."},{"title":"Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet","url":"https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i","ext":true,"cat":"Technology","date":"2021-03","desc":"You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version."},{"title":"Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target","url":"https://dev.to/petrsvihlik/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pullrequesttarget-hci","ext":true,"cat":"Technology","date":"2021-03","desc":"Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets."},{"title":"Avoiding the DevRel ROI Trap with Better Strategic Alignment","url":"https://petrsvihlik.medium.com/avoiding-the-devrel-roi-trap-with-better-strategic-alignment-bcdb6e2a717d","ext":true,"cat":"Developer Relations","date":"2021-01","desc":"An alternative approach to proving the value of DevRel, not focused on numbers or metrics but on strategic alignment."},{"title":"The Little I Learned About Running","url":"https://petrsvihlik.medium.com/the-little-i-learned-about-running-265b1625fa49","ext":true,"cat":"Personal Development","date":"2020-12","desc":"I had never been good at sports (perhaps with an exception of swimming) and yet I fell in love with running."},{"title":"OK Google, water the garden!","url":"https://medium.com/@PetrSvihlik/ok-google-water-the-garden-29827f29a1cb","ext":true,"cat":"Technology","date":"2020-07","desc":"Let\u0027s face it, my brain is just not compatible with any device that has a segment display or more than one button."},{"title":"The Rise of JAMstack","url":"https://kontent.ai/blog/the-rise-of-jamstack","ext":true,"cat":"Technology","date":"2020-03","desc":"JAMstack has proven increasingly popular among developers over the past few years. But what exactly is JAMstack, and why should you care?"},{"title":"7 Deadly Sins of OKRs","url":"https://medium.com/@PetrSvihlik/7-deadly-sins-of-okrs-58d2adc648a1","ext":true,"cat":"Leadership","date":"2020-02","desc":"Are you implementing Objectives and Key Results across your company and don\u0027t want your colleagues to feel frustrated after the first couple of few weeks?"},{"title":"Building A Culture of Relationships That Persist","url":"https://medium.com/@PetrSvihlik/a-culture-of-relationships-that-persist-fac65dbab74f","ext":true,"cat":"Leadership","date":"2019-12","desc":"What does it take to build a flourishing company culture? And how to recognize one? Real-world examples of good and bad habits, substantial and irrelevant indicators."},{"title":"Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov","url":"https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p","ext":true,"cat":"Technology","date":"2019-12","desc":"I love AppVeyor. It\u0027s my go-to CI/CD service for .NET projects. I use it for both open-source and private projects."},{"title":"Why I Won\u0027t Hire You - 5 Honest Tips to a Better CV","url":"https://dev.to/petrsvihlik/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv-540g","ext":true,"cat":"Personal Development","date":"2019-08","desc":"Recently, I had the immense pleasure to go through several hundreds of CVs. I thought I\u0027d share some of the most common mistakes I\u0027ve seen."},{"title":"How I Changed My Life in Three Steps","url":"https://medium.com/@PetrSvihlik/how-i-changed-my-life-in-three-steps-fc7d73f958ca","ext":true,"cat":"Personal Development","date":"2019-01","desc":"The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and focused on things that truly matter."},{"title":"Three Ways to Manage Data in Kentico Using PowerShell","url":"https://devnet.kentico.com/articles/three-ways-to-manage-data-in-kentico-using-powershell","ext":true,"cat":"Technology","date":"2016-08","desc":"PowerShell is the leading task automation platform for Windows. Developers and sysadmins alike use it to automate tasks and manage systems."},{"title":"Referencing Multiple Versions of the Same Assembly in a Single Application","url":"https://devnet.kentico.com/articles/referencing-multiple-versions-of-the-same-assembly-in-a-single-application","ext":true,"cat":"Technology","date":"2016-05","desc":"We\u0027ve all been there \u2014 our application depends on a version of assembly that\u0027s incompatible with the version that\u0027s referenced by the NuGet package we\u0027ve just installed."},{"title":"Running Visual Studio Remote Debugger in Domain Environment","url":"https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment","ext":true,"cat":"Technology","date":"2013-06","desc":"This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain."}]</script>
+
+<div class="log">
+    <a class="row" href="https://medium.com/@PetrSvihlik/a-culture-of-relationships-that-persist-fac65dbab74f" target=_blank rel=noopener data-search="2019-12 leadership building a culture of relationships that persist what does it take to build a flourishing company culture? and how to recognize one? real-world examples of good and bad habits, substantial and irrelevant indicators.">
+        <span class="date">2019-12</span>
+        <span class="cat">Leadership</span>
+        <span class="title" data-text="Building A Culture of Relationships That Persist">Building A Culture of Relationships That Persist
+                <span class="desc">What does it take to build a flourishing company culture? And how to recognize one? Real-world examples of good and bad habits, substantial and irrelevant indicators.</span>
+        </span>
+        <span class="go">cat →</span>
+    </a>
+    <a class="row" href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p" target=_blank rel=noopener data-search="2019-12 technology running .net core 3 xunit code coverage in appveyor using opencover and codecov i love appveyor. it&#x27;s my go-to ci/cd service for .net projects. i use it for both open-source and private projects.">
+        <span class="date">2019-12</span>
+        <span class="cat">Technology</span>
+        <span class="title" data-text="Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov">Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov
+                <span class="desc">I love AppVeyor. It&#x27;s my go-to CI/CD service for .NET projects. I use it for both open-source and private projects.</span>
+        </span>
+        <span class="go">cat →</span>
+    </a>
+    <a class="row" href="https://dev.to/petrsvihlik/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv-540g" target=_blank rel=noopener data-search="2019-08 personal development why i won&#x27;t hire you - 5 honest tips to a better cv recently, i had the immense pleasure to go through several hundreds of cvs. i thought i&#x27;d share some of the most common mistakes i&#x27;ve seen.">
+        <span class="date">2019-08</span>
+        <span class="cat">Personal Development</span>
+        <span class="title" data-text="Why I Won&#x27;t Hire You - 5 Honest Tips to a Better CV">Why I Won&#x27;t Hire You - 5 Honest Tips to a Better CV
+                <span class="desc">Recently, I had the immense pleasure to go through several hundreds of CVs. I thought I&#x27;d share some of the most common mistakes I&#x27;ve seen.</span>
+        </span>
+        <span class="go">cat →</span>
+    </a>
+    <a class="row" href="https://medium.com/@PetrSvihlik/how-i-changed-my-life-in-three-steps-fc7d73f958ca" target=_blank rel=noopener data-search="2019-01 personal development how i changed my life in three steps the year 2018 was absolutely groundbreaking to me. i completely reorganized my life and focused on things that truly matter.">
+        <span class="date">2019-01</span>
+        <span class="cat">Personal Development</span>
+        <span class="title" data-text="How I Changed My Life in Three Steps">How I Changed My Life in Three Steps
+                <span class="desc">The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and focused on things that truly matter.</span>
+        </span>
+        <span class="go">cat →</span>
     </a>
 
-    <h1 class="sidebar__author-title">
-        <a class="sidebar__author-title-link" href="/">Petr &#x160;vihl&#xED;k</a>
-    </h1>
-    <p class="sidebar__author-subtitle">VP Engineering @ Kentico, ex-Microsoft, Open-So(u)rcerer, .NET freak, explorer of the planet earth.</p>
+    <div class="empty" style="display:none"><span class="sym">!</span> no entries match the filter — try <code>esc</code> to clear.</div>
 </div>
 
-        
-<nav class="menu">
-    <ul class="menu__list">
-            <li class="menu__list-item">
-                <a href="/" class="menu__list-item-link  active--exact  active">Articles</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="/pages/projects" class="menu__list-item-link ">Projects</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="/pages/about-me" class="menu__list-item-link ">About me</a>
-            </li>
-    </ul>
-    <div class="switch__container">
-    <span class="switch__text" onClick="document.getElementById('slider').click();">Night mode</span>
-    <label class="switch">
-        <input id="DarkModeSwitcher" type="checkbox" />
-        <span class="slider" id="slider" onClick="toggleDarkMode();" />
-    </label>
-</div>
-</nav>
-
-        <div class="search">
-    <div id="search"></div>
-</div>
-
-        
-<div class="links">
-    <ul class="links__list">
-            <li class="links__list-item">
-                <a href="https://github.com/petrsvihlik" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
-                    <i class="icon-github-circled"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://stackoverflow.com/users/1332034/rocky" rel="noopener noreferrer" target="_blank" aria-label="Stack Overflow">
-                    <i class="icon-stackoverflow"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://dev.to/petrsvihlik" rel="noopener noreferrer" target="_blank" aria-label="Dev.to">
-                    <i class="icon-devto"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://medium.com/@PetrSvihlik" rel="noopener noreferrer" target="_blank" aria-label="Medium">
-                    <i class="icon-medium"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://www.linkedin.com/in/svihlik/" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
-                    <i class="icon-linkedin"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="/feed.rss" rel="noopener noreferrer" target="_blank" aria-label="RSS">
-                    <i class="icon-rss"></i>
-                </a>
-            </li>
-    </ul>
-</div>
-
-    </div>
-</div>
-
-<div class="content">
-    <div class="content__inner">
-        <div class="page">
-            <div class="page__body">
-                    <div class="page__body">
-                        
-<div class="article">
-        <div><time class="article__meta-time" datetime="2019-12-01">December 2019</time><span class="article__meta-divider"></span><span class="article__meta-category"><a class="article__meta-category-link" href="/category/leadership">Leadership</a></span></div>
-        <h2 class="article__title"><a class="article__title-link" href="https://medium.com/@PetrSvihlik/a-culture-of-relationships-that-persist-fac65dbab74f">Building A Culture of Relationships That Persist&nbsp;<i class="icon-link-ext"></i></a></h2>
-        <p class="article__description">What does it take to build a flourishing company culture? And how to recognize one? Real-world examples of good and bad habits, substantial and irrelevant indicators.</p>
-        <a class="article__readmore" href="https://medium.com/@PetrSvihlik/a-culture-of-relationships-that-persist-fac65dbab74f">Read &nbsp;<i class="icon-link-ext"></i></a>
-    </div>
-<div class="article">
-        <div><time class="article__meta-time" datetime="2019-12-01">December 2019</time><span class="article__meta-divider"></span><span class="article__meta-category"><a class="article__meta-category-link" href="/category/technology">Technology</a></span></div>
-        <h2 class="article__title"><a class="article__title-link" href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p">Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov&nbsp;<i class="icon-link-ext"></i></a></h2>
-        <p class="article__description">I love AppVeyor. It&#x27;s my go-to CI/CD service for .NET projects. I use it for both open-source and private projects.</p>
-        <a class="article__readmore" href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p">Read &nbsp;<i class="icon-link-ext"></i></a>
-    </div>
-<div class="article">
-        <div><time class="article__meta-time" datetime="2019-08-26">August 2019</time><span class="article__meta-divider"></span><span class="article__meta-category"><a class="article__meta-category-link" href="/category/personal-development">Personal Development</a></span></div>
-        <h2 class="article__title"><a class="article__title-link" href="https://dev.to/petrsvihlik/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv-540g">Why I Won&#x27;t Hire You - 5 Honest Tips to a Better CV&nbsp;<i class="icon-link-ext"></i></a></h2>
-        <p class="article__description">Recently, I had the immense pleasure to go through several hundreds of CVs. I thought I&#x27;d share some of the most common mistakes I&#x27;ve seen.</p>
-        <a class="article__readmore" href="https://dev.to/petrsvihlik/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv-540g">Read &nbsp;<i class="icon-link-ext"></i></a>
-    </div>
-<div class="article">
-        <div><time class="article__meta-time" datetime="2019-01-22">January 2019</time><span class="article__meta-divider"></span><span class="article__meta-category"><a class="article__meta-category-link" href="/category/personal-development">Personal Development</a></span></div>
-        <h2 class="article__title"><a class="article__title-link" href="https://medium.com/@PetrSvihlik/how-i-changed-my-life-in-three-steps-fc7d73f958ca">How I Changed My Life in Three Steps&nbsp;<i class="icon-link-ext"></i></a></h2>
-        <p class="article__description">The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and focused on things that truly matter.</p>
-        <a class="article__readmore" href="https://medium.com/@PetrSvihlik/how-i-changed-my-life-in-three-steps-fc7d73f958ca">Read &nbsp;<i class="icon-link-ext"></i></a>
+    <div class="pager">
+            <a rel="prev" href="/page/3">← prev</a>
+            <a rel="next" href="/page/5">next →</a>
     </div>
 
-    <div class="pagination">
-        <div class="pagination__prev"><a aria-current="page" rel="prev" class="pagination__prev-link " href="/page/3">← PREV</a></div>
-        <div class="pagination__next"><a rel="next" class="pagination__next-link  " href="/page/5">NEXT →</a></div>
-    </div>
+    <footer class="foot">
+        <span><span class="dot">●</span> built with caffeine &amp; .NET</span>
+        <span class="dim">— © 2026 Petr &#x160;vihl&#xED;k</span>
+        <span class="right">
+            <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener">github</a>
+            <a href="/feed.rss" target="_blank" rel="noopener">rss</a>
+        </span>
+    </footer>
+</main>
 
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-    <script src="/assets/js/zoom.js"></script>
-    <script src="/pagefind/pagefind-ui.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            new PagefindUI({ element: '#search', showImages: false });
-        });
-    </script>
+    <script src="/assets/js/site.js"></script>
 </body>
 </html>

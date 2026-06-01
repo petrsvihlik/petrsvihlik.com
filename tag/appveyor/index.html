@@ -1,9 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-accent="cyan">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- avoid theme flash: apply stored theme/accent before first paint -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('ps-theme') || 'dark';
+                var a = localStorage.getItem('ps-accent') || 'cyan';
+                var r = document.documentElement;
+                r.setAttribute('data-theme', t);
+                r.setAttribute('data-accent', a);
+            } catch (e) { }
+        })();
+    </script>
     <!-- Google Tag Manager -->
         <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,27 +29,22 @@
     <title>Appveyor - Petr &#x160;vihl&#xED;k</title>
     <meta name="description" content="Posts about DevRel, DX, OS, and .NET." />
     <meta name="author" content="Petr &#x160;vihl&#xED;k" />
-    <meta name="viewport" content="width=device-width" />
-    <!-- Load Google Fonts non-blocking to eliminate render-blocking resource -->
+    <!-- JetBrains Mono — loaded non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" /></noscript>
-    <link rel="stylesheet" href="/assets/scss/init.css" />
-    <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-    <link rel="preload" href="/assets/fonts/fontello-5805c6cd/font/fontello.woff2?65524428" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/assets/fonts/fontello-5805c6cd/css/fontello.css" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" /></noscript>
+    <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <script type="application/javascript" src="/assets/js/darkmode.js"></script>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4fd6e0">
+    <meta name="msapplication-TileColor" content="#0a0c10">
+    <meta name="theme-color" content="#0a0c10">
     
 </head>
 
@@ -48,127 +55,73 @@
                     height="0" width="0" style="display:none;visibility:hidden"></iframe>
         </noscript>
         <!-- End Google Tag Manager (noscript) -->
-    <div class="layout">
-        <div class="sidebar">
-    <div class="sidebar__inner">
-        
-<div class="sidebar__author">
-    <a href="/">
-        <img src="/assets/img/avatar.jpg"
-             class="sidebar__author-photo"
-             width="75"
-             height="75"
-             alt="Petr &#x160;vihl&#xED;k" />
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="topbar">
+        <a class="brand" href="/"><span class="sym">~/</span>petr<span class="dim">.svihlik</span></a>
+        <nav class="nav">
+            <a href="/" class="active">articles</a>
+            <a href="/pages/projects" class="">projects</a>
+            <a href="/pages/about-me" class="">about</a>
+        </nav>
+        <div class="tb-ctrl">
+            <div class="swatches" role="group" aria-label="accent color">
+                <button class="sw" data-accent="cyan"    style="--c:#4fd6e0" aria-label="cyan"></button>
+                <button class="sw" data-accent="magenta" style="--c:#ff79c6" aria-label="magenta"></button>
+                <button class="sw" data-accent="green"   style="--c:#93dca2" aria-label="green"></button>
+                <button class="sw" data-accent="yellow"  style="--c:#e7c46b" aria-label="yellow"></button>
+                <button class="sw" data-accent="purple"  style="--c:#c79bf2" aria-label="purple"></button>
+            </div>
+            <button class="iconbtn" data-theme-toggle aria-label="toggle theme">sun</button>
+        </div>
+    </header>
+
+    
+<main class="wrap">
+    <div class="sec-head">
+            <h2><span class="sym">#</span> Appveyor</h2>
+        <span class="count" data-count>2 entries</span>
+    </div>
+    <div class="grep">
+        <span class="label">grep&gt;</span>
+        <input type="text" data-grep placeholder="filter by title or category (e.g. technology)…" aria-label="filter articles" autocomplete="off" spellcheck="false">
+        <span class="hint">/</span>
+    </div>
+
+<div class="log">
+    <a class="row" href="https://dev.to/petrsvihlik/lessons-learned-migrating-from-appveyor-to-github-actions-1gh8" target=_blank rel=noopener data-search="2021-03 technology lessons learned: migrating from appveyor to github actions the third article about github actions in a row? one must be thinking i am up to something.">
+        <span class="date">2021-03</span>
+        <span class="cat">Technology</span>
+        <span class="title" data-text="Lessons Learned: Migrating from AppVeyor to GitHub Actions">Lessons Learned: Migrating from AppVeyor to GitHub Actions
+                <span class="desc">The third article about GitHub Actions in a row? One must be thinking I am up to something.</span>
+        </span>
+        <span class="go">cat →</span>
+    </a>
+    <a class="row" href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p" target=_blank rel=noopener data-search="2019-12 technology running .net core 3 xunit code coverage in appveyor using opencover and codecov i love appveyor. it&#x27;s my go-to ci/cd service for .net projects. i use it for both open-source and private projects.">
+        <span class="date">2019-12</span>
+        <span class="cat">Technology</span>
+        <span class="title" data-text="Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov">Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov
+                <span class="desc">I love AppVeyor. It&#x27;s my go-to CI/CD service for .NET projects. I use it for both open-source and private projects.</span>
+        </span>
+        <span class="go">cat →</span>
     </a>
 
-    <h2 class="sidebar__author-title">
-        <a class="sidebar__author-title-link" href="/">Petr &#x160;vihl&#xED;k</a>
-    </h2>
-    <p class="sidebar__author-subtitle">VP Engineering @ Kentico, ex-Microsoft, Open-So(u)rcerer, .NET freak, explorer of the planet earth.</p>
+    <div class="empty" style="display:none"><span class="sym">!</span> no entries match the filter — try <code>esc</code> to clear.</div>
 </div>
 
-        
-<nav class="menu">
-    <ul class="menu__list">
-            <li class="menu__list-item">
-                <a href="/" class="menu__list-item-link ">Articles</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="/pages/projects" class="menu__list-item-link ">Projects</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="/pages/about-me" class="menu__list-item-link ">About me</a>
-            </li>
-    </ul>
-    <div class="switch__container">
-    <span class="switch__text" onClick="document.getElementById('slider').click();">Night mode</span>
-    <label class="switch">
-        <input id="DarkModeSwitcher" type="checkbox" />
-        <span class="slider" id="slider" onClick="toggleDarkMode();" />
-    </label>
-</div>
-</nav>
 
-        <div class="search">
-    <div id="search"></div>
-</div>
-
-        
-<div class="links">
-    <ul class="links__list">
-            <li class="links__list-item">
-                <a href="https://github.com/petrsvihlik" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
-                    <i class="icon-github-circled"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://stackoverflow.com/users/1332034/rocky" rel="noopener noreferrer" target="_blank" aria-label="Stack Overflow">
-                    <i class="icon-stackoverflow"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://dev.to/petrsvihlik" rel="noopener noreferrer" target="_blank" aria-label="Dev.to">
-                    <i class="icon-devto"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://medium.com/@PetrSvihlik" rel="noopener noreferrer" target="_blank" aria-label="Medium">
-                    <i class="icon-medium"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="https://www.linkedin.com/in/svihlik/" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
-                    <i class="icon-linkedin"></i>
-                </a>
-            </li>
-            <li class="links__list-item">
-                <a href="/feed.rss" rel="noopener noreferrer" target="_blank" aria-label="RSS">
-                    <i class="icon-rss"></i>
-                </a>
-            </li>
-    </ul>
-</div>
-
-    </div>
-</div>
-
-<div class="content">
-    <div class="content__inner">
-        <div class="page">
-                <h1 class="page__title">
-                    Appveyor
-                </h1>
-            <div class="page__body">
-                    <div class="page__body">
-                        
-<div class="article">
-        <div><time class="article__meta-time" datetime="2021-03-05">March 2021</time><span class="article__meta-divider"></span><span class="article__meta-category"><a class="article__meta-category-link" href="/category/technology">Technology</a></span></div>
-        <h2 class="article__title"><a class="article__title-link" href="https://dev.to/petrsvihlik/lessons-learned-migrating-from-appveyor-to-github-actions-1gh8">Lessons Learned: Migrating from AppVeyor to GitHub Actions&nbsp;<i class="icon-link-ext"></i></a></h2>
-        <p class="article__description">The third article about GitHub Actions in a row? One must be thinking I am up to something.</p>
-        <a class="article__readmore" href="https://dev.to/petrsvihlik/lessons-learned-migrating-from-appveyor-to-github-actions-1gh8">Read &nbsp;<i class="icon-link-ext"></i></a>
-    </div>
-<div class="article">
-        <div><time class="article__meta-time" datetime="2019-12-01">December 2019</time><span class="article__meta-divider"></span><span class="article__meta-category"><a class="article__meta-category-link" href="/category/technology">Technology</a></span></div>
-        <h2 class="article__title"><a class="article__title-link" href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p">Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and Codecov&nbsp;<i class="icon-link-ext"></i></a></h2>
-        <p class="article__description">I love AppVeyor. It&#x27;s my go-to CI/CD service for .NET projects. I use it for both open-source and private projects.</p>
-        <a class="article__readmore" href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p">Read &nbsp;<i class="icon-link-ext"></i></a>
-    </div>
+    <footer class="foot">
+        <span><span class="dot">●</span> built with caffeine &amp; .NET</span>
+        <span class="dim">— © 2026 Petr &#x160;vihl&#xED;k</span>
+        <span class="right">
+            <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener">github</a>
+            <a href="/feed.rss" target="_blank" rel="noopener">rss</a>
+        </span>
+    </footer>
+</main>
 
 
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-    <script src="/assets/js/zoom.js"></script>
-    <script src="/pagefind/pagefind-ui.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            new PagefindUI({ element: '#search', showImages: false });
-        });
-    </script>
+    <script src="/assets/js/site.js"></script>
 </body>
 </html>

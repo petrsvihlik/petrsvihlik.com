@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Wait for GitHub Pages to propagate
       run: sleep 60
     - name: Audit URLs using Lighthouse

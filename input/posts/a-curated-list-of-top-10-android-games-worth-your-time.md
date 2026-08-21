@@ -6,4 +6,5 @@ date: 2021-10-16
 category: entertainment
 tags: [fun, gaming]
 canonical_url: https://petrsvihlik.medium.com/a-curated-list-of-top-10-android-games-worth-your-time-6d5232728683
+draft: true # triage: drop — excluded from the site (issue #64)
 ---

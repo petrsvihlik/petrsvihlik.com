@@ -17,5 +17,8 @@ namespace PetrSvihlik.Com.Models.ContentTypes
 
         /// <summary>Show the giscus comment thread under the post.</summary>
         public bool Comments { get; set; }
+
+        /// <summary>Excluded from production builds, archives, feeds, and the sitemap.</summary>
+        public bool Draft { get; set; }
     }
 }

@@ -51,6 +51,7 @@ Post content in Markdown goes here.
 - `slug` is optional — defaults to the filename without extension
 - `canonical_url` can be added for posts originally published elsewhere (adds a `<link rel="canonical">`)
 - Categories and tags are derived from slugs automatically (hyphens → spaces, title-cased)
+- `draft: true` excludes the post from production builds entirely — no page, and it never appears in archives, feeds, or the sitemap. Include draft pages locally with `dotnet run -- preview drafts` (or the `Drafts=true` env var); they render at their real `/posts/<slug>` URL, `noindex`ed, still outside archives/feeds/sitemap
 
 ### Rich content
 

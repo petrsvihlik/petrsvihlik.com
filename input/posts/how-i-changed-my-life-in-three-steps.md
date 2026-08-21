@@ -6,4 +6,5 @@ date: 2019-01-22
 category: personal-development
 tags: [honesty, life, retrospective, core-values]
 canonical_url: https://medium.com/@PetrSvihlik/how-i-changed-my-life-in-three-steps-fc7d73f958ca
+draft: true # triage: rework — excluded until rewritten (issue #64)
 ---

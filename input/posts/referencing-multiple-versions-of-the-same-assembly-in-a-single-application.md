@@ -6,4 +6,5 @@ date: 2016-05-24
 category: technology
 tags: [dot-net, dependency-hell]
 canonical_url: https://devnet.kentico.com/articles/referencing-multiple-versions-of-the-same-assembly-in-a-single-application
+draft: true # triage: drop — excluded from the site (issue #64)
 ---

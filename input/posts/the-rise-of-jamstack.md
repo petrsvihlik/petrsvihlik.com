@@ -6,4 +6,5 @@ date: 2020-03-12
 category: technology
 tags: [jamstack]
 canonical_url: https://kontent.ai/blog/the-rise-of-jamstack
+draft: true # triage: drop — excluded from the site (issue #64)
 ---

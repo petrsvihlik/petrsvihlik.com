@@ -6,4 +6,5 @@ date: 2019-12-01
 category: leadership
 tags: [relationships, company-culture, friendship]
 canonical_url: https://medium.com/@PetrSvihlik/a-culture-of-relationships-that-persist-fac65dbab74f
+draft: true # triage: rework — excluded until rewritten (issue #64)
 ---

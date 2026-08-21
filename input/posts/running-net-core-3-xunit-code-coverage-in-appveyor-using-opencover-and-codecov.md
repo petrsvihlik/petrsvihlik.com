@@ -6,4 +6,5 @@ date: 2019-12-01
 category: technology
 tags: [opencover, appveyor, codecov, dot-net]
 canonical_url: https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p
+draft: true # triage: drop — excluded from the site (issue #64)
 ---

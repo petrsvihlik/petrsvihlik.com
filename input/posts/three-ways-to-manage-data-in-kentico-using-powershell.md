@@ -6,4 +6,5 @@ date: 2016-08-09
 category: technology
 tags: [powershell, rest, reflection, compilation]
 canonical_url: https://devnet.kentico.com/articles/three-ways-to-manage-data-in-kentico-using-powershell
+draft: true # triage: drop — excluded from the site (issue #64)
 ---

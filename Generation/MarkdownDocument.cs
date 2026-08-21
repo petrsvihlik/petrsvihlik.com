@@ -28,6 +28,9 @@ namespace PetrSvihlik.Com.Generation
         /// <summary>Render the page but keep it out of the sitemap and ask crawlers not to index it.</summary>
         public bool Unlisted { get; set; }
 
+        /// <summary>Skip the post in production builds; rendered (noindexed) only when the Drafts setting is on.</summary>
+        public bool Draft { get; set; }
+
         /// <summary>Render a giscus comment thread (backed by a GitHub Discussion) under the content.</summary>
         public bool Comments { get; set; }
     }

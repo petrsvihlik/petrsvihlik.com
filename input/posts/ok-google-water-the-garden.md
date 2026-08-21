@@ -6,4 +6,5 @@ date: 2020-07-16
 category: technology
 tags: [smart-home, rachio, water-irrigation, gardening]
 canonical_url: https://medium.com/@PetrSvihlik/ok-google-water-the-garden-29827f29a1cb
+draft: true # triage: drop — excluded from the site (issue #64)
 ---

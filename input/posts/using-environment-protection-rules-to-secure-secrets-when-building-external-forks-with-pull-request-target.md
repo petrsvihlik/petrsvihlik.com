@@ -6,4 +6,5 @@ date: 2021-03-05
 category: technology
 tags: [github-actions, devops]
 canonical_url: https://dev.to/petrsvihlik/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pullrequesttarget-hci
+draft: true # triage: rework — excluded until rewritten (issue #64)
 ---

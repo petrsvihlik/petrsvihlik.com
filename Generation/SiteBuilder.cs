@@ -28,6 +28,7 @@ namespace PetrSvihlik.Com.Generation
         private readonly string _outputPath;
         private readonly PageContext _ctx;
         private readonly SiteLinks _links;
+        private readonly bool _includeDrafts;
 
         public SiteBuilder(string rootPath, IConfiguration configuration)
         {
@@ -35,6 +36,7 @@ namespace PetrSvihlik.Com.Generation
             _outputPath = Path.Combine(rootPath, "output");
             _links = new SiteLinks(configuration["LinkRoot"], configuration["Host"]);
             _ctx = new PageContext(CreateSiteMetadata(), _links, configuration["TagManagerId"]);
+            _includeDrafts = bool.TryParse(configuration["Drafts"], out var drafts) && drafts;
         }
 
         private static SiteMetadata CreateSiteMetadata() => new()
@@ -83,16 +85,24 @@ namespace PetrSvihlik.Com.Generation
                     return output.ToHtmlString();
                 });
 
-            var newestFirst = articles.OrderByDescending(a => a.PublishDate).ToList();
+            // drafts are excluded from archives, feeds, and the sitemap everywhere below;
+            // their post pages render (noindexed) only when the Drafts setting is on
+            var published = articles.Where(a => !a.Draft).ToList();
+            var draftCount = articles.Count - published.Count;
+
+            var newestFirst = published.OrderByDescending(a => a.PublishDate).ToList();
             var newestDate = newestFirst.FirstOrDefault()?.PublishDate;
             var sitemap = new List<SitemapEntry>();
 
             // posts (and their <article> bodies, reused by the feeds)
             var articleBodies = new Dictionary<string, string>();
-            foreach (var article in articles)
+            foreach (var article in _includeDrafts ? articles : published)
             {
                 var url = _links.Link($"/posts/{article.Slug}");
-                articleBodies[article.Slug] = await RenderAsync<PostArticle>(new() { ["Ctx"] = _ctx, ["Article"] = article });
+                if (!article.Draft)
+                {
+                    articleBodies[article.Slug] = await RenderAsync<PostArticle>(new() { ["Ctx"] = _ctx, ["Article"] = article });
+                }
                 var html = await RenderAsync<PostPage>(new()
                 {
                     ["Ctx"] = _ctx,
@@ -102,14 +112,18 @@ namespace PetrSvihlik.Com.Generation
                     {
                         Title = $"{article.Title} - {_ctx.Site.Title}",
                         Description = article.Description,
-                        RootedUrl = url,
+                        RootedUrl = article.Draft ? null : url,
                         ExternalCanonical = article.CanonicalUrl,
                         Article = article,
-                        JsonLd = JsonLdType.BlogPosting,
+                        JsonLd = article.Draft ? JsonLdType.None : JsonLdType.BlogPosting,
+                        NoIndex = article.Draft,
                     },
                 });
                 WriteFile($"posts/{article.Slug}.html", html);
-                sitemap.Add(new SitemapEntry(url, article.PublishDate));
+                if (!article.Draft)
+                {
+                    sitemap.Add(new SitemapEntry(url, article.PublishDate));
+                }
             }
 
             // home archive: index.html + page/N/index.html
@@ -235,7 +249,8 @@ namespace PetrSvihlik.Com.Generation
             WriteRobotsTxt();
 
             var fileCount = Directory.EnumerateFiles(_outputPath, "*", SearchOption.AllDirectories).Count();
-            Console.WriteLine($"Generated {fileCount} files in {stopwatch.ElapsedMilliseconds} ms.");
+            var draftsNote = draftCount == 0 ? "" : $" Drafts: {draftCount} {(_includeDrafts ? "included (noindexed)" : "skipped")}.";
+            Console.WriteLine($"Generated {fileCount} files in {stopwatch.ElapsedMilliseconds} ms.{draftsNote}");
         }
 
         private List<Article> LoadArticles() =>
@@ -258,6 +273,7 @@ namespace PetrSvihlik.Com.Generation
                         TagObjects = fm.Tags.Select(t => new Tag { Slug = t, Title = t.SlugToTitle() }).ToList(),
                         ArticleAuthor = new Author { Name = "Petr Švihlík" },
                         Comments = fm.Comments,
+                        Draft = fm.Draft,
                     };
                 })
                 .ToList();

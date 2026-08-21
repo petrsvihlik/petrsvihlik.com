@@ -1,8 +1,11 @@
 {
   "profiles": {
     "Generator": {
+      "commandName": "Project"
+    },
+    "Preview": {
       "commandName": "Project",
-      "commandLineArgs": "--nocache"
+      "commandLineArgs": "preview"
     }
   }
 }

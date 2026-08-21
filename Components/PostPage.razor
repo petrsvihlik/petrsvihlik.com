@@ -1,0 +1,32 @@
+@using System.Globalization
+<SiteLayout Ctx="Ctx" Title="@($"{Article.Title} - {Ctx.Site.Title}")" PageType="post" ActiveNav="articles">
+    <HeadExtra>
+        @if (!string.IsNullOrWhiteSpace(Article.CanonicalUrl))
+        {
+            <link rel="canonical" href="@Article.CanonicalUrl" />
+        }
+    </HeadExtra>
+    <ChildContent>
+<main class="wrap">
+
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">$</span> cat @(Article.Slug).md</h2>
+        @if (Article.PublishDate != null)
+        {
+            <span class="count">@Article.PublishDate?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat)</span>
+        }
+    </div>
+    <hr class="sep">
+
+    <article class="article-single" style="margin-top:24px">
+<PostArticle Ctx="Ctx" Article="Article" />
+    </article>
+
+</main>
+    </ChildContent>
+</SiteLayout>
+
+@code {
+    [Parameter] public PageContext Ctx { get; set; }
+    [Parameter] public Article Article { get; set; }
+}

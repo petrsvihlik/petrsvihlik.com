@@ -1,0 +1,127 @@
+@using System.Globalization
+@using System.Text.Json
+<SiteLayout Ctx="Ctx" Title="@PageTitle" ActiveNav="@ActiveNav">
+    <ChildContent>
+<main class="wrap">
+@if (IsArticleList)
+{
+    @* ---------- hero (homepage only) ---------- *@
+    if (ShowHero)
+    {
+        <section class="hero">
+            <div class="avatar-box">
+                <canvas class="avatar" width="120" height="120" role="img" aria-label="@Ctx.Author.Name"
+                        data-src="@Ctx.Links.Link("/assets/img/avatar.jpg")"></canvas>
+                <div class="avatar-tag">./avatar.jpg</div>
+            </div>
+            <div class="id">
+                <p class="prompt"><span class="sym">$</span> whoami</p>
+                <h1>@Ctx.Author.Name<span class="cursor"></span></h1>
+                <p class="bio">
+                    <span class="k">VP&nbsp;Engineering</span> @@ Kentico · ex-Microsoft ·
+                    <span class="s">Open-So(u)rcerer</span> · <span class="n">.NET</span> freak ·
+                    explorer of the planet earth.
+                </p>
+                <nav class="socials">
+                    @foreach (var contact in Ctx.Author.Contacts)
+                    {
+                        <a href="@contact.Url" target="_blank" rel="noopener">@contact.Name.ToLowerInvariant()</a>
+                    }
+                </nav>
+            </div>
+        </section>
+
+        <hr class="sep">
+    }
+
+    @* ---------- section heading ---------- *@
+    <div class="sec-head">
+        @if (IsHomeIndex)
+        {
+            <h2><span class="sym">#</span> articles</h2>
+        }
+        else
+        {
+            <h2><span class="sym">#</span> @TitleProvider?.Title</h2>
+        }
+        <span class="count" data-count>@Articles.Items.Count @(Articles.Items.Count == 1 ? "entry" : "entries")</span>
+    </div>
+
+    @* ---------- grep filter ---------- *@
+    <div class="grep">
+        <span class="label">grep&gt;</span>
+        <input type="text" data-grep placeholder="filter by title or category (e.g. technology)…" aria-label="filter articles" autocomplete="off" spellcheck="false">
+        <span class="hint">/</span>
+    </div>
+
+    @* full archive index — lets the filter search every post, not just this page *@
+    @if (IsHomeIndex && AllArticles != null)
+    {
+        var searchIndex = AllArticles.Select(a => new
+        {
+            title = a.Title,
+            url = !string.IsNullOrWhiteSpace(a.CanonicalUrl)
+                ? a.CanonicalUrl
+                : Ctx.Links.Link($"/posts/{a.Slug}"),
+            ext = !string.IsNullOrWhiteSpace(a.CanonicalUrl),
+            cat = a.SelectedCategory?.Title ?? "",
+            date = a.PublishDate?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat) ?? "",
+            desc = a.Description ?? ""
+        });
+        <script type="application/json" data-article-index>@((MarkupString)JsonSerializer.Serialize(searchIndex))</script>
+    }
+
+    <PostList Ctx="Ctx" Model="Articles" />
+}
+else
+{
+    @* ---------- generic content page (about, 404, …) ---------- *@
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">$</span> cat @(Page.Title)</h2>
+    </div>
+    <hr class="sep">
+
+    <section class="prose" style="margin-top:22px">
+        @((MarkupString)Page.Body)
+    </section>
+}
+
+    <footer class="foot">
+        <span><span class="dot">●</span> built with caffeine &amp; .NET</span>
+        <span class="dim">— © @System.DateTime.UtcNow.Year @Ctx.Author.Name</span>
+        <span class="right">
+            <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener">github</a>
+            <a href="@Ctx.Links.Link("/feed.rss")" target="_blank" rel="noopener">rss</a>
+        </span>
+    </footer>
+</main>
+    </ChildContent>
+</SiteLayout>
+
+@code {
+    [Parameter] public PageContext Ctx { get; set; }
+
+    /// <summary>Set for article-list views (home, tag, and category archives).</summary>
+    [Parameter] public PagedContent<Article> Articles { get; set; }
+
+    /// <summary>Full archive powering the homepage client-side filter. Homepage only.</summary>
+    [Parameter] public System.Collections.Generic.IReadOnlyList<Article> AllArticles { get; set; }
+
+    /// <summary>True on the homepage archive (hero + full search index).</summary>
+    [Parameter] public bool IsHomeIndex { get; set; }
+
+    /// <summary>The group (tag/category) a filtered archive shows, or the content page. Drives the title.</summary>
+    [Parameter] public ITitleProvider TitleProvider { get; set; }
+
+    /// <summary>Set for generic content pages (about, 404, …).</summary>
+    [Parameter] public Page Page { get; set; }
+
+    private bool IsArticleList => Articles != null;
+    private bool ShowHero => IsHomeIndex && Articles.Index <= 1;
+
+    private string PageTitle => TitleProvider != null ? $"{TitleProvider.Title} - {Ctx.Site.Title}" : null;
+
+    private string ActiveNav => Page != null && Page.Url == "about-me"
+        ? "about"
+        : (IsArticleList ? "articles" : null);
+}

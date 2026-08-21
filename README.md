@@ -12,7 +12,8 @@ Source code for [petrsvihlik.com](https://petrsvihlik.com) — a static site bui
 
 **Build and preview:**
 ```bash
-dotnet run -- preview
+dotnet run -- preview          # published content only, as production renders it
+dotnet run -- preview drafts   # also renders draft posts at their real URLs
 ```
 Generates the site and serves it at `http://localhost:5080` (with GitHub Pages-style extensionless URLs). Use `dotnet watch run -- preview` to rebuild on file changes.
 
@@ -21,11 +22,18 @@ Generates the site and serves it at `http://localhost:5080` (with GitHub Pages-s
 dotnet run
 ```
 
+**Start a new post:**
+```bash
+dotnet run -- new "My Post Title"
+```
+Scaffolds `input/posts/my-post-title.md` with front matter prefilled (slug derived from the title, diacritics folded; today's date) — born as `draft: true`, so it is previewable immediately and invisible in production until the draft line is removed. Refuses to overwrite an existing file.
+
 ## How it works
 
 - `Generation/SiteBuilder.cs` loads content from `input/`, renders the components, and writes `output/` — pages, paginated archives (home, per-tag, per-category), RSS/Atom feeds, and `sitemap.xml`.
 - Templates are plain Razor components in `Components/`; site metadata (title, author, contacts) lives in `SiteBuilder.CreateSiteMetadata()`.
-- Settings: `TagManagerId` from `appsettings.json`; `Host` and `LinkRoot` (used by CI) come from environment variables and control absolute-link generation for feeds and the sitemap.
+- Email capture (`Components/Newsletter.razor`) renders on every post page, at the bottom of the homepage archive, and on pages that opt in — a plain HTML form handing the address to the provider's hosted subscribe flow. Provider specifics are five constants at the top of the component (currently Substack; Buttondown/Kit equivalents documented inline).
+- Settings: `TagManagerId` from `appsettings.json`; `Host` and `LinkRoot` (used by CI) come from environment variables and control absolute-link generation for feeds and the sitemap; `Drafts=true` (or the `drafts` CLI arg) includes draft posts in the build.
 
 ## Adding content
 
@@ -49,9 +57,10 @@ Post content in Markdown goes here.
 ```
 
 - `slug` is optional — defaults to the filename without extension
-- `canonical_url` can be added for posts originally published elsewhere (adds a `<link rel="canonical">`)
+- `canonical_url` can be added for posts originally published elsewhere (adds a `<link rel="canonical">`); posts without it are canonicalized to their own URL
 - Categories and tags are derived from slugs automatically (hyphens → spaces, title-cased)
 - `draft: true` excludes the post from production builds entirely — no page, and it never appears in archives, feeds, or the sitemap. Include draft pages locally with `dotnet run -- preview drafts` (or the `Drafts=true` env var); they render at their real `/posts/<slug>` URL, `noindex`ed, still outside archives/feeds/sitemap
+- `comments: true` renders a giscus comment thread (backed by a GitHub Discussion titled `posts/<slug>`; the [`Blog discussion` workflow](.github/workflows/blog-discussion.yml) can pre-create one)
 
 ### Rich content
 
@@ -71,6 +80,8 @@ title: Page Title
 Page content here.
 ```
 
+Pages support the same `comments: true` opt-in as posts, plus `newsletter: true` to render the email-capture form under the content (posts get it automatically).
+
 ## Deployment
 
-Pushing to `master` triggers the [`.NET Core` GitHub Actions workflow](.github/workflows/dotnet-core.yml), which builds the site and deploys it to GitHub Pages (`gh-pages` branch). Lighthouse CI runs automatically after a successful deploy.
+Pushing to `master` triggers the [`.NET Core` GitHub Actions workflow](.github/workflows/dotnet-core.yml), which builds the site and deploys it to GitHub Pages (`gh-pages` branch). Lighthouse CI runs automatically after a successful deploy. Pull requests against `master` get a [Surge preview deploy](.github/workflows/preview.yml), linked from a PR comment and torn down on close.

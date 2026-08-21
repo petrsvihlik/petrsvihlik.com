@@ -25,7 +25,8 @@
                 <nav class="socials">
                     @foreach (var contact in Ctx.Author.Contacts)
                     {
-                        <a href="@contact.Url" target="_blank" rel="noopener">@contact.Name.ToLowerInvariant()</a>
+                        <a href="@contact.Url" target="_blank" rel="noopener"
+                           data-lightbox="@contact.Lightbox" data-download="@contact.Download">@contact.Name.ToLowerInvariant()</a>
                     }
                 </nav>
             </div>
@@ -44,7 +45,7 @@
         {
             <h2><span class="sym">#</span> @TitleProvider?.Title</h2>
         }
-        <span class="count" data-count>@Articles.Items.Count @(Articles.Items.Count == 1 ? "entry" : "entries")</span>
+        <span class="count" data-count>@(Articles.TotalItems > Articles.Items.Count ? $"{Articles.Items.Count} of {Articles.TotalItems}" : Articles.Items.Count.ToString()) @(Articles.TotalItems == 1 ? "entry" : "entries")</span>
     </div>
 
     @* ---------- grep filter ---------- *@

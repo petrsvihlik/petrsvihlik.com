@@ -52,6 +52,7 @@ namespace PetrSvihlik.Com.Generation
                     new() { Name = "Stack Overflow", Url = "https://stackoverflow.com/users/1332034/rocky" },
                     new() { Name = "LinkedIn", Url = "https://www.linkedin.com/in/svihlik/" },
                     new() { Name = "RSS", Url = "/feed.rss" },
+                    new() { Name = "CV", Url = "/assets/cv/", Lightbox = "doc", Download = "/assets/cv/petr-svihlik-cv.pdf" },
                 }
             }
         };

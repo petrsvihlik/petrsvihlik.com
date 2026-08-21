@@ -785,6 +785,81 @@ a.zoomable { cursor: zoom-in; }
 }
 .lightbox__close:hover { color: var(--accent); border-color: var(--accent); }
 
+/* ---------- document lightbox (iframe overlay, e.g. the CV) ---------- */
+.doclb {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+/* backdrop on a sibling layer: a backdrop-filter ancestor stops Chromium
+   from painting the iframe, so the panel must not sit inside the filter */
+.doclb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--bg) 82%, transparent);
+  backdrop-filter: blur(4px);
+}
+.doclb.is-open { display: flex; }
+.doclb__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(880px, 100%);
+  height: min(92vh, 1200px);
+  background: var(--bg-elev);
+  border: 1px solid var(--line-2);
+  border-radius: var(--rad);
+  overflow: hidden;
+}
+.doclb__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px 8px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+.doclb__title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--fg-dim);
+}
+.doclb__btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 9px;
+  color: var(--fg-dim);
+  background: var(--bg-elev);
+  border: 1px solid var(--line-2);
+  border-radius: var(--rad);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--dur), border-color var(--dur);
+}
+.doclb__btn:hover { color: var(--accent); border-color: var(--accent); }
+a.doclb__dl { color: var(--accent); border-color: color-mix(in oklab, var(--accent) 45%, var(--line-2)); }
+.doclb__frame {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #eceef1; /* matches the CV page's own screen background */
+}
+@media (max-width: 560px) {
+  .doclb { padding: 8px; }
+  .doclb__panel { height: 96vh; }
+  .doclb__title { display: none; }
+}
+
 /* ============================================================
    RICH CONTENT — extended markdown constructs (posts + pages)
    ============================================================ */

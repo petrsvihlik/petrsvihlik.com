@@ -2,7 +2,7 @@
 title: "What I Look for When I Read Your CV"
 description: "I've read hundreds of CVs — hiring for DevRel back then, hiring engineers now. Most that don't work fail on the document level, not the person level. That's fixable in an evening."
 slug: why-i-won-t-hire-you-5-honest-tips-to-a-better-cv
-date: 2026-08-21
+date: 2019-08-26
 category: personal-development
 tags: [career, resume, cover-letter, cv, hiring]
 comments: true

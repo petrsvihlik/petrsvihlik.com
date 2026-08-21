@@ -6,6 +6,11 @@ name: Blog discussion
 # Also prints the repository and category node IDs giscus needs.
 
 on:
+  # temporary bootstrap trigger (removed after the first run): dispatching a
+  # workflow requires it to exist on the default branch, which it doesn't yet
+  push:
+    branches: [claude/tender-darwin-g3jnkb-giscus]
+    paths: [.github/workflows/blog-discussion.yml]
   workflow_dispatch:
     inputs:
       term:
@@ -31,6 +36,8 @@ jobs:
       - name: Create discussion if missing
         run: |
           set -euo pipefail
+          TERM="${TERM:-pages/markup-demo}"
+          BODY="${BODY:-Comment thread for the [markup demo page](https://petrsvihlik.com/pages/markup-demo) — the unlisted page that exercises every rich-text feature the site supports. This is also the first giscus-backed discussion on the blog. 🎉}"
           OWNER="${REPO%%/*}"
           NAME="${REPO##*/}"
 

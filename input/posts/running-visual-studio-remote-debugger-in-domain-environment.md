@@ -13,7 +13,7 @@ This article describes scenarios in which you need to connect to Visual Studio R
 
 ![](/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/01.png)
 
-During development of the new [Installer](https://devnet.kentico.com/Articles/2013-06/New-Installer-for-Kentico-CMS-7-is-Out) we came across several difficulties regarding remote debugging. We needed to debug the installer in various environments, on various operating systems with different settings. We've prepared lots of virtual machines to cover most scenarios and installed remote debugger to each of them. I'm now presenting obstacles we encountered and complete solutions to avoid them.
+During development of the new [Installer](https://devnet.kentico.com/Articles/2013-06/New-Installer-for-Kentico-CMS-7-is-Out) we came across several difficulties regarding remote debugging. We needed to debug the installer in various environments, on various operating systems with different settings. We've prepared lots of virtual machines to cover most scenarios and installed remote debugger to each of them. I'm now presenting obstacles we encountered and complete solutions to avoid them.
 
 ## Setting Up the Remote Environment
 
@@ -56,7 +56,7 @@ Now you have to configure remote debugger:
 2. Check Run the "Visual Studio 2012 Remote Debugger" service checkbox and click Next
 3. On the next screen enable all three checkboxes and finish the wizard.
 
-![](/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/04.png) ![](/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/05.png)
+![](/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/04.png) ![](/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/05.png)
 
 ### Running as a standard process
 

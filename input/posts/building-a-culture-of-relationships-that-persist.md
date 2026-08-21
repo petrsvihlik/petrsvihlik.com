@@ -3,6 +3,7 @@ title: "Building A Culture of Relationships That Persist"
 description: "In 2019 I wrote that real company culture is measured by the relationships that outlive employment. Then I left the company — and the thesis got tested on me."
 slug: building-a-culture-of-relationships-that-persist
 date: 2019-12-01
+updated: 2026-08-21
 category: leadership
 tags: [relationships, company-culture, friendship, life]
 comments: true

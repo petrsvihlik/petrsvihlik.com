@@ -3,6 +3,7 @@ title: "Using Environment Protection Rules to Secure Secrets When Building Exter
 description: "Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets. A 2021 pattern — with a 2026 postscript on how it aged."
 slug: using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target
 date: 2021-03-05
+updated: 2026-08-21
 category: technology
 tags: [github-actions, devops, security]
 comments: true

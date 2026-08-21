@@ -21,7 +21,7 @@
         }
 
         <div class="article-single__date">
-            <em>Published @Article.PublishDate?.ToString("MMMM yyyy", CultureInfo.InvariantCulture.DateTimeFormat)</em>
+            <em>Published @Article.PublishDate?.ToString("MMMM yyyy", CultureInfo.InvariantCulture.DateTimeFormat)@(Article.Updated != null ? $" · updated {Article.Updated?.ToString("MMMM yyyy", CultureInfo.InvariantCulture.DateTimeFormat)}" : "")</em>
         </div>
 
         <div class="article-single__footer">

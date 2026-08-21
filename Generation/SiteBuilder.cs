@@ -122,7 +122,7 @@ namespace PetrSvihlik.Com.Generation
                 WriteFile($"posts/{article.Slug}.html", html);
                 if (!article.Draft)
                 {
-                    sitemap.Add(new SitemapEntry(url, article.PublishDate));
+                    sitemap.Add(new SitemapEntry(url, article.Updated ?? article.PublishDate));
                 }
             }
 
@@ -267,6 +267,7 @@ namespace PetrSvihlik.Com.Generation
                         Description = fm.Description,
                         Slug = doc.Slug,
                         PublishDate = fm.Date,
+                        Updated = fm.Updated,
                         CanonicalUrl = fm.CanonicalUrl,
                         ContentHtml = doc.BodyHtml,
                         SelectedCategory = new Category { Slug = categorySlug, Title = categorySlug.SlugToTitle() },

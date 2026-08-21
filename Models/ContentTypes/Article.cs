@@ -9,6 +9,9 @@ namespace PetrSvihlik.Com.Models.ContentTypes
         public string Description { get; set; }
         public string Slug { get; set; }
         public DateTime? PublishDate { get; set; }
+
+        /// <summary>When the content was last substantively revised (shown next to the publish date, feeds sitemap/SEO).</summary>
+        public DateTime? Updated { get; set; }
         public string CanonicalUrl { get; set; }
         public string ContentHtml { get; set; }
         public Category SelectedCategory { get; set; }

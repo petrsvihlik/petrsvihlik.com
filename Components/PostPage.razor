@@ -7,7 +7,7 @@
         <h2><span class="sym">$</span> cat @(Article.Slug).md</h2>
         @if (Article.PublishDate != null)
         {
-            <span class="count">@Article.PublishDate?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat)</span>
+            <span class="count">@Article.PublishDate?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat)@(Article.Updated != null ? $" · upd {Article.Updated?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat)}" : "")</span>
         }
     </div>
     <hr class="sep">

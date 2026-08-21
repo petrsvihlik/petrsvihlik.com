@@ -67,7 +67,7 @@ namespace PetrSvihlik.Com.Generation
                     new XElement(AtomNs + "id", link),
                     new XElement(AtomNs + "title", article.Title),
                     new XElement(AtomNs + "link", new XAttribute("href", link)),
-                    new XElement(AtomNs + "updated", Iso8601(article.PublishDate ?? now)),
+                    new XElement(AtomNs + "updated", Iso8601(article.Updated ?? article.PublishDate ?? now)),
                     new XElement(AtomNs + "content", html),
                     new XElement(AtomNs + "summary", article.Description)));
             }

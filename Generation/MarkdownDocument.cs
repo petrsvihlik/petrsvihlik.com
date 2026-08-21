@@ -18,6 +18,9 @@ namespace PetrSvihlik.Com.Generation
         public string Description { get; set; }
         public string Slug { get; set; }
         public DateTime? Date { get; set; }
+
+        /// <summary>When the content was last substantively revised; the original Date stays the publication date.</summary>
+        public DateTime? Updated { get; set; }
         public string Category { get; set; }
         public List<string> Tags { get; set; } = new();
         public string CanonicalUrl { get; set; }

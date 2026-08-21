@@ -61,6 +61,7 @@ Post content in Markdown goes here.
 - Categories and tags are derived from slugs automatically (hyphens → spaces, title-cased)
 - `draft: true` excludes the post from production builds entirely — no page, and it never appears in archives, feeds, or the sitemap. Include draft pages locally with `dotnet run -- preview drafts` (or the `Drafts=true` env var); they render at their real `/posts/<slug>` URL, `noindex`ed, still outside archives/feeds/sitemap
 - `comments: true` renders a giscus comment thread (backed by a GitHub Discussion titled `posts/<slug>`; the [`Blog discussion` workflow](.github/workflows/blog-discussion.yml) can pre-create one)
+- `updated: 2026-08-21` marks a substantive revision: `date` always stays the original publication date (the archive is chronological), while `updated` shows next to it on the post, feeds `article:modified_time`/`dateModified`, the sitemap's lastmod, and the Atom entry's `updated`
 
 ### Rich content
 

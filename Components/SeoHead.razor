@@ -40,6 +40,10 @@
     {
         <meta property="article:published_time" content="@article.PublishDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)" />
     }
+    if (article.Updated.HasValue)
+    {
+        <meta property="article:modified_time" content="@article.Updated.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)" />
+    }
 }
 @if (JsonLdPayload != null)
 {
@@ -95,6 +99,11 @@
                 },
                 _ => null,
             };
+
+            if (data != null && Seo.JsonLd == JsonLdType.BlogPosting && Seo.Article?.Updated is { } modified)
+            {
+                data["dateModified"] = modified.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+            }
 
             return data == null ? null : JsonSerializer.Serialize(data);
         }

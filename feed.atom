@@ -4,7 +4,7 @@
 	<title>Petr Svihlik - blog</title>
 	<link rel="self" href="https://petrsvihlik.com/" />
 	<rights>2026</rights>
-	<updated>2026-08-21T23:01:40Z</updated>
+	<updated>2026-08-21T23:03:50Z</updated>
 	<subtitle>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</subtitle>
 	<entry>
 		<id>https://petrsvihlik.com/posts/junior-developer-problem</id>
@@ -231,7 +231,7 @@ These features are not available in GitHub Actions and the easiest way to overco
 		<id>https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target</id>
 		<title>Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target</title>
 		<link href="https://petrsvihlik.com/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target" />
-		<updated>2021-03-05T00:00:00Z</updated>
+		<updated>2026-08-21T00:00:00Z</updated>
 		<content>&lt;h1 class="article-single__title"&gt;Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target&lt;/h1&gt;&lt;p class="article-single__description"&gt;Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets. A 2021 pattern &amp;#x2014; with a 2026 postscript on how it aged.&lt;/p&gt;&lt;div class="article-single__body"&gt;&lt;div class="warning"&gt;&lt;p&gt;This article is from March 2021 and describes &lt;code&gt;pull_request_target&lt;/code&gt; as it worked back then. GitHub changed the event's semantics in December 2025, and &lt;code&gt;actions/checkout&lt;/code&gt; now refuses the exact checkout shown below by default. The pattern's core idea — a human approval gate in front of secrets — survived and is now semi-official practice, but don't copy the YAML verbatim. The &lt;a href="#postscript-august-2026-what-four-years-did-to-this-pattern"&gt;postscript&lt;/a&gt; tells the whole story.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;img src="/assets/img/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target/01.webp" loading="lazy" decoding="async" alt="" /&gt;&lt;/p&gt;
@@ -359,7 +359,7 @@ The process is, in my opinion, more transparent thanks to all events being logge
 &lt;h3 id="the-meta-lesson"&gt;The meta-lesson&lt;/h3&gt;
 &lt;p&gt;Security patterns have a half-life, and it's shorter than the half-life of blog posts about them. This article ranked in searches for years after the ground truth underneath it had shifted — which is exactly how &amp;quot;semi-canonical practice&amp;quot; quietly becomes a liability. The 2021 idea was right: put a human between untrusted code and your secrets. Everything else — the event semantics, the environment model, even the checkout line — turned out to be rented ground.&lt;/p&gt;
 &lt;p&gt;I'd rather amend my old advice in public than have it silently rot in a search index. Consider this the amendment.&lt;/p&gt;
-&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published March 2021&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published March 2021 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/github-actions"&gt;Github Actions&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/devops"&gt;Devops&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/security"&gt;Security&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content>
 		<summary>Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets. A 2021 pattern — with a 2026 postscript on how it aged.</summary>
@@ -591,7 +591,7 @@ The process is, in my opinion, more transparent thanks to all events being logge
 		<id>https://petrsvihlik.com/posts/building-a-culture-of-relationships-that-persist</id>
 		<title>Building A Culture of Relationships That Persist</title>
 		<link href="https://petrsvihlik.com/posts/building-a-culture-of-relationships-that-persist" />
-		<updated>2019-12-01T00:00:00Z</updated>
+		<updated>2026-08-21T00:00:00Z</updated>
 		<content>&lt;h1 class="article-single__title"&gt;Building A Culture of Relationships That Persist&lt;/h1&gt;&lt;p class="article-single__description"&gt;In 2019 I wrote that real company culture is measured by the relationships that outlive employment. Then I left the company &amp;#x2014; and the thesis got tested on me.&lt;/p&gt;&lt;div class="article-single__body"&gt;&lt;p&gt;&lt;em&gt;I first published a version of this essay in December 2019, when I led a DevRel team at &lt;a href="https://www.kentico.com/"&gt;Kentico&lt;/a&gt;. Between then and now, its thesis got tested in a way I didn't plan: I left the company, and eventually the thesis brought me back. This is the essay rewritten, in August 2026, with the ending it was missing.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="/assets/img/posts/building-a-culture-of-relationships-that-persist/01.jpg" loading="lazy" decoding="async" alt="" /&gt;&lt;/p&gt;
 &lt;h2 id="how-deep-do-work-relationships-go"&gt;How deep do work relationships go?&lt;/h2&gt;
@@ -660,7 +660,7 @@ The process is, in my opinion, more transparent thanks to all events being logge
 &lt;p&gt;&lt;img src="/assets/img/posts/building-a-culture-of-relationships-that-persist/03.jpg" loading="lazy" decoding="async" alt="" /&gt;&lt;/p&gt;
 &lt;figcaption&gt;This is me, in a photo from the original 2019 essay. I'm keeping it here — it still fits. :)&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published December 2019&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published December 2019 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/relationships"&gt;Relationships&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/company-culture"&gt;Company Culture&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/friendship"&gt;Friendship&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/life"&gt;Life&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content>
 		<summary>In 2019 I wrote that real company culture is measured by the relationships that outlive employment. Then I left the company — and the thesis got tested on me.</summary>
@@ -704,7 +704,7 @@ If you really feel the urge to share such things somewhere, do it on LinkedIn.&l
 		<id>https://petrsvihlik.com/posts/how-i-changed-my-life-in-three-steps</id>
 		<title>How I Changed My Life in Three Steps</title>
 		<link href="https://petrsvihlik.com/posts/how-i-changed-my-life-in-three-steps" />
-		<updated>2019-01-22T00:00:00Z</updated>
+		<updated>2026-08-21T00:00:00Z</updated>
 		<content>&lt;h1 class="article-single__title"&gt;How I Changed My Life in Three Steps&lt;/h1&gt;&lt;p class="article-single__description"&gt;The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and focused on things that truly matter. (With a 2026 afterword.)&lt;/p&gt;&lt;div class="article-single__body"&gt;&lt;p&gt;&lt;em&gt;Written in January 2019. Apart from fixing a few dead links, I've left my 2019 self exactly as he was — the afterword at the end is where 2026 me gets to talk back.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and I feel that I'm happier than I've ever been in my life. If something troubles you or you'd like to change your life for the better, here's a three-step recipe:&lt;/p&gt;
 &lt;p&gt;&lt;img src="/assets/img/posts/how-i-changed-my-life-in-three-steps/01.jpg" loading="lazy" decoding="async" alt="" /&gt;&lt;/p&gt;
@@ -740,7 +740,7 @@ If you really feel the urge to share such things somewhere, do it on LinkedIn.&l
 &lt;p&gt;&lt;strong&gt;The real recipe wasn't the three steps.&lt;/strong&gt; Looking back, the magic wasn't in any particular book or booklet. It was that, for the first time, I did a &lt;em&gt;deliberate&lt;/em&gt; retrospective of my own life — and then said the findings out loud to people who mattered. Pick any framework; the framework is a pretext. The work is the looking, and the saying.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The side-effect was the feature.&lt;/strong&gt; The line about fake friends disappearing was meant as a cheeky warning. It turned out to be the most durable claim in the whole piece. The friendships that survived that season of honesty are, to a large extent, the ones I later wrote about in &lt;a href="/posts/building-a-culture-of-relationships-that-persist"&gt;Building a Culture of Relationships That Persist&lt;/a&gt; — the ones that outlasted job changes, and once even steered one.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;What I'd tell 2019 me.&lt;/strong&gt; Nothing. He was louder and cruder than I am now, and the essay's swagger slightly embarrasses me — which is precisely why I left it untouched. He did the scary thing: he looked, he told the truth about what he saw, and he pressed publish. The least I can do from here is not edit his nerve out of the record.&lt;/p&gt;
-&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published January 2019&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published January 2019 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/honesty"&gt;Honesty&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/life"&gt;Life&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/retrospective"&gt;Retrospective&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/core-values"&gt;Core Values&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content>
 		<summary>The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and focused on things that truly matter. (With a 2026 afterword.)</summary>

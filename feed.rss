@@ -5,8 +5,8 @@
 		<link>https://petrsvihlik.com/</link>
 		<description>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</description>
 		<copyright>2026</copyright>
-		<pubDate>Fri, 21 Aug 2026 23:01:40 GMT</pubDate>
-		<lastBuildDate>Fri, 21 Aug 2026 23:01:40 GMT</lastBuildDate>
+		<pubDate>Fri, 21 Aug 2026 23:03:50 GMT</pubDate>
+		<lastBuildDate>Fri, 21 Aug 2026 23:03:50 GMT</lastBuildDate>
 		<item>
 			<title>The Junior Developer Problem Is More Complicated Than You Think</title>
 			<link>https://petrsvihlik.com/posts/junior-developer-problem</link>
@@ -361,7 +361,7 @@ The process is, in my opinion, more transparent thanks to all events being logge
 &lt;h3 id="the-meta-lesson"&gt;The meta-lesson&lt;/h3&gt;
 &lt;p&gt;Security patterns have a half-life, and it's shorter than the half-life of blog posts about them. This article ranked in searches for years after the ground truth underneath it had shifted — which is exactly how &amp;quot;semi-canonical practice&amp;quot; quietly becomes a liability. The 2021 idea was right: put a human between untrusted code and your secrets. Everything else — the event semantics, the environment model, even the checkout line — turned out to be rented ground.&lt;/p&gt;
 &lt;p&gt;I'd rather amend my old advice in public than have it silently rot in a search index. Consider this the amendment.&lt;/p&gt;
-&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published March 2021&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published March 2021 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/github-actions"&gt;Github Actions&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/devops"&gt;Devops&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/security"&gt;Security&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content:encoded>
 		</item>
@@ -662,7 +662,7 @@ The process is, in my opinion, more transparent thanks to all events being logge
 &lt;p&gt;&lt;img src="/assets/img/posts/building-a-culture-of-relationships-that-persist/03.jpg" loading="lazy" decoding="async" alt="" /&gt;&lt;/p&gt;
 &lt;figcaption&gt;This is me, in a photo from the original 2019 essay. I'm keeping it here — it still fits. :)&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published December 2019&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published December 2019 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/relationships"&gt;Relationships&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/company-culture"&gt;Company Culture&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/friendship"&gt;Friendship&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/life"&gt;Life&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content:encoded>
 		</item>
@@ -742,7 +742,7 @@ If you really feel the urge to share such things somewhere, do it on LinkedIn.&l
 &lt;p&gt;&lt;strong&gt;The real recipe wasn't the three steps.&lt;/strong&gt; Looking back, the magic wasn't in any particular book or booklet. It was that, for the first time, I did a &lt;em&gt;deliberate&lt;/em&gt; retrospective of my own life — and then said the findings out loud to people who mattered. Pick any framework; the framework is a pretext. The work is the looking, and the saying.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The side-effect was the feature.&lt;/strong&gt; The line about fake friends disappearing was meant as a cheeky warning. It turned out to be the most durable claim in the whole piece. The friendships that survived that season of honesty are, to a large extent, the ones I later wrote about in &lt;a href="/posts/building-a-culture-of-relationships-that-persist"&gt;Building a Culture of Relationships That Persist&lt;/a&gt; — the ones that outlasted job changes, and once even steered one.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;What I'd tell 2019 me.&lt;/strong&gt; Nothing. He was louder and cruder than I am now, and the essay's swagger slightly embarrasses me — which is precisely why I left it untouched. He did the scary thing: he looked, he told the truth about what he saw, and he pressed publish. The least I can do from here is not edit his nerve out of the record.&lt;/p&gt;
-&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published January 2019&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published January 2019 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/honesty"&gt;Honesty&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/life"&gt;Life&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/retrospective"&gt;Retrospective&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/core-values"&gt;Core Values&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content:encoded>
 		</item>

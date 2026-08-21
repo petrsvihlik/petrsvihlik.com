@@ -1,3 +1,4 @@
+using PetrSvihlik.Com.Models;
 using PetrSvihlik.Com.Models.ContentTypes;
 using Statiq.Common;
 using Statiq.Core;
@@ -33,7 +34,7 @@ namespace PetrSvihlik.Com.Pipelines
                             }
                         }
                     };
-                    return new[] { ctx.CreateDocument(new MetadataItems { { "SiteMetadata", metadata } }) };
+                    return new[] { ctx.CreateDocument(new MetadataItems { { MetadataKeys.SiteMetadata, metadata } }) };
                 }))
             };
         }

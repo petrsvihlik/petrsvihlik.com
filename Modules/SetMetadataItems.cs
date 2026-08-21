@@ -5,11 +5,15 @@ using System.Threading.Tasks;
 
 namespace PetrSvihlik.Com.Modules
 {
-    public class SetMetaDataItems : Module
+    /// <summary>
+    /// Clones each input document with a batch of metadata items computed from the document,
+    /// so several related entries can be set in a single pass.
+    /// </summary>
+    public class SetMetadataItems : Module
     {
         private readonly Func<IDocument, IExecutionContext, Task<MetadataItems>> _getMetadata;
 
-        public SetMetaDataItems(Func<IDocument, IExecutionContext, Task<MetadataItems>> getMetadata)
+        public SetMetadataItems(Func<IDocument, IExecutionContext, Task<MetadataItems>> getMetadata)
         {
             _getMetadata = getMetadata;
         }

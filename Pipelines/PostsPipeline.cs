@@ -1,3 +1,5 @@
+using PetrSvihlik.Com.Extensions;
+using PetrSvihlik.Com.Models;
 using PetrSvihlik.Com.Models.ContentTypes;
 using PetrSvihlik.Com.Models.ViewModels;
 using Statiq.Common;
@@ -8,6 +10,7 @@ using Statiq.Yaml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PetrSvihlik.Com.Pipelines
 {
@@ -21,7 +24,7 @@ namespace PetrSvihlik.Com.Pipelines
                 new ReadFiles("posts/*.md"),
                 new ExtractFrontMatter(new ParseYaml()),
                 new RenderMarkdown().UseExtensions(),
-                new SetMetadata("ArticleModel", Config.FromDocument((doc, ctx) => BuildArticle(doc))),
+                new SetMetadata(MetadataKeys.ArticleModel, Config.FromDocument(async doc => (object)await BuildArticleAsync(doc))),
                 new SetMetadata(nameof(Category), Config.FromDocument(doc =>
                     doc.GetString("category"))),
                 new SetMetadata(nameof(Tag), Config.FromDocument(doc =>
@@ -35,15 +38,10 @@ namespace PetrSvihlik.Com.Pipelines
                 new MergeContent(new ReadFiles("_Post.cshtml")),
                 new RenderRazor()
                     .WithModel(Config.FromDocument((document, context) =>
-                    {
-                        var article = document.Get<Article>("ArticleModel");
-                        var metadata = context.Outputs.FromPipeline(nameof(SiteMetadataPipeline))
-                            .Select(x => x.Get<SiteMetadata>("SiteMetadata")).FirstOrDefault();
-                        var homepage = context.Outputs.FromPipeline(nameof(HomepagePipeline))
-                            .Select(x => x.Get<Homepage>("Homepage")).FirstOrDefault();
-                        var sidebar = new SidebarViewModel(homepage, metadata, false, null);
-                        return new PostViewModel(article, metadata, sidebar);
-                    })),
+                        new PostViewModel(
+                            document.Get<Article>(MetadataKeys.ArticleModel),
+                            context.GetSiteMetadata(),
+                            context.CreateSidebar()))),
             };
 
             OutputModules = new ModuleList
@@ -52,7 +50,7 @@ namespace PetrSvihlik.Com.Pipelines
             };
         }
 
-        private static Article BuildArticle(IDocument doc)
+        private static async Task<Article> BuildArticleAsync(IDocument doc)
         {
             var categorySlug = doc.GetString("category") ?? "";
             var tagSlugs = doc.GetList<string>("tags", new List<string>());
@@ -64,22 +62,15 @@ namespace PetrSvihlik.Com.Pipelines
                 Slug = doc.GetString("slug") ?? doc.Source.FileNameWithoutExtension.FullPath,
                 PublishDate = doc.Get<DateTime?>("date"),
                 CanonicalUrl = doc.GetString("canonical_url"),
-                ContentHtml = doc.GetContentStringAsync().GetAwaiter().GetResult(),
+                ContentHtml = await doc.GetContentStringAsync(),
                 SelectedCategory = new Category
                 {
                     Slug = categorySlug,
-                    Title = SlugToTitle(categorySlug)
+                    Title = categorySlug.SlugToTitle()
                 },
-                TagObjects = tagSlugs.Select(s => new Tag { Slug = s, Title = SlugToTitle(s) }).ToList(),
+                TagObjects = tagSlugs.Select(s => new Tag { Slug = s, Title = s.SlugToTitle() }).ToList(),
                 ArticleAuthor = new Author { Name = "Petr Švihlík" }
             };
-        }
-
-        internal static string SlugToTitle(string slug)
-        {
-            if (string.IsNullOrEmpty(slug)) return slug;
-            return System.Globalization.CultureInfo.CurrentCulture.TextInfo
-                .ToTitleCase(slug.Replace("-", " "));
         }
     }
 }

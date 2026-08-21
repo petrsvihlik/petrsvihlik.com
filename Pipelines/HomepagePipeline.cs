@@ -1,3 +1,4 @@
+using PetrSvihlik.Com.Models;
 using PetrSvihlik.Com.Models.ContentTypes;
 using Statiq.Common;
 using Statiq.Core;
@@ -22,7 +23,7 @@ namespace PetrSvihlik.Com.Pipelines
                             new Page { Title = "About me", Url = "about-me", ShowInNavigation = true },
                         }
                     };
-                    return new[] { ctx.CreateDocument(new MetadataItems { { "Homepage", homepage } }) };
+                    return new[] { ctx.CreateDocument(new MetadataItems { { MetadataKeys.Homepage, homepage } }) };
                 }))
             };
         }

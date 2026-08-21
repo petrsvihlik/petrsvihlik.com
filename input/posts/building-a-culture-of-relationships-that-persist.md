@@ -1,99 +1,108 @@
 ---
 title: "Building A Culture of Relationships That Persist"
-description: "What does it take to build a flourishing company culture? And how to recognize one? Real-world examples of good and bad habits, substantial and irrelevant indicators."
+description: "In 2019 I wrote that real company culture is measured by the relationships that outlive employment. Then I left the company — and the thesis got tested on me."
 slug: building-a-culture-of-relationships-that-persist
-date: 2019-12-01
+date: 2026-08-21
 category: leadership
-tags: [relationships, company-culture, friendship]
-canonical_url: https://medium.com/@PetrSvihlik/a-culture-of-relationships-that-persist-fac65dbab74f
-draft: true # triage: rework — excluded until rewritten (issue #64)
+tags: [relationships, company-culture, friendship, life]
+comments: true
 ---
 
-## Building A Culture of Relationships That Persist
-
-What defines a healthy workplace relationship? What can be done to have better and stronger relationships?
+*I first published a version of this essay in December 2019, when I led a DevRel team at [Kentico](https://www.kentico.com/). Between then and now, its thesis got tested in a way I didn't plan: I left the company, and eventually the thesis brought me back. This is the essay rewritten with the ending it was missing.*
 
 ![](/assets/img/posts/building-a-culture-of-relationships-that-persist/01.jpg)
 
-## Relationships — how deep they go?
+## How deep do work relationships go?
 
-Not so long ago, a friend of mine was getting married and I had the honor to be her man of honor. She is actually a colleague of mine (and a former teammate). I’ve known her for more than seven years — we go running together, we visit each other, we go on trips together, and we helped each other withstand some serious life crises. I absolutely didn’t take it for granted but I wasn't exactly surprised when she asked me to be her honor attendant.
+Back in 2019, a friend of mine was getting married and I had the honor to be her man of honor. She was a colleague and former teammate. By then I'd known her for more than seven years — we went running together, visited each other, traveled together, and helped each other withstand some serious life crises. I didn't take the invitation for granted, but I wasn't exactly surprised either.
 
-Nevertheless, it got me wondering about relationships at work:
+It got me wondering about relationships at work:
 
-> How often do people ask their co-workers for such personal favors?
+> How often do people ask their co-workers for such personal favors?
 
-> How often people truly open up to their colleagues?
+> How often do people truly open up to their colleagues?
 
-I’m all the more curious because many people I meet are reluctant to involve in any deeper camaraderie at work. At best, they go grab a beer with their peers but sometimes, not even that. And I don’t think it’s because they don’t like beer.
+I was all the more curious because many people I meet are reluctant to get involved in any deeper camaraderie at work. At best, they grab a beer with their peers — sometimes not even that. And I don't think it's because they don't like beer.
 
-Au contraire, I think they’d often love to go out but the **company culture doesn’t spawn the opportunities**.
+Au contraire, I think they'd often love to go out, but the **company culture doesn't spawn the opportunities**.
 
-Are deeper friendships at work so unusual? Should I feel lucky?
+Are deeper friendships at work so unusual? Should I have felt lucky?
 
-## Relationships that last
+## Relationships that last
 
-Let stick with the wedding theme for a bit. This past summer, I spent three wedding-y weekends in a row with my colleagues. Besides the mentioned wedding, I organized a bachelorette party and participated in another stag party. (Which would do for another article but unfortunately, I can’t share any details as I’m bound to secrecy. 😇)
+To stick with the wedding theme: that same summer I spent three wedding-y weekends in a row with my colleagues. Besides the wedding itself, I organized a bachelorette party and took part in another stag party. (Which would make for another article, but unfortunately I'm bound to secrecy. 😇)
 
-My colleagues and I host and attend several events of this kind every year. Throughout time, we perfected the stag parties to the level where we stay together up to four days, often abroad, and typically spending a serious part of our paychecks. The preparations take weeks, the schedules are packed until the very last second.
+My colleagues and I hosted and attended several events of this kind every year. Over time we perfected the stag parties to the point where we'd stay together up to four days, often abroad, typically spending a serious part of our paychecks. Preparations took weeks; the schedules were packed until the very last second.
 
-That alone wouldn’t be so unique if those events weren’t attended by and organized for our friends who **no longer work for our company**.
+That alone wouldn't be so remarkable — if those events weren't attended by, and organized for, friends who **no longer worked for our company**.
 
-## How to recognize great relationships?
+Hold that thought. It turns out to be the whole point.
 
-People spending their own resources, including the most precious one — time, indicate that they genuinely care about each other (not only about getting the work done).
+## How to recognize great relationships
 
-> It seems to me that the quality of relationships in a company is directly proportional to the time people spend together outside of work.
+People spending their own resources — including the most precious one, time — on each other is the signal that they genuinely care (and not only about getting the work done).
 
-**Try asking yourself the following questions:**
+> It seems to me that the quality of relationships in a company is directly proportional to the time people spend together outside of work.
 
-- Do people in your team care about the wellbeing of each other?
-- Do they go out after the working hours?
-- Do they form communities around shared values?
+**Try asking yourself:**
+
+- Do people in your team care about each other's wellbeing?
+- Do they go out after working hours?
+- Do they form communities around shared values?
 - Do they mingle with their former colleagues?
 
-Tip: A brief look at the off-topic channels in your company Slack can tell you more.
+Tip: a brief look at the off-topic channels in your company Slack will tell you more than any engagement survey.
 
-## Why do I care about relationships?
+## Why I care
 
-Relationships are an inherent part of everything we do and everything we say. By communicating, we are building relationships. Even if we don’t immediately realize it, we maintain relationships with many people — our doctors, car mechanics, or postmen.
+Relationships are an inherent part of everything we do and say. By communicating, we build them — even when we don't notice. We maintain relationships with our doctors, car mechanics, postmen.
 
-Of course, some relationships are more important than others. While you’ll probably won’t try to fix a relationship with a rude pizza guy who you’ll never see again, it’s worth considering nurturing and cherishing relationships with your colleagues whom you spend more than a third of your life with.
+Some relationships matter more than others. You probably won't invest in fixing things with a rude pizza guy you'll never see again. Your colleagues — the people you spend more than a third of your waking life with — are a different calculation entirely.
 
-I am a human in the first place which makes my time on this planet limited, and I want to make maximum out of it. I want to do my job well and I want to love my job, neither of which would be possible if I had no real friends (=no one to rely on) at work.
-
-And that’s basically what cultivating relationships is about — increasing trust, the sense of people being able to rely on each other.
+I'm a human first, my time on this planet is finite, and I want to make the maximum of it. I want to do my job well and I want to love my job. Neither is possible without real friends — people I can rely on — at work. That's what cultivating relationships is about: building the kind of trust where people can actually lean on each other.
 
 ## Relationships are communicating vessels
 
-I know people (and I bet you do too) who believe it’s possible to keep personal life apart from work life.
+I know people (and I bet you do too) who believe it's possible to keep personal life and work life hermetically separated. They sometimes like to call themselves "professionals." I've witnessed the extreme version: someone bitches you out in the office and then expects you to grab a friendly beer with them after work. That's not professionalism — that's pretense and opportunism. Wanting the best of both worlds while sacrificing nothing, least of all your ego. Underneath it, usually, is a fear of being vulnerable.
 
-Sometimes, they like to call themselves “professionals”. I witnessed some extreme cases when they’d bitch you out in the office and then expect you to go grab a beer after work with them. This is no professionalism, this is pure psychopathy, pretense, and opportunism. These people basically want the best of the two worlds and are willing to sacrifice nothing, all the less their egos. They fear being vulnerable.
+Don't get me wrong — I'm not naive about power disparity between a supervisor and a subordinate; it's real and it constrains what's possible. But the least everyone can do is try not to be a different person at work than they are at home, in a pub, or in a gym. **Honesty is the key.**
 
-Now don’t get me wrong, I’m not naive enough to think that there can’t exist a power disparity between a supervisor and a subordinate. However, I believe that the least everyone can do is to try not to be a different person at work than they are <at home|in a pub|in a gym>. **Honesty is the key**.
-
+^^^
 ![](/assets/img/posts/building-a-culture-of-relationships-that-persist/02.png)
+^^^ ME = how I treat people at work + how I treat people at a party + how I treat people at ⟨…⟩
 
-ME = How I treat people at work + How I treat people at a party + How I treat people at <…>
+## Culture can't be pushed — only lived
 
-## Building a culture of healthy relationships
+Unlike company strategy, culture is not something you can push top-down. It can be promoted, advocated, encouraged — but not commanded. Don't expect the culture to change unless you change yourself. You can't order your teams to do team-building and then skip it yourself. Lead by example.
 
-What I learned is that unlike the company strategy, culture is not something that can be easily pushed top-down. It can be promoted, advocated, encouraged but can hardly be pushed.
+Some examples I watched work:
 
-Don’t expect the culture to change unless you change yourself. You simply can’t command your teams to perform team-building activities and then not take part in them. Lead by example!
+- When I prepared the first team breakfast, it kicked off a snowball of food-related courtesies that continued for years.
+- If our CEO hadn't been showing up to [Trees for Bugs](https://trees.kentico.com/) year after year, we wouldn't have planted thousands of trees — the initiative would have died before the first few hundred.
+- If our offices weren't dog-friendly, I doubt one of our colleagues would have gone on to run her own animal shelter, with other colleagues supporting her and getting involved in charities of their own.
 
-**Some examples:**
+Culture is fragile — trust and respect, once lost, are brutally hard to restore. Stay authentic. If you don't mean it, don't do it; empty gestures only corrode.
 
-- When I prepared the first team breakfast it kicked off a snowball effect of exchanging food-related courtesies which continues to this day.
-- If our CEO hasn’t been attending [Trees for Bugs](https://trees.kentico.com/) for 10 years we wouldn’t have planted more than 3k trees so far. In fact, the initiative would be long dead before we planted the first few hundreds.
-- If our offices weren’t dog-friendly, I doubt that one of our employees would now run her own animal shelter and that other employees would support her initiative and involve in various other charities.
+That's where the 2019 version of this essay ended: with a checklist, a conviction, and a disclaimer that I was lucky to work somewhere that honored all this. What I couldn't know was that I was about to run the experiment on myself.
 
-Culture is very fragile — a loss of trust and respect are very difficult to restore. It’s essential to stay authentic and genuine. If you don’t mean it, don’t do it. Empty gestures will only harm the culture.
+## The test I didn't plan
 
-If we all understand this, we’ll be set up for much more fun and rich lives.
+In 2021, I left. After many years at Kentico I moved to Microsoft to work on Azure — a different continent of a company, a different chapter of life. By my own essay's logic, this was the moment of truth: if those relationships had really been friendships, leaving shouldn't delete them. If they'd been proximity dressed up as friendship, the calendar would quietly empty out.
 
+The calendar didn't empty out. The trips kept happening. The parties still got organized — now partly *for* me, the former colleague. The running continued. The people who had helped me through crises kept showing up, employment contract or no employment contract. I had become the person from my own third paragraph: the ex-colleague the stag party is planned around.
+
+And in 2023, that persistent layer of relationships did something no job posting could have done — it pulled me back. I returned to Kentico, this time to lead engineering. Not because the office was dog-friendly or the breakfasts were legendary, but because the people I trusted most were there, and the trust had survived two years of me being somewhere else entirely.
+
+## The off-boarding test
+
+So here's the upgrade to the 2019 thesis. Forget perks; forget even the after-work beers. The sharpest measure of a company's culture is what I'd call the off-boarding test:
+
+> What survives when the employment ends?
+
+If leaving deletes a person from the community, the culture was proximity, not relationships. If people still get invited to the weddings, the stag parties, and the trips years after their last commit — the culture is real, and it compounds. It follows people out the door, speaks well of you in rooms you're not in, and sometimes it even brings people home.
+
+Employment is a phase. Relationships are the persistent layer. Build for the layer that persists.
+
+^^^
 ![](/assets/img/posts/building-a-culture-of-relationships-that-persist/03.jpg)
-
-This is me. I found this two years old photo just recently and thought it fits here quite nicely :)
-
-*Disclaimer: I’m lucky to lead a small team of DevRel practitioners at* [***Kentico***](https://www.kentico.com/)*, a company that honors the aforementioned values. This article expresses solely my personal opinion and was written in my spare time.*
+^^^ This is me, in a photo from the original 2019 essay. I'm keeping it here — it still fits. :)

@@ -84,6 +84,11 @@ else
     <section class="prose" style="margin-top:22px">
         @((MarkupString)Page.Body)
     </section>
+
+    if (Page.Comments)
+    {
+        <Comments Term="@($"pages/{Page.Url}")" />
+    }
 }
 
     <footer class="foot">

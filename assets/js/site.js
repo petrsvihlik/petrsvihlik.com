@@ -27,6 +27,15 @@
     });
   }
 
+  function syncGiscusTheme() {
+    var frame = document.querySelector('iframe.giscus-frame');
+    if (!frame) return;
+    frame.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: theme === 'dark' ? 'noborder_dark' : 'noborder_light' } } },
+      'https://giscus.app'
+    );
+  }
+
   document.addEventListener('click', function (e) {
     var t = e.target.closest('[data-theme-toggle]');
     if (t) {
@@ -34,6 +43,7 @@
       root.setAttribute('data-theme', theme);
       localStorage.setItem(THEME_KEY, theme);
       syncThemeBtn();
+      syncGiscusTheme();
       return;
     }
     var sw = e.target.closest('.sw');

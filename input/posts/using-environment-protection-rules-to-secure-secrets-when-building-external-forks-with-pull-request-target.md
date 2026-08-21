@@ -1,13 +1,16 @@
 ---
 title: "Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target"
-description: "Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets."
+description: "Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets. A 2021 pattern — with a 2026 postscript on how it aged."
 slug: using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target
 date: 2021-03-05
 category: technology
-tags: [github-actions, devops]
-canonical_url: https://dev.to/petrsvihlik/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pullrequesttarget-hci
-draft: true # triage: rework — excluded until rewritten (issue #64)
+tags: [github-actions, devops, security]
+comments: true
 ---
+
+::: warning
+This article is from March 2021 and describes `pull_request_target` as it worked back then. GitHub changed the event's semantics in December 2025, and `actions/checkout` now refuses the exact checkout shown below by default. The pattern's core idea — a human approval gate in front of secrets — survived and is now semi-official practice, but don't copy the YAML verbatim. The [postscript](#postscript-august-2026-what-four-years-did-to-this-pattern) tells the whole story.
+:::
 
 ![](/assets/img/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target/01.webp)
 
@@ -129,3 +132,50 @@ The process is, in my opinion, more transparent thanks to all events being logge
 If you want to explore the whole workflow, feel free to check out my project [WopiHost](https://github.com/petrsvihlik/WopiHost/blob/master/.github/workflows/pull_request.yml).
 
 To learn more about the specifics of `pull_request_target` head to the [documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#pull_request_target).
+
+---
+
+## Postscript (August 2026): what four years did to this pattern
+
+I wrote everything above in March 2021, when environments were a few months old and `pull_request_target` was the shiny new answer to fork builds. Publishing security advice comes with an implicit contract: you should come back later and tell people how it aged. Here's my report, and it's a story in four acts.
+
+### Act one: the pattern spreads
+
+The human-approval-gate idea took off. Variants of "gate the secrets behind an environment with required reviewers" appeared in community guidance and eventually in [GitHub's own documentation on securely using `pull_request_target`](https://docs.github.com/en/actions/reference/security/secure-use). For a while it was fair to call it semi-official best practice, and I'll admit the 2021 me would have been pretty pleased with that.
+
+### Act two: the bypass (February 2025)
+
+Then researchers at QuantCo found a hole — not in my workflow specifically, but in the ground it stood on. In [Pull Requests Go Both Ways](https://tech.quantco.com/blog/github-actions-environments/), Yannik Tausch and Oliver Borchert showed that **any collaborator with push access to any branch could bypass an environment's deployment-branch restriction** and reach its protected secrets and OIDC tokens by leveraging `pull_request_target` — and, remarkably, a repository was exposed *even if none of its workflows used the trigger at all*, because the attacker could introduce a workflow that did. They reported it through GitHub's bug bounty program on HackerOne; GitHub fixed it in December 2025.
+
+Read that again: the mechanism I recommended for protecting secrets was, for a window of time, itself a way around a related protection. The approval gate still required a human click, but the environment model underneath had a seam nobody had noticed for years.
+
+### Act three: GitHub rewrites the event (December 2025)
+
+GitHub's fix went deeper than patching the bypass. As of December 8, 2025, [the semantics of `pull_request_target` changed outright](https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/):
+
+- The workflow file and checkout now **always come from the repository's default branch**, no matter which branch the PR targets. `GITHUB_REF` resolves to the default branch and `GITHUB_SHA` to its latest commit. (Previously, any base branch could supply the workflow — which meant outdated, already-"fixed" vulnerable workflows on stale branches could still be executed. That class of bug is now dead.)
+- Environment branch-protection rules are evaluated against the *executing* ref — for `pull_request_target` that's the default branch, for the `pull_request` family it's `refs/pull/N/merge` — closing the seam QuantCo found.
+
+So the block quote near the top of this article — "the event runs against the workflow and code from the base of the pull request" — is no longer true. It describes an event that doesn't exist anymore.
+
+### Act four: my checkout line gets refused (June 2026)
+
+The final twist is my favorite. In June 2026, [`actions/checkout` v7 started refusing to fetch fork PR code in `pull_request_target` workflows by default](https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/) — and among the "insecure inputs" it now rejects is, verbatim, `ref: ${{ github.event.pull_request.head.sha }}`. The exact line this article is built around. The enforcement was even backported to older checkout versions.
+
+There's an opt-out for workflows that check out fork code deliberately, with elevated trust — which is precisely what the approval-gate pattern does. It's called `allow-unsafe-pr-checkout`, and GitHub says the name is intentionally ugly so it stands out in code review. I find that genuinely elegant: the platform now forces the 2021 pattern to *declare itself* instead of blending into innocent-looking YAML.
+
+### What I'd actually do today
+
+The idea survived; the YAML didn't. If I were setting this up in 2026:
+
+1. Keep the environment with **required reviewers** in front of any job that touches secrets — that part aged well, and it's why the opt-out exists at all.
+2. Accept the new semantics: your workflow always runs from the default branch. That's a feature — fix a vulnerable workflow once, on the default branch, and stale branches can't resurrect it.
+3. Check out the fork's code only in the gated job, with `allow-unsafe-pr-checkout` set — visibly, greppably, deliberately.
+4. Scope the secrets to the bare minimum the fork build needs, and prefer OIDC over long-lived credentials.
+5. Re-read [GitHub's hardening guidance](https://docs.github.com/en/actions/reference/security/secure-use) before trusting anything — including this post.
+
+### The meta-lesson
+
+Security patterns have a half-life, and it's shorter than the half-life of blog posts about them. This article ranked in searches for years after the ground truth underneath it had shifted — which is exactly how "semi-canonical practice" quietly becomes a liability. The 2021 idea was right: put a human between untrusted code and your secrets. Everything else — the event semantics, the environment model, even the checkout line — turned out to be rented ground.
+
+I'd rather amend my old advice in public than have it silently rot in a search index. Consider this the amendment.

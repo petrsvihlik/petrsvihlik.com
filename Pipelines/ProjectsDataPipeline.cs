@@ -1,3 +1,4 @@
+using PetrSvihlik.Com.Models;
 using PetrSvihlik.Com.Models.ContentTypes;
 using Statiq.Common;
 using Statiq.Core;
@@ -15,13 +16,13 @@ namespace PetrSvihlik.Com.Pipelines
                 new ReadFiles("projects/_*.md"),
                 new ExtractFrontMatter(new ParseYaml()),
                 new RenderMarkdown().UseExtensions(),
-                new SetMetadata("ProjectModel", Config.FromDocument((doc, ctx) => new Project
+                new SetMetadata(MetadataKeys.ProjectModel, Config.FromDocument(async doc => (object)new Project
                 {
                     Title = doc.GetString("title"),
                     Repo = doc.GetString("repo"),
                     Logo = doc.GetString("logo"),
                     Description = doc.GetString("description"),
-                    ContentHtml = doc.GetContentStringAsync().GetAwaiter().GetResult(),
+                    ContentHtml = await doc.GetContentStringAsync(),
                     Order = doc.GetInt("order", 999),
                 })),
             };

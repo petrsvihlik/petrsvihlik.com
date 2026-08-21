@@ -1,10 +1,10 @@
+using PetrSvihlik.Com.Extensions;
 using PetrSvihlik.Com.Models;
 using PetrSvihlik.Com.Models.ContentTypes;
 using PetrSvihlik.Com.Models.ViewModels;
 using Statiq.Common;
 using Statiq.Core;
 using Statiq.Razor;
-using System.Linq;
 
 namespace PetrSvihlik.Com.Pipelines
 {
@@ -15,37 +15,20 @@ namespace PetrSvihlik.Com.Pipelines
             Dependencies.AddRange(nameof(PostsPipeline), nameof(HomepagePipeline), nameof(SiteMetadataPipeline));
             ProcessModules = new ModuleList(
                 new ReplaceDocuments(nameof(PostsPipeline)),
-                new OrderDocuments(Config.FromDocument(doc => doc.Get<Article>("ArticleModel")?.PublishDate)).Descending(),
-                new PaginateDocuments(4),
-                new SetDestination(Config.FromDocument(doc => Filename(doc))),
+                new OrderDocuments(Config.FromDocument(doc => doc.Get<Article>(MetadataKeys.ArticleModel)?.PublishDate)).Descending(),
+                new PaginateDocuments(GroupedArchivePipeline.PostsPerPage),
+                new SetDestination(Config.FromDocument(GetDestination)),
                 new MergeContent(new ReadFiles("_Index.cshtml")),
                 new RenderRazor()
                     .WithModel(Config.FromDocument((document, context) =>
-                    {
-                        var articles = document.GetChildren()
-                            .Select(d => d.Get<Article>("ArticleModel"))
-                            .Where(a => a != null)
-                            .ToList();
-                        var paged = new PagedContent<Article>(articles, document);
-                        var metadata = context.Outputs.FromPipeline(nameof(SiteMetadataPipeline))
-                            .Select(x => x.Get<SiteMetadata>("SiteMetadata")).FirstOrDefault();
-                        var homepage = context.Outputs.FromPipeline(nameof(HomepagePipeline))
-                            .Select(x => x.Get<Homepage>("Homepage")).FirstOrDefault();
-
-                        // full archive (newest-first) so the homepage filter
-                        // can search every post, not just the current page
-                        var allArticles = context.Outputs.FromPipeline(nameof(PostsPipeline))
-                            .Select(d => d.Get<Article>("ArticleModel"))
-                            .Where(a => a != null)
-                            .OrderByDescending(a => a.PublishDate)
-                            .ToList();
-
-                        return new HomeViewModel(paged,
-                            new SidebarViewModel(homepage, metadata, true, "/"))
+                        new HomeViewModel(
+                            document.AsPagedContent<Article>(),
+                            context.CreateSidebar(isIndex: true, activeMenuItem: "/"))
                         {
-                            AllArticles = allArticles
-                        };
-                    }))
+                            // full archive (newest-first) so the homepage filter
+                            // can search every post, not just the current page
+                            AllArticles = context.GetArticles()
+                        }))
             );
 
             OutputModules = new ModuleList
@@ -54,7 +37,7 @@ namespace PetrSvihlik.Com.Pipelines
             };
         }
 
-        private static NormalizedPath Filename(IDocument document)
+        private static NormalizedPath GetDestination(IDocument document)
         {
             var index = document.GetInt(Keys.Index);
             return new NormalizedPath($"{(index > 1 ? $"page/{index}/" : "")}index.html");

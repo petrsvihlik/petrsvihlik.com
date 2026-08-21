@@ -1,6 +1,7 @@
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
 using Microsoft.Extensions.Logging;
+using PetrSvihlik.Com.Models;
 using PetrSvihlik.Com.Models.ContentTypes;
 using PetrSvihlik.Com.Modules;
 using Statiq.Common;
@@ -19,11 +20,11 @@ namespace PetrSvihlik.Com.Pipelines
             Dependencies.Add(nameof(PostsPipeline));
             ProcessModules = new ModuleList(
                 new ReplaceDocuments(Dependencies.ToArray()),
-                new SetMetaDataItems(
+                new SetMetadataItems(
                     async (input, context) =>
                     {
-                        var article = input.Get<Article>("ArticleModel");
-                        var html = await ParseHtml(input, context);
+                        var article = input.Get<Article>(MetadataKeys.ArticleModel);
+                        var html = await ParseHtmlAsync(input, context);
                         var articleContent = html?.GetElementsByTagName("article").FirstOrDefault()?.InnerHtml ?? "";
 
                         return new MetadataItems
@@ -42,7 +43,7 @@ namespace PetrSvihlik.Com.Pipelines
             OutputModules = new ModuleList(new WriteFiles());
         }
 
-        private static async Task<IHtmlDocument> ParseHtml(IDocument document, IExecutionContext context)
+        private static async Task<IHtmlDocument> ParseHtmlAsync(IDocument document, IExecutionContext context)
         {
             var parser = new HtmlParser();
             try

@@ -5,6 +5,7 @@
     <TargetFramework>net11.0</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <DefaultItemExcludes>$(DefaultItemExcludes);output\**</DefaultItemExcludes>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,24 +39,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="extensionas\**" />
     <Compile Remove="input\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="input\**">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Remove="extensionas\**" />
-    <None Remove="extensionas\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="MyExtensions\IDocumentExtensions.cs" />
-    <None Include="MyExtensions\StringExtensions.cs" />
-  </ItemGroup>
+  <!--
+    NOTE: the extension-method folder is named "MyExtensions" because Statiq.Web's MSBuild
+    targets remove `extensions/**` from compilation (the folder is reserved for Statiq's
+    runtime script extensions), so a folder named "Extensions" would be silently excluded.
+  -->
 
 </Project>

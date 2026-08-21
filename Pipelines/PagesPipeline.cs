@@ -1,3 +1,4 @@
+using PetrSvihlik.Com.Models;
 using PetrSvihlik.Com.Models.ContentTypes;
 using PetrSvihlik.Com.Models.ViewModels;
 using Statiq.Common;
@@ -5,7 +6,6 @@ using Statiq.Core;
 using Statiq.Markdown;
 using Statiq.Razor;
 using Statiq.Yaml;
-using System.Linq;
 
 namespace PetrSvihlik.Com.Pipelines
 {
@@ -19,8 +19,8 @@ namespace PetrSvihlik.Com.Pipelines
                 new ReadFiles("pages/*.md"),
                 new ExtractFrontMatter(new ParseYaml()),
                 new RenderMarkdown().UseExtensions(),
-                new SetMetadata("RenderedBody", Config.FromDocument(async doc => await doc.GetContentStringAsync())),
-                new SetDestination(Config.FromDocument(doc => GetPath(doc))),
+                new SetMetadata(MetadataKeys.RenderedBody, Config.FromDocument(async doc => await doc.GetContentStringAsync())),
+                new SetDestination(Config.FromDocument(GetDestination)),
             };
 
             ProcessModules = new ModuleList
@@ -29,21 +29,15 @@ namespace PetrSvihlik.Com.Pipelines
                 new RenderRazor()
                     .WithModel(Config.FromDocument((document, context) =>
                     {
-                        var slug = document.GetString("slug") ?? document.Source.FileNameWithoutExtension.FullPath;
                         var page = new Page
                         {
                             Title = document.GetString("title"),
-                            Url = slug,
-                            Body = document.GetString("RenderedBody"),
+                            Url = GetSlug(document),
+                            Body = document.GetString(MetadataKeys.RenderedBody),
                             MetaDescription = document.GetString("description"),
                             ShowInNavigation = document.GetBool("show_in_navigation"),
                         };
-                        var model = new HomeViewModel(page,
-                            new SidebarViewModel(
-                                context.Outputs.FromPipeline(nameof(HomepagePipeline)).Select(x => x.Get<Homepage>("Homepage")).FirstOrDefault(),
-                                context.Outputs.FromPipeline(nameof(SiteMetadataPipeline)).Select(x => x.Get<SiteMetadata>("SiteMetadata")).FirstOrDefault(),
-                                false, page.Url));
-                        return model;
+                        return new HomeViewModel(page, context.CreateSidebar(activeMenuItem: page.Url));
                     }))
             };
 
@@ -53,9 +47,12 @@ namespace PetrSvihlik.Com.Pipelines
             };
         }
 
-        private static NormalizedPath GetPath(IDocument doc)
+        private static string GetSlug(IDocument doc) =>
+            doc.GetString("slug") ?? doc.Source.FileNameWithoutExtension.FullPath;
+
+        private static NormalizedPath GetDestination(IDocument doc)
         {
-            var slug = doc.GetString("slug") ?? doc.Source.FileNameWithoutExtension.FullPath;
+            var slug = GetSlug(doc);
             return slug == "404"
                 ? new NormalizedPath("404.html")
                 : new NormalizedPath($"pages/{slug}/index.html");

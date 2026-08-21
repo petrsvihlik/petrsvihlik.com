@@ -1,3 +1,5 @@
+using PetrSvihlik.Com.Models;
+using PetrSvihlik.Com.Models.ContentTypes;
 using Statiq.Common;
 using Statiq.Core;
 using System;
@@ -13,15 +15,13 @@ namespace PetrSvihlik.Com.Pipelines
             ProcessModules = new ModuleList(
                 // pull documents from other pipelines
                 new ReplaceDocuments(Dependencies.ToArray()),
-                new SetMetadata(Keys.SitemapItem, Config.FromDocument((doc, ctx) =>
-                {
-                    var siteMapItem = new SitemapItem(doc.Destination.FullPath)
+                new SetMetadata(Keys.SitemapItem, Config.FromDocument(doc =>
+                    new SitemapItem(doc.Destination.FullPath)
                     {
-                        LastModUtc = DateTime.UtcNow,
+                        // posts carry their publish date; generated index pages fall back to build time
+                        LastModUtc = doc.Get<Article>(MetadataKeys.ArticleModel)?.PublishDate ?? DateTime.UtcNow,
                         ChangeFrequency = SitemapChangeFrequency.Weekly,
-                    };
-                    return siteMapItem;
-                })),
+                    })),
 
                 new GenerateSitemap()
             );

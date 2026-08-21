@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using PetrSvihlik.Com.Models;
 
 namespace PetrSvihlik.Com.Models.ContentTypes
 {
@@ -15,8 +14,5 @@ namespace PetrSvihlik.Com.Models.ContentTypes
         public Category SelectedCategory { get; set; }
         public List<Tag> TagObjects { get; set; } = new();
         public Author ArticleAuthor { get; set; }
-
-        string ITitleProvider.Title => Title;
-        string ITitleProvider.ElementCodename => "title";
     }
 }

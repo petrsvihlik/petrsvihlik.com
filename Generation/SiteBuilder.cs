@@ -257,6 +257,7 @@ namespace PetrSvihlik.Com.Generation
                         SelectedCategory = new Category { Slug = categorySlug, Title = categorySlug.SlugToTitle() },
                         TagObjects = fm.Tags.Select(t => new Tag { Slug = t, Title = t.SlugToTitle() }).ToList(),
                         ArticleAuthor = new Author { Name = "Petr Švihlík" },
+                        Comments = fm.Comments,
                     };
                 })
                 .ToList();
@@ -274,6 +275,7 @@ namespace PetrSvihlik.Com.Generation
                         Body = doc.BodyHtml,
                         MetaDescription = doc.FrontMatter.Description,
                         Unlisted = doc.FrontMatter.Unlisted,
+                        Comments = doc.FrontMatter.Comments,
                     };
                 })
                 .ToList();

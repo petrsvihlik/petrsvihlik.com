@@ -9,5 +9,8 @@ namespace PetrSvihlik.Com.Models.ContentTypes
 
         /// <summary>Rendered, but kept out of the sitemap and noindexed (e.g. test pages).</summary>
         public bool Unlisted { get; set; }
+
+        /// <summary>Show the giscus comment thread under the content.</summary>
+        public bool Comments { get; set; }
     }
 }

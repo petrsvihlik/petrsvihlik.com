@@ -14,5 +14,8 @@ namespace PetrSvihlik.Com.Models.ContentTypes
         public Category SelectedCategory { get; set; }
         public List<Tag> TagObjects { get; set; } = new();
         public Author ArticleAuthor { get; set; }
+
+        /// <summary>Show the giscus comment thread under the post.</summary>
+        public bool Comments { get; set; }
     }
 }

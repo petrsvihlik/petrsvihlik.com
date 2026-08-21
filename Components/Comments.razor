@@ -1,0 +1,50 @@
+<section class="comments">
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">$</span> gh discussion view</h2>
+        <span class="count"><a href="@DiscussionsUrl" target="_blank" rel="noopener">open on github ↗</a></span>
+    </div>
+    <hr class="sep">
+
+    <div class="giscus"></div>
+    <script>
+        (function () {
+            var theme = 'dark';
+            try { theme = localStorage.getItem('ps-theme') || 'dark'; } catch (e) { }
+            var s = document.createElement('script');
+            s.src = 'https://giscus.app/client.js';
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            var cfg = {
+                'data-repo': '@Repo',
+                'data-repo-id': '@RepoId',
+                'data-category': '@Category',
+                'data-category-id': '@CategoryId',
+                'data-mapping': 'specific',
+                'data-term': '@Term',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '0',
+                'data-input-position': 'bottom',
+                'data-lang': 'en',
+                'data-loading': 'lazy',
+                'data-theme': theme === 'dark' ? 'noborder_dark' : 'noborder_light'
+            };
+            for (var k in cfg) { s.setAttribute(k, cfg[k]); }
+            document.currentScript.parentNode.insertBefore(s, document.currentScript);
+        })();
+    </script>
+    <noscript><a href="@DiscussionsUrl">Join the discussion on GitHub</a></noscript>
+</section>
+
+@code {
+    // giscus configuration — repository and "Announcements" category node IDs,
+    // reported by the "Blog discussion" workflow (or giscus.app).
+    private const string Repo = "petrsvihlik/petrsvihlik.com";
+    private const string RepoId = "GISCUS_REPO_ID";
+    private const string Category = "Announcements";
+    private const string CategoryId = "GISCUS_CATEGORY_ID";
+    private const string DiscussionsUrl = "https://github.com/petrsvihlik/petrsvihlik.com/discussions";
+
+    /// <summary>The giscus term: equals the backing discussion's title (e.g. "pages/markup-demo").</summary>
+    [Parameter] public string Term { get; set; }
+}

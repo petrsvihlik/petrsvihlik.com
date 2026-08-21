@@ -1,0 +1,65 @@
+name: Blog discussion
+
+# Creates the GitHub Discussion backing a page's giscus comment thread.
+# giscus is configured with mapping=specific, so the discussion title must
+# equal the page's term (e.g. "pages/markup-demo" or "posts/my-slug").
+# Also prints the repository and category node IDs giscus needs.
+
+on:
+  workflow_dispatch:
+    inputs:
+      term:
+        description: "giscus term = discussion title (e.g. posts/my-slug)"
+        required: true
+      body:
+        description: "Discussion body (markdown)"
+        required: false
+        default: ""
+
+permissions:
+  discussions: write
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TERM: ${{ inputs.term }}
+      BODY: ${{ inputs.body }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Create discussion if missing
+        run: |
+          set -euo pipefail
+          OWNER="${REPO%%/*}"
+          NAME="${REPO##*/}"
+
+          REPO_ID=$(gh api graphql \
+            -f query='query($o:String!,$n:String!){repository(owner:$o,name:$n){id}}' \
+            -f o="$OWNER" -f n="$NAME" --jq '.data.repository.id')
+          CATEGORY_ID=$(gh api graphql \
+            -f query='query($o:String!,$n:String!){repository(owner:$o,name:$n){discussionCategories(first:25){nodes{id name}}}}' \
+            -f o="$OWNER" -f n="$NAME" \
+            --jq '.data.repository.discussionCategories.nodes[] | select(.name=="Announcements") | .id')
+
+          echo "giscus data-repo-id:     $REPO_ID"
+          echo "giscus data-category-id: $CATEGORY_ID"
+
+          EXISTING=$(gh api graphql \
+            -f query='query($q:String!){search(type:DISCUSSION,query:$q,first:20){nodes{... on Discussion{title url}}}}' \
+            -f q="repo:$REPO in:title \"$TERM\"" \
+            --jq ".data.search.nodes[] | select(.title==\"$TERM\") | .url")
+          if [ -n "$EXISTING" ]; then
+            echo "Discussion already exists: $EXISTING"
+            exit 0
+          fi
+
+          if [ -z "$BODY" ]; then
+            BODY="Comment thread for [petrsvihlik.com/$TERM](https://petrsvihlik.com/$TERM)."
+          fi
+
+          URL=$(gh api graphql \
+            -f query='mutation($r:ID!,$c:ID!,$t:String!,$b:String!){createDiscussion(input:{repositoryId:$r,categoryId:$c,title:$t,body:$b}){discussion{url}}}' \
+            -f r="$REPO_ID" -f c="$CATEGORY_ID" -f t="$TERM" -f b="$BODY" \
+            --jq '.data.createDiscussion.discussion.url')
+          echo "Created: $URL"

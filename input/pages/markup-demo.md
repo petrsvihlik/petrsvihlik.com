@@ -3,6 +3,7 @@ title: "Markup demo"
 slug: markup-demo
 description: "Internal test page exercising every rich-text feature the site supports."
 unlisted: true
+comments: true
 ---
 
 This page exercises every markup feature the generator supports. It is unlisted: no navigation, no sitemap, `noindex`. If something looks broken here, it will look broken in a post.

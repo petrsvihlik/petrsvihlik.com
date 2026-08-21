@@ -928,3 +928,9 @@ html[data-theme="dark"] .article-single__body .gist {
 .hljs-deletion { color: var(--magenta); }
 .hljs-emphasis { font-style: italic; }
 .hljs-strong { font-weight: 700; }
+
+/* ---------- comments (giscus) ---------- */
+.comments { margin-top: 12px; }
+.comments .giscus { margin-top: 20px; }
+.comments .sec-head .count a { color: var(--fg-dim); text-decoration: none; }
+.comments .sec-head .count a:hover { color: var(--accent); }

@@ -16,6 +16,11 @@
 <PostArticle Ctx="Ctx" Article="Article" />
     </article>
 
+    @if (Article.Comments)
+    {
+        <Comments Term="@($"posts/{Article.Slug}")" />
+    }
+
 </main>
     </ChildContent>
 </SiteLayout>

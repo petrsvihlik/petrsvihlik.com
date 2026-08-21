@@ -27,6 +27,9 @@ namespace PetrSvihlik.Com.Generation
 
         /// <summary>Render the page but keep it out of the sitemap and ask crawlers not to index it.</summary>
         public bool Unlisted { get; set; }
+
+        /// <summary>Render a giscus comment thread (backed by a GitHub Discussion) under the content.</summary>
+        public bool Comments { get; set; }
     }
 
     /// <summary>A Markdown content file: parsed front matter plus the body rendered to HTML.</summary>

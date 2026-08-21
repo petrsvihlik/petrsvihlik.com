@@ -5,8 +5,8 @@
 		<link>https://petrsvihlik.com/</link>
 		<description>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</description>
 		<copyright>2026</copyright>
-		<pubDate>Fri, 21 Aug 2026 23:22:40 GMT</pubDate>
-		<lastBuildDate>Fri, 21 Aug 2026 23:22:40 GMT</lastBuildDate>
+		<pubDate>Fri, 21 Aug 2026 23:24:25 GMT</pubDate>
+		<lastBuildDate>Fri, 21 Aug 2026 23:24:25 GMT</lastBuildDate>
 		<item>
 			<title>The Junior Developer Problem Is More Complicated Than You Think</title>
 			<link>https://petrsvihlik.com/posts/junior-developer-problem</link>
@@ -339,7 +339,7 @@ This is how you can generate code coverage for the whole solution:&lt;/p&gt;
 &lt;p&gt;If you stick to standard .NET naming and folder structure conventions, setting up code coverage is actually very easy nowadays.&lt;/p&gt;
 &lt;p&gt;To see the whole workflow in action, head to some of our &lt;a href="https://github.com/Kentico/kontent-delivery-sdk-net/actions/workflows/integrate.yml"&gt;SDK repos&lt;/a&gt;. You can also explore how we do releases using GitHub Actions. All code is in the &lt;a href="https://github.com/Kentico/kontent-delivery-sdk-net/tree/master/.github/workflows"&gt;&lt;code&gt;workflows folder&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In my next article, I'll cover how to &lt;a href="https://dev.to/petrsvihlik/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pullrequesttarget-hci"&gt;secure secrets when building pull requests from forks&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;p class="article-single__readmore"&gt;&lt;a href="https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;&lt;/p&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published March 2021 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published March 2021 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/codecov"&gt;Codecov&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/dot-net"&gt;Dot Net&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/github-actions"&gt;Github Actions&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/coverlet"&gt;Coverlet&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/continuous-integration"&gt;Continuous Integration&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/devops"&gt;Devops&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content:encoded>
 		</item>
@@ -754,7 +754,7 @@ The process is, in my opinion, more transparent thanks to all events being logge
 &lt;p&gt;There is one technology that could potentially disrupt the landscape, and that is WebAssembly. Also known as WASM, WebAssembly is efficient bytecode in a binary format, seen by some as a successor to JavaScript thanks to its native-like performance (1.5x up to 20x faster than JavaScript).&lt;/p&gt;
 &lt;p&gt;WebAssembly alone could be a notable challenger of the elevated performance standards set by JAMstack.&lt;/p&gt;
 &lt;p&gt;Still in its relative infancy, it remains to be seen how WASM will reshape the landscape. With the birth of first &lt;a href="https://www.webassemblyman.com/webassembly_front_end_web_development.html"&gt;WebAssembly front-end frameworks&lt;/a&gt;, it’s undeniable that the technology is getting some serious traction. But rather than replacing JavaScipt, it’s more likely that it’ll supplement it. WebAssembly in combination with JAMstack could give life to a deadly combo offering the best performance of both worlds—statically generated markup and dynamic parts powered by superfast bytecode. Will we start seeing &lt;strong&gt;W&lt;/strong&gt;AMstack sites soon?&lt;/p&gt;
-&lt;/div&gt;&lt;p class="article-single__readmore"&gt;&lt;a href="https://kontent.ai/blog/the-rise-of-jamstack" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;&lt;/p&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published March 2020 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published March 2020 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/jamstack"&gt;Jamstack&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content:encoded>
 		</item>
@@ -1065,7 +1065,7 @@ The process is, in my opinion, more transparent thanks to all events being logge
 &lt;p&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/petrsvihlik/eae68ea160c9db788c39e5aa9eb774a1"&gt;View the gist on GitHub&lt;/a&gt;&lt;/noscript&gt;&lt;/p&gt;
 &lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;I hope this article gave you a head start in writing your own modules. For Kentico developers, I see the potential of PowerShell, especially in CI scenarios and in intranets, but I'm sure you can think of other applications. Let us know down in the comments, and don't hesitate to share your creations with the community!&lt;/p&gt;
-&lt;/div&gt;&lt;p class="article-single__readmore"&gt;&lt;a href="https://devnet.kentico.com/articles/three-ways-to-manage-data-in-kentico-using-powershell" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;&lt;/p&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published August 2016 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published August 2016 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/powershell"&gt;Powershell&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/rest"&gt;Rest&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/reflection"&gt;Reflection&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/compilation"&gt;Compilation&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content:encoded>
 		</item>
@@ -1126,7 +1126,7 @@ the local intranet or the Internet. --&gt;
 &lt;li&gt;&lt;a href="https://msdn.microsoft.com/en-us/library/4191fzwb(v=vs.110).aspx"&gt;Specifying an Assembly's Location&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I'll be very glad if you share your experience in the comments. Have you tried any of the suggested solutions? Did it work for you?&lt;/p&gt;
-&lt;/div&gt;&lt;p class="article-single__readmore"&gt;&lt;a href="https://devnet.kentico.com/articles/referencing-multiple-versions-of-the-same-assembly-in-a-single-application" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;&lt;/p&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published May 2016 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published May 2016 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/dot-net"&gt;Dot Net&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/dependency-hell"&gt;Dependency Hell&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content:encoded>
 		</item>
@@ -1211,7 +1211,7 @@ the local intranet or the Internet. --&gt;
 &lt;/ul&gt;
 &lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;I see the remote debugger as an extremely powerful tool though it's not always easy to configure it. I hope this article made some things clear. Please feel free to leave comments below. If you have any additional tips it would be nice to share them with others. I'll then gladly update this post.&lt;/p&gt;
-&lt;/div&gt;&lt;p class="article-single__readmore"&gt;&lt;a href="https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment" target="_blank" rel="noopener noreferrer"&gt;Read the full article →&lt;/a&gt;&lt;/p&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published June 2013 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="article-single__date"&gt;&lt;em&gt;Published June 2013 &amp;#xB7; updated August 2026&lt;/em&gt;&lt;/div&gt;
 
         &lt;div class="article-single__footer"&gt;&lt;div class="article-single__tags"&gt;&lt;ul class="article-single__tags-list"&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/visual-studio"&gt;Visual Studio&lt;/a&gt;&lt;/li&gt;&lt;li class="article-single__tags-list-item"&gt;&lt;a class="article-single__tags-list-item-link" href="/tag/debugging"&gt;Debugging&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;a href="/" class="article-single__home-button"&gt;All Articles&lt;/a&gt;&lt;/div&gt;</content:encoded>
 		</item>

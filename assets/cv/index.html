@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petr Švihlík — CV</title>
+  <style>
+    /* ============ Fonts ============ */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    /* ============ Reset & base ============ */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #16181d;
+      --ink-soft: #3d434d;
+      --muted: #6b7280;
+      --faint: #9aa1ac;
+      --accent: #0f6b63;         /* deep teal */
+      --accent-soft: #e6f2f0;
+      --rule: #e4e7ec;
+      --chip-bg: #f3f5f7;
+      --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    }
+
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      font-family: 'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 9.4pt;
+      line-height: 1.38;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    /* ============ Page ============ */
+    .page {
+      max-width: 186mm;
+      margin: 0 auto;
+      padding: 10mm 0 6mm;
+    }
+
+    @page { size: A4; margin: 11mm 12mm 12mm; }
+
+    @media screen {
+      body { background: #eceef1; }
+      .page {
+        background: #fff;
+        padding: 14mm 12mm;
+        margin: 24px auto;
+        box-shadow: 0 2px 24px rgba(20, 24, 31, .10);
+        border-radius: 6px;
+      }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    /* ============ Header ============ */
+    header { margin-bottom: 5mm; }
+
+    .name-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2mm;
+    }
+
+    h1 {
+      font-size: 24pt;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 1mm;
+    }
+
+    .tagline {
+      font-size: 9.4pt;
+      color: var(--muted);
+      margin-top: .8mm;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6mm 5mm;
+      margin-top: 3mm;
+      padding-top: 2.6mm;
+      border-top: 1px solid var(--rule);
+      font-size: 8.8pt;
+      color: var(--ink-soft);
+    }
+
+    .contact span, .contact a { display: inline-flex; align-items: center; gap: 1.4mm; }
+
+    .contact svg { width: 3.4mm; height: 3.4mm; fill: var(--accent); flex: none; }
+
+    /* ============ Sections ============ */
+    section { margin-top: 4.2mm; }
+
+    h2 {
+      font-size: 8.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      margin-bottom: 2.2mm;
+    }
+
+    h2::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+    /* ============ Summary ============ */
+    .summary { color: var(--ink-soft); }
+
+    /* ============ Skills ============ */
+    .chips { display: flex; flex-wrap: wrap; gap: 1.6mm; }
+
+    .chip {
+      background: var(--chip-bg);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: .9mm 2.6mm;
+      font-size: 8.6pt;
+      font-weight: 500;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .chip.hl {
+      background: var(--accent-soft);
+      border-color: #cbe4e0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ============ Entries ============ */
+    .entry {
+      display: grid;
+      grid-template-columns: 27mm 1fr;
+      gap: 4mm;
+      margin-bottom: 3mm;
+      break-inside: avoid;
+    }
+
+    .entry.compact { margin-bottom: 1.3mm; }
+
+    .when {
+      font-family: var(--mono);
+      font-size: 7.6pt;
+      color: var(--faint);
+      padding-top: .8mm;
+      letter-spacing: -.02em;
+    }
+
+    .role { font-size: 10pt; font-weight: 700; }
+
+    .role .org { font-weight: 600; color: var(--accent); }
+
+    .role .loc { font-weight: 400; font-size: 8.6pt; color: var(--muted); }
+
+    .entry p.desc { color: var(--ink-soft); margin-top: .8mm; }
+
+    .entry ul { list-style: none; margin-top: 1.2mm; }
+
+    .entry li {
+      position: relative;
+      padding-left: 4mm;
+      margin-bottom: .7mm;
+      color: var(--ink-soft);
+    }
+
+    .entry li::before {
+      content: '';
+      position: absolute;
+      left: .4mm;
+      top: .62em;
+      width: 1.5mm;
+      height: 1.5mm;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: .55;
+    }
+
+    /* ============ Footer grid ============ */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 0 7mm;
+    }
+
+    .kv { margin-bottom: 1mm; color: var(--ink-soft); }
+    .kv b { font-weight: 600; color: var(--ink); }
+
+    /* ============ Print ============ */
+    @media print {
+      body { font-size: 9.2pt; }
+      .page { max-width: none; margin: 0; padding: 0; }
+      section { break-inside: auto; }
+      .page-break { break-before: page; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="name-row">
+        <div>
+          <h1>Petr Švihlík</h1>
+          <div class="title">VP of Engineering</div>
+          <div class="tagline">Building high-performing teams, systems, and technical strategy</div>
+        </div>
+      </div>
+      <div class="contact">
+        <span>
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Brno, Czechia</span>
+        <a href="https://www.linkedin.com/in/svihlik/">
+          <svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          linkedin.com/in/svihlik</a>
+        <a href="https://github.com/petrsvihlik">
+          <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          github.com/petrsvihlik</a>
+        <a href="https://petrsvihlik.com">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82A14.6 14.6 0 0 1 12 4.04zM4.26 14a8.12 8.12 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.08 16zm2.95-8H5.08a7.99 7.99 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96a14.6 14.6 0 0 1-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.6 14.6 0 0 1 0-4h4.68a14.6 14.6 0 0 1 0 4zm.26 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38a8.12 8.12 0 0 1 0 4h-3.38z"/></svg>
+          petrsvihlik.com</a>
+      </div>
+    </header>
+
+    <!-- ================= SUMMARY ================= -->
+    <section>
+      <h2>Profile</h2>
+      <p class="summary">VP of Engineering leading a ~60-person product engineering organization at Kentico, a global
+        DXP/CMS vendor — owning engineering strategy, org design, people systems, AI transformation, and SaaS platform
+        operations. I create clarity, trust, and alignment: translating strategy into execution while giving teams the
+        ownership and autonomy they need to do their best work. Most effective where technical depth, people
+        leadership, and strategic thinking intersect. Strong bias toward action and learning by doing.</p>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section>
+      <h2>Top Skills</h2>
+      <div class="chips">
+        <span class="chip hl">Strategic Thinking</span>
+        <span class="chip hl">Analytical Thinking</span>
+        <span class="chip hl">Communication</span>
+        <span class="chip hl">Thought Leadership</span>
+        <span class="chip hl">Claude Code &amp; Agentic AI</span>
+        <span class="chip">Engineering Management</span>
+        <span class="chip">Org Design (Team Topologies)</span>
+        <span class="chip">AI Transformation</span>
+        <span class="chip">Azure &amp; SaaS Operations</span>
+        <span class="chip">Developer Experience</span>
+        <span class="chip">.NET</span>
+        <span class="chip">Open Source</span>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section>
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="when">2023 – Present</div>
+        <div>
+          <div class="role">VP of Engineering · <span class="org">Kentico</span> <span class="loc">— Brno, Czechia</span></div>
+          <p class="desc">Engineering executive for a global DXP/CMS vendor. Own engineering strategy, org design, people
+            systems, AI transformation, and SaaS platform operations across a ~60-engineer product organization; report
+            to the CPO.</p>
+          <ul>
+            <li>Built Kentico's engineering career architecture from the ground up: dual IC/EM tracks, job tiers, role
+              definitions, promotion process, and a merit-based compensation system with annual market-benchmarked
+              salary methodology (3 consecutive cycles).</li>
+            <li>Led company-wide AI transformation: adoption programs and budget governance, a tier-linked Engineering
+              Management AI Baseline, provider-agnostic tooling strategy, and internal automation.</li>
+            <li>Drove KentiCopilot, an agentic AI product built on the Model Context Protocol (MCP), enabling end-to-end
+              agentic scenarios over the CMS; report progress directly to the CEO with checkpoint-gated delivery.</li>
+            <li>Own SaaS reliability and security posture: incident management analysis, uptime reporting, and Azure
+              cost optimization — cut cloud spend by ~10% through improved forecasting and workload optimization.</li>
+            <li>Co-designed and executed a Team Topologies-based reorganization of the product org into five divisions;
+              authored division charters, identified and onboarded two new division leaders, and now lead Platform
+              Engineering directly.</li>
+            <li>Represent engineering to strategic partners and enterprise customers: led the technical response
+              retaining Kentico's top implementation partner; negotiated SLA terms for government SaaS procurement.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2021 – 2023</div>
+        <div>
+          <div class="role">Senior Software Development Engineer · <span class="org">Microsoft</span> <span class="loc">— Prague, Czechia</span></div>
+          <p class="desc">Azure Communication Services (ACS) | Developer Success team. A deliberate swing back to
+            hands-on engineering at global scale — senior IC by choice (declined a parallel EM offer) before returning
+            to executive leadership.</p>
+          <ul>
+            <li>Led development of SDKs and shared AuthN/AuthZ primitives for Azure Communication Services.</li>
+            <li>Served as Developer Experience panelist, influencing public APIs and SDK design across ACS —
+              collaborating with the Azure SDK architects on API design and review.</li>
+            <li>Conducted REST &amp; SDK API reviews and privacy &amp; security reviews for globally distributed cloud
+              services; defined best practices for authentication, authorization, and identity management.</li>
+            <li>Key projects: ACS/Microsoft Teams interoperability; Identity service idempotence and reliability
+              improvements.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2017 – 2021</div>
+        <div>
+          <div class="role">Head of Developer Relations · <span class="org">Kentico</span> <span class="loc">— Brno, Czechia</span></div>
+          <ul>
+            <li>Founded and scaled Kentico's Developer Relations function from zero to a high-impact team of 5.</li>
+            <li>Defined DevRel, Developer Experience, and Developer Marketing strategy aligned with business goals.</li>
+            <li>Built and governed a large-scale open-source ecosystem (120+ repositories, SDKs &amp; samples across ~15
+              tech stacks).</li>
+            <li>Owned all developer-facing communication: content, events, sponsorships, MVP program, and community
+              engagement; introduced OKRs and translated strategy into execution.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2015 – 2017</div>
+        <div>
+          <div class="role">Developer Advocate · <span class="org">Kentico</span> <span class="loc">— Amsterdam, Netherlands</span></div>
+          <ul>
+            <li>Defined early developer community strategy around Kentico products; led and coordinated open-source
+              initiatives across the company.</li>
+            <li>Drove community engagement, contributor growth, and technical feedback loops.</li>
+            <li>Delivered technical talks, workshops, and authored developer-focused content.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2014 – 2015</div>
+        <div>
+          <div class="role">Software Engineer · <span class="org">TrueLime</span> <span class="loc">— Breda, Netherlands</span></div>
+          <ul>
+            <li>Delivered enterprise solutions for global clients: cloud architecture, CI/CD, scalable .NET systems, CRM
+              customizations, and complex integrations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2012 – 2014</div>
+        <div>
+          <div class="role">Technical Leader · <span class="org">Kentico</span> <span class="loc">— Brno, Czechia</span></div>
+          <ul>
+            <li>Led platform and DevOps teams responsible for CI, tooling, and core CMS capabilities (data engine,
+              security, APIs, performance, scalability); owned backlog prioritization as Product Owner.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry compact">
+        <div class="when">2007 – 2012</div>
+        <div class="role">Software Developer, later Senior Software Developer · <span class="org">Kentico</span> <span class="loc">— Brno, Czechia</span></div>
+      </div>
+
+      <div class="entry compact">
+        <div class="when">2002 – 2007</div>
+        <div class="role">Early Career — Software Development &amp; Teaching <span class="loc">— CSJu, CC Systems, eMule</span></div>
+      </div>
+    </section>
+
+    <!-- ================= OPEN SOURCE & COMMUNITY ================= -->
+    <section>
+      <h2>Open Source &amp; Community</h2>
+
+      <div class="entry">
+        <div class="when">2015 – Present</div>
+        <div>
+          <div class="role"><a href="https://github.com/petrsvihlik/WopiHost">WopiHost</a> <span class="loc">— Maintainer</span></div>
+          <p class="desc">Maintainer of WopiHost, the leading open-source .NET implementation of the WOPI protocol (200+
+            GitHub stars), integrating Office Online, Collabora, and OnlyOffice.</p>
+        </div>
+      </div>
+
+      <div class="entry compact">
+        <div class="when">2018 – 2020</div>
+        <div class="kv">Consulted / opposed 4 diploma &amp; bachelor theses, <b>Faculty of Informatics, Masaryk University</b>.</div>
+      </div>
+
+      <div class="entry compact">
+        <div class="when">2022</div>
+        <div class="kv">Volunteer personal assistant (3 days, 24/7) for a person with paraplegia, <b><a href="https://www.ligavozic.cz/">Liga Vozíčkářů</a></b>.</div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section>
+      <h2>Education</h2>
+
+      <div class="entry compact">
+        <div class="when">2008 – 2011</div>
+        <div class="kv"><b>Bc., Applied Informatics</b> — Faculty of Informatics, Masaryk University, Brno.</div>
+      </div>
+
+      <div class="entry compact">
+        <div class="when">2006 – 2008</div>
+        <div class="kv"><b>Information Technology</b> — Faculty of Information Technology, Brno University of Technology.</div>
+      </div>
+
+      <div class="entry compact">
+        <div class="when">2002 – 2006</div>
+        <div class="kv"><b>Programming</b> — High School of Applied Cybernetics, Hradec Králové.</div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER GRID ================= -->
+    <section>
+      <div class="grid-2">
+        <div>
+          <h2>Languages</h2>
+          <div class="kv"><b>Czech</b> — native</div>
+          <div class="kv"><b>English</b> — full professional proficiency</div>
+          <div class="kv"><b>Spanish</b> — elementary proficiency</div>
+          <div class="kv"><b>Dutch</b> — elementary proficiency</div>
+        </div>
+        <div>
+          <h2>Certifications</h2>
+          <div class="kv">Certificate in Advanced English (CAE)</div>
+          <div class="kv"><a href="https://www.credly.com/badges/94d77618-0a25-4d19-b7f8-c77b0749544b">MCSD</a>, <a href="https://www.credly.com/badges/c7817878-b0af-4cc8-b7f7-1c3049e82623">MCSA</a>, MCPD, MCTS, MCP</div>
+          <div class="kv">CCNA</div>
+        </div>
+        <div>
+          <h2>Personal</h2>
+          <div class="kv"><b>Citizenship:</b> Czech</div>
+          <div class="kv"><b>Born:</b> 1987</div>
+          <div class="kv"><b>Residence:</b> Brno, Czechia (EU)</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

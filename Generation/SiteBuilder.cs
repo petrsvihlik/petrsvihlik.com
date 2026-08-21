@@ -292,6 +292,7 @@ namespace PetrSvihlik.Com.Generation
                         MetaDescription = doc.FrontMatter.Description,
                         Unlisted = doc.FrontMatter.Unlisted,
                         Comments = doc.FrontMatter.Comments,
+                        Newsletter = doc.FrontMatter.Newsletter,
                     };
                 })
                 .ToList();

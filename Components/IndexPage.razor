@@ -90,6 +90,11 @@ else
         @((MarkupString)Page.Body)
     </section>
 
+    if (Page.Newsletter)
+    {
+        <Newsletter Source="page" />
+    }
+
     if (Page.Comments)
     {
         <Comments Term="@($"pages/{Page.Url}")" />

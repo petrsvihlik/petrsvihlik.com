@@ -1,6 +1,6 @@
 @using System.Globalization
 @using System.Text.Json
-<SiteLayout Ctx="Ctx" Seo="Seo" ActiveNav="@ActiveNav">
+<SiteLayout Ctx="Ctx" Seo="Seo" ActiveNav="@ActiveNav" IncludeHighlight="Highlight">
     <ChildContent>
 <main class="wrap">
 @if (IsArticleList)
@@ -118,6 +118,9 @@ else
 
     /// <summary>Set for generic content pages (about, 404, …).</summary>
     [Parameter] public Page Page { get; set; }
+
+    /// <summary>Include the syntax highlighter (content pages with code blocks).</summary>
+    [Parameter] public bool Highlight { get; set; }
 
     private bool IsArticleList => Articles != null;
     private bool ShowHero => IsHomeIndex && Articles.Index <= 1;

@@ -86,6 +86,11 @@
     @ChildContent
 
     <script src="@Ctx.Links.Link("/assets/js/site.js")"></script>
+    @if (IncludeHighlight)
+    {
+        <script src="@Ctx.Links.Link("/assets/js/highlight.min.js")"></script>
+        <script>hljs.highlightAll();</script>
+    }
 </body>
 </html>
 
@@ -100,6 +105,9 @@
 
     /// <summary>Value of the body id attribute (e.g. "post").</summary>
     [Parameter] public string PageType { get; set; }
+
+    /// <summary>Include the syntax highlighter (pages whose content has code blocks).</summary>
+    [Parameter] public bool IncludeHighlight { get; set; }
 
     [Parameter] public RenderFragment ChildContent { get; set; }
 

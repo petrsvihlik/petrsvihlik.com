@@ -1,7 +1,11 @@
 using Markdig;
+using Markdig.Renderers.Html;
+using Markdig.Syntax;
+using Markdig.Syntax.Inlines;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -20,13 +24,31 @@ namespace PetrSvihlik.Com.Generation
         public string Repo { get; set; }
         public string Logo { get; set; }
         public int? Order { get; set; }
+
+        /// <summary>Render the page but keep it out of the sitemap and ask crawlers not to index it.</summary>
+        public bool Unlisted { get; set; }
     }
 
     /// <summary>A Markdown content file: parsed front matter plus the body rendered to HTML.</summary>
     public sealed class MarkdownDocument
     {
-        private static readonly MarkdownPipeline Pipeline =
-            new MarkdownPipelineBuilder().Configure("advanced").Build();
+        private static readonly MarkdownPipeline Pipeline = CreatePipeline();
+
+        private static MarkdownPipeline CreatePipeline()
+        {
+            var builder = new MarkdownPipelineBuilder().Configure("advanced");
+            builder.DocumentProcessed += document =>
+            {
+                // native lazy loading for every content image
+                foreach (var image in document.Descendants<LinkInline>().Where(link => link.IsImage))
+                {
+                    var attributes = image.GetAttributes();
+                    attributes.AddProperty("loading", "lazy");
+                    attributes.AddProperty("decoding", "async");
+                }
+            };
+            return builder.Build();
+        }
 
         private static readonly IDeserializer YamlDeserializer = new DeserializerBuilder()
             .WithNamingConvention(UnderscoredNamingConvention.Instance)

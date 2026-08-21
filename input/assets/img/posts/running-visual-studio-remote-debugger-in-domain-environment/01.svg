@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-label="A domain-joined developer machine connecting to a remote debugger on a virtual machine outside the domain — the connection crossing the boundary is where authentication hurts">
+  <rect x="1" y="1" width="1198" height="518" rx="8" fill="#0e1117" stroke="#283040" stroke-width="2"/>
+  <circle cx="36" cy="38" r="7" fill="#ff6b6b"/>
+  <circle cx="62" cy="38" r="7" fill="#e7c46b"/>
+  <circle cx="88" cy="38" r="7" fill="#93dca2"/>
+  <text x="116" y="45" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" fill="#8a93a0">$ msvsmon.exe /connect --cross-boundary</text>
+  <line x1="1" y1="64" x2="1199" y2="64" stroke="#1b212b" stroke-width="2"/>
+
+  <!-- domain boundary -->
+  <rect x="90" y="120" width="600" height="320" rx="12" fill="none" stroke="#283040" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="114" y="156" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#515b69">windows domain</text>
+
+  <rect x="130" y="220" width="220" height="110" rx="6" fill="#11151c" stroke="#283040" stroke-width="2"/>
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" text-anchor="middle">
+    <text x="240" y="268" font-size="20" fill="#d8dee6">domain</text>
+    <text x="240" y="298" font-size="20" fill="#d8dee6">controller</text>
+  </g>
+
+  <rect x="420" y="220" width="230" height="110" rx="6" fill="#11151c" stroke="#4fd6e0" stroke-width="2.5"/>
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" text-anchor="middle">
+    <text x="535" y="268" font-size="20" fill="#4fd6e0">your computer</text>
+    <text x="535" y="298" font-size="18" fill="#8a93a0">Visual Studio</text>
+  </g>
+
+  <line x1="350" y1="275" x2="420" y2="275" stroke="#515b69" stroke-width="2"/>
+
+  <!-- outside VM -->
+  <rect x="880" y="220" width="230" height="110" rx="6" fill="#11151c" stroke="#f0a35e" stroke-width="2.5"/>
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" text-anchor="middle">
+    <text x="995" y="268" font-size="20" fill="#f0a35e">virtual machine</text>
+    <text x="995" y="298" font-size="18" fill="#8a93a0">msvsmon.exe</text>
+  </g>
+
+  <!-- the painful connection -->
+  <line x1="650" y1="275" x2="880" y2="275" stroke="#ff6b6b" stroke-width="3"/>
+  <text x="765" y="255" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="17" fill="#ff6b6b">auth fails here</text>
+
+  <text x="90" y="486" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#515b69">// no trust relationship — mirrored local accounts to the rescue</text>
+</svg>

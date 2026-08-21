@@ -6,8 +6,12 @@ date: 2016-05-24
 category: technology
 tags: [dot-net, dependency-hell]
 canonical_url: https://devnet.kentico.com/articles/referencing-multiple-versions-of-the-same-assembly-in-a-single-application
-draft: true # triage: drop — excluded from the site (issue #64)
+comments: true
 ---
+
+::: info
+A .NET Framework-era article (2016): binding redirects, AppDomains, and strong-naming work as described there, while modern .NET replaced this whole toolbox with `AssemblyLoadContext`. Still relevant if you maintain a .NET Framework or Kentico Xperience 13 site. Originally published on [Kentico DevNet](https://devnet.kentico.com/articles/referencing-multiple-versions-of-the-same-assembly-in-a-single-application).
+:::
 
 We've all been there — our application depends on a version of assembly that's incompatible with the version that's referenced by the NuGet package we've just installed. The situation gets worse when the conflict occurs between two third-party NuGet packages. What can we do about it? What does Kentico do about it?
 

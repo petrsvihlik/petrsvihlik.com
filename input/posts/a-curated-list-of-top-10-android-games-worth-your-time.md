@@ -5,9 +5,12 @@ slug: a-curated-list-of-top-10-android-games-worth-your-time
 date: 2021-10-16
 category: entertainment
 tags: [fun, gaming]
-canonical_url: https://petrsvihlik.medium.com/a-curated-list-of-top-10-android-games-worth-your-time-6d5232728683
-draft: true # triage: drop — excluded from the site (issue #64)
+comments: true
 ---
+
+::: info
+This is a snapshot of the Play Store as of October 2021. Prices, availability, and compatibility have moved on since, and at least one of these games now lives only on APK mirrors and Steam. Archived as published — the taste holds up even where the links don't.
+:::
 
 No matter whether you’re on a train, on a toilet, or on acid you’ll enjoy these games. Guaranteed!
 

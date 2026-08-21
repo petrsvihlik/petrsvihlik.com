@@ -5,9 +5,12 @@ slug: running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-cod
 date: 2019-12-01
 category: technology
 tags: [opencover, appveyor, codecov, dot-net]
-canonical_url: https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p
-draft: true # triage: drop — excluded from the site (issue #64)
+comments: true
 ---
+
+::: warning
+Tools from 2019, preserved as history: .NET Core 3 is long out of support, OpenCover has been retired by its maintainer, and Codecov's uploader has been replaced since. For the modern approach, see the follow-up: [Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet](/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet).
+:::
 
 ![](/assets/img/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov/01.webp)
 

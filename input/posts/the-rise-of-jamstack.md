@@ -6,8 +6,12 @@ date: 2020-03-12
 category: technology
 tags: [jamstack]
 canonical_url: https://kontent.ai/blog/the-rise-of-jamstack
-draft: true # triage: drop — excluded from the site (issue #64)
+comments: true
 ---
+
+::: info
+A 2020 snapshot of a movement at its peak: the term has since been retired by its own coiners, and the patterns dissolved into the mainstream (SSR, ISR, edge rendering). Archived as a period piece — including the capitalization. Originally published on the [Kontent.ai blog](https://kontent.ai/blog/the-rise-of-jamstack).
+:::
 
 ## What is JAMstack, and how does it work?
 The JAM in [JAMstack](https://kontent.ai/resources/state-of-jamstack-report/) stands for **J**avaScript, **A**PI, and **M**arkup. It is essentially a new way to construct websites and applications, with the key difference being that it runs almost completely in the front end, allowing the sites and apps to become served without classic web servers.
@@ -30,7 +34,7 @@ Statically generated sites can be sourced with data from literally anywhere—lo
 
 Although headless CMSs were initially created to overcome the omnichannel gap, it seems that they create a perfect match with static site generators.
 
-![](/assets/img/posts/the-rise-of-jamstack/02.png)
+![](/assets/img/posts/the-rise-of-jamstack/02.svg)
 
 Keeping the concerns separated lets you use a [best-of-breed solution](https://kontent.ai/integrations) for each problem while allowing the (micro)services to scale almost indefinitely. Speaking of scalability, serving static files requires almost zero infrastructure and removes the need for boosting your databases’ and web servers’ performance. There is practically no way of achieving better performance and scalability because serving static files is just a matter of transferring them over the wire. The page-load time is limited by the speed of your connection and the hard drive/memory serving the files.
 

@@ -68,6 +68,12 @@ Markdown is rendered with Markdig's `advanced` pipeline; everything it supports 
 
 Add `unlisted: true` to a page's front matter to render it while keeping it out of the sitemap and marked `noindex` (used by the markup demo).
 
+### Illustrations (SVG design system)
+
+Post illustrations are hand-authored SVGs in a shared "terminal panel" style: a dark window with traffic-light dots and a `$ command` title, drawn strictly from the site's design tokens (JetBrains Mono, the dark-theme palette, 6px-radius boxes, code-comment annotations). Dark chrome is deliberate — like a real terminal screenshot, the panels read native in dark mode and intentional in light mode, with no theme plumbing needed inside `<img>`-loaded SVGs.
+
+To create one, copy [`input/assets/img/posts/_template.svg`](input/assets/img/posts/_template.svg) — it documents the palette, chrome, and conventions inline — save it as `input/assets/img/posts/<slug>/NN.svg`, and reference it like any image (add a caption with the `^^^` figure syntax). Keep photos, screenshots, and memes as raster; use the panels for concepts, diagrams, and headers.
+
 ### New page
 
 Create a Markdown file in `input/pages/`:

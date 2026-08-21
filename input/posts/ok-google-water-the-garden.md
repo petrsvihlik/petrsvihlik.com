@@ -5,9 +5,12 @@ slug: ok-google-water-the-garden
 date: 2020-07-16
 category: technology
 tags: [smart-home, rachio, water-irrigation, gardening]
-canonical_url: https://medium.com/@PetrSvihlik/ok-google-water-the-garden-29827f29a1cb
-draft: true # triage: drop — excluded from the site (issue #64)
+comments: true
 ---
+
+::: info
+A build log from the summer of 2020. The hardware, the US-import workaround, and the Google Assistant integration are all described as they worked back then — the voice-control part has reportedly gotten flakier since. Archived as a story, not as a manual.
+:::
 
 ![](/assets/img/posts/ok-google-water-the-garden/01.jpg)
 

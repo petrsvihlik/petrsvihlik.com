@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Org chart where every team's OKRs, including DevRel's, roll up into the exec team's goals">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a93a0"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="1198" height="558" rx="8" fill="#0e1117" stroke="#283040" stroke-width="2"/>
+  <circle cx="36" cy="38" r="7" fill="#ff6b6b"/>
+  <circle cx="62" cy="38" r="7" fill="#e7c46b"/>
+  <circle cx="88" cy="38" r="7" fill="#93dca2"/>
+  <text x="116" y="45" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" fill="#8a93a0">$ okr align --roll-up</text>
+  <line x1="1" y1="64" x2="1199" y2="64" stroke="#1b212b" stroke-width="2"/>
+
+  <!-- exec box -->
+  <rect x="500" y="110" width="200" height="64" rx="6" fill="#11151c" stroke="#93dca2" stroke-width="2.5"/>
+  <text x="600" y="149" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#93dca2">exec team</text>
+
+  <!-- team boxes -->
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" text-anchor="middle">
+    <rect x="90"  y="340" width="170" height="60" rx="6" fill="#11151c" stroke="#4fd6e0" stroke-width="2.5"/>
+    <text x="175" y="377" fill="#4fd6e0">devrel</text>
+    <rect x="310" y="340" width="170" height="60" rx="6" fill="#11151c" stroke="#283040" stroke-width="2"/>
+    <text x="395" y="377" fill="#d8dee6">support</text>
+    <rect x="530" y="340" width="170" height="60" rx="6" fill="#11151c" stroke="#283040" stroke-width="2"/>
+    <text x="615" y="377" fill="#d8dee6">engineering</text>
+    <rect x="750" y="340" width="170" height="60" rx="6" fill="#11151c" stroke="#283040" stroke-width="2"/>
+    <text x="835" y="377" fill="#d8dee6">marketing</text>
+    <rect x="970" y="340" width="140" height="60" rx="6" fill="#11151c" stroke="#283040" stroke-width="2"/>
+    <text x="1040" y="377" fill="#d8dee6">sales</text>
+  </g>
+
+  <!-- roll-up arrows -->
+  <g fill="none" stroke="#515b69" stroke-width="2" marker-end="url(#arr)">
+    <path d="M 175 340 C 175 240, 420 190, 508 172"/>
+    <path d="M 395 340 C 395 260, 480 210, 540 182"/>
+    <path d="M 615 340 L 604 182"/>
+    <path d="M 835 340 C 835 260, 730 210, 668 182"/>
+    <path d="M 1040 340 C 1040 240, 790 190, 700 172"/>
+  </g>
+  <!-- devrel's arrow, emphasized -->
+  <path d="M 145 340 C 130 220, 380 160, 496 148" fill="none" stroke="#4fd6e0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- individual OKRs feeding teams -->
+  <g fill="none" stroke="#283040" stroke-width="2" marker-end="url(#arr)">
+    <path d="M 175 480 L 175 408"/>
+    <path d="M 395 480 L 395 408"/>
+    <path d="M 615 480 L 615 408"/>
+    <path d="M 835 480 L 835 408"/>
+    <path d="M 1040 480 L 1040 408"/>
+  </g>
+
+  <text x="90" y="520" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#515b69">// same goals, every altitude — stories everyone can relate to</text>
+</svg>

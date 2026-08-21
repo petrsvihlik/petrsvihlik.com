@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-label="Three fish: culture eats strategy, strategy eats metrics">
+  <rect x="1" y="1" width="1198" height="428" rx="8" fill="#0e1117" stroke="#283040" stroke-width="2"/>
+  <circle cx="36" cy="38" r="7" fill="#ff6b6b"/>
+  <circle cx="62" cy="38" r="7" fill="#e7c46b"/>
+  <circle cx="88" cy="38" r="7" fill="#93dca2"/>
+  <text x="116" y="45" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" fill="#8a93a0">$ ps aux | grep food-chain</text>
+  <line x1="1" y1="64" x2="1199" y2="64" stroke="#1b212b" stroke-width="2"/>
+
+  <!-- metrics: small fish, swimming left, oblivious -->
+  <g>
+    <ellipse cx="180" cy="250" rx="52" ry="26" fill="#11151c" stroke="#8a93a0" stroke-width="2"/>
+    <polygon points="228,250 262,230 262,270" fill="#11151c" stroke="#8a93a0" stroke-width="2"/>
+    <circle cx="152" cy="243" r="4" fill="#8a93a0"/>
+  </g>
+
+  <!-- strategy: medium fish, mouth open toward metrics -->
+  <g>
+    <ellipse cx="520" cy="250" rx="105" ry="52" fill="#11151c" stroke="#e7c46b" stroke-width="2.5"/>
+    <polygon points="612,250 672,212 672,288" fill="#11151c" stroke="#e7c46b" stroke-width="2.5"/>
+    <polygon points="415,250 462,222 462,278" fill="#0e1117"/>
+    <path d="M 462 222 L 415 250 L 462 278" fill="none" stroke="#e7c46b" stroke-width="2.5"/>
+    <circle cx="472" cy="228" r="6" fill="#e7c46b"/>
+  </g>
+
+  <!-- culture: big fish, mouth open toward strategy -->
+  <g>
+    <ellipse cx="960" cy="250" rx="170" ry="95" fill="#11151c" stroke="#4fd6e0" stroke-width="3"/>
+    <polygon points="1105,250 1178,196 1178,304" fill="#11151c" stroke="#4fd6e0" stroke-width="3"/>
+    <polygon points="790,250 872,196 872,304" fill="#0e1117"/>
+    <path d="M 872 196 L 790 250 L 872 304" fill="none" stroke="#4fd6e0" stroke-width="3"/>
+    <circle cx="882" cy="206" r="9" fill="#4fd6e0"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" text-anchor="middle">
+    <text x="200" y="330" fill="#8a93a0">metrics</text>
+    <text x="530" y="350" fill="#e7c46b">strategy</text>
+    <text x="975" y="392" fill="#4fd6e0">culture</text>
+  </g>
+
+  <text x="90" y="130" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#515b69">// breakfast is served at every level of abstraction</text>
+</svg>

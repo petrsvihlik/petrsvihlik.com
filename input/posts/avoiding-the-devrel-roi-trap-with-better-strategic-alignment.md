@@ -61,7 +61,7 @@ So can our ability to adapt to company strategy be our “KPI” and talk for us
 To put things in a broader context, allow me a little detour and let me share a simplistic model of what I consider a good strategy:
 
 ^^^
-![DevRel strategy = Company Strategy ∩ Developers’ Needs ∩ What developer avocados are good at](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/02.png)
+![DevRel strategy = Company Strategy ∩ Developers’ Needs ∩ What developer avocados are good at](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/02.svg)
 ^^^ A perfect DevRel strategy recipe that’s strikingly reminiscent of Ikigai
 
 To succeed, I need to collect the company’s management’s expectations, understand the target audience’s needs, and know my team well. None of these is an easy task — to start with, I wouldn’t expect the management team to provide me with anything more than the target segment + the stage of the customer’s journey or lifecycle to focus on, second, developers can be a very loud and demanding bunch and the demands tend to vary quite often, and finally, learning my team members’ superpowers requires some time working together. But all this research is soooo worth it and it saves so much trouble in the future!
@@ -77,7 +77,7 @@ What happens if you choose a wrong strategy? Well, you end up:
 - worrying about being unable to explain your actions, or
 - not doing DevRel work at all.
 
-![DevRel strategy != Other people’s jobs, not advocating for devs’ needs, things not aligned with company strategy](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/03.png)
+![DevRel strategy != Other people’s jobs, not advocating for devs’ needs, things not aligned with company strategy](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/03.svg)
 
 In either case, your motivation vaporizes very quickly. Now let’s get back to strategic alignment and our approach to it in Kentico.
 
@@ -126,7 +126,7 @@ Once we’re happy with the definition of our OKRs, we track progress on a weekl
 
 Every month, there is a department-wide meeting and a company-wide newsletter where all teams reflect on selected OKRs. We make sure these updates are as brief and understandable as possible. This way it doesn’t waste anybody’s time and keeps everybody in the loop. People can ask questions, challenge decisions being made, suggest improvements, or just praise their colleagues. At the end of the year, we zoom out and repeat the process from a higher perspective.
 
-![](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/04.jpg)
+![](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/04.svg)
 
 Regular updates close the gap between the executives and teams.
 
@@ -150,5 +150,5 @@ My hope is that I was able to offer an alternative, yet viable perspective on ho
 This article is meant to lay the foundation of how I see DevRel. Let me know if you’d like me to expand on any of what I mentioned down in the comments. I’ll make sure to write about it in the future.
 
 ^^^
-![If culture eats strategy for breakfast, then strategy eats metrics for brunch.](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/05.png)
+![If culture eats strategy for breakfast, then strategy eats metrics for brunch.](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/05.svg)
 ^^^ If culture eats strategy for breakfast, then strategy eats metrics for dinner the night before. 😀

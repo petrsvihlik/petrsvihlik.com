@@ -12,7 +12,7 @@ comments: true
 
 The year 2018 was absolutely groundbreaking to me. I completely reorganized my life and I feel that I'm happier than I've ever been in my life. If something troubles you or you'd like to change your life for the better, here's a three-step recipe:
 
-![](/assets/img/posts/how-i-changed-my-life-in-three-steps/01.jpg)
+![](/assets/img/posts/how-i-changed-my-life-in-three-steps/01.svg)
 
 ## 1) The Subtle Art of Not Giving a F*ck
 

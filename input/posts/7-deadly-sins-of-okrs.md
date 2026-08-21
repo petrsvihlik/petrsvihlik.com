@@ -12,7 +12,7 @@ Are you implementing **O**bjectives and **K**ey **R**esults across your company 
 
 Note for the reader: This article expects a basic knowledge of the [OKR framework](https://en.wikipedia.org/wiki/OKR), originally introduced by Intel. I try to summarize the experience I gained throughout the almost two years since we’ve started with OKRs at [Kentico](https://www.kentico.com/). I discuss various problems that teams across our company have faced at some point in the time (on a smaller or larger scale). I call the problems deadly sins and I try to give honest advice on how not to become guilty of them. Why deadly? Because each one of them causes the framework to be dysfunctional and means you won’t achieve the desired results.
 
-![](/assets/img/posts/7-deadly-sins-of-okrs/01.jpg)
+![](/assets/img/posts/7-deadly-sins-of-okrs/01.svg)
 
 ## Sin #1 — Missing the WHY
 

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="A fork pull request must pass a human approval gate before the build sees any secrets">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a93a0"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="1198" height="628" rx="8" fill="#0e1117" stroke="#283040" stroke-width="2"/>
+  <circle cx="36" cy="38" r="7" fill="#ff6b6b"/>
+  <circle cx="62" cy="38" r="7" fill="#e7c46b"/>
+  <circle cx="88" cy="38" r="7" fill="#93dca2"/>
+  <text x="116" y="45" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" fill="#8a93a0">$ gh workflow view pull_request.yml</text>
+  <line x1="1" y1="64" x2="1199" y2="64" stroke="#1b212b" stroke-width="2"/>
+
+  <rect x="90" y="210" width="280" height="150" rx="6" fill="#11151c" stroke="#f0a35e" stroke-width="2.5"/>
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" text-anchor="middle">
+    <text x="230" y="270" font-size="24" fill="#f0a35e">fork PR</text>
+    <text x="230" y="310" font-size="18" fill="#8a93a0">untrusted code</text>
+  </g>
+
+  <line x1="370" y1="285" x2="452" y2="285" stroke="#8a93a0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <rect x="460" y="190" width="280" height="190" rx="6" fill="#11151c" stroke="#e7c46b" stroke-width="2.5"/>
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" text-anchor="middle">
+    <text x="600" y="245" font-size="28" fill="#e7c46b">⏸ gate</text>
+    <text x="600" y="290" font-size="20" fill="#d8dee6">required reviewers</text>
+    <text x="600" y="325" font-size="18" fill="#8a93a0">a human reads the diff</text>
+  </g>
+
+  <line x1="740" y1="285" x2="822" y2="285" stroke="#93dca2" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="781" y="260" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="17" fill="#93dca2">approved</text>
+
+  <rect x="830" y="210" width="280" height="150" rx="6" fill="#11151c" stroke="#93dca2" stroke-width="2.5"/>
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" text-anchor="middle">
+    <text x="970" y="270" font-size="24" fill="#93dca2">build + test</text>
+    <text x="970" y="310" font-size="18" fill="#8a93a0">🔒 secrets available</text>
+  </g>
+
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20">
+    <text x="90" y="470" fill="#8a93a0">environment: <tspan fill="#d8dee6">"Integrate Pull Request"</tspan></text>
+    <text x="90" y="510" fill="#515b69">// humans before secrets — every approval audited</text>
+  </g>
+</svg>

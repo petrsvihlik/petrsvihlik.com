@@ -934,3 +934,53 @@ html[data-theme="dark"] .article-single__body .gist {
 .comments .giscus { margin-top: 20px; }
 .comments .sec-head .count a { color: var(--fg-dim); text-decoration: none; }
 .comments .sec-head .count a:hover { color: var(--accent); }
+
+/* ---------- newsletter (email capture) ---------- */
+.newsletter { margin-top: 12px; }
+.newsletter .sec-head .count a { color: var(--fg-dim); }
+.newsletter .sec-head .count a:hover { color: var(--accent); }
+.nl-blurb {
+  margin: 16px 0 12px;
+  font-size: 13px;
+  color: var(--fg-dim);
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+.nl-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 460px;
+  padding: 8px 8px 8px 12px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--rad);
+}
+.nl-form:focus-within { border-color: var(--accent); }
+.nl-form .label { color: var(--green); font-size: 13px; white-space: nowrap; }
+.nl-form input[type="email"] {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 14px;
+}
+.nl-form input[type="email"]::placeholder { color: var(--fg-faint); }
+.nl-btn {
+  appearance: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1;
+  padding: 7px 11px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--rad);
+  white-space: nowrap;
+  transition: all var(--dur);
+}
+.nl-btn:hover { background: var(--accent); color: var(--bg); }

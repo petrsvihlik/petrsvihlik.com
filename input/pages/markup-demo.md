@@ -158,9 +158,9 @@ The generator has exactly two NuGet dependencies[^deps], which is the whole poin
 
 A GitHub gist, embedded with its plain `<script>` embed code (raw HTML passes through Markdown; inverted in dark mode to match the theme):
 
-<script src="https://gist.github.com/petrsvihlik/a9d3f569110a258824a2b9adcb543aa7.js"></script>
+<script src="https://gist.github.com/petrsvihlik/cc34a6cf1882d515139c5b27f37cf99e.js"></script>
 
-<noscript><a href="https://gist.github.com/petrsvihlik/a9d3f569110a258824a2b9adcb543aa7">View the gist on GitHub</a></noscript>
+<noscript><a href="https://gist.github.com/petrsvihlik/cc34a6cf1882d515139c5b27f37cf99e">View the gist on GitHub</a></noscript>
 
 ---
 

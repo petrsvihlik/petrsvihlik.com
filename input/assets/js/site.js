@@ -161,7 +161,10 @@
     }
 
     function setCount(n) {
-      if (countEl) countEl.textContent = n + (n === 1 ? ' entry' : ' entries');
+      if (!countEl) return;
+      var total = fullIndex ? fullIndex.length : serverRows.length;
+      var unit = total === 1 ? ' entry' : ' entries';
+      countEl.textContent = (total > n ? n + ' of ' + total : String(n)) + unit;
     }
 
     function showServer() {
@@ -277,6 +280,67 @@
           e.preventDefault();
           open(a.href, a.textContent.trim());
         });
+      });
+    });
+  }
+
+  /* ---------- document lightbox ----------
+     Opens links marked data-lightbox="doc" in an iframe overlay instead of
+     navigating — used by the CV, reusable for any embedded document. The
+     toolbar offers a download (data-download), a full-page link, and close.
+     Click backdrop / ✕ / Esc to close. */
+  function initDocLightbox() {
+    var links = document.querySelectorAll('a[data-lightbox="doc"]');
+    if (!links.length) return;
+
+    var overlay, frame, dl, ext;
+    function onKey(e) { if (e.key === 'Escape') close(); }
+    function build() {
+      overlay = document.createElement('div');
+      overlay.className = 'doclb';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.innerHTML =
+        '<div class="doclb__panel">' +
+          '<div class="doclb__bar">' +
+            '<span class="doclb__title"></span>' +
+            '<a class="doclb__btn doclb__dl" download>save .pdf</a>' +
+            '<a class="doclb__btn doclb__ext" target="_blank" rel="noopener">open ↗</a>' +
+            '<button class="doclb__btn doclb__close" type="button" aria-label="close">✕</button>' +
+          '</div>' +
+          '<iframe class="doclb__frame" title="document"></iframe>' +
+        '</div>';
+      frame = overlay.querySelector('.doclb__frame');
+      dl = overlay.querySelector('.doclb__dl');
+      ext = overlay.querySelector('.doclb__ext');
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay || e.target.closest('.doclb__close')) close();
+      });
+    }
+    function open(link) {
+      if (!overlay) build();
+      overlay.querySelector('.doclb__title').textContent = '$ cat ' + (link.textContent.trim() || 'document');
+      if (frame.getAttribute('src') !== link.href) frame.src = link.href;
+      var download = link.getAttribute('data-download');
+      dl.style.display = download ? '' : 'none';
+      if (download) dl.href = download;
+      ext.href = link.href;
+      overlay.classList.add('is-open');
+      root.style.overflow = 'hidden';
+      document.addEventListener('keydown', onKey);
+    }
+    function close() {
+      if (!overlay) return;
+      overlay.classList.remove('is-open');
+      root.style.overflow = '';
+      document.removeEventListener('keydown', onKey);
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(link);
       });
     });
   }
@@ -442,6 +506,7 @@
     bootAvatar();
     initFilter();
     initLightbox();
+    initDocLightbox();
     initStars();
     initBg();
     initCodeCopy();

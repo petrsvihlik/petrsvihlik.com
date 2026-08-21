@@ -33,6 +33,7 @@ Scaffolds `input/posts/my-post-title.md` with front matter prefilled (slug deriv
 - `Generation/SiteBuilder.cs` loads content from `input/`, renders the components, and writes `output/` — pages, paginated archives (home, per-tag, per-category), RSS/Atom feeds, and `sitemap.xml`.
 - Templates are plain Razor components in `Components/`; site metadata (title, author, contacts) lives in `SiteBuilder.CreateSiteMetadata()`.
 - Email capture (`Components/Newsletter.razor`) renders on every post page, at the bottom of the homepage archive, and on pages that opt in — a plain HTML form handing the address to the provider's hosted subscribe flow. Provider specifics are five constants at the top of the component (currently Substack; Buttondown/Kit equivalents documented inline).
+- Document lightbox: any link with `data-lightbox="doc"` opens its target in an iframe overlay (toolbar: download via `data-download`, open full page, close) instead of navigating — the hero's `[cv]` link uses it. The CV itself is a self-contained page + PDF under `input/assets/cv/`; a header contact becomes such a link via the `Lightbox`/`Download` properties on `Contact`. To refresh the PDF after editing the CV HTML, print it headless (Chromium `--print-to-pdf` honors the page's `@page` A4 rules).
 - Settings: `TagManagerId` from `appsettings.json`; `Host` and `LinkRoot` (used by CI) come from environment variables and control absolute-link generation for feeds and the sitemap; `Drafts=true` (or the `drafts` CLI arg) includes draft posts in the build.
 
 ## Adding content

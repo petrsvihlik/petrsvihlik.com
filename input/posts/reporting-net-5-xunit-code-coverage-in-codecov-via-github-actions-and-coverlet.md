@@ -3,11 +3,16 @@ title: "Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and C
 description: "You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version."
 slug: reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet
 date: 2021-03-05
+updated: 2026-08-21
 category: technology
 tags: [codecov, dot-net, github-actions, coverlet, continuous-integration, devops]
 canonical_url: https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i
-draft: true # triage: drop — excluded from the site (issue #64)
+comments: true
 ---
+
+::: warning
+Written for .NET 5 in 2021 and archived as-is: the concepts hold, but the commands have moved on (coverlet's collector with `--collect:"XPlat Code Coverage"` is the current path, and the Codecov action now requires a token). Originally published on the [Kontent.ai dev.to blog](https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i).
+:::
 
 ![](/assets/img/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet/01.webp)
 

@@ -13,7 +13,7 @@ comments: true
 This article is from March 2021 and describes `pull_request_target` as it worked back then. GitHub changed the event's semantics in December 2025, and `actions/checkout` now refuses the exact checkout shown below by default. The pattern's core idea — a human approval gate in front of secrets — survived and is now semi-official practice, but don't copy the YAML verbatim. The [postscript](#postscript-august-2026-what-four-years-did-to-this-pattern) tells the whole story.
 :::
 
-![](/assets/img/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target/01.webp)
+![](/assets/img/posts/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pull-request-target/01.svg)
 
 Building pull requests from forked repositories with GitHub Actions can be a bit tricky when it comes to secrets. As per the [documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#pull_request), with the exception of `GITHUB_TOKEN`, secrets are not passed to the runner when a workflow is triggered from a forked repository. This is to prevent the automatic execution of untrusted code that may be contained within the forked repo.
 In other words, we can't use the `pull_request` trigger if there are secrets that need to be involved in the workflow.

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="TEMPLATE — copy this file to start a new post illustration">
+  <!--
+    petrsvihlik.com illustration template — "terminal panel"
+    ========================================================
+    Every post illustration is a self-contained dark terminal window drawn
+    from the site's design tokens. Dark chrome is deliberate: like a real
+    terminal screenshot, it reads native in dark mode and intentional in
+    light mode, with no theme plumbing inside <img>-loaded SVGs.
+
+    Palette (mirrors site.css dark tokens — keep in sync):
+      panel bg   #0e1117   (bg-elev)     box fill   #11151c   (bg-soft)
+      border     #283040   (line-2)      hairline   #1b212b   (line)
+      text       #d8dee6   (fg)          dim        #8a93a0   (fg-dim)
+      faint      #515b69   (fg-faint)
+      cyan #4fd6e0  green #93dca2  yellow #e7c46b  magenta #ff79c6
+      purple #c79bf2  orange #f0a35e  red #ff6b6b
+
+    Conventions:
+      - viewBox 1200x630 for post headers; 1200xH (any H) for diagrams
+      - titlebar: three dots (red/yellow/green) + "$ command" label that
+        names the illustration in the site's prompt idiom
+      - mono everywhere: 'JetBrains Mono', ui-monospace fallback stack
+      - annotations as code comments: "// note" in faint
+      - boxes: bg-soft fill, line-2 stroke, rx=6; arrows: dim stroke,
+        marker-end="url(#arr)"; dashed strokes for weak/implied relations
+      - one accent color per concept, from the syntax palette
+      - save as input/assets/img/posts/<slug>/NN.svg, reference from the
+        post as ![alt](/assets/img/posts/<slug>/NN.svg), caption via ^^^
+  -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a93a0"/>
+    </marker>
+  </defs>
+
+  <!-- panel -->
+  <rect x="1" y="1" width="1198" height="628" rx="8" fill="#0e1117" stroke="#283040" stroke-width="2"/>
+
+  <!-- titlebar -->
+  <circle cx="36" cy="38" r="7" fill="#ff6b6b"/>
+  <circle cx="62" cy="38" r="7" fill="#e7c46b"/>
+  <circle cx="88" cy="38" r="7" fill="#93dca2"/>
+  <text x="116" y="45" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" fill="#8a93a0">$ your-command --here</text>
+  <line x1="1" y1="64" x2="1199" y2="64" stroke="#1b212b" stroke-width="2"/>
+
+  <!-- content: replace everything below -->
+  <rect x="120" y="180" width="300" height="90" rx="6" fill="#11151c" stroke="#283040" stroke-width="2"/>
+  <text x="270" y="233" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#d8dee6">a box</text>
+  <line x1="420" y1="225" x2="640" y2="225" stroke="#8a93a0" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="650" y="180" width="300" height="90" rx="6" fill="#11151c" stroke="#4fd6e0" stroke-width="2"/>
+  <text x="800" y="233" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#4fd6e0">an accent box</text>
+  <text x="120" y="420" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#515b69">// annotations read like code comments</text>
+</svg>

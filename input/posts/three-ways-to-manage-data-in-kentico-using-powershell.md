@@ -3,11 +3,16 @@ title: "Three Ways to Manage Data in Kentico Using PowerShell"
 description: "PowerShell is the leading task automation platform for Windows. Developers and sysadmins alike use it to automate tasks and manage systems."
 slug: three-ways-to-manage-data-in-kentico-using-powershell
 date: 2016-08-09
+updated: 2026-08-21
 category: technology
 tags: [powershell, rest, reflection, compilation]
 canonical_url: https://devnet.kentico.com/articles/three-ways-to-manage-data-in-kentico-using-powershell
-draft: true # triage: drop — excluded from the site (issue #64)
+comments: true
 ---
+
+::: info
+Written in 2016 against the Kentico 9-era API and REST service. The product has since become Xperience by Kentico with its own automation story — but the trick of reflecting `ConfigurationManager` to load a site's web.config into any PowerShell session remains genuinely reusable. Originally published on [Kentico DevNet](https://devnet.kentico.com/articles/three-ways-to-manage-data-in-kentico-using-powershell).
+:::
 
 PowerShell is the leading task automation platform for Windows. Developers and system administrators from all around the world use it for the most complex deployment and installation scenarios as well as for the simplest scripting. The facts that it's built on top of the .NET Framework opens up certain possibilities for integration with Kentico. Today, we'll have a look at what we can achieve with PowerShell in combination with the Kentico API and the Kentico REST API.
 

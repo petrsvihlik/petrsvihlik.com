@@ -11,7 +11,7 @@ comments: true
 
 *I first published a version of this essay in December 2019, when I led a DevRel team at [Kentico](https://www.kentico.com/). Between then and now, its thesis got tested in a way I didn't plan: I left the company, and eventually the thesis brought me back. This is the essay rewritten, in August 2026, with the ending it was missing.*
 
-![](/assets/img/posts/building-a-culture-of-relationships-that-persist/01.jpg)
+![](/assets/img/posts/building-a-culture-of-relationships-that-persist/01.svg)
 
 ## How deep do work relationships go?
 
@@ -69,7 +69,7 @@ I know people (and I bet you do too) who believe it's possible to keep personal 
 Don't get me wrong — I'm not naive about power disparity between a supervisor and a subordinate; it's real and it constrains what's possible. But the least everyone can do is try not to be a different person at work than they are at home, in a pub, or in a gym. **Honesty is the key.**
 
 ^^^
-![](/assets/img/posts/building-a-culture-of-relationships-that-persist/02.png)
+![](/assets/img/posts/building-a-culture-of-relationships-that-persist/02.svg)
 ^^^ ME = how I treat people at work + how I treat people at a party + how I treat people at ⟨…⟩
 
 ## Culture can't be pushed — only lived

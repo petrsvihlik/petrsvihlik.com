@@ -3,15 +3,20 @@ title: "Running Visual Studio Remote Debugger in Domain Environment"
 description: "This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain."
 slug: running-visual-studio-remote-debugger-in-domain-environment
 date: 2013-06-19
+updated: 2026-08-21
 category: technology
 tags: [visual-studio, debugging]
 canonical_url: https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment
-draft: true # triage: drop — excluded from the site (issue #64)
+comments: true
 ---
+
+::: info
+Written in 2013 against Visual Studio 2012. `msvsmon.exe` still ships with Visual Studio and cross-domain authentication still hurts the same way, but see Microsoft Learn for current guidance and UI. Originally published on [Kentico DevNet](https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment).
+:::
 
 This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor, hereinafter remote debugger, running on a computer that is not part of a domain from a computer that is in a domain.
 
-![](/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/01.png)
+![](/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/01.svg)
 
 During development of the new [Installer](https://devnet.kentico.com/Articles/2013-06/New-Installer-for-Kentico-CMS-7-is-Out) we came across several difficulties regarding remote debugging. We needed to debug the installer in various environments, on various operating systems with different settings. We've prepared lots of virtual machines to cover most scenarios and installed remote debugger to each of them. I'm now presenting obstacles we encountered and complete solutions to avoid them.
 

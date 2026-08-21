@@ -8,7 +8,7 @@ tags: [github-actions, appveyor, linux, devops]
 comments: true
 ---
 
-![](/assets/img/posts/lessons-learned-migrating-from-appveyor-to-github-actions/01.webp)
+![](/assets/img/posts/lessons-learned-migrating-from-appveyor-to-github-actions/01.svg)
 
 The third article about GitHub Actions in a row? One must be thinking I am up to something. And they'd be right. Over the past week, I migrated more than 10 repositories from AppVeyor to GitHub Actions.
 

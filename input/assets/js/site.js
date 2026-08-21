@@ -388,6 +388,43 @@
     });
   }
 
+  /* ---------- code blocks: copy-to-clipboard ---------- */
+  function initCodeCopy() {
+    if (!navigator.clipboard) return;
+    document.querySelectorAll('.article-single__body pre > code, .prose pre > code').forEach(function (code) {
+      var pre = code.parentElement;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'copy-btn';
+      btn.textContent = 'copy';
+      btn.setAttribute('aria-label', 'copy code to clipboard');
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(code.innerText).then(function () {
+          btn.textContent = 'copied!';
+          btn.classList.add('copied');
+          setTimeout(function () {
+            btn.textContent = 'copy';
+            btn.classList.remove('copied');
+          }, 1600);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  }
+
+  /* ---------- heading anchor links ---------- */
+  function initHeadingAnchors() {
+    document.querySelectorAll('.article-single__body h2[id], .article-single__body h3[id], .prose h2[id], .prose h3[id]')
+      .forEach(function (h) {
+        var a = document.createElement('a');
+        a.className = 'h-anchor';
+        a.href = '#' + h.id;
+        a.textContent = '#';
+        a.setAttribute('aria-label', 'link to this section');
+        h.appendChild(a);
+      });
+  }
+
   /* ---------- go ---------- */
   function init() {
     syncThemeBtn();
@@ -397,6 +434,8 @@
     initLightbox();
     initStars();
     initBg();
+    initCodeCopy();
+    initHeadingAnchors();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

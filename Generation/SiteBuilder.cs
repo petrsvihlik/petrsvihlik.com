@@ -97,6 +97,7 @@ namespace PetrSvihlik.Com.Generation
                 {
                     ["Ctx"] = _ctx,
                     ["Article"] = article,
+                    ["Highlight"] = HasCodeBlocks(article.ContentHtml),
                     ["Seo"] = new PageSeo
                     {
                         Title = $"{article.Title} - {_ctx.Site.Title}",
@@ -194,16 +195,17 @@ namespace PetrSvihlik.Com.Generation
                     ["Ctx"] = _ctx,
                     ["Page"] = page,
                     ["TitleProvider"] = page,
+                    ["Highlight"] = HasCodeBlocks(page.Body),
                     ["Seo"] = new PageSeo
                     {
                         Title = $"{page.Title} - {_ctx.Site.Title}",
                         Description = page.MetaDescription,
-                        RootedUrl = is404 ? null : url,
-                        NoIndex = is404,
+                        RootedUrl = is404 || page.Unlisted ? null : url,
+                        NoIndex = is404 || page.Unlisted,
                     },
                 });
                 WriteFile(is404 ? "404.html" : $"pages/{page.Url}/index.html", html);
-                if (!is404)
+                if (!is404 && !page.Unlisted)
                 {
                     sitemap.Add(new SitemapEntry(url, null));
                 }
@@ -271,6 +273,7 @@ namespace PetrSvihlik.Com.Generation
                         Url = doc.Slug,
                         Body = doc.BodyHtml,
                         MetaDescription = doc.FrontMatter.Description,
+                        Unlisted = doc.FrontMatter.Unlisted,
                     };
                 })
                 .ToList();
@@ -321,6 +324,9 @@ namespace PetrSvihlik.Com.Generation
             Directory.CreateDirectory(Path.GetDirectoryName(destination));
             File.Copy(sourcePath, destination, overwrite: true);
         }
+
+        private static bool HasCodeBlocks(string html) =>
+            html?.Contains("<pre><code", StringComparison.Ordinal) == true;
 
         private void WriteRobotsTxt()
         {

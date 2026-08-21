@@ -6,5 +6,8 @@ namespace PetrSvihlik.Com.Models.ContentTypes
         public string Url { get; set; }
         public string Body { get; set; }
         public string MetaDescription { get; set; }
+
+        /// <summary>Rendered, but kept out of the sitemap and noindexed (e.g. test pages).</summary>
+        public bool Unlisted { get; set; }
     }
 }

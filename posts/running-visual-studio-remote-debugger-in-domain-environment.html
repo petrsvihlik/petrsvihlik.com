@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="cyan"><head><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('ps-theme') || 'dark';
+                var a = localStorage.getItem('ps-accent') || 'cyan';
+                var r = document.documentElement;
+                r.setAttribute('data-theme', t);
+                r.setAttribute('data-accent', a);
+            } catch (e) { }
+        })();
+    </script><script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TKDH5DJ');</script><link rel="alternate" type="application/rss&#x2B;xml" title="RSS feed for Running Visual Studio Remote Debugger in Domain Environment - Petr &#x160;vihl&#xED;k" href="/feed.rss" />
+    <link rel="alternate" type="application/atom&#x2B;xml" title="Atom feed for Running Visual Studio Remote Debugger in Domain Environment - Petr &#x160;vihl&#xED;k" href="/feed.atom" />
+    <title>Running Visual Studio Remote Debugger in Domain Environment - Petr &#x160;vihl&#xED;k</title>
+    <meta name="description" content="This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain." />
+    <meta name="author" content="Petr &#x160;vihl&#xED;k" />
+    <link rel="canonical" href="https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment" /><meta property="og:site_name" content="Petr &#x160;vihl&#xED;k" />
+    <meta property="og:title" content="Running Visual Studio Remote Debugger in Domain Environment - Petr &#x160;vihl&#xED;k" />
+    <meta property="og:description" content="This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain." />
+    <meta property="og:type" content="article" /><meta property="og:url" content="https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment" /><meta property="og:image" content="https://petrsvihlik.com/assets/img/avatar.jpg" /><meta name="twitter:card" content="summary"><meta property="article:author" content="Petr &#x160;vihl&#xED;k" /><meta property="article:section" content="Technology" /><meta property="article:tag" content="Visual Studio" /><meta property="article:tag" content="Debugging" /><meta property="article:published_time" content="2013-06-19" /><meta property="article:modified_time" content="2026-08-21" /><script type="application/ld&#x2B;json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Running Visual Studio Remote Debugger in Domain Environment","description":"This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain.","datePublished":"2013-06-19","url":"https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment","mainEntityOfPage":"https://petrsvihlik.com/posts/running-visual-studio-remote-debugger-in-domain-environment","image":"https://petrsvihlik.com/assets/img/avatar.jpg","author":{"@type":"Person","name":"Petr \u0160vihl\u00EDk","url":"https://petrsvihlik.com/pages/about-me"},"dateModified":"2026-08-21"}</script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap"></noscript>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4fd6e0" />
+    <meta name="msapplication-TileColor" content="#0a0c10">
+    <meta name="theme-color" content="#0a0c10"></head>
+
+<body id="post"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKDH5DJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><canvas id="bg-canvas"></canvas>
+
+    <header class="topbar"><a class="brand" href="/"><span class="sym">~/</span>petr<span class="dim">.svihlik</span></a>
+        <nav class="nav"><a href="/" class="active">articles</a>
+            <a href="/pages/projects" class="">projects</a>
+            <a href="/pages/about-me" class="">about</a></nav>
+        <div class="tb-ctrl"><div class="swatches" role="group" aria-label="accent color"><button class="sw" data-accent="cyan" style="--c:#4fd6e0" aria-label="cyan"></button>
+                <button class="sw" data-accent="magenta" style="--c:#ff79c6" aria-label="magenta"></button>
+                <button class="sw" data-accent="green" style="--c:#93dca2" aria-label="green"></button>
+                <button class="sw" data-accent="yellow" style="--c:#e7c46b" aria-label="yellow"></button>
+                <button class="sw" data-accent="purple" style="--c:#c79bf2" aria-label="purple"></button></div>
+            <button class="iconbtn" data-theme-toggle aria-label="toggle theme">sun</button></div></header>
+
+    <main class="wrap"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> cat running-visual-studio-remote-debugger-in-domain-environment.md</h2><span class="count">2013-06 &#xB7; upd 2026-08</span></div>
+    <hr class="sep">
+
+    <article class="article-single" style="margin-top:24px"><h1 class="article-single__title">Running Visual Studio Remote Debugger in Domain Environment</h1><p class="article-single__description">This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor running on a remote machine that is a part of a Windows domain.</p><div class="article-single__body"><div class="info"><p>Written in 2013 against Visual Studio 2012. <code>msvsmon.exe</code> still ships with Visual Studio and cross-domain authentication still hurts the same way, but see Microsoft Learn for current guidance and UI. Originally published on <a href="https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment">Kentico DevNet</a>.</p>
+</div>
+<p>This article describes scenarios in which you need to connect to Visual Studio Remote Debugging Monitor, hereinafter remote debugger, running on a computer that is not part of a domain from a computer that is in a domain.</p>
+<p><img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/01.svg" loading="lazy" decoding="async" alt="" /></p>
+<p>During development of the new <a href="https://devnet.kentico.com/Articles/2013-06/New-Installer-for-Kentico-CMS-7-is-Out">Installer</a> we came across several difficulties regarding remote debugging. We needed to debug the installer in various environments, on various operating systems with different settings. We've prepared lots of virtual machines to cover most scenarios and installed remote debugger to each of them. I'm now presenting obstacles we encountered and complete solutions to avoid them.</p>
+<h2 id="setting-up-the-remote-environment">Setting Up the Remote Environment</h2>
+<p>To prevent &quot;<em>Error: The Microsoft Visual Studio Remote Debugging Monitor on the remote computer is running as a different user</em>&quot;:</p>
+<ol>
+<li>Create an account with the same username and the same password as your domain account.</li>
+<li>Assign that account to the Administrators group.</li>
+<li>Log in under this account.</li>
+</ol>
+<h2 id="installing-remote-tools-for-visual-studio-2012">Installing Remote Tools for Visual Studio 2012</h2>
+<p>Mount your ISO image of Visual Studio and navigate to .\Remote Tools\ folder. There you can find setup files for x86, x64 and ARM platforms.</p>
+<p><img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/02.png" loading="lazy" decoding="async" alt="" /></p>
+<h2 id="running-remote-debugger">Running Remote Debugger</h2>
+<p>You have two options for running the debugger:</p>
+<ol>
+<li>As a service</li>
+<li>As a standard process</li>
+</ol>
+<p>I recommend setting up both so that if one starts saying &quot;<em>Invalid access to memory location.</em>&quot; you can use the other. Remember to set up the service first as it's easier to configure the environment (you don't have to change port of the service).</p>
+<p>By default remote debugger tries to listen on 4016 port.</p>
+<h3 id="running-as-a-service">Running as a service</h3>
+<p>As a first step you have to configure &quot;<a href="http://technet.microsoft.com/en-us/library/cc739424(v=ws.10).aspx">Log on as a service</a>&quot; Local Policy.</p>
+<ol>
+<li>Press [Win]+[R] (Or Start-&gt;Run) and type gpedit.msc</li>
+<li>Navigate to Computer Configuration-&gt;Windows Settings-&gt;Security Settings-&gt;Local Policies-&gt;User Rights Assignment</li>
+<li>Set up &quot;Log on as a service&quot; as shown on picture below</li>
+</ol>
+<p><a href="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/03.png"><img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/03.png" loading="lazy" decoding="async" alt="" /></a></p>
+<p>Now you have to configure remote debugger:</p>
+<ol>
+<li>Launch Remote Debugger Configuration Wizard and click next.</li>
+<li>Check Run the &quot;Visual Studio 2012 Remote Debugger&quot; service checkbox and click Next</li>
+<li>On the next screen enable all three checkboxes and finish the wizard.</li>
+</ol>
+<p><img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/04.png" loading="lazy" decoding="async" alt="" /> <img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/05.png" loading="lazy" decoding="async" alt="" /></p>
+<h3 id="running-as-a-standard-process">Running as a standard process</h3>
+<p>Remember to run the debugging monitor as an administrator. You can do [Shift]+[Right click] click on its icon and &quot;Run as administrator&quot;.</p>
+<p>Or, if you want to set this permanently go to properties of Debugging monitor and check &quot;Run this program as an administrator&quot; checkbox on Compatibility tab.</p>
+<p>You can do this both on the original &quot;msvsmon.exe&quot; or any of its shortcuts.</p>
+<p><a href="https://devnet.kentico.com/getattachment/bd015508-0b67-4b2d-8279-f43de3889fae/rd.png"><img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/06.png" loading="lazy" decoding="async" alt="" /></a></p>
+<p>When you launch remote debugger you should end up with the following screen:
+<img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/07.png" loading="lazy" decoding="async" alt="" /></p>
+<p>There are few options under the tools menu regarding permission, authentication etc. You can leave everything in the default state.</p>
+<h2 id="configuring-firewall">Configuring firewall</h2>
+<p>On first launch, the remote debugger will ask you to add firewall rules. Make sure you allow all the rules:
+<img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/08.png" loading="lazy" decoding="async" alt="" /></p>
+<p>If you're still receiving the error &quot;<em>The Microsoft Visual Studio Remote Debugging Monitor (MSVSMON.EXE) does not appear to be running on the remote computer.</em>&quot;, you can try to disable firewall completely. You can do this by navigating to firewall settings and clicking &quot;Turn Windows Firewall on or off&quot;.
+<a href="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/09.png"><img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/09.png" loading="lazy" decoding="async" alt="" /></a></p>
+<p>There is also one more approach to resolve the error above from <a href="http://msdn.microsoft.com/en-us/library/ms164726.aspx">Microsoft</a>.</p>
+<h2 id="connecting-to-remote-debugger">Connecting to Remote Debugger</h2>
+<p>I assume the service or process or both are running; the process you want to debug is also running on the remote machine so now we are ready to start debugging.</p>
+<ol>
+<li>Start Visual Studio 2012 on the local machine.</li>
+<li>Open solution of the process you want to debug.</li>
+<li>Click Debug-&gt;Attach to process</li>
+<li>Type qualifier, in my case &quot;w8vm:4016&quot; (the qualifier is shown in console of remote debugger, it's in format machinename:port)</li>
+<li>Click refresh</li>
+<li>Select remote process from list offered</li>
+<li>Attach to that process</li>
+</ol>
+<p><a href="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/10.png"><img src="/assets/img/posts/running-visual-studio-remote-debugger-in-domain-environment/10.png" loading="lazy" decoding="async" alt="" /></a></p>
+<p>Now you can use debugger as you are used to. You can place your breakpoints, evaluate variables in watch, etc.</p>
+<h2 id="resolving-errors">Resolving errors</h2>
+<p>When you receive &quot;<em>Unable to connect to the Microsoft Visual Studio Remote Debugging Monitor named 'w8vm:4016'. Invalid access to memory location.</em>&quot;, do not panic. Try to restart visual studio (you have to close all running instances). If this doesn't help, try to connect to the debugger service instead of the debugger process or vice versa.</p>
+<h2 id="debugging-tips">Debugging tips</h2>
+<ul>
+<li>Use <a href="http://msdn.microsoft.com/en-us/library/system.diagnostics.debugger.launch.aspx">Debugger.Launch()</a> and <a href="http://msdn.microsoft.com/en-us/library/system.diagnostics.debugger.break.aspx">Debugger.Break()</a> to initiate debugging and perform a break. It's the same as a breakpoint in your code. You'll find it useful e.g. when your application cannot be launched by debugger directly from Visual Studio.</li>
+<li>Enrich your application with <a href="http://msdn.microsoft.com/en-us/library/x810d419.aspx">DebuggerDisplay</a> attributes which will allow you to propagate important properties in debugger watch. So e.g. instead of an array of meaningless objects, you will see each item under its real name.</li>
+<li>Remote debugger also supports command line mode; just launch &quot;msvsmon.exe /?&quot; for more information.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>I see the remote debugger as an extremely powerful tool though it's not always easy to configure it. I hope this article made some things clear. Please feel free to leave comments below. If you have any additional tips it would be nice to share them with others. I'll then gladly update this post.</p>
+</div><p class="article-single__readmore"><a href="https://devnet.kentico.com/articles/running-visual-studio-remote-debugger-in-domain-environment" target="_blank" rel="noopener noreferrer">Read the full article →</a></p><div class="article-single__date"><em>Published June 2013 &#xB7; updated August 2026</em></div>
+
+        <div class="article-single__footer"><div class="article-single__tags"><ul class="article-single__tags-list"><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/visual-studio">Visual Studio</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/debugging">Debugging</a></li></ul></div><a href="/" class="article-single__home-button">All Articles</a></div></article>
+
+    <section class="newsletter"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> subscribe --newsletter</h2>
+        <span class="count"><a href="https://petrsvihlik.substack.com" target="_blank" rel="noopener">via substack ↗</a></span></div>
+    <hr class="sep">
+
+    <p class="nl-blurb">New essays straight to your inbox, as they're published. No spam, unsubscribe anytime.</p>
+    <form class="nl-form" action="https://petrsvihlik.substack.com/subscribe" method="get" target="_blank" rel="noopener"><label class="label" for="nl-email">email&gt;</label>
+        <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" spellcheck="false" />
+        <input type="hidden" name="utm_source" value="petrsvihlik.com"><input type="hidden" name="utm_content" value="post" /><button class="nl-btn" type="submit">subscribe</button></form></section><section class="comments"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> gh discussion view</h2>
+        <span class="count"><a href="https://github.com/petrsvihlik/petrsvihlik.com/discussions" target="_blank" rel="noopener">open on github ↗</a></span></div>
+    <hr class="sep">
+
+    <div class="giscus"></div>
+    <script>
+        (function () {
+            var theme = 'dark';
+            try { theme = localStorage.getItem('ps-theme') || 'dark'; } catch (e) { }
+            var s = document.createElement('script');
+            s.src = 'https://giscus.app/client.js';
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            var cfg = {
+                'data-repo': 'petrsvihlik/petrsvihlik.com',
+                'data-repo-id': 'MDEwOlJlcG9zaXRvcnkzMTA4MjA5OTY=',
+                'data-category': 'Announcements',
+                'data-category-id': 'DIC_kwDOEobAhM4DD5Hp',
+                'data-mapping': 'specific',
+                'data-term': 'posts/running-visual-studio-remote-debugger-in-domain-environment',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '0',
+                'data-input-position': 'bottom',
+                'data-lang': 'en',
+                'data-loading': 'lazy',
+                'data-theme': theme === 'dark' ? 'noborder_dark' : 'noborder_light'
+            };
+            for (var k in cfg) { s.setAttribute(k, cfg[k]); }
+            document.currentScript.parentNode.insertBefore(s, document.currentScript);
+        })();
+    </script>
+    <noscript><a href="https://github.com/petrsvihlik/petrsvihlik.com/discussions">Join the discussion on GitHub</a></noscript></section></main>
+
+    <script src="/assets/js/site.js"></script></body></html>

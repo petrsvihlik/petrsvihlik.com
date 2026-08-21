@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="A linter run over a company's OKRs, reporting seven warnings — the seven deadly sins">
+  <rect x="1" y="1" width="1198" height="628" rx="8" fill="#0e1117" stroke="#283040" stroke-width="2"/>
+  <circle cx="36" cy="38" r="7" fill="#ff6b6b"/>
+  <circle cx="62" cy="38" r="7" fill="#e7c46b"/>
+  <circle cx="88" cy="38" r="7" fill="#93dca2"/>
+  <text x="116" y="45" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" fill="#8a93a0">$ okr lint ./company</text>
+  <line x1="1" y1="64" x2="1199" y2="64" stroke="#1b212b" stroke-width="2"/>
+
+  <g font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22">
+    <text x="90" y="126" fill="#8a93a0">objective: <tspan fill="#d8dee6">"Make developers love our product"</tspan></text>
+
+    <text x="90" y="180"><tspan fill="#93dca2">✓</tspan> <tspan fill="#d8dee6">kr-1</tspan>  <tspan fill="#8a93a0">aligned with company goals</tspan></text>
+    <text x="90" y="222"><tspan fill="#ff6b6b">✗</tspan> <tspan fill="#d8dee6">kr-2</tspan>  <tspan fill="#e7c46b">WARN: nobody explained the WHY</tspan></text>
+    <text x="90" y="264"><tspan fill="#ff6b6b">✗</tspan> <tspan fill="#d8dee6">kr-3</tspan>  <tspan fill="#e7c46b">WARN: wired to performance reviews</tspan></text>
+    <text x="90" y="306"><tspan fill="#ff6b6b">✗</tspan> <tspan fill="#d8dee6">kr-4</tspan>  <tspan fill="#e7c46b">WARN: measures activity, not outcomes</tspan></text>
+    <text x="90" y="348"><tspan fill="#ff6b6b">✗</tspan> <tspan fill="#d8dee6">kr-5</tspan>  <tspan fill="#e7c46b">WARN: check-ins silently abandoned</tspan></text>
+    <text x="90" y="390"><tspan fill="#93dca2">✓</tspan> <tspan fill="#d8dee6">kr-6</tspan>  <tspan fill="#8a93a0">ambitious but honest</tspan></text>
+
+    <text x="90" y="452" fill="#d8dee6">7 warnings found <tspan fill="#515b69">// the deadly sins, enumerated below</tspan></text>
+    <text x="90" y="494" fill="#8a93a0">hint: the framework is fine — the habits around it break it</text>
+  </g>
+
+  <text x="90" y="566" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#515b69">// two years of company-wide OKRs, distilled</text>
+</svg>

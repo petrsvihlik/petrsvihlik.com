@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="A network of people where the connections persist even after some nodes leave the company boundary">
+  <rect x="1" y="1" width="1198" height="628" rx="8" fill="#0e1117" stroke="#283040" stroke-width="2"/>
+  <circle cx="36" cy="38" r="7" fill="#ff6b6b"/>
+  <circle cx="62" cy="38" r="7" fill="#e7c46b"/>
+  <circle cx="88" cy="38" r="7" fill="#93dca2"/>
+  <text x="116" y="45" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="20" fill="#8a93a0">$ graph --relationships --persist</text>
+  <line x1="1" y1="64" x2="1199" y2="64" stroke="#1b212b" stroke-width="2"/>
+
+  <!-- company boundary -->
+  <rect x="110" y="120" width="570" height="400" rx="10" fill="none" stroke="#283040" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="134" y="156" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#515b69">company</text>
+
+  <!-- edges inside -->
+  <g stroke="#515b69" stroke-width="2">
+    <line x1="270" y1="230" x2="430" y2="200"/>
+    <line x1="270" y1="230" x2="340" y2="360"/>
+    <line x1="430" y1="200" x2="550" y2="310"/>
+    <line x1="340" y1="360" x2="250" y2="455"/>
+    <line x1="340" y1="360" x2="510" y2="460"/>
+    <line x1="550" y1="310" x2="510" y2="460"/>
+  </g>
+  <!-- edges that cross the boundary and persist -->
+  <g stroke="#4fd6e0" stroke-width="2.5">
+    <line x1="550" y1="310" x2="920" y2="245"/>
+    <line x1="510" y1="460" x2="880" y2="480"/>
+    <line x1="430" y1="200" x2="920" y2="245"/>
+  </g>
+
+  <!-- nodes inside -->
+  <g stroke="#0e1117" stroke-width="3">
+    <circle cx="270" cy="230" r="13" fill="#4fd6e0"/>
+    <circle cx="430" cy="200" r="13" fill="#93dca2"/>
+    <circle cx="340" cy="360" r="13" fill="#e7c46b"/>
+    <circle cx="550" cy="310" r="13" fill="#ff79c6"/>
+    <circle cx="250" cy="455" r="13" fill="#c79bf2"/>
+    <circle cx="510" cy="460" r="13" fill="#8a93a0"/>
+  </g>
+  <!-- nodes that left -->
+  <g stroke="#0e1117" stroke-width="3">
+    <circle cx="920" cy="245" r="13" fill="#f0a35e"/>
+    <circle cx="880" cy="480" r="13" fill="#4fd6e0"/>
+  </g>
+  <text x="948" y="252" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#8a93a0">left in 2021</text>
+  <text x="908" y="487" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#8a93a0">left in 2019</text>
+
+  <text x="110" y="576" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="18" fill="#515b69">// the edges don't know about the org chart</text>
+</svg>

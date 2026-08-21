@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="cyan"><head><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('ps-theme') || 'dark';
+                var a = localStorage.getItem('ps-accent') || 'cyan';
+                var r = document.documentElement;
+                r.setAttribute('data-theme', t);
+                r.setAttribute('data-accent', a);
+            } catch (e) { }
+        })();
+    </script><script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TKDH5DJ');</script><link rel="alternate" type="application/rss&#x2B;xml" title="RSS feed for OK Google, water the garden! - Petr &#x160;vihl&#xED;k" href="/feed.rss" />
+    <link rel="alternate" type="application/atom&#x2B;xml" title="Atom feed for OK Google, water the garden! - Petr &#x160;vihl&#xED;k" href="/feed.atom" />
+    <title>OK Google, water the garden! - Petr &#x160;vihl&#xED;k</title>
+    <meta name="description" content="Let&#x27;s face it, my brain is just not compatible with any device that has a segment display or more than one button." />
+    <meta name="author" content="Petr &#x160;vihl&#xED;k" />
+    <link rel="canonical" href="https://petrsvihlik.com/posts/ok-google-water-the-garden" /><meta property="og:site_name" content="Petr &#x160;vihl&#xED;k" />
+    <meta property="og:title" content="OK Google, water the garden! - Petr &#x160;vihl&#xED;k" />
+    <meta property="og:description" content="Let&#x27;s face it, my brain is just not compatible with any device that has a segment display or more than one button." />
+    <meta property="og:type" content="article" /><meta property="og:url" content="https://petrsvihlik.com/posts/ok-google-water-the-garden" /><meta property="og:image" content="https://petrsvihlik.com/assets/img/avatar.jpg" /><meta name="twitter:card" content="summary"><meta property="article:author" content="Petr &#x160;vihl&#xED;k" /><meta property="article:section" content="Technology" /><meta property="article:tag" content="Smart Home" /><meta property="article:tag" content="Rachio" /><meta property="article:tag" content="Water Irrigation" /><meta property="article:tag" content="Gardening" /><meta property="article:published_time" content="2020-07-16" /><meta property="article:modified_time" content="2026-08-21" /><script type="application/ld&#x2B;json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"OK Google, water the garden!","description":"Let\u0027s face it, my brain is just not compatible with any device that has a segment display or more than one button.","datePublished":"2020-07-16","url":"https://petrsvihlik.com/posts/ok-google-water-the-garden","mainEntityOfPage":"https://petrsvihlik.com/posts/ok-google-water-the-garden","image":"https://petrsvihlik.com/assets/img/avatar.jpg","author":{"@type":"Person","name":"Petr \u0160vihl\u00EDk","url":"https://petrsvihlik.com/pages/about-me"},"dateModified":"2026-08-21"}</script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap"></noscript>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4fd6e0" />
+    <meta name="msapplication-TileColor" content="#0a0c10">
+    <meta name="theme-color" content="#0a0c10"></head>
+
+<body id="post"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKDH5DJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><canvas id="bg-canvas"></canvas>
+
+    <header class="topbar"><a class="brand" href="/"><span class="sym">~/</span>petr<span class="dim">.svihlik</span></a>
+        <nav class="nav"><a href="/" class="active">articles</a>
+            <a href="/pages/projects" class="">projects</a>
+            <a href="/pages/about-me" class="">about</a></nav>
+        <div class="tb-ctrl"><div class="swatches" role="group" aria-label="accent color"><button class="sw" data-accent="cyan" style="--c:#4fd6e0" aria-label="cyan"></button>
+                <button class="sw" data-accent="magenta" style="--c:#ff79c6" aria-label="magenta"></button>
+                <button class="sw" data-accent="green" style="--c:#93dca2" aria-label="green"></button>
+                <button class="sw" data-accent="yellow" style="--c:#e7c46b" aria-label="yellow"></button>
+                <button class="sw" data-accent="purple" style="--c:#c79bf2" aria-label="purple"></button></div>
+            <button class="iconbtn" data-theme-toggle aria-label="toggle theme">sun</button></div></header>
+
+    <main class="wrap"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> cat ok-google-water-the-garden.md</h2><span class="count">2020-07 &#xB7; upd 2026-08</span></div>
+    <hr class="sep">
+
+    <article class="article-single" style="margin-top:24px"><h1 class="article-single__title">OK Google, water the garden!</h1><p class="article-single__description">Let&#x27;s face it, my brain is just not compatible with any device that has a segment display or more than one button.</p><div class="article-single__body"><div class="info"><p>A build log from the summer of 2020. The hardware, the US-import workaround, and the Google Assistant integration are all described as they worked back then — the voice-control part has reportedly gotten flakier since. Archived as a story, not as a manual.</p>
+</div>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/01.jpg" loading="lazy" decoding="async" alt="" /></p>
+<p>Let’s face it, my brain is just not compatible with any device that has a segment display or more than one button. Whether it’s a scientific calculator, thermostat, or water irrigation controller, I’m just not patient enough to RTFM or to try to learn and understand all the pictograms.</p>
+<p>The first time I ran out of patience was Christmas two years ago when my ABB thermostats went crazy and I was unable to set the temperature to anything lower than the melting point of mithril.</p>
+<p>To maintain my mental health, I decided to have them all replaced with Google Nest. It was the best decision I could have made—I no longer have to care about temperature and it saved me plenty money so far.</p>
+<p>The second time I almost had gone crazy was when I tried to set up the water irrigation system after winter. This is the bad guy who caused it: Hunter ELC-401i.</p>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/02.jpg" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>Hunter Eco Logic ELC-401i</figcaption>
+</figure>
+<p>When I was replacing the thermostats, I left the job to a professional. It turned out to be a wise decision given the amount of the extra wiring necessary.</p>
+<p>But this time, I said to myself, I’m gonna be tough, I’m gonna do all by myself. As you can imagine, everything that could have gone wrong went wrong. Let me share my journey with you.</p>
+<h3 id="choosing-the-smart-sprinkler-controller">💡 Choosing the smart sprinkler controller</h3>
+<p>My good friend <a href="https://twitter.com/JaroslavKordula">Jaroslav</a>, a home-automation guru, recommended me this cool new controller everyone’s talking about — <a href="https://rachio.com/rachio-3/">Rachio 3rd Generation</a>. I watched the <a href="https://rachio.com/">video</a> on Rachio’s homepage and I was sold. I couldn’t believe my eyes, it was <strong>exactly</strong> what I needed.</p>
+<h3 id="shipping-to-europe">📫 Shipping to Europe</h3>
+<p>The only problem was, that Rachio doesn’t ship to Europe. Which is quite unfortunate, considering my current state of residence being Czechia.</p>
+<p>In fact, their product is not prepared for usage outside North America (more on that later) and it can even be illegal to use it.</p>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/03.png" loading="lazy" decoding="async" alt="" /></p>
+<p>There is, however, an option — ordering it from <a href="https://www.amazon.com/gp/product/B07CZ864Y9/">Amazon US</a> which is exactly what I did. The only downside is the import fees of $43.84 ($43.43 to be precise — I got a $0.41 refund 😂). Good that I take part in online surveys and always have a plenty of Amazon coupons at hand.</p>
+<p>Not sure why, but it took almost a month for the controller to be delivered. Longer than most of the stuff I order on AliExpress. COVID-19 I guess.</p>
+<h3 id="power-supply">⚡ Power supply</h3>
+<p>If you think that you’ll just buy a US-&gt;EU converter and you’re done, you’re wrong. The original Rachio 3 power supply only supports 110V input (no 230V).</p>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/04.jpg" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>Original Rachio 3 Power Supply</figcaption>
+</figure>
+<p>I solved that by ordering a <a href="https://www.onpira.cz/zbozi/napajeci-zdroj-0-5-1a--5-24v-ac/?variantId=12147">different one</a> with the following specification:</p>
+<ul>
+<li>IN: 230 V AC</li>
+<li>OUT: 24 V AC, 1000mA (1A)</li>
+</ul>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/05.png" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>Noname adapter</figcaption>
+</figure>
+<p>And it worked:</p>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/06.png" loading="lazy" decoding="async" alt="" /></p>
+<p>Rachio 3 powered up!</p>
+<p><em>Note: I learned that AC transformers are not that common here in Europe. It’s much easier to find DC transformers online.</em></p>
+<h3 id="connecting-to-wi-fi">📡 Connecting to Wi-Fi</h3>
+<p>As you can see, Rachio doesn’t have any display and has almost no controls. 🎉 The setup is done entirely via <a href="https://play.google.com/store/apps/details?id=com.rachio.iro">the app</a> 😍. As with most of today’s smart devices, the configuration is all cloud-based so you first need to connect the controller to Wi-Fi.</p>
+<p>As you can probably guess by now, there was no Wi-Fi signal near the controller. Long story short — I got myself a Wi-Fi repeater.</p>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/07.jpg" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>TP-Link RE205 (AC750 Wi-Fi Extender)</figcaption>
+</figure>
+<p>I was surprised how easy it is to set up a repeater nowadays. You just press the <a href="https://en.wikipedia.org/wiki/Wi-Fi_Protected_Setup">WPS button</a> on your router and the target device and it’s done. I didn’t even know my router has a WPS button. 🤔</p>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/08.png" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>Rachio 3 + TP-Link RE205 + 24VAC Power</figcaption>
+</figure>
+<h3 id="wiring">🔌 Wiring</h3>
+<p>Finally, something that I got right the first time. Rachio basically copies standard controller wiring. So I went from this:</p>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/09.jpg" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>Hunter ELC 4</figcaption>
+</figure>
+<p>To this:</p>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/10.jpg" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>Rachio 3rd Generation — 2 zones setup</figcaption>
+</figure>
+<ul>
+<li>Yellow-green: Common</li>
+<li>Blue: Zone 1</li>
+<li>Brown: Zone 2</li>
+<li>S1/S2: Rain sensors</li>
+<li>Black: Power In</li>
+</ul>
+<p><em>Note: The rain sensors are not necessary in order for Rachio to work — it uses</em> <a href="https://pwsweather.com/"><em>PWSWeather</em></a> <em>online service for weather forecasting.</em></p>
+<h3 id="app-configuration">⚙️ App configuration</h3>
+<p>The next step was to set up the zones in the app and create an irrigation schedule. This was a piece of cake.</p>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/11.png" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>Rachio Android App</figcaption>
+</figure>
+<p>The only problem was that the sprinklers never started spraying water.</p>
+<h3 id="fixing-the-water-supply">🚰 Fixing the water supply</h3>
+<p>First, I thought there is a different output voltage required in order to start the watering valves. But that didn’t seem likely since there are several <a href="https://www.youtube.com/results?search_query=rachio+hunter">videos</a> on YouTube demonstrating the transition from Hunter to Rachio.</p>
+<p>Then, I thought the water pump is dead. I called a technician who recommended cleaning the filter and indeed, that was it!</p>
+<p>I disassembled the pipes and the filter was full of sand.</p>
+<figure>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/12.jpg" loading="lazy" decoding="async" alt="" /></p>
+<figcaption>Clean strainer filter</figcaption>
+</figure>
+<h3 id="ok-google-water-the-garden">💦 OK Google, water the garden</h3>
+<p>It took some plumbing, electrical work, networking, but I can finally say “OK Google, water the garden”!</p>
+<p><img src="/assets/img/posts/ok-google-water-the-garden/13.png" loading="lazy" decoding="async" alt="" /></p>
+<p>Achievement unlocked!</p>
+<p>What command should I teach my Google Assistant next? 😁</p>
+</div><div class="article-single__date"><em>Published July 2020 &#xB7; updated August 2026</em></div>
+
+        <div class="article-single__footer"><div class="article-single__tags"><ul class="article-single__tags-list"><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/smart-home">Smart Home</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/rachio">Rachio</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/water-irrigation">Water Irrigation</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/gardening">Gardening</a></li></ul></div><a href="/" class="article-single__home-button">All Articles</a></div></article>
+
+    <section class="newsletter"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> subscribe --newsletter</h2>
+        <span class="count"><a href="https://petrsvihlik.substack.com" target="_blank" rel="noopener">via substack ↗</a></span></div>
+    <hr class="sep">
+
+    <p class="nl-blurb">New essays straight to your inbox, as they're published. No spam, unsubscribe anytime.</p>
+    <form class="nl-form" action="https://petrsvihlik.substack.com/subscribe" method="get" target="_blank" rel="noopener"><label class="label" for="nl-email">email&gt;</label>
+        <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" spellcheck="false" />
+        <input type="hidden" name="utm_source" value="petrsvihlik.com"><input type="hidden" name="utm_content" value="post" /><button class="nl-btn" type="submit">subscribe</button></form></section><section class="comments"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> gh discussion view</h2>
+        <span class="count"><a href="https://github.com/petrsvihlik/petrsvihlik.com/discussions" target="_blank" rel="noopener">open on github ↗</a></span></div>
+    <hr class="sep">
+
+    <div class="giscus"></div>
+    <script>
+        (function () {
+            var theme = 'dark';
+            try { theme = localStorage.getItem('ps-theme') || 'dark'; } catch (e) { }
+            var s = document.createElement('script');
+            s.src = 'https://giscus.app/client.js';
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            var cfg = {
+                'data-repo': 'petrsvihlik/petrsvihlik.com',
+                'data-repo-id': 'MDEwOlJlcG9zaXRvcnkzMTA4MjA5OTY=',
+                'data-category': 'Announcements',
+                'data-category-id': 'DIC_kwDOEobAhM4DD5Hp',
+                'data-mapping': 'specific',
+                'data-term': 'posts/ok-google-water-the-garden',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '0',
+                'data-input-position': 'bottom',
+                'data-lang': 'en',
+                'data-loading': 'lazy',
+                'data-theme': theme === 'dark' ? 'noborder_dark' : 'noborder_light'
+            };
+            for (var k in cfg) { s.setAttribute(k, cfg[k]); }
+            document.currentScript.parentNode.insertBefore(s, document.currentScript);
+        })();
+    </script>
+    <noscript><a href="https://github.com/petrsvihlik/petrsvihlik.com/discussions">Join the discussion on GitHub</a></noscript></section></main>
+
+    <script src="/assets/js/site.js"></script></body></html>

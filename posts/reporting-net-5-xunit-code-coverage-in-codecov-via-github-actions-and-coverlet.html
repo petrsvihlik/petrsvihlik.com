@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="cyan"><head><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('ps-theme') || 'dark';
+                var a = localStorage.getItem('ps-accent') || 'cyan';
+                var r = document.documentElement;
+                r.setAttribute('data-theme', t);
+                r.setAttribute('data-accent', a);
+            } catch (e) { }
+        })();
+    </script><script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TKDH5DJ');</script><link rel="alternate" type="application/rss&#x2B;xml" title="RSS feed for Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet - Petr &#x160;vihl&#xED;k" href="/feed.rss" />
+    <link rel="alternate" type="application/atom&#x2B;xml" title="Atom feed for Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet - Petr &#x160;vihl&#xED;k" href="/feed.atom" />
+    <title>Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet - Petr &#x160;vihl&#xED;k</title>
+    <meta name="description" content="You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version." />
+    <meta name="author" content="Petr &#x160;vihl&#xED;k" />
+    <link rel="canonical" href="https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i" /><meta property="og:site_name" content="Petr &#x160;vihl&#xED;k" />
+    <meta property="og:title" content="Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet - Petr &#x160;vihl&#xED;k" />
+    <meta property="og:description" content="You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version." />
+    <meta property="og:type" content="article" /><meta property="og:url" content="https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i" /><meta property="og:image" content="https://petrsvihlik.com/assets/img/avatar.jpg" /><meta name="twitter:card" content="summary"><meta property="article:author" content="Petr &#x160;vihl&#xED;k" /><meta property="article:section" content="Technology" /><meta property="article:tag" content="Codecov" /><meta property="article:tag" content="Dot Net" /><meta property="article:tag" content="Github Actions" /><meta property="article:tag" content="Coverlet" /><meta property="article:tag" content="Continuous Integration" /><meta property="article:tag" content="Devops" /><meta property="article:published_time" content="2021-03-05" /><meta property="article:modified_time" content="2026-08-21" /><script type="application/ld&#x2B;json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet","description":"You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version.","datePublished":"2021-03-05","url":"https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i","mainEntityOfPage":"https://petrsvihlik.com/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet","image":"https://petrsvihlik.com/assets/img/avatar.jpg","author":{"@type":"Person","name":"Petr \u0160vihl\u00EDk","url":"https://petrsvihlik.com/pages/about-me"},"dateModified":"2026-08-21"}</script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap"></noscript>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4fd6e0" />
+    <meta name="msapplication-TileColor" content="#0a0c10">
+    <meta name="theme-color" content="#0a0c10"></head>
+
+<body id="post"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKDH5DJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><canvas id="bg-canvas"></canvas>
+
+    <header class="topbar"><a class="brand" href="/"><span class="sym">~/</span>petr<span class="dim">.svihlik</span></a>
+        <nav class="nav"><a href="/" class="active">articles</a>
+            <a href="/pages/projects" class="">projects</a>
+            <a href="/pages/about-me" class="">about</a></nav>
+        <div class="tb-ctrl"><div class="swatches" role="group" aria-label="accent color"><button class="sw" data-accent="cyan" style="--c:#4fd6e0" aria-label="cyan"></button>
+                <button class="sw" data-accent="magenta" style="--c:#ff79c6" aria-label="magenta"></button>
+                <button class="sw" data-accent="green" style="--c:#93dca2" aria-label="green"></button>
+                <button class="sw" data-accent="yellow" style="--c:#e7c46b" aria-label="yellow"></button>
+                <button class="sw" data-accent="purple" style="--c:#c79bf2" aria-label="purple"></button></div>
+            <button class="iconbtn" data-theme-toggle aria-label="toggle theme">sun</button></div></header>
+
+    <main class="wrap"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> cat reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet.md</h2><span class="count">2021-03 &#xB7; upd 2026-08</span></div>
+    <hr class="sep">
+
+    <article class="article-single" style="margin-top:24px"><h1 class="article-single__title">Reporting .NET 5 XUnit Code Coverage in Codecov via GitHub Actions and Coverlet</h1><p class="article-single__description">You might remember my earlier post where I described how to set up code coverage reporting in AppVeyor. This is the GitHub Actions version.</p><div class="article-single__body"><div class="warning"><p>Written for .NET 5 in 2021 and archived as-is: the concepts hold, but the commands have moved on (coverlet's collector with <code>--collect:&quot;XPlat Code Coverage&quot;</code> is the current path, and the Codecov action now requires a token). Originally published on the <a href="https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i">Kontent.ai dev.to blog</a>.</p>
+</div>
+<p><img src="/assets/img/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet/01.webp" loading="lazy" decoding="async" alt="" /></p>
+<p>You might remember my <a href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p">earlier post</a> where I described how to set up code coverage reporting for .NET Core 3 using AppVeyor + OpenCover + Codecov.</p>
+<p>Time has moved on, .NET 5 has arrived, and the best practices have changed, so let's see how to collect code coverage for .NET projects in 2021.</p>
+<h2 id="the-stack">The stack</h2>
+<p>For some time, I have been intrigued by the <code>coverlet.collector</code> that you can find in any new XUnit <code>.csproj</code>. What it is? How can I use it? Can I replace OpenCover with it?</p>
+<p>Also, I started noticing people migrating to GitHub Actions and I didn't have any experience with it and kinda felt that I'm missing the train. This observation has been confirmed recently in the <a href="https://about.codecov.io/resource/2020-state-of-open-source-code-coverage/">2020 State of Open Source Code Coverage</a> report where GitHub Actions scored the #1 fastest growing CI used with Codecov (and also the #1 in absolute numbers).</p>
+<p><a href="https://about.codecov.io/resource/2020-state-of-open-source-code-coverage/#sos-23"><img src="/assets/img/posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet/02.jpg" loading="lazy" decoding="async" alt="2020 State of Open Source Code Coverage" /></a></p>
+<p>I was thinking I could modernize the stack that I use for .NET projects both at work and for my personal projects. Of the three tools that I've been using previously, I'll be keeping just Codecov (because it's awesome ❤). Let's get to it.</p>
+<h2 id="generating-coverage">Generating coverage</h2>
+<p>I like to use the <code>dotnet</code> CLI for as many tasks as possible. The good news is that <code>coverlet</code> offers deep integration with <code>msbuild</code>.
+This is how you can generate code coverage for the whole solution:</p>
+<pre><code class="language-powershell">dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+</code></pre>
+<p>The command will generate <code>coverage.opencover.xml</code> files in all your test projects (if you run <code>dotnet test</code> on the solution level).</p>
+<p>All you need to do to make the code coverage-related <code>/p:</code> switches work is to install also the <a href="https://www.nuget.org/packages/coverlet.msbuild/"><code>coverlet.msbuild</code></a> NuGet package. So your <code>.csproj</code>s will look something like this:</p>
+<pre><code class="language-xml">&lt;PackageReference Include=&quot;coverlet.collector&quot; Version=&quot;3.0.3&quot;&gt;
+  &lt;IncludeAssets&gt;runtime; build; native; contentfiles; analyzers; buildtransitive&lt;/IncludeAssets&gt;
+  &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
+&lt;/PackageReference&gt;
+&lt;PackageReference Include=&quot;coverlet.msbuild&quot; Version=&quot;3.0.3&quot;&gt;
+  &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
+  &lt;IncludeAssets&gt;runtime; build; native; contentfiles; analyzers; buildtransitive&lt;/IncludeAssets&gt;
+&lt;/PackageReference&gt;
+</code></pre>
+<p>Make sure to leave in the <code>/p:CoverletOutputFormat=opencover</code> switch as this is the format that's accepted by Codecov.</p>
+<p>For more advanced configuration, I recommend reading the documentation on <a href="https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md">Coverlet's integration with MSBuild</a>. This is especially useful when your solution or projects don't stick to naming conventions and you need to do some extra filtering, etc.</p>
+<h2 id="integrating-into-github-actions">Integrating into GitHub Actions</h2>
+<p>Plugging the <code>dotnet test</code> into the CI pipeline is just a matter of creating a new workflow step. No matter if you use the <code>ubuntu-latest</code> or <code>windows-latest</code> runner, it works flawlessly.</p>
+<pre><code class="language-yml">- name: Restore dependencies
+  run: dotnet restore
+- name: Build
+  run: dotnet build --no-restore /p:ContinuousIntegrationBuild=true
+- name: Test
+  run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+</code></pre>
+<h2 id="collecting-coverage-by-codecov">Collecting coverage by Codecov</h2>
+<p>The last step is to upload the test coverage to Codecov. You can find an official <a href="https://github.com/marketplace/actions/codecov">Codecov GitHub Action</a> on the marketplace which makes the process super easy - no need to install the Codecov CLI, etc.</p>
+<p>Just add the following lines to your workflow:</p>
+<pre><code class="language-yml">- name: Codecov
+  uses: codecov/codecov-action@v1
+</code></pre>
+<p>Codecov will search through the folder structure of your project and discover your coverage reports based on conventions. You don't even have to include the <code>CODECOV_TOKEN</code> for public repos.</p>
+<h2 id="summary">Summary</h2>
+<p>As you can see, this approach is much more convenient than <a href="https://dev.to/petrsvihlik/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov-1n7p">the one I was using before</a> - downloading and installing tools, running PowerShell scripts, etc.</p>
+<p>If you stick to standard .NET naming and folder structure conventions, setting up code coverage is actually very easy nowadays.</p>
+<p>To see the whole workflow in action, head to some of our <a href="https://github.com/Kentico/kontent-delivery-sdk-net/actions/workflows/integrate.yml">SDK repos</a>. You can also explore how we do releases using GitHub Actions. All code is in the <a href="https://github.com/Kentico/kontent-delivery-sdk-net/tree/master/.github/workflows"><code>workflows folder</code></a>.</p>
+<p>In my next article, I'll cover how to <a href="https://dev.to/petrsvihlik/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pullrequesttarget-hci">secure secrets when building pull requests from forks</a>.</p>
+</div><p class="article-single__readmore"><a href="https://dev.to/kontent_ai/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet-4h5i" target="_blank" rel="noopener noreferrer">Read the full article →</a></p><div class="article-single__date"><em>Published March 2021 &#xB7; updated August 2026</em></div>
+
+        <div class="article-single__footer"><div class="article-single__tags"><ul class="article-single__tags-list"><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/codecov">Codecov</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/dot-net">Dot Net</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/github-actions">Github Actions</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/coverlet">Coverlet</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/continuous-integration">Continuous Integration</a></li><li class="article-single__tags-list-item"><a class="article-single__tags-list-item-link" href="/tag/devops">Devops</a></li></ul></div><a href="/" class="article-single__home-button">All Articles</a></div></article>
+
+    <section class="newsletter"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> subscribe --newsletter</h2>
+        <span class="count"><a href="https://petrsvihlik.substack.com" target="_blank" rel="noopener">via substack ↗</a></span></div>
+    <hr class="sep">
+
+    <p class="nl-blurb">New essays straight to your inbox, as they're published. No spam, unsubscribe anytime.</p>
+    <form class="nl-form" action="https://petrsvihlik.substack.com/subscribe" method="get" target="_blank" rel="noopener"><label class="label" for="nl-email">email&gt;</label>
+        <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" spellcheck="false" />
+        <input type="hidden" name="utm_source" value="petrsvihlik.com"><input type="hidden" name="utm_content" value="post" /><button class="nl-btn" type="submit">subscribe</button></form></section><section class="comments"><div class="sec-head" style="margin-top:46px"><h2><span class="sym">$</span> gh discussion view</h2>
+        <span class="count"><a href="https://github.com/petrsvihlik/petrsvihlik.com/discussions" target="_blank" rel="noopener">open on github ↗</a></span></div>
+    <hr class="sep">
+
+    <div class="giscus"></div>
+    <script>
+        (function () {
+            var theme = 'dark';
+            try { theme = localStorage.getItem('ps-theme') || 'dark'; } catch (e) { }
+            var s = document.createElement('script');
+            s.src = 'https://giscus.app/client.js';
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            var cfg = {
+                'data-repo': 'petrsvihlik/petrsvihlik.com',
+                'data-repo-id': 'MDEwOlJlcG9zaXRvcnkzMTA4MjA5OTY=',
+                'data-category': 'Announcements',
+                'data-category-id': 'DIC_kwDOEobAhM4DD5Hp',
+                'data-mapping': 'specific',
+                'data-term': 'posts/reporting-net-5-xunit-code-coverage-in-codecov-via-github-actions-and-coverlet',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '0',
+                'data-input-position': 'bottom',
+                'data-lang': 'en',
+                'data-loading': 'lazy',
+                'data-theme': theme === 'dark' ? 'noborder_dark' : 'noborder_light'
+            };
+            for (var k in cfg) { s.setAttribute(k, cfg[k]); }
+            document.currentScript.parentNode.insertBefore(s, document.currentScript);
+        })();
+    </script>
+    <noscript><a href="https://github.com/petrsvihlik/petrsvihlik.com/discussions">Join the discussion on GitHub</a></noscript></section></main>
+
+    <script src="/assets/js/site.js"></script><script src="/assets/js/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script></body></html>

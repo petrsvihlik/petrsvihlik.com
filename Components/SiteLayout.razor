@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="cyan">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- avoid theme flash: apply stored theme/accent before first paint -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('ps-theme') || 'dark';
+                var a = localStorage.getItem('ps-accent') || 'cyan';
+                var r = document.documentElement;
+                r.setAttribute('data-theme', t);
+                r.setAttribute('data-accent', a);
+            } catch (e) { }
+        })();
+    </script>
+    <!-- Google Tag Manager -->
+    @if (!string.IsNullOrWhiteSpace(Ctx.TagManagerId))
+    {
+        <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','@Ctx.TagManagerId');</script>
+    }
+    <!-- End Google Tag Manager -->
+    <link rel="alternate" type="application/rss+xml" title="RSS feed for @PageTitle" href="@Ctx.Links.Link("/feed.rss")" />
+    <link rel="alternate" type="application/atom+xml" title="Atom feed for @PageTitle" href="@Ctx.Links.Link("/feed.atom")" />
+    <title>@PageTitle</title>
+    <meta name="description" content="@(Ctx.Site.Subtitle ?? "Blog about development.")" />
+    <meta name="author" content="@Ctx.Author.Name" />
+    <!-- JetBrains Mono — loaded non-blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" /></noscript>
+    <link rel="stylesheet" href="@Ctx.Links.Link("/assets/css/site.css")" />
+    <link rel="shortcut icon" href="@Ctx.Links.Link("favicon.ico")" type="image/x-icon" />
+    <link rel="icon" href="@Ctx.Links.Link("favicon.ico")" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="@Ctx.Links.Link("apple-touch-icon.png")">
+    <link rel="icon" type="image/png" sizes="32x32" href="@Ctx.Links.Link("favicon-32x32.png")">
+    <link rel="icon" type="image/png" sizes="16x16" href="@Ctx.Links.Link("favicon-16x16.png")">
+    <link rel="manifest" href="@Ctx.Links.Link("site.webmanifest")">
+    <link rel="mask-icon" href="@Ctx.Links.Link("safari-pinned-tab.svg")" color="#4fd6e0">
+    <meta name="msapplication-TileColor" content="#0a0c10">
+    <meta name="theme-color" content="#0a0c10">
+    @HeadExtra
+</head>
+
+<body id="@PageType">
+    @if (!string.IsNullOrWhiteSpace(Ctx.TagManagerId))
+    {
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=@Ctx.TagManagerId"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    }
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="topbar">
+        <a class="brand" href="@Ctx.Links.Link("/")"><span class="sym">~/</span>petr<span class="dim">.svihlik</span></a>
+        <nav class="nav">
+            <a href="@Ctx.Links.Link("/")" class="@(ActiveNav == "articles" ? "active" : "")">articles</a>
+            <a href="@Ctx.Links.Link("/pages/projects")" class="@(ActiveNav == "projects" ? "active" : "")">projects</a>
+            <a href="@Ctx.Links.Link("/pages/about-me")" class="@(ActiveNav == "about" ? "active" : "")">about</a>
+        </nav>
+        <div class="tb-ctrl">
+            <div class="swatches" role="group" aria-label="accent color">
+                <button class="sw" data-accent="cyan"    style="--c:#4fd6e0" aria-label="cyan"></button>
+                <button class="sw" data-accent="magenta" style="--c:#ff79c6" aria-label="magenta"></button>
+                <button class="sw" data-accent="green"   style="--c:#93dca2" aria-label="green"></button>
+                <button class="sw" data-accent="yellow"  style="--c:#e7c46b" aria-label="yellow"></button>
+                <button class="sw" data-accent="purple"  style="--c:#c79bf2" aria-label="purple"></button>
+            </div>
+            <button class="iconbtn" data-theme-toggle aria-label="toggle theme">sun</button>
+        </div>
+    </header>
+
+    @ChildContent
+
+    <script src="@Ctx.Links.Link("/assets/js/site.js")"></script>
+</body>
+</html>
+
+@code {
+    [Parameter] public PageContext Ctx { get; set; }
+
+    /// <summary>Browser title; falls back to the site title.</summary>
+    [Parameter] public string Title { get; set; }
+
+    /// <summary>Which topbar item gets the "active" class: "articles", "projects", or "about".</summary>
+    [Parameter] public string ActiveNav { get; set; }
+
+    /// <summary>Value of the body id attribute (e.g. "post").</summary>
+    [Parameter] public string PageType { get; set; }
+
+    /// <summary>Extra elements appended to head (e.g. a canonical link).</summary>
+    [Parameter] public RenderFragment HeadExtra { get; set; }
+
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    private string PageTitle => Title ?? Ctx.Site.Title;
+}

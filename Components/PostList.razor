@@ -1,0 +1,53 @@
+@using System.Globalization
+
+<div class="log">
+@foreach (var article in Model.Items)
+{
+    var isExternal = !string.IsNullOrWhiteSpace(article.CanonicalUrl);
+    var link = isExternal ? article.CanonicalUrl : Ctx.Links.Link($"/posts/{article.Slug}");
+    var date = article.PublishDate?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat) ?? "";
+    var category = article.SelectedCategory?.Title ?? "";
+    var search = $"{date} {category} {article.Title} {article.Description}".ToLowerInvariant();
+
+    <a class="row" href="@link" target="@(isExternal ? "_blank" : null)" rel="@(isExternal ? "noopener" : null)" data-search="@search">
+        <span class="date">@date</span>
+        <span class="cat">@category</span>
+        <span class="title" data-text="@article.Title">@article.Title
+            @if (!string.IsNullOrWhiteSpace(article.Description))
+            {
+                <span class="desc">@article.Description</span>
+            }
+        </span>
+        <span class="go">cat →</span>
+    </a>
+}
+
+    <div class="empty" style="display:none"><span class="sym">!</span> no entries match the filter — try <code>esc</code> to clear.</div>
+</div>
+
+@if (Model.TotalPages > 1)
+{
+    <div class="pager">
+        @if (Model.Previous != null)
+        {
+            <a rel="prev" href="@Model.Previous.Url">← prev</a>
+        }
+        else
+        {
+            <span>← prev</span>
+        }
+        @if (Model.Next != null)
+        {
+            <a rel="next" href="@Model.Next.Url">next →</a>
+        }
+        else
+        {
+            <span>next →</span>
+        }
+    </div>
+}
+
+@code {
+    [Parameter] public PageContext Ctx { get; set; }
+    [Parameter] public PagedContent<Article> Model { get; set; }
+}

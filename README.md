@@ -2,7 +2,7 @@
 
 # petrsvihlik.com
 
-Source code for [petrsvihlik.com](https://petrsvihlik.com) — a static site built with [Statiq.Web](https://statiq.dev/web/) on .NET 11 (preview). Content is stored as Markdown files with YAML front matter.
+Source code for [petrsvihlik.com](https://petrsvihlik.com) — a static site built with a small bespoke generator on .NET 11 (preview): Markdown ([Markdig](https://github.com/xoofx/markdig)) + YAML front matter ([YamlDotNet](https://github.com/aaubry/YamlDotNet)) rendered through Razor components (`Components/`) via ASP.NET Core's `HtmlRenderer`. No site-generator framework, two NuGet dependencies total.
 
 ## Prerequisites
 
@@ -10,16 +10,22 @@ Source code for [petrsvihlik.com](https://petrsvihlik.com) — a static site bui
 
 ## Running locally
 
-**Preview with live reload:**
+**Build and preview:**
 ```bash
 dotnet run -- preview
 ```
-Opens at `http://localhost:5080`. The site rebuilds automatically on file changes.
+Generates the site and serves it at `http://localhost:5080` (with GitHub Pages-style extensionless URLs). Use `dotnet watch run -- preview` to rebuild on file changes.
 
 **One-off build** (output goes to `output/`):
 ```bash
 dotnet run
 ```
+
+## How it works
+
+- `Generation/SiteBuilder.cs` loads content from `input/`, renders the components, and writes `output/` — pages, paginated archives (home, per-tag, per-category), RSS/Atom feeds, and `sitemap.xml`.
+- Templates are plain Razor components in `Components/`; site metadata (title, author, contacts) lives in `SiteBuilder.CreateSiteMetadata()`.
+- Settings: `TagManagerId` from `appsettings.json`; `Host` and `LinkRoot` (used by CI) come from environment variables and control absolute-link generation for feeds and the sitemap.
 
 ## Adding content
 

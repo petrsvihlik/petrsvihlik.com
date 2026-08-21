@@ -1,0 +1,47 @@
+@using System.Globalization
+        <h1 class="article-single__title">@Article.Title</h1>
+
+        @if (!string.IsNullOrWhiteSpace(Article.Description))
+        {
+            <p class="article-single__description">@Article.Description</p>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Article.ContentHtml))
+        {
+            <div class="article-single__body">
+                @((MarkupString)Article.ContentHtml)
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Article.CanonicalUrl))
+        {
+            <p class="article-single__readmore">
+                <a href="@Article.CanonicalUrl" target="_blank" rel="noopener noreferrer">Read the full article →</a>
+            </p>
+        }
+
+        <div class="article-single__date">
+            <em>Published @Article.PublishDate?.ToString("MMMM yyyy", CultureInfo.InvariantCulture.DateTimeFormat)</em>
+        </div>
+
+        <div class="article-single__footer">
+            @if (Article.TagObjects?.Count > 0)
+            {
+                <div class="article-single__tags">
+                    <ul class="article-single__tags-list">
+                        @foreach (var tag in Article.TagObjects)
+                        {
+                            <li class="article-single__tags-list-item">
+                                <a class="article-single__tags-list-item-link" href="@Ctx.Links.Link($"/tag/{tag.Slug}")">@tag.Title</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+            <a href="@Ctx.Links.Link("/")" class="article-single__home-button">All Articles</a>
+        </div>
+
+@code {
+    [Parameter] public PageContext Ctx { get; set; }
+    [Parameter] public Article Article { get; set; }
+}

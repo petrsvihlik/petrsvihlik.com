@@ -1,0 +1,55 @@
+<SiteLayout Ctx="Ctx" Title="@($"Projects - {Ctx.Site.Title}")" PageType="page" ActiveNav="projects">
+    <ChildContent>
+<main class="wrap">
+
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">~/</span>projects</h2>
+        <span class="count">git remote -v</span>
+    </div>
+    <hr class="sep">
+
+    <p class="lead" style="margin-top:20px">
+        Open source, .NET tooling, and side-quests. Pulled from
+        <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener" style="color:var(--accent)">github.com/petrsvihlik</a>.
+    </p>
+
+    <div class="cards">
+        @foreach (var project in Projects)
+        {
+            <a class="card" href="@project.GitHubUrl" target="_blank" rel="noopener">
+                <div class="ctop"><span class="lang"></span><h3>@project.Title</h3></div>
+                <p>@project.Description</p>
+                <div class="meta">
+                    @if (!string.IsNullOrEmpty(project.Repo))
+                    {
+                        <span class="stars" data-repo="@project.Repo" title="GitHub stars"><b>★</b> <span class="stars-count" aria-live="polite">…</span></span>
+                        <span>@project.Repo</span>
+                    }
+                    <span>C#</span>
+                </div>
+            </a>
+        }
+        <a class="card" href="https://github.com/petrsvihlik" target="_blank" rel="noopener">
+            <div class="ctop"><span class="lang"></span><h3>+ more</h3></div>
+            <p>See everything on GitHub →</p>
+            <div class="meta"><span>browse all repos</span></div>
+        </a>
+    </div>
+
+    <footer class="foot">
+        <span><span class="dot">●</span> open source by default</span>
+        <span class="dim">— © @System.DateTime.UtcNow.Year @Ctx.Author.Name</span>
+        <span class="right">
+            <a href="https://github.com/petrsvihlik" target="_blank" rel="noopener">github</a>
+            <a href="@Ctx.Links.Link("/feed.rss")" target="_blank" rel="noopener">rss</a>
+        </span>
+    </footer>
+
+</main>
+    </ChildContent>
+</SiteLayout>
+
+@code {
+    [Parameter] public PageContext Ctx { get; set; }
+    [Parameter] public System.Collections.Generic.IReadOnlyList<Project> Projects { get; set; }
+}

@@ -72,6 +72,11 @@
     }
 
     <PostList Ctx="Ctx" Model="Articles" />
+
+    if (IsHomeIndex)
+    {
+        <Newsletter Source="home" />
+    }
 }
 else
 {

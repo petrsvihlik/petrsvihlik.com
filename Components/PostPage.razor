@@ -16,6 +16,8 @@
 <PostArticle Ctx="Ctx" Article="Article" />
     </article>
 
+    <Newsletter Source="post" />
+
     @if (Article.Comments)
     {
         <Comments Term="@($"posts/{Article.Slug}")" />

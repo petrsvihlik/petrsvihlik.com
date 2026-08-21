@@ -1,0 +1,37 @@
+<section class="newsletter">
+    <div class="sec-head" style="margin-top:46px">
+        <h2><span class="sym">$</span> subscribe --newsletter</h2>
+        <span class="count"><a href="@ProviderUrl" target="_blank" rel="noopener">via @ProviderName ↗</a></span>
+    </div>
+    <hr class="sep">
+
+    <p class="nl-blurb">New essays straight to your inbox, as they're published. No spam, unsubscribe anytime.</p>
+    <form class="nl-form" action="@FormAction" method="@FormMethod" target="_blank" rel="noopener">
+        <label class="label" for="nl-email">email&gt;</label>
+        <input id="nl-email" type="email" name="@EmailField" required
+               placeholder="you@example.com" autocomplete="email" spellcheck="false">
+        <input type="hidden" name="utm_source" value="petrsvihlik.com">
+        @if (!string.IsNullOrWhiteSpace(Source))
+        {
+            <input type="hidden" name="utm_content" value="@Source">
+        }
+        <button class="nl-btn" type="submit">subscribe</button>
+    </form>
+</section>
+
+@code {
+    // Email capture — provider-agnostic: a plain HTML form hands the address to the
+    // provider's hosted subscribe flow (no JS, no CORS, works without scripts).
+    // Swapping providers later means changing only the constants below; the markup stays:
+    //   substack    GET  {publication}/subscribe                                   field: email
+    //   buttondown  POST https://buttondown.com/api/emails/embed-subscribe/{user}  field: email
+    //   kit         POST https://app.kit.com/forms/{form-id}/subscriptions         field: email_address
+    private const string ProviderName = "substack";
+    private const string ProviderUrl = "https://petrsvihlik.substack.com";
+    private const string FormAction = $"{ProviderUrl}/subscribe";
+    private const string FormMethod = "get";
+    private const string EmailField = "email";
+
+    /// <summary>Where the form sits ("post", "home") — reported to the provider as utm_content.</summary>
+    [Parameter] public string Source { get; set; }
+}

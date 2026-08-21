@@ -72,6 +72,11 @@
     }
 
     <PostList Ctx="Ctx" Model="Articles" />
+
+    if (IsHomeIndex)
+    {
+        <Newsletter Source="home" />
+    }
 }
 else
 {
@@ -84,6 +89,11 @@ else
     <section class="prose" style="margin-top:22px">
         @((MarkupString)Page.Body)
     </section>
+
+    if (Page.Newsletter)
+    {
+        <Newsletter Source="page" />
+    }
 
     if (Page.Comments)
     {

@@ -37,7 +37,7 @@ jobs:
           script: |
             const url = 'https://petrsvihlik-pr-${{ github.event.pull_request.number }}.surge.sh';
             const marker = '<!-- surge-preview -->';
-            const body = `${marker}\n🚀 **Preview:** [${url}](${url})`;
+            const body = `${marker}\n🚀 **Preview:** [${url}](${url}) · [markup demo](${url}/pages/markup-demo)`;
 
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,

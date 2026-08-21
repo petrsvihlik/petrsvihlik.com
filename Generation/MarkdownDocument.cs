@@ -33,6 +33,9 @@ namespace PetrSvihlik.Com.Generation
 
         /// <summary>Render a giscus comment thread (backed by a GitHub Discussion) under the content.</summary>
         public bool Comments { get; set; }
+
+        /// <summary>Render the newsletter signup form under a page's content (posts get it always).</summary>
+        public bool Newsletter { get; set; }
     }
 
     /// <summary>A Markdown content file: parsed front matter plus the body rendered to HTML.</summary>

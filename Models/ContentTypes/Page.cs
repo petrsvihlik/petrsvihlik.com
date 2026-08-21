@@ -12,5 +12,8 @@ namespace PetrSvihlik.Com.Models.ContentTypes
 
         /// <summary>Show the giscus comment thread under the content.</summary>
         public bool Comments { get; set; }
+
+        /// <summary>Show the newsletter signup form under the content.</summary>
+        public bool Newsletter { get; set; }
     }
 }

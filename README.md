@@ -93,3 +93,5 @@ Pages support the same `comments: true` opt-in as posts, plus `newsletter: true`
 ## Deployment
 
 Pushing to `master` triggers the [`.NET Core` GitHub Actions workflow](.github/workflows/dotnet-core.yml), which builds the site and deploys it to GitHub Pages (`gh-pages` branch). Lighthouse CI runs automatically after a successful deploy. Pull requests against `master` get a [Surge preview deploy](.github/workflows/preview.yml), linked from a PR comment and torn down on close.
+
+Note: Surge does not serve `.pdf` files — they upload fine but return 404 ([sintaxi/surge#257](https://github.com/sintaxi/surge/issues/257), [#302](https://github.com/sintaxi/surge/issues/302)) — so PDF links (e.g. the CV download) 404 on previews while everything else works. GitHub Pages serves them normally, so verify PDFs on production.

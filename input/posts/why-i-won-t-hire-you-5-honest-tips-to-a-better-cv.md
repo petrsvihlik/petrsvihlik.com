@@ -10,7 +10,7 @@ comments: true
 
 *A version of this article appeared in 2019 as "Why I Won't Hire You — 5 Honest Tips to a Better CV". Rewritten in August 2026: a few hundred CVs later, from the other side of more hiring rounds, and with AI in the mix.*
 
-![](/assets/img/posts/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv/01.webp)
+![](/assets/img/posts/why-i-won-t-hire-you-5-honest-tips-to-a-better-cv/01.svg)
 
 Over the years I've read hundreds of CVs — first hiring developer advocates, these days hiring engineers. Here's the thing that took me embarrassingly long to say out loud: most CVs that don't work fail on the *document* level, not the *person* level. Behind many a rejected PDF was probably a perfectly capable human whose one page just didn't let them through.
 

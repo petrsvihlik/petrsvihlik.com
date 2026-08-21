@@ -1,0 +1,109 @@
+@using System.Collections.Generic
+@using System.Globalization
+@using System.Text.Json
+@if (Seo.NoIndex)
+{
+    <meta name="robots" content="noindex, follow" />
+}
+@if (CanonicalUrl != null)
+{
+    <link rel="canonical" href="@CanonicalUrl" />
+}
+    <meta property="og:site_name" content="@Ctx.Site.Title" />
+    <meta property="og:title" content="@(Seo.Title ?? Ctx.Site.Title)" />
+    <meta property="og:description" content="@Description" />
+    <meta property="og:type" content="@(Seo.Article != null ? "article" : "website")" />
+@if (CanonicalUrl != null)
+{
+    <meta property="og:url" content="@CanonicalUrl" />
+}
+@if (Ctx.Links.HasHost)
+{
+    <meta property="og:image" content="@Ctx.Links.Absolute("/assets/img/avatar.jpg")" />
+}
+    <meta name="twitter:card" content="summary" />
+@if (Seo.Article is { } article)
+{
+    if (article.ArticleAuthor != null)
+    {
+        <meta property="article:author" content="@article.ArticleAuthor.Name" />
+    }
+    if (!string.IsNullOrWhiteSpace(article.SelectedCategory?.Title))
+    {
+        <meta property="article:section" content="@article.SelectedCategory.Title" />
+    }
+    foreach (var tag in article.TagObjects)
+    {
+        <meta property="article:tag" content="@tag.Title" />
+    }
+    if (article.PublishDate.HasValue)
+    {
+        <meta property="article:published_time" content="@article.PublishDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)" />
+    }
+}
+@if (JsonLdPayload != null)
+{
+    <script type="application/ld+json">@((MarkupString)JsonLdPayload)</script>
+}
+
+@code {
+    [Parameter] public PageContext Ctx { get; set; }
+    [Parameter] public PageSeo Seo { get; set; }
+
+    private string Description => Seo.Description ?? Ctx.Site.Subtitle;
+
+    /// <summary>
+    /// The page's canonical URL: the original external location for cross-posted articles,
+    /// otherwise the page's own absolute URL (which requires a configured Host).
+    /// </summary>
+    private string CanonicalUrl =>
+        Seo.ExternalCanonical
+        ?? (Ctx.Links.HasHost && Seo.RootedUrl != null ? Ctx.Links.ToAbsolute(Seo.RootedUrl) : null);
+
+    // Structured data needs absolute URLs, so it is only emitted when a Host is configured.
+    private string JsonLdPayload
+    {
+        get
+        {
+            if (!Ctx.Links.HasHost)
+            {
+                return null;
+            }
+
+            Dictionary<string, object> data = Seo.JsonLd switch
+            {
+                JsonLdType.WebSite => new()
+                {
+                    ["@context"] = "https://schema.org",
+                    ["@type"] = "WebSite",
+                    ["name"] = Ctx.Site.Title,
+                    ["description"] = Ctx.Site.Subtitle,
+                    ["url"] = Ctx.Links.Absolute("/"),
+                    ["author"] = AuthorJsonLd,
+                },
+                JsonLdType.BlogPosting when Seo.Article is { } article => new()
+                {
+                    ["@context"] = "https://schema.org",
+                    ["@type"] = "BlogPosting",
+                    ["headline"] = article.Title,
+                    ["description"] = article.Description,
+                    ["datePublished"] = article.PublishDate?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture),
+                    ["url"] = CanonicalUrl,
+                    ["mainEntityOfPage"] = Ctx.Links.ToAbsolute(Seo.RootedUrl),
+                    ["image"] = Ctx.Links.Absolute("/assets/img/avatar.jpg"),
+                    ["author"] = AuthorJsonLd,
+                },
+                _ => null,
+            };
+
+            return data == null ? null : JsonSerializer.Serialize(data);
+        }
+    }
+
+    private Dictionary<string, object> AuthorJsonLd => new()
+    {
+        ["@type"] = "Person",
+        ["name"] = Ctx.Author.Name,
+        ["url"] = Ctx.Links.Absolute("/pages/about-me"),
+    };
+}

@@ -30,8 +30,9 @@
     <link rel="alternate" type="application/rss+xml" title="RSS feed for @PageTitle" href="@Ctx.Links.Link("/feed.rss")" />
     <link rel="alternate" type="application/atom+xml" title="Atom feed for @PageTitle" href="@Ctx.Links.Link("/feed.atom")" />
     <title>@PageTitle</title>
-    <meta name="description" content="@(Ctx.Site.Subtitle ?? "Blog about development.")" />
+    <meta name="description" content="@(Seo.Description ?? Ctx.Site.Subtitle)" />
     <meta name="author" content="@Ctx.Author.Name" />
+    <SeoHead Ctx="Ctx" Seo="Seo" />
     <!-- JetBrains Mono — loaded non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,7 +49,6 @@
     <link rel="mask-icon" href="@Ctx.Links.Link("safari-pinned-tab.svg")" color="#4fd6e0">
     <meta name="msapplication-TileColor" content="#0a0c10">
     <meta name="theme-color" content="#0a0c10">
-    @HeadExtra
 </head>
 
 <body id="@PageType">
@@ -92,8 +92,8 @@
 @code {
     [Parameter] public PageContext Ctx { get; set; }
 
-    /// <summary>Browser title; falls back to the site title.</summary>
-    [Parameter] public string Title { get; set; }
+    /// <summary>Per-page SEO data (title, description, canonical, structured data).</summary>
+    [Parameter] public PageSeo Seo { get; set; }
 
     /// <summary>Which topbar item gets the "active" class: "articles", "projects", or "about".</summary>
     [Parameter] public string ActiveNav { get; set; }
@@ -101,10 +101,7 @@
     /// <summary>Value of the body id attribute (e.g. "post").</summary>
     [Parameter] public string PageType { get; set; }
 
-    /// <summary>Extra elements appended to head (e.g. a canonical link).</summary>
-    [Parameter] public RenderFragment HeadExtra { get; set; }
-
     [Parameter] public RenderFragment ChildContent { get; set; }
 
-    private string PageTitle => Title ?? Ctx.Site.Title;
+    private string PageTitle => Seo.Title ?? Ctx.Site.Title;
 }

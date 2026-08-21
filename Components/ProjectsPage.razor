@@ -1,4 +1,4 @@
-<SiteLayout Ctx="Ctx" Title="@($"Projects - {Ctx.Site.Title}")" PageType="page" ActiveNav="projects">
+<SiteLayout Ctx="Ctx" Seo="Seo" PageType="page" ActiveNav="projects">
     <ChildContent>
 <main class="wrap">
 
@@ -51,5 +51,6 @@
 
 @code {
     [Parameter] public PageContext Ctx { get; set; }
+    [Parameter] public PageSeo Seo { get; set; }
     [Parameter] public System.Collections.Generic.IReadOnlyList<Project> Projects { get; set; }
 }

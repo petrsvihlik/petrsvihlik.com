@@ -50,8 +50,6 @@ namespace PetrSvihlik.Com.Generation
                 {
                     new() { Name = "GitHub", Url = "https://github.com/petrsvihlik" },
                     new() { Name = "Stack Overflow", Url = "https://stackoverflow.com/users/1332034/rocky" },
-                    new() { Name = "Dev.to", Url = "https://dev.to/petrsvihlik" },
-                    new() { Name = "Medium", Url = "https://medium.com/@PetrSvihlik" },
                     new() { Name = "LinkedIn", Url = "https://www.linkedin.com/in/svihlik/" },
                     new() { Name = "RSS", Url = "/feed.rss" },
                 }

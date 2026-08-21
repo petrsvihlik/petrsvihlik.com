@@ -2,11 +2,11 @@
 
 # petrsvihlik.com
 
-Source code for [petrsvihlik.com](https://petrsvihlik.com) — a static site built with [Statiq.Web](https://statiq.dev/web/) on .NET 10. Content is stored as Markdown files with YAML front matter.
+Source code for [petrsvihlik.com](https://petrsvihlik.com) — a static site built with [Statiq.Web](https://statiq.dev/web/) on .NET 11 (preview). Content is stored as Markdown files with YAML front matter.
 
 ## Prerequisites
 
-- [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [.NET 11 SDK (preview)](https://dotnet.microsoft.com/download)
 
 ## Running locally
 

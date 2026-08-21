@@ -3,6 +3,7 @@ title: "A Curated List of Top 10 Android Games Worth Your Time"
 description: "No matter whether you're on a train, on a toilet, or on acid you'll enjoy these top 10 Android games."
 slug: a-curated-list-of-top-10-android-games-worth-your-time
 date: 2021-10-16
+updated: 2026-08-21
 category: entertainment
 tags: [fun, gaming]
 comments: true

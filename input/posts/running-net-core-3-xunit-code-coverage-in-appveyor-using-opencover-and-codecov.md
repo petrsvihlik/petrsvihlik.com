@@ -3,6 +3,7 @@ title: "Running .NET Core 3 XUnit Code Coverage in AppVeyor Using OpenCover and 
 description: "I love AppVeyor. It's my go-to CI/CD service for .NET projects. I use it for both open-source and private projects."
 slug: running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov
 date: 2019-12-01
+updated: 2026-08-21
 category: technology
 tags: [opencover, appveyor, codecov, dot-net]
 comments: true

@@ -1,11 +1,5 @@
 @using System.Globalization
-<SiteLayout Ctx="Ctx" Title="@($"{Article.Title} - {Ctx.Site.Title}")" PageType="post" ActiveNav="articles">
-    <HeadExtra>
-        @if (!string.IsNullOrWhiteSpace(Article.CanonicalUrl))
-        {
-            <link rel="canonical" href="@Article.CanonicalUrl" />
-        }
-    </HeadExtra>
+<SiteLayout Ctx="Ctx" Seo="Seo" PageType="post" ActiveNav="articles">
     <ChildContent>
 <main class="wrap">
 
@@ -28,5 +22,6 @@
 
 @code {
     [Parameter] public PageContext Ctx { get; set; }
+    [Parameter] public PageSeo Seo { get; set; }
     [Parameter] public Article Article { get; set; }
 }

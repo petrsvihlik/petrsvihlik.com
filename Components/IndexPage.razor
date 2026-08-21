@@ -1,6 +1,6 @@
 @using System.Globalization
 @using System.Text.Json
-<SiteLayout Ctx="Ctx" Title="@PageTitle" ActiveNav="@ActiveNav">
+<SiteLayout Ctx="Ctx" Seo="Seo" ActiveNav="@ActiveNav">
     <ChildContent>
 <main class="wrap">
 @if (IsArticleList)
@@ -101,6 +101,9 @@ else
 @code {
     [Parameter] public PageContext Ctx { get; set; }
 
+    /// <summary>Per-page SEO data (title, description, canonical, structured data).</summary>
+    [Parameter] public PageSeo Seo { get; set; }
+
     /// <summary>Set for article-list views (home, tag, and category archives).</summary>
     [Parameter] public PagedContent<Article> Articles { get; set; }
 
@@ -118,8 +121,6 @@ else
 
     private bool IsArticleList => Articles != null;
     private bool ShowHero => IsHomeIndex && Articles.Index <= 1;
-
-    private string PageTitle => TitleProvider != null ? $"{TitleProvider.Title} - {Ctx.Site.Title}" : null;
 
     private string ActiveNav => Page != null && Page.Url == "about-me"
         ? "about"

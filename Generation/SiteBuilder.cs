@@ -84,14 +84,31 @@ namespace PetrSvihlik.Com.Generation
                 });
 
             var newestFirst = articles.OrderByDescending(a => a.PublishDate).ToList();
+            var newestDate = newestFirst.FirstOrDefault()?.PublishDate;
+            var sitemap = new List<SitemapEntry>();
 
             // posts (and their <article> bodies, reused by the feeds)
             var articleBodies = new Dictionary<string, string>();
             foreach (var article in articles)
             {
+                var url = _links.Link($"/posts/{article.Slug}");
                 articleBodies[article.Slug] = await RenderAsync<PostArticle>(new() { ["Ctx"] = _ctx, ["Article"] = article });
-                var html = await RenderAsync<PostPage>(new() { ["Ctx"] = _ctx, ["Article"] = article });
+                var html = await RenderAsync<PostPage>(new()
+                {
+                    ["Ctx"] = _ctx,
+                    ["Article"] = article,
+                    ["Seo"] = new PageSeo
+                    {
+                        Title = $"{article.Title} - {_ctx.Site.Title}",
+                        Description = article.Description,
+                        RootedUrl = url,
+                        ExternalCanonical = article.CanonicalUrl,
+                        Article = article,
+                        JsonLd = JsonLdType.BlogPosting,
+                    },
+                });
                 WriteFile($"posts/{article.Slug}.html", html);
+                sitemap.Add(new SitemapEntry(url, article.PublishDate));
             }
 
             // home archive: index.html + page/N/index.html
@@ -105,30 +122,42 @@ namespace PetrSvihlik.Com.Generation
                     ["Articles"] = page,
                     ["AllArticles"] = newestFirst,
                     ["IsHomeIndex"] = true,
+                    ["Seo"] = new PageSeo
+                    {
+                        Title = page.Index == 1 ? null : $"{_ctx.Site.Title} - page {page.Index}",
+                        RootedUrl = page.Url,
+                        JsonLd = page.Index == 1 ? JsonLdType.WebSite : JsonLdType.None,
+                    },
                 });
                 WriteFile(page.Index == 1 ? "index.html" : $"page/{page.Index}/index.html", html);
+                sitemap.Add(new SitemapEntry(page.Url, newestDate));
             }
 
-            // tag and category archives
+            // tag and category archives; tag pages mostly hold a single post, so they are
+            // noindexed and left out of the sitemap to avoid flooding crawlers with thin pages
             await RenderGroupedArchivesAsync("category", newestFirst,
                 a => a.SelectedCategory is { Slug.Length: > 0 } category ? new[] { category.Slug } : Array.Empty<string>(),
-                slug => new Category { Slug = slug, Title = slug.SlugToTitle() });
+                slug => new Category { Slug = slug, Title = slug.SlugToTitle() },
+                indexable: true);
             await RenderGroupedArchivesAsync("tag", newestFirst,
                 a => a.TagObjects.Select(t => t.Slug),
-                slug => new Tag { Slug = slug, Title = slug.SlugToTitle() });
+                slug => new Tag { Slug = slug, Title = slug.SlugToTitle() },
+                indexable: false);
 
             async Task RenderGroupedArchivesAsync(
                 string pathPrefix, IReadOnlyList<Article> all,
-                Func<Article, IEnumerable<string>> getSlugs, Func<string, TaxonomyTerm> createTerm)
+                Func<Article, IEnumerable<string>> getSlugs, Func<string, TaxonomyTerm> createTerm,
+                bool indexable)
             {
                 var groups = all
                     .SelectMany(a => getSlugs(a).Select(slug => (slug, article: a)))
-                    .GroupBy(x => x.slug);
+                    .GroupBy(x => x.slug)
+                    .OrderBy(g => g.Key, StringComparer.Ordinal);
                 foreach (var group in groups)
                 {
                     var term = createTerm(group.Key);
-                    var groupPages = PagedContent<Article>.Paginate(
-                        group.Select(x => x.article).ToList(), PostsPerPage,
+                    var groupArticles = group.Select(x => x.article).ToList();
+                    var groupPages = PagedContent<Article>.Paginate(groupArticles, PostsPerPage,
                         i => _links.Link(i == 1 ? $"/{pathPrefix}/{group.Key}" : $"/{pathPrefix}/{group.Key}/{i}"));
                     foreach (var page in groupPages)
                     {
@@ -137,9 +166,20 @@ namespace PetrSvihlik.Com.Generation
                             ["Ctx"] = _ctx,
                             ["Articles"] = page,
                             ["TitleProvider"] = term,
+                            ["Seo"] = new PageSeo
+                            {
+                                Title = $"{term.Title} - {_ctx.Site.Title}" + (page.Index == 1 ? "" : $" - page {page.Index}"),
+                                Description = $"Posts about {term.Title} by {_ctx.Author.Name}.",
+                                RootedUrl = page.Url,
+                                NoIndex = !indexable,
+                            },
                         });
                         var suffix = page.Index == 1 ? "" : $"{page.Index}/";
                         WriteFile($"{pathPrefix}/{group.Key}/{suffix}index.html", html);
+                        if (indexable)
+                        {
+                            sitemap.Add(new SitemapEntry(page.Url, groupArticles.Max(a => a.PublishDate)));
+                        }
                     }
                 }
             }
@@ -147,24 +187,50 @@ namespace PetrSvihlik.Com.Generation
             // content pages: about-me, 404, …
             foreach (var page in pages)
             {
+                var is404 = page.Url == "404";
+                var url = _links.Link($"/pages/{page.Url}");
                 var html = await RenderAsync<IndexPage>(new()
                 {
                     ["Ctx"] = _ctx,
                     ["Page"] = page,
                     ["TitleProvider"] = page,
+                    ["Seo"] = new PageSeo
+                    {
+                        Title = $"{page.Title} - {_ctx.Site.Title}",
+                        Description = page.MetaDescription,
+                        RootedUrl = is404 ? null : url,
+                        NoIndex = is404,
+                    },
                 });
-                WriteFile(page.Url == "404" ? "404.html" : $"pages/{page.Url}/index.html", html);
+                WriteFile(is404 ? "404.html" : $"pages/{page.Url}/index.html", html);
+                if (!is404)
+                {
+                    sitemap.Add(new SitemapEntry(url, null));
+                }
             }
 
             // projects
+            var projectsUrl = _links.Link("/pages/projects");
             WriteFile("pages/projects/index.html",
-                await RenderAsync<ProjectsPage>(new() { ["Ctx"] = _ctx, ["Projects"] = projects }));
+                await RenderAsync<ProjectsPage>(new()
+                {
+                    ["Ctx"] = _ctx,
+                    ["Projects"] = projects,
+                    ["Seo"] = new PageSeo
+                    {
+                        Title = $"Projects - {_ctx.Site.Title}",
+                        Description = $"Open source projects and .NET tooling by {_ctx.Author.Name}.",
+                        RootedUrl = projectsUrl,
+                    },
+                }));
+            sitemap.Add(new SitemapEntry(projectsUrl, null));
 
-            // feeds and sitemap
+            // feeds, sitemap, robots.txt
             var feedArticles = newestFirst.Select(a => (a, articleBodies[a.Slug])).ToList();
             FeedWriter.WriteRss(Path.Combine(_outputPath, "feed.rss"), _ctx.Site, _links, feedArticles);
             FeedWriter.WriteAtom(Path.Combine(_outputPath, "feed.atom"), _ctx.Site, _links, feedArticles);
-            SitemapWriter.Write(Path.Combine(_outputPath, "sitemap.xml"), _links, articles, homePages.Count);
+            SitemapWriter.Write(Path.Combine(_outputPath, "sitemap.xml"), _links, sitemap);
+            WriteRobotsTxt();
 
             var fileCount = Directory.EnumerateFiles(_outputPath, "*", SearchOption.AllDirectories).Count();
             Console.WriteLine($"Generated {fileCount} files in {stopwatch.ElapsedMilliseconds} ms.");
@@ -204,6 +270,7 @@ namespace PetrSvihlik.Com.Generation
                         Title = doc.FrontMatter.Title,
                         Url = doc.Slug,
                         Body = doc.BodyHtml,
+                        MetaDescription = doc.FrontMatter.Description,
                     };
                 })
                 .ToList();
@@ -253,6 +320,16 @@ namespace PetrSvihlik.Com.Generation
             var destination = Path.Combine(_outputPath, relativeDestination);
             Directory.CreateDirectory(Path.GetDirectoryName(destination));
             File.Copy(sourcePath, destination, overwrite: true);
+        }
+
+        private void WriteRobotsTxt()
+        {
+            var content = "User-agent: *\nAllow: /\n";
+            if (_links.HasHost)
+            {
+                content += $"\nSitemap: {_links.Absolute("/sitemap.xml")}\n";
+            }
+            WriteFile("robots.txt", content);
         }
 
         private void WriteFile(string relativePath, string content)

@@ -60,10 +60,8 @@
         var searchIndex = AllArticles.Select(a => new
         {
             title = a.Title,
-            url = !string.IsNullOrWhiteSpace(a.CanonicalUrl)
-                ? a.CanonicalUrl
-                : Ctx.Links.Link($"/posts/{a.Slug}"),
-            ext = !string.IsNullOrWhiteSpace(a.CanonicalUrl),
+            url = Ctx.Links.Link($"/posts/{a.Slug}"),
+            ext = false,
             cat = a.SelectedCategory?.Title ?? "",
             date = a.PublishDate?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat) ?? "",
             desc = a.Description ?? ""

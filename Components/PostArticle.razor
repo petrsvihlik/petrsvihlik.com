@@ -13,13 +13,6 @@
             </div>
         }
 
-        @if (!string.IsNullOrWhiteSpace(Article.CanonicalUrl))
-        {
-            <p class="article-single__readmore">
-                <a href="@Article.CanonicalUrl" target="_blank" rel="noopener noreferrer">Read the full article →</a>
-            </p>
-        }
-
         <div class="article-single__date">
             <em>Published @Article.PublishDate?.ToString("MMMM yyyy", CultureInfo.InvariantCulture.DateTimeFormat)@(Article.Updated != null ? $" · updated {Article.Updated?.ToString("MMMM yyyy", CultureInfo.InvariantCulture.DateTimeFormat)}" : "")</em>
         </div>

@@ -3,13 +3,12 @@
 <div class="log">
 @foreach (var article in Model.Items)
 {
-    var isExternal = !string.IsNullOrWhiteSpace(article.CanonicalUrl);
-    var link = isExternal ? article.CanonicalUrl : Ctx.Links.Link($"/posts/{article.Slug}");
+    var link = Ctx.Links.Link($"/posts/{article.Slug}");
     var date = article.PublishDate?.ToString("yyyy-MM", CultureInfo.InvariantCulture.DateTimeFormat) ?? "";
     var category = article.SelectedCategory?.Title ?? "";
     var search = $"{date} {category} {article.Title} {article.Description}".ToLowerInvariant();
 
-    <a class="row" href="@link" target="@(isExternal ? "_blank" : null)" rel="@(isExternal ? "noopener" : null)" data-search="@search">
+    <a class="row" href="@link" data-search="@search">
         <span class="date">@date</span>
         <span class="cat">@category</span>
         <span class="title" data-text="@article.Title">@article.Title

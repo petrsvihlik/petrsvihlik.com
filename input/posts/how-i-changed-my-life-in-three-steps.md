@@ -18,9 +18,9 @@ The year 2018 was absolutely groundbreaking to me. I completely reorganized my l
 
 There is an overwhelming plethora of self improvement books. I find most of them shitty. If there's one book you should read, it's [this one](https://markmanson.net/books/subtle-art). It'll help you set the right values and spend the finite number of f*cks you're given in this life efficiently. For me, the #1 value is now honesty — to other people and to myself as well.
 
+^^^
 ![](/assets/img/posts/how-i-changed-my-life-in-three-steps/02.jpg)
-
-The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life
+^^^ The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life
 
 This book is an absolute gem, full of deep life truths. I can sign every word in the book. I humbly bow to you, Mr. [Mark Manson](https://markmanson.net/).
 
@@ -46,9 +46,9 @@ But beware of one little side-effect: when you "come out" your fake friends will
 
 Talking honestly to your friends will help you find the balls you need to execute your plan.
 
+^^^
 ![](/assets/img/posts/how-i-changed-my-life-in-three-steps/04.png)
-
-A pair of tennis balls
+^^^ A pair of tennis balls
 
 ## Good Hunting
 

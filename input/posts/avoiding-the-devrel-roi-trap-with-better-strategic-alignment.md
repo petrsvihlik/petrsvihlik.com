@@ -45,7 +45,7 @@ It has much to do with the activities we choose to do as DevRel and how well we 
 I noticed a couple of people who publicly emphasize the importance of strategic alignment. To mention some, Phil Leggetter in his [AAARRRP strategy framework](https://www.leggetter.co.uk/aaarrrp/), [Mary Thengvall](https://www.marythengvall.com/blog/2020/12/14/first-understand-the-company-goals) in her recent article:
 
 > In order to successfully prove the value of our work in a way that the company understands and sees as beneficial, we need to attach the main goals of the Developer Relations department to the goals that are shared by the company as a whole.
-> **Source:** [**https://www.marythengvall.com/blog/2020/12/14/first-understand-the-company-goals**](https://www.marythengvall.com/blog/2020/12/14/first-understand-the-company-goals)
+> — [marythengvall.com](https://www.marythengvall.com/blog/2020/12/14/first-understand-the-company-goals)
 
 Or, if you give a thought to Max Katz’s [3-part framework for measuring success in DevRel](https://maxkatz.org/2020/02/14/measuring-success-in-developer-relations-a-3-part-framework/), you’ll realize that two parts are actually a subset of the third — Measuring something that’s tied to business goals.
 
@@ -60,16 +60,16 @@ So can our ability to adapt to company strategy be our “KPI” and talk for us
 
 To put things in a broader context, allow me a little detour and let me share a simplistic model of what I consider a good strategy:
 
+^^^
 ![DevRel strategy = Company Strategy ∩ Developers’ Needs ∩ What developer avocados are good at](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/02.png)
-
-A perfect DevRel strategy recipe that’s strikingly reminiscent of Ikigai
+^^^ A perfect DevRel strategy recipe that’s strikingly reminiscent of Ikigai
 
 To succeed, I need to collect the company’s management’s expectations, understand the target audience’s needs, and know my team well. None of these is an easy task — to start with, I wouldn’t expect the management team to provide me with anything more than the target segment + the stage of the customer’s journey or lifecycle to focus on, second, developers can be a very loud and demanding bunch and the demands tend to vary quite often, and finally, learning my team members’ superpowers requires some time working together. But all this research is soooo worth it and it saves so much trouble in the future!
 
 My favorite quote from Cristiano Betta captures my feelings perfectly:
 
 > One of the big dangers to any developer relations program is that it is so easy to try and do it all. The problem though with trying to do it all is that you end up being busy and doing nothing well.
-> **Source:** [**https://devrel.net/dev-rel/meet-cristiano-betta**](https://devrel.net/dev-rel/meet-cristiano-betta)
+> — [devrel.net](https://devrel.net/dev-rel/meet-cristiano-betta)
 
 What happens if you choose a wrong strategy? Well, you end up:
 
@@ -149,6 +149,6 @@ My hope is that I was able to offer an alternative, yet viable perspective on ho
 
 This article is meant to lay the foundation of how I see DevRel. Let me know if you’d like me to expand on any of what I mentioned down in the comments. I’ll make sure to write about it in the future.
 
+^^^
 ![If culture eats strategy for breakfast, then strategy eats metrics for brunch.](/assets/img/posts/avoiding-the-devrel-roi-trap-with-better-strategic-alignment/05.png)
-
-If culture eats strategy for breakfast, then strategy eats metrics for dinner the night before. 😀
+^^^ If culture eats strategy for breakfast, then strategy eats metrics for dinner the night before. 😀

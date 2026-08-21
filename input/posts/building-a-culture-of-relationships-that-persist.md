@@ -67,9 +67,9 @@ I know people (and I bet you do too) who believe it's possible to keep personal 
 
 Don't get me wrong — I'm not naive about power disparity between a supervisor and a subordinate; it's real and it constrains what's possible. But the least everyone can do is try not to be a different person at work than they are at home, in a pub, or in a gym. **Honesty is the key.**
 
+^^^
 ![](/assets/img/posts/building-a-culture-of-relationships-that-persist/02.png)
-
-ME = how I treat people at work + how I treat people at a party + how I treat people at ⟨…⟩
+^^^ ME = how I treat people at work + how I treat people at a party + how I treat people at ⟨…⟩
 
 ## Culture can't be pushed — only lived
 
@@ -103,6 +103,6 @@ If leaving deletes a person from the community, the culture was proximity, not r
 
 Employment is a phase. Relationships are the persistent layer. Build for the layer that persists.
 
+^^^
 ![](/assets/img/posts/building-a-culture-of-relationships-that-persist/03.jpg)
-
-This is me, in a photo from the original 2019 essay. I'm keeping it here — it still fits. :)
+^^^ This is me, in a photo from the original 2019 essay. I'm keeping it here — it still fits. :)

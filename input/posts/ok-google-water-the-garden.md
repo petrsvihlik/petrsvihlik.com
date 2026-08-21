@@ -19,9 +19,9 @@ To maintain my mental health, I decided to have them all replaced with Google Ne
 
 The second time I almost had gone crazy was when I tried to set up the water irrigation system after winter. This is the bad guy who caused it: Hunter ELC-401i.
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/02.jpg)
-
-Hunter Eco Logic ELC-401i
+^^^ Hunter Eco Logic ELC-401i
 
 When I was replacing the thermostats, I left the job to a professional. It turned out to be a wise decision given the amount of the extra wiring necessary.
 
@@ -47,18 +47,18 @@ Not sure why, but it took almost a month for the controller to be delivered. Lon
 
 If you think that you’ll just buy a US->EU converter and you’re done, you’re wrong. The original Rachio 3 power supply only supports 110V input (no 230V).
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/04.jpg)
-
-Original Rachio 3 Power Supply
+^^^ Original Rachio 3 Power Supply
 
 I solved that by ordering a [different one](https://www.onpira.cz/zbozi/napajeci-zdroj-0-5-1a--5-24v-ac/?variantId=12147) with the following specification:
 
 - IN: 230 V AC
 - OUT: 24 V AC, 1000mA (1A)
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/05.png)
-
-Noname adapter
+^^^ Noname adapter
 
 And it worked:
 
@@ -74,29 +74,29 @@ As you can see, Rachio doesn’t have any display and has almost no controls. �
 
 As you can probably guess by now, there was no Wi-Fi signal near the controller. Long story short — I got myself a Wi-Fi repeater.
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/07.jpg)
-
-TP-Link RE205 (AC750 Wi-Fi Extender)
+^^^ TP-Link RE205 (AC750 Wi-Fi Extender)
 
 I was surprised how easy it is to set up a repeater nowadays. You just press the [WPS button](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Setup) on your router and the target device and it’s done. I didn’t even know my router has a WPS button. 🤔
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/08.png)
-
-Rachio 3 + TP-Link RE205 + 24VAC Power
+^^^ Rachio 3 + TP-Link RE205 + 24VAC Power
 
 ### 🔌 Wiring
 
 Finally, something that I got right the first time. Rachio basically copies standard controller wiring. So I went from this:
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/09.jpg)
-
-Hunter ELC 4
+^^^ Hunter ELC 4
 
 To this:
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/10.jpg)
-
-Rachio 3rd Generation — 2 zones setup
+^^^ Rachio 3rd Generation — 2 zones setup
 
 - Yellow-green: Common
 - Blue: Zone 1
@@ -110,9 +110,9 @@ Rachio 3rd Generation — 2 zones setup
 
 The next step was to set up the zones in the app and create an irrigation schedule. This was a piece of cake.
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/11.png)
-
-Rachio Android App
+^^^ Rachio Android App
 
 The only problem was that the sprinklers never started spraying water.
 
@@ -124,9 +124,9 @@ Then, I thought the water pump is dead. I called a technician who recommended cl
 
 I disassembled the pipes and the filter was full of sand.
 
+^^^
 ![](/assets/img/posts/ok-google-water-the-garden/12.jpg)
-
-Clean strainer filter
+^^^ Clean strainer filter
 
 ### 💦 OK Google, water the garden
 

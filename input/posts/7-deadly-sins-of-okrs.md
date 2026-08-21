@@ -25,7 +25,7 @@ To prevent those situations, people need to understand what’s happening with t
 A rule of thumb — OKRs should be decoupled from individuals’ performance reviews.
 
 > OKRs are about setting direction on a company and team level — not about evaluating individuals. So managers shouldn’t talk about OKR completion in performance reviews. Instead, they could give their team members qualitative feedback on OKR-related behavior. For example, they might want to say things like “I liked how you often referred to our team OKRs when prioritizing your tasks” or “When deciding what to work on next, you could pay more attention to the team OKRs that are currently at risk.”
-> [**https://www.small-improvements.com/blog/okrs-vs-employee-goals/**](https://www.small-improvements.com/blog/okrs-vs-employee-goals/)
+> — [small-improvements.com](https://www.small-improvements.com/blog/okrs-vs-employee-goals/)
 
 Another thing that can hinder the meaning of OKRs, is when top-level management fails to provide feedback on the status of OKRs — no matter if it’s positive or negative. Without feedback, people can’t see how the OKRs have been useful for the company at all and lose motivation quickly.
 
@@ -59,9 +59,9 @@ Ask yourself a question: How much time my team can dedicate to OKRs?
 
 Does it seem that there is just too much stuff to do and no time for OKRs? OK, that’s your first brain teaser! This is actually a good sign, OKRs are forcing you to think out of the box! Seriously, how can you allocate time for OKRs (aka changes, improvements) while keeping the quality of your daily work unchanged?
 
+^^^
 ![](/assets/img/posts/7-deadly-sins-of-okrs/02.jpg)
-
-Don’t worry, you’re not doing it wrong. It’s supposed to be difficult. 😉
+^^^ Don’t worry, you’re not doing it wrong. It’s supposed to be difficult. 😉
 
 ## Sin #4— Failing to understand the difference between leading and lagging indicators
 

@@ -12,9 +12,9 @@ I had never been good at sports (perhaps with an exception of swimming) and yet 
 
 I dedicate this article to my friend Matus who I think is a much better sportsman than I am :) But let it also be an encouragement to any novice runner.
 
+^^^
 ![](/assets/img/posts/the-little-i-learned-about-running/01.jpg)
-
-Can you find me in the picture? Hint: Look out for a black headband :)
+^^^ Can you find me in the picture? Hint: Look out for a black headband :)
 
 ## 1. Keep your eyes up
 

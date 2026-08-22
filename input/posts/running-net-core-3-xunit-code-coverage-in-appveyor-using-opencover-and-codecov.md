@@ -23,7 +23,9 @@ Recently, I started upgrading my project portfolio to .NET Core 3.0. With that, 
 The goal was to create a minimalistic, reusable piece of code (independent of environment settings, tool versions, etc.) that I could use across multiple projects. Here it goes:
 
 #### coverage.ps1
-{% gist https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7 file=coverage.ps1 %}
+<script src="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7.js?file=coverage.ps1"></script>
+
+<noscript><a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7#file-coverage-ps1">View coverage.ps1 on GitHub</a></noscript>
 
 The script can run locally and in AppVeyor with slightly different configurations. The most tricky part is:
 
@@ -42,15 +44,18 @@ AppVeyor supports [Chocolatey](https://chocolatey.org/) so I'm using `cinst` to 
 Cool thing is that if you run `codecov -f coverage.xml` from AppVeyor you don't need an API key. It just works automagically ✨.
 
 #### appveyor.yml
-{% gist https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7 file=appveyor.yml %}
+<script src="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7.js?file=appveyor.yml"></script>
+
+<noscript><a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7#file-appveyor-yml">View appveyor.yml on GitHub</a></noscript>
 
 ### The result
 I've got this nice sunburst chart indicating which files need attention:
 
 ![Codecov sunburst](/assets/img/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov/02.png)
 
-I've also got the Codecov badge with % coverage:
-{% github Kentico/kontent-delivery-sdk-net %}
+I've also got the Codecov badge with % coverage in the [kontent-delivery-sdk-net](https://github.com/Kentico/kontent-delivery-sdk-net) repo:
+
+[![Codecov coverage badge](https://codecov.io/gh/Kentico/kontent-delivery-sdk-net/branch/master/graph/badge.svg)](https://github.com/Kentico/kontent-delivery-sdk-net)
 
 And last but not least, a nice ASCII art in the AppVeyor log here:
 [![Alt Text](/assets/img/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov/03.png)](https://ci.appveyor.com/project/kentico/deliver-net-sdk/branch/master#L310)

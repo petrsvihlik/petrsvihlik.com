@@ -499,6 +499,51 @@
       });
   }
 
+  /* ---------- video embeds ----------
+     Click-to-load facades: a thumbnail stands in for the player until the
+     reader asks for it, so a post with a dozen videos still costs one image
+     each. The real iframe (privacy-friendly nocookie host) is created on
+     click. Without JS the markup's plain link to YouTube remains. */
+  function initVideo() {
+    document.querySelectorAll('[data-yt]').forEach(function (box) {
+      var id = box.getAttribute('data-yt');
+      if (!id || box.dataset.ytReady) return;
+      box.dataset.ytReady = '1';
+
+      var title = box.getAttribute('data-title') || 'video';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'video__play';
+      btn.setAttribute('aria-label', 'play ' + title);
+      btn.innerHTML =
+        '<span class="video__media">' +
+          '<img class="video__thumb" loading="lazy" alt="" src="https://i.ytimg.com/vi/' +
+            id + '/hqdefault.jpg">' +
+          '<span class="video__glyph" aria-hidden="true">▶</span>' +
+        '</span>' +
+        '<span class="video__cap"><span class="sym">$</span> play ' + title + '</span>';
+
+      // a thumbnail that 404s should leave a clean panel, not a broken image
+      btn.querySelector('.video__thumb').addEventListener('error', function () {
+        this.remove();
+      });
+
+      btn.addEventListener('click', function () {
+        var frame = document.createElement('iframe');
+        frame.className = 'video__frame';
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        frame.title = title;
+        frame.allow =
+          'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        frame.allowFullscreen = true;
+        frame.setAttribute('frameborder', '0');
+        box.replaceChildren(frame);
+      });
+
+      box.replaceChildren(btn);
+    });
+  }
+
   /* ---------- go ---------- */
   function init() {
     syncThemeBtn();
@@ -507,6 +552,7 @@
     initFilter();
     initLightbox();
     initDocLightbox();
+    initVideo();
     initStars();
     initBg();
     initCodeCopy();

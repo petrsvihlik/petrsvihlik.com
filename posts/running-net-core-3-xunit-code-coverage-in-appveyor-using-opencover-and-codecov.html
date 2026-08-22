@@ -68,7 +68,8 @@
 <h3 id="custom-powershell-coverage-script">Custom PowerShell coverage script 📜</h3>
 <p>The goal was to create a minimalistic, reusable piece of code (independent of environment settings, tool versions, etc.) that I could use across multiple projects. Here it goes:</p>
 <h4 id="coverage.ps1">coverage.ps1</h4>
-<p>{% gist <a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7">https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7</a> file=coverage.ps1 %}</p>
+<script src="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7.js?file=coverage.ps1"></script>
+<p><noscript><a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7#file-coverage-ps1">View coverage.ps1 on GitHub</a></noscript></p>
 <p>The script can run locally and in AppVeyor with slightly different configurations. The most tricky part is:</p>
 <pre><code>$register = if ($ENV:APPVEYOR -eq $true ) { '-register' } else { '-register:user' }
 </code></pre>
@@ -78,12 +79,13 @@
 <p>AppVeyor supports <a href="https://chocolatey.org/">Chocolatey</a> so I'm using <code>cinst</code> to install OpenCover and Codecov CLIs. Then I'm turning off the default test script and replacing it with my own which runs OpenCover to generate the coverage files, and finally, I'm calling Codecov CLI to upload the results.</p>
 <p>Cool thing is that if you run <code>codecov -f coverage.xml</code> from AppVeyor you don't need an API key. It just works automagically ✨.</p>
 <h4 id="appveyor.yml">appveyor.yml</h4>
-<p>{% gist <a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7">https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7</a> file=appveyor.yml %}</p>
+<script src="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7.js?file=appveyor.yml"></script>
+<p><noscript><a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7#file-appveyor-yml">View appveyor.yml on GitHub</a></noscript></p>
 <h3 id="the-result">The result</h3>
 <p>I've got this nice sunburst chart indicating which files need attention:</p>
 <p><img src="/assets/img/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov/02.png" loading="lazy" decoding="async" alt="Codecov sunburst" /></p>
-<p>I've also got the Codecov badge with % coverage:
-{% github Kentico/kontent-delivery-sdk-net %}</p>
+<p>I've also got the Codecov badge with % coverage in the <a href="https://github.com/Kentico/kontent-delivery-sdk-net">kontent-delivery-sdk-net</a> repo:</p>
+<p><a href="https://github.com/Kentico/kontent-delivery-sdk-net"><img src="https://codecov.io/gh/Kentico/kontent-delivery-sdk-net/branch/master/graph/badge.svg" loading="lazy" decoding="async" alt="Codecov coverage badge" /></a></p>
 <p>And last but not least, a nice ASCII art in the AppVeyor log here:
 <a href="https://ci.appveyor.com/project/kentico/deliver-net-sdk/branch/master#L310"><img src="/assets/img/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov/03.png" loading="lazy" decoding="async" alt="Alt Text" /></a></p>
 <p>So far, I have successfully tested this approach in two repos so I hope it'll work for you too. Any improvements are welcome!</p>

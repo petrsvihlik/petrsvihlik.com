@@ -5,8 +5,8 @@
 		<link>https://petrsvihlik.com/</link>
 		<description>Blog about all that matters to me - technology, life, leadership, and Developer Relations.</description>
 		<copyright>2026</copyright>
-		<pubDate>Fri, 21 Aug 2026 23:51:42 GMT</pubDate>
-		<lastBuildDate>Fri, 21 Aug 2026 23:51:42 GMT</lastBuildDate>
+		<pubDate>Sat, 22 Aug 2026 00:06:48 GMT</pubDate>
+		<lastBuildDate>Sat, 22 Aug 2026 00:06:48 GMT</lastBuildDate>
 		<item>
 			<title>The Junior Developer Problem Is More Complicated Than You Think</title>
 			<link>https://petrsvihlik.com/posts/junior-developer-problem</link>
@@ -931,7 +931,8 @@ The process is, in my opinion, more transparent thanks to all events being logge
 &lt;h3 id="custom-powershell-coverage-script"&gt;Custom PowerShell coverage script 📜&lt;/h3&gt;
 &lt;p&gt;The goal was to create a minimalistic, reusable piece of code (independent of environment settings, tool versions, etc.) that I could use across multiple projects. Here it goes:&lt;/p&gt;
 &lt;h4 id="coverage.ps1"&gt;coverage.ps1&lt;/h4&gt;
-&lt;p&gt;{% gist &lt;a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7"&gt;https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7&lt;/a&gt; file=coverage.ps1 %}&lt;/p&gt;
+&lt;script src="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7.js?file=coverage.ps1"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7#file-coverage-ps1"&gt;View coverage.ps1 on GitHub&lt;/a&gt;&lt;/noscript&gt;&lt;/p&gt;
 &lt;p&gt;The script can run locally and in AppVeyor with slightly different configurations. The most tricky part is:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$register = if ($ENV:APPVEYOR -eq $true ) { '-register' } else { '-register:user' }
 &lt;/code&gt;&lt;/pre&gt;
@@ -941,12 +942,13 @@ The process is, in my opinion, more transparent thanks to all events being logge
 &lt;p&gt;AppVeyor supports &lt;a href="https://chocolatey.org/"&gt;Chocolatey&lt;/a&gt; so I'm using &lt;code&gt;cinst&lt;/code&gt; to install OpenCover and Codecov CLIs. Then I'm turning off the default test script and replacing it with my own which runs OpenCover to generate the coverage files, and finally, I'm calling Codecov CLI to upload the results.&lt;/p&gt;
 &lt;p&gt;Cool thing is that if you run &lt;code&gt;codecov -f coverage.xml&lt;/code&gt; from AppVeyor you don't need an API key. It just works automagically ✨.&lt;/p&gt;
 &lt;h4 id="appveyor.yml"&gt;appveyor.yml&lt;/h4&gt;
-&lt;p&gt;{% gist &lt;a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7"&gt;https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7&lt;/a&gt; file=appveyor.yml %}&lt;/p&gt;
+&lt;script src="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7.js?file=appveyor.yml"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/petrsvihlik/857671b3d937d010ccc67676733625d7#file-appveyor-yml"&gt;View appveyor.yml on GitHub&lt;/a&gt;&lt;/noscript&gt;&lt;/p&gt;
 &lt;h3 id="the-result"&gt;The result&lt;/h3&gt;
 &lt;p&gt;I've got this nice sunburst chart indicating which files need attention:&lt;/p&gt;
 &lt;p&gt;&lt;img src="/assets/img/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov/02.png" loading="lazy" decoding="async" alt="Codecov sunburst" /&gt;&lt;/p&gt;
-&lt;p&gt;I've also got the Codecov badge with % coverage:
-{% github Kentico/kontent-delivery-sdk-net %}&lt;/p&gt;
+&lt;p&gt;I've also got the Codecov badge with % coverage in the &lt;a href="https://github.com/Kentico/kontent-delivery-sdk-net"&gt;kontent-delivery-sdk-net&lt;/a&gt; repo:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/Kentico/kontent-delivery-sdk-net"&gt;&lt;img src="https://codecov.io/gh/Kentico/kontent-delivery-sdk-net/branch/master/graph/badge.svg" loading="lazy" decoding="async" alt="Codecov coverage badge" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And last but not least, a nice ASCII art in the AppVeyor log here:
 &lt;a href="https://ci.appveyor.com/project/kentico/deliver-net-sdk/branch/master#L310"&gt;&lt;img src="/assets/img/posts/running-net-core-3-xunit-code-coverage-in-appveyor-using-opencover-and-codecov/03.png" loading="lazy" decoding="async" alt="Alt Text" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;So far, I have successfully tested this approach in two repos so I hope it'll work for you too. Any improvements are welcome!&lt;/p&gt;

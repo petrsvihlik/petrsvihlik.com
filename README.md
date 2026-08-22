@@ -68,6 +68,8 @@ Post content in Markdown goes here.
 
 Markdown is rendered with Markdig's `advanced` pipeline; everything it supports is styled and demonstrated on the unlisted test page [`/pages/markup-demo`](input/pages/markup-demo.md) — tables, task lists, footnotes, definition lists, figures with captions, `::: tip|info|warning|danger` callouts, ==highlights==, and more. Fenced code blocks get build-flagged syntax highlighting (vendored [highlight.js](https://highlightjs.org), loaded only on pages that contain code) plus a copy button; images lazy-load and open in the lightbox; GitHub gists embed via their plain `<script>` snippet. `h2`/`h3` headings get hover anchor links.
 
+Videos embed as click-to-load facades — write `<div class="video" data-yt="VIDEO_ID" data-title="Trailer name"><a href="https://www.youtube.com/watch?v=VIDEO_ID">Watch “Trailer name” on YouTube</a></div>` and the thumbnail stands in until the reader clicks, at which point the player (on the `youtube-nocookie` host) replaces it. Only one image loads per video up front, so a post can carry a dozen of them; the inner link is the no-JavaScript fallback.
+
 Add `unlisted: true` to a page's front matter to render it while keeping it out of the sitemap and marked `noindex` (used by the markup demo).
 
 ### Illustrations (SVG design system)

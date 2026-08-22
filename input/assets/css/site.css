@@ -1059,3 +1059,77 @@ html[data-theme="dark"] .article-single__body .gist {
   transition: all var(--dur);
 }
 .nl-btn:hover { background: var(--accent); color: var(--bg); }
+
+/* video embeds — click-to-load facade, styled like the terminal panels */
+.video {
+  position: relative;
+  margin: 1.4em 0;
+  border: 1px solid var(--line);
+  border-radius: var(--rad);
+  overflow: hidden;
+  background: var(--bg-elev);
+}
+.video__play {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+.video__media {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+.video__thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  filter: saturate(0.85) brightness(0.82);
+  transition: filter var(--dur);
+}
+.video__play:hover .video__thumb,
+.video__play:focus-visible .video__thumb { filter: none; }
+.video__glyph {
+  position: absolute;
+  top: calc(50% - 22px);
+  left: calc(50% - 27px);
+  width: 54px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  color: var(--fg);
+  background: color-mix(in srgb, var(--bg) 74%, transparent);
+  border: 1px solid var(--line-2);
+  border-radius: var(--rad);
+  transition: all var(--dur);
+}
+.video__play:hover .video__glyph,
+.video__play:focus-visible .video__glyph {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+}
+.video__cap {
+  display: block;
+  padding: 8px 11px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  text-align: left;
+  color: var(--fg-dim);
+}
+.video__cap .sym { color: var(--accent); margin-right: 5px; }
+.video__frame { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+/* no-JS fallback: the plain link the markup ships with */
+.video > a { display: block; padding: 12px; font-family: var(--mono); font-size: 13px; }

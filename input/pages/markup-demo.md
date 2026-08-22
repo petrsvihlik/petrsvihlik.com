@@ -163,6 +163,12 @@ A GitHub gist, embedded with its plain `<script>` embed code (raw HTML passes th
 
 <noscript><a href="https://gist.github.com/petrsvihlik/cc34a6cf1882d515139c5b27f37cf99e">View the gist on GitHub</a></noscript>
 
+## Video embed
+
+A YouTube video as a click-to-load facade — only the thumbnail loads up front, and the player is created on click, so a post can carry a dozen videos without paying for a dozen iframes. The link inside the element is what readers without JavaScript get.
+
+<div class="video" data-yt="TKHuaB9ZuXo" data-title="KAMI Trailer"><a href="https://www.youtube.com/watch?v=TKHuaB9ZuXo">Watch “KAMI Trailer” on YouTube</a></div>
+
 ---
 
 That's everything. If a future post needs a construct not on this page, add it here first.

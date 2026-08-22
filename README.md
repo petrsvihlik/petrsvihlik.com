@@ -78,6 +78,8 @@ Post illustrations are hand-authored SVGs in a shared "terminal panel" style: a 
 
 To create one, copy [`input/assets/img/posts/_template.svg`](input/assets/img/posts/_template.svg) — it documents the palette, chrome, and conventions inline — save it as `input/assets/img/posts/<slug>/NN.svg`, and reference it like any image (add a caption with the `^^^` figure syntax). Keep photos, screenshots, and memes as raster; use the panels for concepts, diagrams, and headers.
 
+Every panel also ships a **PNG twin** beside it (`NN.svg` → `NN.png`, rendered at 2× on the panel background). The site always uses the SVG; the twins exist for platforms that can't handle SVG — dev.to's image CDN, for one, passes SVG bytes through while labelling them `image/webp`, so an SVG cross-post renders as a broken image there. Regenerate the twins after editing a panel by rendering it headless at twice its `viewBox` size.
+
 ### New page
 
 Create a Markdown file in `input/pages/`:

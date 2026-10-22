@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Authorization code</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
+  code { display: block; padding: .75rem; border-radius: .4rem; background: rgba(127,127,127,.15); word-break: break-all; font-size: .95rem; }
+  button { margin-top: .75rem; padding: .5rem 1rem; font-size: 1rem; cursor: pointer; }
+  .muted { opacity: .7; font-size: .9rem; }
+  .error { color: #c0392b; }
+</style>
+</head>
+<body>
+<h1>Authorization code</h1>
+<div id="out"><p>No authorization code in this URL.</p></div>
+<p class="muted">Paste the code into the sync script. It is single-use, expires in minutes and is useless without the app's client secret and PKCE verifier. Nothing on this page is sent anywhere.</p>
+<script>
+  (function () {
+    var p = new URLSearchParams(window.location.search);
+    var out = document.getElementById('out');
+    var code = p.get('code'), state = p.get('state'), err = p.get('error');
+    // drop the code from the address bar and browser history
+    if (window.location.search) { history.replaceState(null, '', window.location.pathname); }
+    function row(label, value) {
+      var wrap = document.createElement('div');
+      var h = document.createElement('p'); h.textContent = label;
+      var c = document.createElement('code'); c.textContent = value;
+      var b = document.createElement('button'); b.textContent = 'Copy';
+      b.onclick = function () { navigator.clipboard.writeText(value).then(function () { b.textContent = 'Copied'; }); };
+      wrap.appendChild(h); wrap.appendChild(c); wrap.appendChild(b);
+      return wrap;
+    }
+    if (err) {
+      out.innerHTML = '';
+      var e = document.createElement('p'); e.className = 'error';
+      e.textContent = 'Error: ' + err + (p.get('error_description') ? ' (' + p.get('error_description') + ')' : '');
+      out.appendChild(e);
+    } else if (code) {
+      out.innerHTML = '';
+      out.appendChild(row('Code', code));
+      if (state) { out.appendChild(row('State', state)); }
+    }
+  })();
+</script>
+</body>
+</html>
